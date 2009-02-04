@@ -1,15 +1,10 @@
 #summary Starting point for developers on the chimera student project.
 
-= Introduction =
-
 This will be our starting place for posting helpful links etc... for the student version of chimera
+== Communication ==
+ * [http://csc480.proboards.com/ Class message board /chat]
 
 
-= Details =
-
-More to come...
-
-= Links =
 
 == Chimera ==
 
