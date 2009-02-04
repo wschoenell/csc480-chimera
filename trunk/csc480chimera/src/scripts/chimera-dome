@@ -1,0 +1,101 @@
+#! /usr/bin/env python
+# -*- coding: iso-8859-1 -*-
+
+# chimera - observatory automation system
+# Copyright (C) 2006-2007  P. Henrique Silva <henrique@astro.ufsc.br>
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+
+from chimera.core.cli import ChimeraCLI, action
+from chimera.util.coord import Coord
+
+import sys
+
+
+class ChimeraDome (ChimeraCLI):
+    
+    def __init__ (self):
+        ChimeraCLI.__init__(self, "chimera-dome", "Dome controller", 0.1)
+    
+
+        self.addHelpGroup("DOME", "Dome")
+        self.addInstrument(name="dome", cls="Dome", required=True,
+                           help="Dome instrument to be used", helpGroup="DOME")
+
+        self.addHelpGroup("TELESCOPE", "Telescope Tracking Configuration")
+        self.addParameters(dict(name="telescope", default="/Telescope/0", helpGroup="TELESCOPE",
+                                help="Tell the dome to follow TELESCOPE when tracking (only "
+                                "utilized when using --track"))
+        
+        self.addHelpGroup("COMMANDS", "Commands")
+
+    @action(help="Open dome slit", helpGroup="COMMANDS", actionGroup="SLIT")
+    def open(self, options):
+        self.out("Opening dome slit ... ")
+        self.dome.openSlit()
+        self.out("OK")
+    
+    @action(help="Close dome slit", helpGroup="COMMANDS", actionGroup="SLIT")
+    def close(self, options):
+        self.out("Closing dome slit ... ")
+        self.dome.closeSlit()
+        self.out("OK")
+
+    @action(help="Track the telescope", helpGroup="COMMANDS", actionGroup="TRACKING")
+    def track(self, options):
+
+        if options.telescope:
+            self.dome["telescope"] = options.telescope
+            
+        self.out("Activating tracking ... ")
+        self.dome.track()
+        self.out("OK")
+
+    @action(help="Stop tracking the telescope (stand)", helpGroup="COMMANDS", actionGroup="TRACKING")
+    def stand(self, options):
+        self.out("Deactivating tracking ... ")
+        self.dome.stand()
+        self.out("OK")
+
+    @action(long="to", type="string",
+            help="Move dome to AZ azimuth", metavar="AZ", helpGroup="COMMANDS")
+    def moveTo(self, options):
+        
+        try:
+            target = Coord.fromDMS(options.moveTo)
+        except ValueError, e:
+            self.exit("Invalid azimuth (%s)" % e)
+
+        self.out("Moving dome to %s ... " % target)
+        self.dome.slewToAz(target)
+        self.out("OK")
+    
+    @action(help="Print dome information", helpGroup="COMMANDS")
+    def info(self, options):
+
+        self.out("Dome: %s (%s)." % (self.dome["driver"], self.dome.getDriver()["device"]))
+        self.out("Current dome azimuth: %s." % self.dome.getAz())
+        if self.dome.isSlitOpen():
+            self.out("Dome slit is open.")
+        else:
+            self.out("Dome slit is closed.")
+
+def main():
+    cli = ChimeraDome()
+    return cli.run(sys.argv)
+    
+if __name__ == '__main__':
+    main()

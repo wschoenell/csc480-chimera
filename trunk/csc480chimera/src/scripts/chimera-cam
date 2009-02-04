@@ -1,0 +1,390 @@
+#! /usr/bin/env python
+# -*- coding: iso-8859-1 -*-
+
+# chimera - observatory automation system
+# Copyright (C) 2006-2007  P. Henrique Silva <henrique@astro.ufsc.br>
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+
+from chimera.core.cli import ChimeraCLI, action, ParameterType
+from chimera.core.callback import callback
+from chimera.core.exceptions import printException
+
+from chimera.interfaces.filterwheel import InvalidFilterPositionException
+from chimera.interfaces.cameradriver import CameraFeature
+
+from chimera.util.ds9 import DS9
+
+import os
+import sys
+import time
+import warnings
+
+currentFrame = 0
+currentFrameExposeStart = 0
+currentFrameReadoutStart = 0
+
+class ChimeraCam (ChimeraCLI):
+    
+    def __init__ (self):
+        ChimeraCLI.__init__(self, "chimera-cam", "Camera controller", 0.1)
+        
+        self.addHelpGroup("CAM", "Camera and Filter Wheel configuration")
+        self.addInstrument(name="camera", cls="Camera",
+                           help="Camera instrument to be used. If blank, try to guess from chimera.config",
+                           helpGroup="CAM", required=True)
+        
+        self.addInstrument(name="wheel", cls="FilterWheel",
+                           help="Filter Wheel instrument to be used. If blank, try to guess from chimera.config",
+                           helpGroup="CAM")
+        
+        self.addHelpGroup("EXPOSE", "Exposure control")
+        self.addParameters(dict(name="frames", short="n", type="int", default=1, helpGroup="EXPOSE", help="Number of frames"),
+                           dict(name="exptime", short="t", type="float", default=1, helpGroup="EXPOSE",
+                                help="Integration time in seconds for each frame"),
+                           dict(name="interval", short="i", type="float", default=0.0, helpGroup="EXPOSE",
+                                help="Number of seconds to wait between each frame"),
+                           dict(name="output", short="o", type="string", helpGroup="EXPOSE",
+                                help="Base filename including full path if needed.",
+                                default="$DATE-$TIME.fits"),
+                           dict(name="filter", short="f", type="string", helpGroup="EXPOSE",
+                                help="Filter to be used. "
+                                     "Use --filters to get a list of available filters"),
+                           dict(name="shutter", type=ParameterType.CHOICE, helpGroup="EXPOSE",
+                                choices=["open", "OPEN", "close", "CLOSE", "leave", "LEAVE"],
+                                default="OPEN",
+                                help="What to do with the shutter: open, close, leave (case insensitive)"),
+                           dict(name="binning", help="Apply the selected binning to all frames", helpGroup="EXPOSE"),
+                           dict(name="subframe", 
+                                help="Readout only the selected subframe portion. The notation follows IRAF conventions."
+                                " x1:x2,y1:y2 to specify the corners of the desired subframe", helpGroup="EXPOSE"))
+
+        self.addHelpGroup("DISPLAY", "Display configuration")
+        self.addParameters(dict(name="no_display", long="no-display", type=ParameterType.BOOLEAN,
+                                helpGroup="DISPLAY",
+                                help="Don't try to display image on DS9. default is display for exptime >= 5"),
+                           dict(name="force_display", long="force-display", type=ParameterType.BOOLEAN,
+                                helpGroup="DISPLAY",
+                                help="Always display image on DS9 regardless of exptime."))
+    
+        self.addHelpGroup("TEMP", "Temperature control")
+        self.addParameters(dict(name="wait", short="w", type=ParameterType.BOOLEAN,
+                                default=False,
+                                helpGroup="TEMP",
+                                help="Wait until the selected CCD setpoint is achived."))
+
+        self.addHelpGroup("INFO", "Information")
+
+        self.addHelpGroup("IMAGETYPE", "Image types")
+        self.addParameters(dict(name="isBias", long="bias", type=ParameterType.CONSTANT, const="zero",
+                                help="Mark this frame as a BIAS frame.", helpGroup="IMAGETYPE"),
+                           dict(name="isDomeFlat", long="flat", type=ParameterType.CONSTANT, const="flat",
+                                help="Mark this frame as a DOME FLAT frame.", helpGroup="IMAGETYPE"),
+                           dict(name="isSkyFlat", long="sky-flat", type=ParameterType.CONSTANT, const="skyflat",
+                                help="Mark this frame as a SKY FLAT frame.", helpGroup="IMAGETYPE"),
+                           dict(name="isDark", long="dark", type=ParameterType.CONSTANT, const="dark",
+                                help="Mark this frame as a DARK frame.", helpGroup="IMAGETYPE"),
+                           dict(name="isObject", long="object", type=ParameterType.CONSTANT, const="object",
+                                help="Mark this frame as a OBJECT frame.", helpGroup="IMAGETYPE"))
+
+    @action(short="F", helpGroup="INFO", help="Print available filter names.")
+    def filters(self, options):
+        if not self.wheel:
+            self.exit("No Filter Wheel found. Edit chimera.config or pass --wheel/--wheel-driver (see --help)")
+        
+        self.out("Available filters:", end="")
+        
+        for i,f in enumerate(self.wheel.getFilters()):
+            self.out(str(f), end="")
+        
+        self.out()
+        self.exit()
+        
+    @action(name="setpoint", short="T", long="start-cooling", actionGroup="TEMP",
+            type="float",
+            helpGroup="TEMP", help="Start camera cooling, using the defined TEMP",
+            metavar="TEMP")
+    def startCooling (self, options):
+        
+        def eps_equal(a, b, eps=0.01):
+            return abs(a-b) <= eps
+
+        camera = self.camera
+        
+        if options.wait:
+            timeout = 4*60 # FIXME: configurable?
+        
+        start = time.time()
+
+        self.out(40*"=")
+        
+        camera.startCooling(options.setpoint)
+        self.out("setting camera setpoint to %.3f." % options.setpoint)
+        
+        if options.wait:
+            while not eps_equal(camera.getTemperature(), camera.getSetPoint(), 0.2):
+                self.out("\rwaiting setpoint temperature %.3f oC, current: %.3f oC" \
+                    % (camera.getSetPoint(), camera.getTemperature()), end="")
+                time.sleep(1)
+    
+                if time.time() > (start+timeout):
+                    self.out("giving up after wait for %d seconds" % timeout)
+                    break
+    
+            self.out("OK (took %.3fs)" % (time.time()-start))
+    
+        self.out(40*"=")
+        self.exit()        
+
+    @action(long="stop-cooling", actionGroup="TEMP",
+            helpGroup="TEMP", help="Stop camera cooling")
+    def stopCooling (self, options):
+        camera = self.camera
+
+        self.out(40*"=")
+        self.out("stopping camera cooling...", end="")
+        camera.stopCooling()
+        self.out("OK")        
+        self.out(40*"=")
+        self.exit()
+
+    @action(long="stop-fan", actionGroup="TEMP_FAN",
+            helpGroup="TEMP", help="Stop the cooler fan.")
+    def stopFan (self, options):
+        camera = self.camera
+
+        self.out(40*"=")
+        self.out("stopping cooler fan...", end="")
+        camera.stopFan()
+        self.out("OK")        
+        self.out(40*"=")
+        self.exit()
+
+    @action(long="start-fan", actionGroup="TEMP_FAN",
+            helpGroup="TEMP", help="Start the cooler fan.")
+    def startFan (self, options):
+        camera = self.camera
+
+        self.out(40*"=")
+        self.out("starting cooler fan...", end="")
+        camera.startFan()
+        self.out("OK")        
+        self.out(40*"=")
+        self.exit()
+
+    @action(help="Print camera information and exit", helpGroup="INFO")
+    def info(self, options):
+        camera = self.camera
+        
+        self.out("Camera:", camera["driver"], "(%s)" % camera.getDriver()["device"])
+
+        if camera.isCooling() == True:
+            self.out("Cooling enabled, Setpoint: %.1f oC" % camera.getSetPoint())
+        else:
+            self.out("Cooling disabled.")
+
+        self.out("Current CCD temperature:", "%.1f" % camera.getTemperature(), "oC")
+        if camera.isFanning():
+            self.out("Cooler fan active.")
+        else:
+            self.out("Cooler fan inactive.")
+
+        self.out("="*40)
+        for feature in CameraFeature:
+            self.out(str(feature), str(bool(camera.supports(feature))))
+
+        self.out("="*40)
+        ccds = camera.getCCDs()
+        currentCCD = camera.getCurrentCCD()
+        self.out("Available CCDs: ", end="")
+        for ccd in ccds.keys():
+            if ccd == currentCCD:
+                self.out("*%s* " % str(ccd), end="")
+            else:
+                self.out("%s " % str(ccd), end="")
+        self.out()
+
+        self.out("="*40)
+        self.out("ADCs: ", end="")
+        adcs = camera.getADCs()
+        for adc in adcs.keys():
+            self.out("%s " % adc, end="")
+        self.out()
+
+        self.out("="*40)
+        self.out("CCD size (pixel)       : %d x %d" % camera.getPhysicalSize())
+        self.out("Pixel size (micrometer): %.2f x %.2f" % camera.getPixelSize())
+        self.out("Overscan size (pixel)  : %d x %d" % camera.getOverscanSize())
+        
+        self.out("="*40)
+        self.out("Available binnings: ", end="")
+        sortedBins = camera.getBinnings().keys()
+        sortedBins.sort()
+
+        for bin in sortedBins:
+            self.out("%s " % bin, end="")
+        self.out()
+
+        self.exit()
+    
+    def _getImageType(self, options):
+        types = (options.isBias, options.isDomeFlat, options.isSkyFlat, options.isDark, options.isObject)
+        for t in types:
+            if t: return t
+        return "object"
+
+    def __abort__ (self):
+        self.out("aborting... ", endl="")
+
+        if self.camera.isExposing():
+            self.camera.abortExposure()
+        
+    @action(default=True, helpGroup="EXPOSE", help="Take an exposure with selected parameters")
+    def expose(self, options):
+        
+        camera = self.camera
+    
+        # first check binning
+        binnings = camera.getBinnings()
+
+        if options.binning:
+            if options.binning not in binnings.keys():
+                self.exit("Invalid binning mode. See --info for available binning modes")
+
+        # make files in the current directory if path is not absolute
+        if not os.path.isabs(options.output):
+            options.output = os.path.join(os.getcwd(), options.output)
+            
+        ds9 = None
+        if (not self.options.no_display and options.exptime >= 5) or options.force_display:
+            try:
+                ds9 = DS9(open=True)
+            except IOError:
+                self.err("Problems starting DS9. DIsplay disabled.")
+
+        imagetype = self._getImageType(options)
+         
+        @callback(self.localManager)
+        def exposeBegin(request):
+            global currentFrame, currentFrameExposeStart
+            currentFrameExposeStart = time.time()
+            currentFrame += 1
+            self.out(40*"=")
+            self.out("[%03d/%03d] [%s]" % (currentFrame, options.frames, time.strftime("%c")))
+            self.out("exposing (%.3fs) ..." % request["exptime"], end="")
+        
+        @callback(self.localManager)
+        def exposeComplete(request):
+            global currentFrameExposeStart
+            self.out("OK (took %.3f s)" % (time.time()-currentFrameExposeStart))
+    
+        @callback(self.localManager)
+        def readoutBegin(request):
+            global currentFrameReadoutStart
+            currentFrameReadoutStart = time.time()
+            self.out("reading out and saving ...", end="")
+                
+        @callback(self.localManager)
+        def readoutComplete(image):
+            global currentFrame, currentFrameExposeStart, currentFrameReadoutStart
+            self.out(" (%s) " % image.filename(), end="")
+            self.out("OK (took %.3f s)"  % (time.time()-currentFrameReadoutStart))
+            self.out("[%03d/%03d] took %.3fs" % (currentFrame, options.frames,
+                                              time.time()-currentFrameExposeStart))
+            
+            if ds9:
+                ds9.displayImage(image)
+    
+        @callback(self.localManager)
+        def abortComplete():
+            global currentFrameExposeStart
+            self.out("OK (took %.3f s)"  % (time.time()-currentFrameExposeStart))
+
+        camera.exposeBegin     += exposeBegin
+        camera.exposeComplete  += exposeComplete
+        camera.abortComplete   += abortComplete
+        camera.readoutBegin    += readoutBegin
+        camera.readoutComplete += readoutComplete
+        
+        self.out(40*"=")
+        self.out("Taking %d %s frame[s] of %.3fs each" % (options.frames, imagetype.upper(), options.exptime))
+        self.out("Shutter: %s" % options.shutter)
+        self.out("Interval between frames: %.3fs" % options.interval)
+        if camera.isCooling():
+            self.out("Cooling enabled, setpoint: %.3f oC" % camera.getSetpoint())
+        else:
+            self.out("Cooling disabled.")
+
+        self.out("Current CCD temperature: %.3f oC" % camera.getTemperature())
+
+        if options.binning:
+            self.out("Binning: %s" % options.binning)
+        else:
+            self.out("No binning")
+
+        if options.subframe:
+            self.out("Subframe: %s" % options.subframe)
+        else:
+            self.out("Full Frame")
+
+        if options.filter != None:
+            self.out("Filter: %s" % options.filter)
+        
+        if options.filter != None and self.wheel:
+            self.out(40*"=")
+            try:
+                self.out("Changing to filter %s... " % options.filter, end="")
+                self.wheel.setFilter(options.filter)
+                self.out("OK")
+            except InvalidFilterPositionException, e:
+                self.out("ERROR. Couldn't move filter wheel to %s. (%s)" % (options.filter, e))
+                time.sleep(3)
+
+        # finally, expose
+        start = time.time()
+        
+        try:
+            try:
+                camera.expose(exptime=options.exptime,
+                              frames=options.frames,
+                              interval=options.interval,
+                              filename=options.output,
+                              type=imagetype,
+                              binning=options.binning or None,
+                              window=options.subframe or None,
+                              shutter=options.shutter)
+            except Exception, e:
+                self.err("Error trying to take exposures. (%s)" % printException(e))
+        finally:
+
+            #camera.exposeBegin     -= exposeBegin
+            #camera.exposeComplete  -= exposeComplete
+            #camera.abortComplete   -= abortComplete
+            #camera.readoutBegin    -= readoutBegin
+            #camera.readoutComplete -= readoutComplete
+
+            self.out(40*"=")
+            self.out("Total time: %.3fs" % (time.time()-start))
+            self.out(40*"=")
+            self.out("%s" % time.strftime("%c"))            
+            self.out(40*"=")
+
+def main():
+    cli = ChimeraCam()
+    return cli.run(sys.argv)
+    
+if __name__ == '__main__':
+    main()
