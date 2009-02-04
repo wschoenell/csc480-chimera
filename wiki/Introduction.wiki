@@ -2,15 +2,12 @@
 
 = Introduction =
 
-More to come...
+This will be our starting place for posting helpful links etc... for the student version of chimera
 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+More to come...
 
 = Links =
 == Astronomy/Astrometry related ==
