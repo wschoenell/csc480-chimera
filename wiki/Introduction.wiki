@@ -17,4 +17,10 @@ More to come...
   * [http://chimera.sourceforge.net/ Chimera on sourceforge]
 
 == Astronomy/Astrometry related ==
-[http://calgary.rasc.ca/radecl.htm RA & DEC]
+  * [http://calgary.rasc.ca/radecl.htm RA & DEC]
+
+== Educational Software ==
+  * [http://www.stellarium.org/ Stellarium]
+  * [http://www.google.com/sky/ Google sky]
+  * [http://www.worldwidetelescope.org/Home.aspx Worldwide telescope]
+  * [http://earth.google.com/ Google earth also has a "sky thing"]
