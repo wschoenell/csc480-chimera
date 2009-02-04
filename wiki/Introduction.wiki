@@ -12,7 +12,7 @@ More to come...
 = Links =
 
 == Chimera ==
-[http://code.google.com/p/chimera/ Original chimera site on Google code] 
-[http://chimera.sourceforge.net/ Chimera on sourceforge]
+*[http://code.google.com/p/chimera/ Original chimera site on Google code] 
+*[http://chimera.sourceforge.net/ Chimera on sourceforge]
 == Astronomy/Astrometry related ==
 [http://calgary.rasc.ca/radecl.htm RA & DEC]
