@@ -1,0 +1,6 @@
+#summary Software packages and libraries needed for the chimera project
+
+
+= Dependencies =
+ 
+Pending...
