@@ -3,9 +3,9 @@
 
 
 == 1.) You must have the Python plugin for netbeans. ==
-Go to Tools >> Plugins
-in the search bar at top right type python
-select the python plugin (not the pythonedit if it is there !!)
+  Go to Tools >> Plugins
+  in the search bar at top right type python
+  select the python plugin (not the pythonedit if it is there !!)
 
 Click install and follow the instructions, then restart netbeans
 
@@ -59,8 +59,6 @@ Click Finish
 Next it will ask if you want to open the project - say yes.
 Note. The only thing that you will see in the Netbeans project is the stuff that is in the src folder.
 The rest is still in the chimera480 folder in your NetBeansProjects directory.
-
-
 
 
 
