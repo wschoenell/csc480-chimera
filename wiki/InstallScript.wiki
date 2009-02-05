@@ -1,0 +1,7 @@
+#summary This install script was written by Ben and looks to be dependent on Ubuntu.
+
+= Introduction =
+
+This install script was written by Ben and looks to be dependent on Ubuntu. Please try it out and update this wiki with any information you find.
+
+The script uses apt-get, so it wont work on the Sun Rays.
