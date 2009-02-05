@@ -1,21 +1,22 @@
 #summary Directions on how to use NetBeans for this project
+#labels Featured
 
-How to install as a project in Netbeans
+=How to install as a project in Netbeans=
 
 
-1.) You must have the Python plugin for netbeans. 
+== 1.) You must have the Python plugin for netbeans. ==
 	Go to Tools >> Plugins
 	in the search bar at top right type python
 	select the python plugin (not the pythonedit if it is there !!)
 
 	Click install and follow the instructions, then restart netbeans
 
-2.) Netbeans comes with a subversion client interface preinstalled.
+== 2.) Netbeans comes with a subversion client interface preinstalled. ==
 	But you will need to specify the svn client to use or download one to use
 
 	
 	
-   LINUX
+   === LINUX ===
 	If you are running linux (which you are suppossed to be for this project )
 		If you don't have svn - which you can determine by typing "which svn" in a terminal
 		Then type "sudo apt-get install subversion" type in your root password etc...
@@ -26,7 +27,7 @@ How to install as a project in Netbeans
 	Select Subversion under Versioning Systems in left column
 	enter /usr/bin/ as the location for the svn executable
 
-   WINDOWS
+   === WINDOWS ===
 	If you are running Windows, then in order to get the subeversion client
 	by going to the main toolbar and click Versioning >> Subversion >> Checkout
 	This will give you the option of downloading the svn client ("Get bundled Subversion 1.5 binaries...") from the repostories
@@ -36,7 +37,7 @@ How to install as a project in Netbeans
 	This will install the subversion client so click restart now after it downloads it.
 	When it restarts it will take a minute for Netbeans to install the new updated plugin.
 
-3.) Now You will need to add the account for chimera
+== 3.) Now You will need to add the account for chimera ==
 	Now for both Windows and Linux; go to the main toolbar Versioning >> Subversion >> Checkout
         Enter into Repository URL: https://csc480-chimera.googlecode.com/svn/trunk/
 	Enter into User: The username given in class
@@ -56,7 +57,7 @@ How to install as a project in Netbeans
 	Click Finish
 
 
-4.) This will start the download which will take a while. 
+== 4.) This will start the download which will take a while. ==
 	Next it will ask if you want to open the project - say yes.
 	Note. The only thing that you will see in the Netbeans project is the stuff that is in the src folder.
 	The rest is still in the chimera480 folder in your NetBeansProjects directory.
