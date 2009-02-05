@@ -1,4 +1,4 @@
-#summary This install script was written by Ben and looks to be dependent on Ubuntu.
+#summary This install script was written by Ben and looks to be dependent on Ubuntu 8.10 and NOT 8.04.
 
 = Introduction =
 
