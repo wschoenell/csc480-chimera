@@ -23,4 +23,4 @@ This will be our starting place for posting helpful links etc... for the student
 
 == Google Gadgets ==
 
-<wiki:gadget url="http://www.ohloh.net/p/gwt/widgets/project_factoids.xml" width="340" height="170" border="0" />
+<wiki:gadget url="http://www.ohloh.net/p/gwt/widgets/project_languages.xml" width="340" height="200" border="1" />
