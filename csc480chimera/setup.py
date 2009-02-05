@@ -80,7 +80,7 @@ else:
         print >> sys.stderr, "*"*80
         print >> sys.stderr, "You don't seem to have Numpy installed. Please install Numpy >= 1.1.0 and try again."
         print >> sys.stderr, "*"*80
-        sys.exit(1)
+        #sys.exit(1)
 
     linux_deps += ["python-sbigudrv == 0.1", "coords"]
     
