@@ -20,7 +20,3 @@ This will be our starting place for posting helpful links etc... for the student
   * [http://www.google.com/sky/ Google sky]
   * [http://www.worldwidetelescope.org/Home.aspx Worldwide telescope]
   * [http://earth.google.com/ Google earth also has a "sky thing"]
-
-== Google Gadgets ==
-
-<wiki:gadget url="http://www.ohloh.net/p/gwt/widgets/project_languages.xml" width="340" height="200" border="1" />
