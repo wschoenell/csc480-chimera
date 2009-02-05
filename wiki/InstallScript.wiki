@@ -5,3 +5,14 @@
 This install script was written by Ben and looks to be dependent on Ubuntu. Please try it out and update this wiki with any information you find.
 
 The script uses apt-get, so it wont work on the Sun Rays.
+
+= Update. It Works! =
+All that is needed to get it to work is:
+  * download the install script
+  * type `sudo python chimera-install.py`
+  * say yes to everything
+  * navigate to the folder where you have the downloaded source code from subversion
+  * open a terminal and cd to that folder, then cd to `src/chimera/core`
+  * now type `sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core`
+  * now type `chimera linux.xml -vv`
+  * It should say starting all the fake stuff and that it is up and running
