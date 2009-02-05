@@ -1,3 +1,4 @@
+#summary Directions on how to create a NetBeans Project using subversion and Google Code
 #labels Featured
 = How to install as a project in Netbeans =
 
