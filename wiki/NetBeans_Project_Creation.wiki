@@ -54,11 +54,11 @@ Now you will be in the "Folders to Checkout" Panel
     * in linux usually `/home/<user name>/NetBeansProjects`
     * in Windows Vista usually `C:\<path to user home dir>\Documents\NetBeansProjects`
     * in Windows XP usually `C:\<path to user home dir>\My Documents\NetBeansProjects`
-  * leave Scan for NetBeans Projects after Checkout checked
+  * leave Scan for `NetBeans` Projects after Checkout checked
   * Click Finish
 
 
 == 4.) This will start the download which will take a while. ==
 Next it will ask if you want to open the project - say yes.
-Note. The only thing that you will see in the Netbeans project is the stuff that is in the `src` folder.
-The rest is still in the chimera480 folder in your NetBeansProjects directory.
+Note. The only thing that you will see in the `Netbeans` project is the stuff that is in the `src` folder.
+The rest is still in the `chimera480` folder in your `NetBeansProjects` directory.
