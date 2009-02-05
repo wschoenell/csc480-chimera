@@ -51,7 +51,7 @@ Now you will be in the "Folders to Checkout" Panel
   * leave Repository Revision blank
   * check skip trunk and checkout only its contents (this just means you don't want the extra directory called trunk you just want everything in it)
   * in Local Folder, browse to your NetBeansProjects folder
-    * in linux usually /home/<username>/NetBeansProjects
+    * in linux usually /home/<user-name>/NetBeansProjects
     * in Windows Vista usually C:\<path to user home dir>\Documents/NetBeansProjects
     * in Windows XP usually C:\<path to user home dir>\My Documents/NetBeansProjects
   * leave Scan for NetBeans Projects after Checkout checked
