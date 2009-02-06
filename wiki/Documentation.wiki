@@ -7,6 +7,7 @@
   * [http://pydoc.org/ Python Documentation Online]
   * [http://docs.python.org/library/index.html The Python Standard Library] from python.org
   * [http://docs.python.org/modindex.html Module Index] 
+  * [http://pyref.infogami.com/ Unofficial Python Reference]
 
 = General =
   * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
