@@ -8,6 +8,7 @@
   * [http://docs.python.org/library/index.html The Python Standard Library] from python.org
   * [http://docs.python.org/modindex.html Module Index] 
   * [http://pyref.infogami.com/ Unofficial Python Reference]
+  * [http://books.google.com/books?id=ftA0yk1Z92wC&printsec=frontcover&dq=underscoring+variable+names+python Learning Python] (PDF) from O'Reilly
 
 = General =
   * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
