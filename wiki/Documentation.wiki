@@ -1,0 +1,16 @@
+#summary Documentation for the Python programming language
+#labels Featured
+
+= API =
+
+  * [http://epydoc.sourceforge.net/stdlib/ Python Standard Library] Javadoc like Python API
+  * [http://pydoc.org/ Python Documentation Online]
+  * [http://docs.python.org/library/index.html The Python Standard Library] from python.org
+  * [http://docs.python.org/modindex.html Module Index] 
+
+= General =
+  * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
+
+
+== Documenting your code ==
+  * [http://epydoc.sourceforge.net/ Epydoc] (what to use)
