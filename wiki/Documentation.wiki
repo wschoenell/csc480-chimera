@@ -23,4 +23,4 @@
 
 = CHIMERA =
 
-  * [http://example.com API for chimera] (this is the javadoc-like reference)
+  * [http://oswego.edu/~sdoherty/api/ API for chimera] (this is the javadoc-like reference)
