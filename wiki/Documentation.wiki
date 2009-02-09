@@ -1,7 +1,7 @@
 #summary Documentation for the Python programming language
 #labels Featured
-
-= API =
+= PYTHON =
+== API ==
 
   * [http://epydoc.sourceforge.net/stdlib/ Python Standard Library] Javadoc-like Python API
   * [http://pydoc.org/ Python Documentation Online]
@@ -10,7 +10,7 @@
   * [http://pyref.infogami.com/ Unofficial Python Reference]
   * [http://books.google.com/books?id=ftA0yk1Z92wC&printsec=frontcover&dq=underscoring+variable+names+python Learning Python] (PDF) from O'Reilly
 
-= General =
+== General ==
   * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
 
 
