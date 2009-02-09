@@ -22,3 +22,5 @@
 
 
 = CHIMERA =
+
+  * [http://example.com API for chimera] (this is the javadoc-like reference)
