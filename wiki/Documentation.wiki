@@ -19,3 +19,6 @@
 
 == Small and Specific Tidbits ==
   * [http://pyref.infogami.com/__all__ Purpose of the __all__ variable]
+
+
+= CHIMERA =
