@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.imageserver.imageserver</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.imageserver-module.html">Package&nbsp;imageserver</a> ::
+        Module&nbsp;imageserver
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.imageserver.imageserver-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.imageserver.imageserver-module.html">Module chimera.controllers.imageserver.imageserver</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.chimeraobject=chimera.core.chimeraobject-module.html"><a title="chimera.core.chimeraobject" class="py-name" href="#" onclick="return doclink('link-2', 'chimeraobject', 'link-2');">chimeraobject</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.chimeraobject.ChimeraObject=chimera.core.chimeraobject.ChimeraObject-class.html"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-3', 'ChimeraObject', 'link-3');">ChimeraObject</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-6', 'exceptions', 'link-6');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class chimera.core.exceptions.ObjectNotFoundException=chimera.core.exceptions.ObjectNotFoundException-class.html"><a title="chimera.core.exceptions.ObjectNotFoundException" class="py-name" href="#" onclick="return doclink('link-7', 'ObjectNotFoundException', 'link-7');">ObjectNotFoundException</a></tt><tt class="py-op">,</tt> <tt id="link-8" class="py-name" targets="Class chimera.core.exceptions.ClassLoaderException=chimera.core.exceptions.ClassLoaderException-class.html"><a title="chimera.core.exceptions.ClassLoaderException" class="py-name" href="#" onclick="return doclink('link-8', 'ClassLoaderException', 'link-8');">ClassLoaderException</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-9', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-10', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Module chimera.core.path=chimera.core.path-module.html"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-11', 'path', 'link-11');">path</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Class chimera.core.path.ChimeraPath=chimera.core.path.ChimeraPath-class.html"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-12', 'ChimeraPath', 'link-12');">ChimeraPath</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-13" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-13', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Package chimera.controllers=chimera.controllers-module.html,Static Method chimera.core.path.ChimeraPath.controllers()=chimera.core.path.ChimeraPath-class.html#controllers"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-14', 'controllers', 'link-14');">controllers</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Package chimera.controllers.imageserver=chimera.controllers.imageserver-module.html,Module chimera.controllers.imageserver.imageserver=chimera.controllers.imageserver.imageserver-module.html"><a title="chimera.controllers.imageserver
+chimera.controllers.imageserver.imageserver" class="py-name" href="#" onclick="return doclink('link-15', 'imageserver', 'link-15');">imageserver</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Module chimera.controllers.imageserver.imageserverhttp=chimera.controllers.imageserver.imageserverhttp-module.html"><a title="chimera.controllers.imageserver.imageserverhttp" class="py-name" href="#" onclick="return doclink('link-16', 'imageserverhttp', 'link-16');">imageserverhttp</a></tt> <tt class="py-keyword">import</tt> <tt id="link-17" class="py-name" targets="Class chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP" class="py-name" href="#" onclick="return doclink('link-17', 'ImageServerHTTP', 'link-17');">ImageServerHTTP</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-18" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-18', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-19', 'util', 'link-19');">util</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#image,Module chimera.util.image=chimera.util.image-module.html"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-20', 'image', 'link-20');">image</a></tt> <tt class="py-keyword">import</tt> <tt id="link-21" class="py-name" targets="Class chimera.util.image.Image=chimera.util.image.Image-class.html"><a title="chimera.util.image.Image" class="py-name" href="#" onclick="return doclink('link-21', 'Image', 'link-21');">Image</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-22', 'util', 'link-19');">util</a></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-23', 'path', 'link-11');">path</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer"></a><div id="ImageServer-def"><a name="L17"></a><tt class="py-lineno"> 17</tt> <a class="py-toggle" href="#" id="ImageServer-toggle" onclick="return toggle('ImageServer');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html">ImageServer</a><tt class="py-op">(</tt><tt class="py-base-class">ChimeraObject</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ImageServer-expanded"><a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Variable chimera.controllers.imageserver.imageserver.ImageServer.__config__=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__config__,Variable chimera.controllers.pointverify.PointVerify.__config__=chimera.controllers.pointverify.PointVerify-class.html#__config__,Variable chimera.controllers.reduction.chimera_pipe.Reduction.__config__=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__config__,Variable chimera.controllers.scheduler.controller.Controller.__config__=chimera.controllers.scheduler.controller.Controller-class.html#__config__,Variable chimera.controllers.xephem.XEphem.__config__=chimera.controllers.xephem.XEphem-class.html#__config__,Variable chimera.controllers.xmlrpc.XMLRPC.__config__=chimera.controllers.xmlrpc.XMLRPC-class.html#__config__,Variable chimera.core.site.Site.__config__=chimera.core.site.Site-class.html#__config__,Variable chimera.drivers.fakecamera.FakeCamera.__config__=chimera.drivers.fakecamera.FakeCamera-class.html#__config__,Variable chimera.drivers.faketelescope.FakeTelescope.__config__=chimera.drivers.faketelescope.FakeTelescope-class.html#__config__,Variable chimera.drivers.meade.Meade.__config__=chimera.drivers.meade.Meade-class.html#__config__,Variable chimera.drivers.theskytelescope.TheSkyTelescope.__config__=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__config__,Variable chimera.interfaces.autofocus.IAutofocus.__config__=chimera.interfaces.autofocus.IAutofocus-class.html#__config__,Variable chimera.interfaces.camera.ICamera.__config__=chimera.interfaces.camera.ICamera-class.html#__config__,Variable chimera.interfaces.cameradriver.ICameraDriver.__config__=chimera.interfaces.cameradriver.ICameraDriver-class.html#__config__,Variable chimera.interfaces.dome.IDome.__config__=chimera.interfaces.dome.IDome-class.html#__config__,Variable chimera.interfaces.domedriver.IDomeDriver.__config__=chimera.interfaces.domedriver.IDomeDriver-class.html#__config__,Variable chimera.interfaces.filterwheel.IFilterWheel.__config__=chimera.interfaces.filterwheel.IFilterWheel-class.html#__config__,Variable chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__=chimera.interfaces.filterwheeldriver.IFilterWheelDriver-class.html#__config__,Variable chimera.interfaces.focuser.IFocuser.__config__=chimera.interfaces.focuser.IFocuser-class.html#__config__,Variable chimera.interfaces.focuserdriver.IFocuserDriver.__config__=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#__config__,Variable chimera.interfaces.telescope.ITelescope.__config__=chimera.interfaces.telescope.ITelescope-class.html#__config__,Variable chimera.interfaces.telescope.ITelescopePark.__config__=chimera.interfaces.telescope.ITelescopePark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriver.__config__=chimera.interfaces.telescopedriver.ITelescopeDriver-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverPark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#__config__,Variable chimera.interfaces.weatherstation.IWeatherStation.__config__=chimera.interfaces.weatherstation.IWeatherStation-class.html#__config__"><a title="chimera.controllers.imageserver.imageserver.ImageServer.__config__
+chimera.controllers.pointverify.PointVerify.__config__
+chimera.controllers.reduction.chimera_pipe.Reduction.__config__
+chimera.controllers.scheduler.controller.Controller.__config__
+chimera.controllers.xephem.XEphem.__config__
+chimera.controllers.xmlrpc.XMLRPC.__config__
+chimera.core.site.Site.__config__
+chimera.drivers.fakecamera.FakeCamera.__config__
+chimera.drivers.faketelescope.FakeTelescope.__config__
+chimera.drivers.meade.Meade.__config__
+chimera.drivers.theskytelescope.TheSkyTelescope.__config__
+chimera.interfaces.autofocus.IAutofocus.__config__
+chimera.interfaces.camera.ICamera.__config__
+chimera.interfaces.cameradriver.ICameraDriver.__config__
+chimera.interfaces.dome.IDome.__config__
+chimera.interfaces.domedriver.IDomeDriver.__config__
+chimera.interfaces.filterwheel.IFilterWheel.__config__
+chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__
+chimera.interfaces.focuser.IFocuser.__config__
+chimera.interfaces.focuserdriver.IFocuserDriver.__config__
+chimera.interfaces.telescope.ITelescope.__config__
+chimera.interfaces.telescope.ITelescopePark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriver.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__
+chimera.interfaces.weatherstation.IWeatherStation.__config__" class="py-name" href="#" onclick="return doclink('link-24', '__config__', 'link-24');">__config__</a></tt>  <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">'save_dir'</tt><tt class="py-op">:</tt> <tt class="py-string">'$HOME/images/$LAST_NOON_DATE'</tt><tt class="py-op">,</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">                    </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">                   <tt class="py-comment"># Root directory where images are stored for use when autoloading existing</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">                   <tt class="py-string">'load_dir'</tt><tt class="py-op">:</tt> <tt class="py-string">'$HOME/images'</tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">                   <tt class="py-comment"># Load existing load_dir images on startup</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">                   <tt class="py-string">'autoload'</tt><tt class="py-op">:</tt> <tt id="link-25" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-25', 'True', 'link-25');">True</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                    </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">                   <tt class="py-string">'http_host'</tt><tt class="py-op">:</tt> <tt class="py-string">'0.0.0.0'</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">                   <tt class="py-string">'http_port'</tt><tt class="py-op">:</tt> <tt class="py-number">7669</tt><tt class="py-op">}</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">     </tt>
+<a name="ImageServer.__init__"></a><div id="ImageServer.__init__-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="ImageServer.__init__-toggle" onclick="return toggle('ImageServer.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.__init__-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-26', 'ChimeraObject', 'link-3');">ChimeraObject</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method chimera.controllers.autofocus.Autofocus.__init__()=chimera.controllers.autofocus.Autofocus-class.html#__init__,Method chimera.controllers.autofocus.FocusFit.__init__()=chimera.controllers.autofocus.FocusFit-class.html#__init__,Method chimera.controllers.console.command.Command.__init__()=chimera.controllers.console.command.Command-class.html#__init__,Method chimera.controllers.console.command.HighLevelCommand.__init__()=chimera.controllers.console.command.HighLevelCommand-class.html#__init__,Method chimera.controllers.console.commander.Commander.__init__()=chimera.controllers.console.commander.Commander-class.html#__init__,Method chimera.controllers.console.commands.alias.AliasCommand.__init__()=chimera.controllers.console.commands.alias.AliasCommand-class.html#__init__,Method chimera.controllers.console.commands.object.ObjectCommand.__init__()=chimera.controllers.console.commands.object.ObjectCommand-class.html#__init__,Method chimera.controllers.console.commands.quit.QuitCommand.__init__()=chimera.controllers.console.commands.quit.QuitCommand-class.html#__init__,Method chimera.controllers.console.commands.site.SiteCommand.__init__()=chimera.controllers.console.commands.site.SiteCommand-class.html#__init__,Method chimera.controllers.console.commands.unalias.UnaliasCommand.__init__()=chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#__init__,Method chimera.controllers.console.console.Console.__init__()=chimera.controllers.console.console.Console-class.html#__init__,Method chimera.controllers.console.controller._ConsoleControllerSingleton.__init__()=chimera.controllers.console.controller._ConsoleControllerSingleton-class.html#__init__,Method chimera.controllers.console.message.Config.__init__()=chimera.controllers.console.message.Config-class.html#__init__,Method chimera.controllers.console.message.Error.__init__()=chimera.controllers.console.message.Error-class.html#__init__,Method chimera.controllers.console.message.Hint.__init__()=chimera.controllers.console.message.Hint-class.html#__init__,Method chimera.controllers.console.message.Message.__init__()=chimera.controllers.console.message.Message-class.html#__init__,Method chimera.controllers.console.namespace.Namespace.__init__()=chimera.controllers.console.namespace.Namespace-class.html#__init__,Method chimera.controllers.extinction.Extinction.__init__()=chimera.controllers.extinction.Extinction-class.html#__init__,Method chimera.controllers.imageserver.imagerequest.ImageRequest.__init__()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#__init__,Method chimera.controllers.imageserver.imageserver.ImageServer.__init__()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__init__,Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#__init__,Method chimera.controllers.pointverify.PointVerify.__init__()=chimera.controllers.pointverify.PointVerify-class.html#__init__,Method chimera.controllers.reduction.calibration.Calibration.__init__()=chimera.controllers.reduction.calibration.Calibration-class.html#__init__,Method chimera.controllers.reduction.chimera_pipe.Reduction.__init__()=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__init__,Method chimera.controllers.scheduler.constraints.Constraints.__init__()=chimera.controllers.scheduler.constraints.Constraints-class.html#__init__,Method chimera.controllers.scheduler.constraints.IConstraint.__init__()=chimera.controllers.scheduler.constraints.IConstraint-class.html#__init__,Method chimera.controllers.scheduler.controller.Controller.__init__()=chimera.controllers.scheduler.controller.Controller-class.html#__init__,Method chimera.controllers.scheduler.machine.Machine.__init__()=chimera.controllers.scheduler.machine.Machine-class.html#__init__,Method chimera.controllers.scheduler.sequential.SequentialScheduler.__init__()=chimera.controllers.scheduler.sequential.SequentialScheduler-class.html#__init__,Method chimera.controllers.site.main.SiteController.__init__()=chimera.controllers.site.main.SiteController-class.html#__init__,Method chimera.controllers.xephem.XEphem.__init__()=chimera.controllers.xephem.XEphem-class.html#__init__,Method chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__()=chimera.controllers.xmlrpc.ChimeraXMLDispatcher-class.html#__init__,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#__init__,Method chimera.controllers.xmlrpc.XMLRPC.__init__()=chimera.controllers.xmlrpc.XMLRPC-class.html#__init__,Method chimera.controllers.xmlrpc.serverThread.__init__()=chimera.controllers.xmlrpc.serverThread-class.html#__init__,Method chimera.core.async.BeginDispatcher.__init__()=chimera.core.async.BeginDispatcher-class.html#__init__,Method chimera.core.async.EndDispatcher.__init__()=chimera.core.async.EndDispatcher-class.html#__init__,Method chimera.core.chimeraobject.ChimeraObject.__init__()=chimera.core.chimeraobject.ChimeraObject-class.html#__init__,Method chimera.core.classloader.ClassLoader.__init__()=chimera.core.classloader.ClassLoader-class.html#__init__,Method chimera.core.cli.CLIValues.__init__()=chimera.core.cli.CLIValues-class.html#__init__,Method chimera.core.cli.ChimeraCLI.__init__()=chimera.core.cli.ChimeraCLI-class.html#__init__,Method chimera.core.cli.Option.__init__()=chimera.core.cli.Option-class.html#__init__,Method chimera.core.config.BoolChecker.__init__()=chimera.core.config.BoolChecker-class.html#__init__,Method chimera.core.config.Config.__init__()=chimera.core.config.Config-class.html#__init__,Method chimera.core.config.CoordChecker.__init__()=chimera.core.config.CoordChecker-class.html#__init__,Method chimera.core.config.CoordOption.__init__()=chimera.core.config.CoordOption-class.html#__init__,Method chimera.core.config.EnumChecker.__init__()=chimera.core.config.EnumChecker-class.html#__init__,Method chimera.core.config.FloatChecker.__init__()=chimera.core.config.FloatChecker-class.html#__init__,Method chimera.core.config.IgnoreChecker.__init__()=chimera.core.config.IgnoreChecker-class.html#__init__,Method chimera.core.config.IntChecker.__init__()=chimera.core.config.IntChecker-class.html#__init__,Method chimera.core.config.Option.__init__()=chimera.core.config.Option-class.html#__init__,Method chimera.core.config.OptionsChecker.__init__()=chimera.core.config.OptionsChecker-class.html#__init__,Method chimera.core.config.RangeChecker.__init__()=chimera.core.config.RangeChecker-class.html#__init__,Method chimera.core.config.StringChecker.__init__()=chimera.core.config.StringChecker-class.html#__init__,Method chimera.core.eventsproxy.EventsProxy.__init__()=chimera.core.eventsproxy.EventsProxy-class.html#__init__,Method chimera.core.eventwrapper.EventWrapperDispatcher.__init__()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#__init__,Method chimera.core.exceptions.ChimeraException.__init__()=chimera.core.exceptions.ChimeraException-class.html#__init__,Method chimera.core.location.Location.__init__()=chimera.core.location.Location-class.html#__init__,Method chimera.core.lockwrapper.LockWrapper.__init__()=chimera.core.lockwrapper.LockWrapper-class.html#__init__,Method chimera.core.lockwrapper.LockWrapperDispatcher.__init__()=chimera.core.lockwrapper.LockWrapperDispatcher-class.html#__init__,Method chimera.core.log.ChimeraFormatter.__init__()=chimera.core.log.ChimeraFormatter-class.html#__init__,Method chimera.core.manager.Manager.__init__()=chimera.core.manager.Manager-class.html#__init__,Method chimera.core.manager.ManagerAdapter.__init__()=chimera.core.manager.ManagerAdapter-class.html#__init__,Method chimera.core.managerbeacon.ManagerBeacon.__init__()=chimera.core.managerbeacon.ManagerBeacon-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapper.__init__()=chimera.core.methodwrapper.MethodWrapper-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapperDispatcher.__init__()=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__init__,Method chimera.core.monitor.Monitor.__init__()=chimera.core.monitor.Monitor-class.html#__init__,Method chimera.core.proxy.Proxy.__init__()=chimera.core.proxy.Proxy-class.html#__init__,Method chimera.core.proxy.ProxyMethod.__init__()=chimera.core.proxy.ProxyMethod-class.html#__init__,Method chimera.core.remoteobject.RemoteObject.__init__()=chimera.core.remoteobject.RemoteObject-class.html#__init__,Method chimera.core.resources.Resource.__init__()=chimera.core.resources.Resource-class.html#__init__,Method chimera.core.resources.ResourcesManager.__init__()=chimera.core.resources.ResourcesManager-class.html#__init__,Method chimera.core.rwlock.ReadWriteLock.__init__()=chimera.core.rwlock.ReadWriteLock-class.html#__init__,Method chimera.core.site.AstroDate.__init__()=chimera.core.site.AstroDate-class.html#__init__,Method chimera.core.site.Site.__init__()=chimera.core.site.Site-class.html#__init__,Method chimera.core.systemconfig.SystemConfig.__init__()=chimera.core.systemconfig.SystemConfig-class.html#__init__,Method chimera.core.tests.managerhelper.ManagerHelper.__init__()=chimera.core.tests.managerhelper.ManagerHelper-class.html#__init__,Method chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__()=chimera.core.tests.managerhelperwitherror.ManagerHelperWithError-class.html#__init__,Method chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__()=chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException-class.html#__init__,Method chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__()=chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException-class.html#__init__,Method chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__()=chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException-class.html#__init__,Method chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__()=chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException-class.html#__init__,Method chimera.core.tests.test_events.Publisher.__init__()=chimera.core.tests.test_events.Publisher-class.html#__init__,Method chimera.core.tests.test_events.Subscriber.__init__()=chimera.core.tests.test_events.Subscriber-class.html#__init__,Method chimera.core.tests.test_manager.Simple.__init__()=chimera.core.tests.test_manager.Simple-class.html#__init__,Method chimera.core.tests.test_resources.TestResources.__init__()=chimera.core.tests.test_resources.TestResources-class.html#__init__,Method chimera.core.threads.ThreadPool.__init__()=chimera.core.threads.ThreadPool-class.html#__init__,Method chimera.core.threads.ThreadPoolThread.__init__()=chimera.core.threads.ThreadPoolThread-class.html#__init__,Method chimera.drivers.domelna40cm.DomeLNA40cm.__init__()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__init__,Method chimera.drivers.fakecamera.FakeCamera.__init__()=chimera.drivers.fakecamera.FakeCamera-class.html#__init__,Method chimera.drivers.fakedome.FakeDome.__init__()=chimera.drivers.fakedome.FakeDome-class.html#__init__,Method chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__()=chimera.drivers.fakefilterwheel.FakeFilterWheel-class.html#__init__,Method chimera.drivers.fakefocuser.FakeFocuser.__init__()=chimera.drivers.fakefocuser.FakeFocuser-class.html#__init__,Method chimera.drivers.faketelescope.FakeTelescope.__init__()=chimera.drivers.faketelescope.FakeTelescope-class.html#__init__,Method chimera.drivers.meade.Meade.__init__()=chimera.drivers.meade.Meade-class.html#__init__,Method chimera.drivers.optectcfs.OptecTCFS.__init__()=chimera.drivers.optectcfs.OptecTCFS-class.html#__init__,Method chimera.drivers.remoteclient.RemoteClient.__init__()=chimera.drivers.remoteclient.RemoteClient-class.html#__init__,Method chimera.drivers.remoteclient.RemoteMethodWrapper.__init__()=chimera.drivers.remoteclient.RemoteMethodWrapper-class.html#__init__,Method chimera.drivers.sbig.sbig.SBIG.__init__()=chimera.drivers.sbig.sbig.SBIG-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGException.__init__()=chimera.drivers.sbig.sbigdrv.SBIGException-class.html#__init__,Method chimera.drivers.theskytelescope.TheSkyTelescope.__init__()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__init__,Method chimera.instruments.camera.Camera.__init__()=chimera.instruments.camera.Camera-class.html#__init__,Method chimera.instruments.dome.Dome.__init__()=chimera.instruments.dome.Dome-class.html#__init__,Method chimera.instruments.filterwheel.FilterWheel.__init__()=chimera.instruments.filterwheel.FilterWheel-class.html#__init__,Method chimera.instruments.focuser.Focuser.__init__()=chimera.instruments.focuser.Focuser-class.html#__init__,Method chimera.instruments.telescope.Telescope.__init__()=chimera.instruments.telescope.Telescope-class.html#__init__,Method chimera.interfaces.lifecycle.ILifeCycle.__init__()=chimera.interfaces.lifecycle.ILifeCycle-class.html#__init__,Method chimera.util.catalogs.landolt.Landolt.__init__()=chimera.util.catalogs.landolt.Landolt-class.html#__init__,Method chimera.util.catalogs.ppm.PPM.__init__()=chimera.util.catalogs.ppm.PPM-class.html#__init__,Method chimera.util.catalogs.ucac2.UCAC2.__init__()=chimera.util.catalogs.ucac2.UCAC2-class.html#__init__,Method chimera.util.coord.Coord.__init__()=chimera.util.coord.Coord-class.html#__init__,Method chimera.util.ds9.DS9.__init__()=chimera.util.ds9.DS9-class.html#__init__,Method chimera.util.etree.ElementPath.Path.__init__()=chimera.util.etree.ElementPath.Path-class.html#__init__,Method chimera.util.etree.ElementTree.ElementTree.__init__()=chimera.util.etree.ElementTree.ElementTree-class.html#__init__,Method chimera.util.etree.ElementTree.QName.__init__()=chimera.util.etree.ElementTree.QName-class.html#__init__,Method chimera.util.etree.ElementTree.TreeBuilder.__init__()=chimera.util.etree.ElementTree.TreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree.XMLTreeBuilder.__init__()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree._ElementInterface.__init__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__init__,Method chimera.util.etree.ElementTree._iterparse.__init__()=chimera.util.etree.ElementTree._iterparse-class.html#__init__,Method chimera.util.filenamesequence.FilenameSequence.__init__()=chimera.util.filenamesequence.FilenameSequence-class.html#__init__,Method chimera.util.image.Image.__init__()=chimera.util.image.Image-class.html#__init__,Method chimera.util.position.Position.__init__()=chimera.util.position.Position-class.html#__init__,Method chimera.util.sexcatalog.SExtractorfile.__init__()=chimera.util.sexcatalog.SExtractorfile-class.html#__init__,Method chimera.util.sextractor.SExtractor.__init__()=chimera.util.sextractor.SExtractor-class.html#__init__,Method chimera.util.simbad.Simbad.__init__()=chimera.util.simbad.Simbad-class.html#__init__,Method chimera.util.telescopelimits.TelescopeLimits.__init__()=chimera.util.telescopelimits.TelescopeLimits-class.html#__init__,Method chimera.util.vizquery.VizQuery.__init__()=chimera.util.vizquery.VizQuery-class.html#__init__,Method chimera.util.votable.VONode.__init__()=chimera.util.votable.VONode-class.html#__init__,Method chimera.util.votable.VOTable.__init__()=chimera.util.votable.VOTable-class.html#__init__,Method chimera.util.votable.VOTableHandler.__init__()=chimera.util.votable.VOTableHandler-class.html#__init__"><a title="chimera.controllers.autofocus.Autofocus.__init__
+chimera.controllers.autofocus.FocusFit.__init__
+chimera.controllers.console.command.Command.__init__
+chimera.controllers.console.command.HighLevelCommand.__init__
+chimera.controllers.console.commander.Commander.__init__
+chimera.controllers.console.commands.alias.AliasCommand.__init__
+chimera.controllers.console.commands.object.ObjectCommand.__init__
+chimera.controllers.console.commands.quit.QuitCommand.__init__
+chimera.controllers.console.commands.site.SiteCommand.__init__
+chimera.controllers.console.commands.unalias.UnaliasCommand.__init__
+chimera.controllers.console.console.Console.__init__
+chimera.controllers.console.controller._ConsoleControllerSingleton.__init__
+chimera.controllers.console.message.Config.__init__
+chimera.controllers.console.message.Error.__init__
+chimera.controllers.console.message.Hint.__init__
+chimera.controllers.console.message.Message.__init__
+chimera.controllers.console.namespace.Namespace.__init__
+chimera.controllers.extinction.Extinction.__init__
+chimera.controllers.imageserver.imagerequest.ImageRequest.__init__
+chimera.controllers.imageserver.imageserver.ImageServer.__init__
+chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__
+chimera.controllers.pointverify.PointVerify.__init__
+chimera.controllers.reduction.calibration.Calibration.__init__
+chimera.controllers.reduction.chimera_pipe.Reduction.__init__
+chimera.controllers.scheduler.constraints.Constraints.__init__
+chimera.controllers.scheduler.constraints.IConstraint.__init__
+chimera.controllers.scheduler.controller.Controller.__init__
+chimera.controllers.scheduler.machine.Machine.__init__
+chimera.controllers.scheduler.sequential.SequentialScheduler.__init__
+chimera.controllers.site.main.SiteController.__init__
+chimera.controllers.xephem.XEphem.__init__
+chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__
+chimera.controllers.xmlrpc.XMLRPC.__init__
+chimera.controllers.xmlrpc.serverThread.__init__
+chimera.core.async.BeginDispatcher.__init__
+chimera.core.async.EndDispatcher.__init__
+chimera.core.chimeraobject.ChimeraObject.__init__
+chimera.core.classloader.ClassLoader.__init__
+chimera.core.cli.CLIValues.__init__
+chimera.core.cli.ChimeraCLI.__init__
+chimera.core.cli.Option.__init__
+chimera.core.config.BoolChecker.__init__
+chimera.core.config.Config.__init__
+chimera.core.config.CoordChecker.__init__
+chimera.core.config.CoordOption.__init__
+chimera.core.config.EnumChecker.__init__
+chimera.core.config.FloatChecker.__init__
+chimera.core.config.IgnoreChecker.__init__
+chimera.core.config.IntChecker.__init__
+chimera.core.config.Option.__init__
+chimera.core.config.OptionsChecker.__init__
+chimera.core.config.RangeChecker.__init__
+chimera.core.config.StringChecker.__init__
+chimera.core.eventsproxy.EventsProxy.__init__
+chimera.core.eventwrapper.EventWrapperDispatcher.__init__
+chimera.core.exceptions.ChimeraException.__init__
+chimera.core.location.Location.__init__
+chimera.core.lockwrapper.LockWrapper.__init__
+chimera.core.lockwrapper.LockWrapperDispatcher.__init__
+chimera.core.log.ChimeraFormatter.__init__
+chimera.core.manager.Manager.__init__
+chimera.core.manager.ManagerAdapter.__init__
+chimera.core.managerbeacon.ManagerBeacon.__init__
+chimera.core.methodwrapper.MethodWrapper.__init__
+chimera.core.methodwrapper.MethodWrapperDispatcher.__init__
+chimera.core.monitor.Monitor.__init__
+chimera.core.proxy.Proxy.__init__
+chimera.core.proxy.ProxyMethod.__init__
+chimera.core.remoteobject.RemoteObject.__init__
+chimera.core.resources.Resource.__init__
+chimera.core.resources.ResourcesManager.__init__
+chimera.core.rwlock.ReadWriteLock.__init__
+chimera.core.site.AstroDate.__init__
+chimera.core.site.Site.__init__
+chimera.core.systemconfig.SystemConfig.__init__
+chimera.core.tests.managerhelper.ManagerHelper.__init__
+chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__
+chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__
+chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__
+chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__
+chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__
+chimera.core.tests.test_events.Publisher.__init__
+chimera.core.tests.test_events.Subscriber.__init__
+chimera.core.tests.test_manager.Simple.__init__
+chimera.core.tests.test_resources.TestResources.__init__
+chimera.core.threads.ThreadPool.__init__
+chimera.core.threads.ThreadPoolThread.__init__
+chimera.drivers.domelna40cm.DomeLNA40cm.__init__
+chimera.drivers.fakecamera.FakeCamera.__init__
+chimera.drivers.fakedome.FakeDome.__init__
+chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__
+chimera.drivers.fakefocuser.FakeFocuser.__init__
+chimera.drivers.faketelescope.FakeTelescope.__init__
+chimera.drivers.meade.Meade.__init__
+chimera.drivers.optectcfs.OptecTCFS.__init__
+chimera.drivers.remoteclient.RemoteClient.__init__
+chimera.drivers.remoteclient.RemoteMethodWrapper.__init__
+chimera.drivers.sbig.sbig.SBIG.__init__
+chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__
+chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__
+chimera.drivers.sbig.sbigdrv.SBIGException.__init__
+chimera.drivers.theskytelescope.TheSkyTelescope.__init__
+chimera.instruments.camera.Camera.__init__
+chimera.instruments.dome.Dome.__init__
+chimera.instruments.filterwheel.FilterWheel.__init__
+chimera.instruments.focuser.Focuser.__init__
+chimera.instruments.telescope.Telescope.__init__
+chimera.interfaces.lifecycle.ILifeCycle.__init__
+chimera.util.catalogs.landolt.Landolt.__init__
+chimera.util.catalogs.ppm.PPM.__init__
+chimera.util.catalogs.ucac2.UCAC2.__init__
+chimera.util.coord.Coord.__init__
+chimera.util.ds9.DS9.__init__
+chimera.util.etree.ElementPath.Path.__init__
+chimera.util.etree.ElementTree.ElementTree.__init__
+chimera.util.etree.ElementTree.QName.__init__
+chimera.util.etree.ElementTree.TreeBuilder.__init__
+chimera.util.etree.ElementTree.XMLTreeBuilder.__init__
+chimera.util.etree.ElementTree._ElementInterface.__init__
+chimera.util.etree.ElementTree._iterparse.__init__
+chimera.util.filenamesequence.FilenameSequence.__init__
+chimera.util.image.Image.__init__
+chimera.util.position.Position.__init__
+chimera.util.sexcatalog.SExtractorfile.__init__
+chimera.util.sextractor.SExtractor.__init__
+chimera.util.simbad.Simbad.__init__
+chimera.util.telescopelimits.TelescopeLimits.__init__
+chimera.util.vizquery.VizQuery.__init__
+chimera.util.votable.VONode.__init__
+chimera.util.votable.VOTable.__init__
+chimera.util.votable.VOTableHandler.__init__" class="py-name" href="#" onclick="return doclink('link-27', '__init__', 'link-27');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">         </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt>   <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByPath</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.__start__"></a><div id="ImageServer.__start__-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="ImageServer.__start__-toggle" onclick="return toggle('ImageServer.__start__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#__start__">__start__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.__start__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.__start__-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method chimera.util.image.Image.http()=chimera.util.image.Image-class.html#http"><a title="chimera.util.image.Image.http" class="py-name" href="#" onclick="return doclink('link-28', 'http', 'link-28');">http</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP" class="py-name" href="#" onclick="return doclink('link-29', 'ImageServerHTTP', 'link-17');">ImageServerHTTP</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="chimera.util.image.Image.http" class="py-name" href="#" onclick="return doclink('link-30', 'http', 'link-28');">http</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method chimera.core.manager.Manager.start()=chimera.core.manager.Manager-class.html#start,Method chimera.util.etree.ElementTree.TreeBuilder.start()=chimera.util.etree.ElementTree.TreeBuilder-class.html#start"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-31', 'start', 'link-31');">start</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">         </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">'autoload'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method chimera.controllers.autofocus.FocusFit.log()=chimera.controllers.autofocus.FocusFit-class.html#log,Variable chimera.controllers.imageserver.imagerequest.log=chimera.controllers.imageserver.imagerequest-module.html#log,Variable chimera.controllers.scheduler.machine.log=chimera.controllers.scheduler.machine-module.html#log,Variable chimera.controllers.scheduler.sequential.log=chimera.controllers.scheduler.sequential-module.html#log,Variable chimera.controllers.site.main.log=chimera.controllers.site.main-module.html#log,Variable chimera.core.config.log=chimera.core.config-module.html#log,Variable chimera.core.eventsproxy.log=chimera.core.eventsproxy-module.html#log,Variable chimera.core.location.log=chimera.core.location-module.html#log,Variable chimera.core.lockwrapper.log=chimera.core.lockwrapper-module.html#log,Module chimera.core.log=chimera.core.log-module.html,Variable chimera.core.manager.log=chimera.core.manager-module.html#log,Variable chimera.core.methodwrapper.log=chimera.core.methodwrapper-module.html#log,Variable chimera.core.proxy.log=chimera.core.proxy-module.html#log,Variable chimera.core.systemconfig.log=chimera.core.systemconfig-module.html#log,Variable chimera.core.tests.test_log.log=chimera.core.tests.test_log-module.html#log,Variable chimera.core.threads.log=chimera.core.threads-module.html#log,Variable chimera.drivers.sbig.sbigdrv.log=chimera.drivers.sbig.sbigdrv-module.html#log,Variable chimera.drivers.tests.test_meade.log=chimera.drivers.tests.test_meade-module.html#log,Variable chimera.drivers.theskytelescope.log=chimera.drivers.theskytelescope-module.html#log,Variable chimera.instruments.tests.test_camera.log=chimera.instruments.tests.test_camera-module.html#log,Variable chimera.util.astrometrynet.log=chimera.util.astrometrynet-module.html#log,Variable chimera.util.image.log=chimera.util.image-module.html#log"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-32', 'log', 'link-32');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">'Loading existing images...'</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">            <tt class="py-name">loaddir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-33', 'path', 'link-11');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">expanduser</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">'load_dir'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-name">loaddir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-34', 'path', 'link-11');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">expandvars</tt><tt class="py-op">(</tt><tt class="py-name">loaddir</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-name">loaddir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-35', 'path', 'link-11');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">realpath</tt><tt class="py-op">(</tt><tt class="py-name">loaddir</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer._loadImageDir()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#_loadImageDir"><a title="chimera.controllers.imageserver.imageserver.ImageServer._loadImageDir" class="py-name" href="#" onclick="return doclink('link-36', '_loadImageDir', 'link-36');">_loadImageDir</a></tt><tt class="py-op">(</tt><tt class="py-name">loaddir</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.__stop__"></a><div id="ImageServer.__stop__-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="ImageServer.__stop__-toggle" onclick="return toggle('ImageServer.__stop__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#__stop__">__stop__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.__stop__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.__stop__-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="chimera.util.image.Image.http" class="py-name" href="#" onclick="return doclink('link-37', 'http', 'link-28');">http</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.stop()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#stop,Method chimera.core.manager.Manager.stop()=chimera.core.manager.Manager-class.html#stop"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.stop
+chimera.core.manager.Manager.stop" class="py-name" href="#" onclick="return doclink('link-38', 'stop', 'link-38');">stop</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-39" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-39', 'image', 'link-20');">image</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method chimera.core.config.Config.values()=chimera.core.config.Config-class.html#values,Variable chimera.core.resources.ResourcesManager.values=chimera.core.resources.ResourcesManager-class.html#values"><a title="chimera.core.config.Config.values
+chimera.core.resources.ResourcesManager.values" class="py-name" href="#" onclick="return doclink('link-40', 'values', 'link-40');">values</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer.unregister()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#unregister"><a title="chimera.controllers.imageserver.imageserver.ImageServer.unregister" class="py-name" href="#" onclick="return doclink('link-41', 'unregister', 'link-41');">unregister</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-42', 'image', 'link-20');">image</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer._loadImageDir"></a><div id="ImageServer._loadImageDir-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="ImageServer._loadImageDir-toggle" onclick="return toggle('ImageServer._loadImageDir');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#_loadImageDir">_loadImageDir</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">dir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer._loadImageDir-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer._loadImageDir-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">filesToLoad</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-43', 'path', 'link-11');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">dir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>         </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">            <tt class="py-comment"># build files list</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">for</tt> <tt id="link-44" class="py-name" targets="Variable chimera.core.log.root=chimera.core.log-module.html#root,Static Method chimera.core.path.ChimeraPath.root()=chimera.core.path.ChimeraPath-class.html#root"><a title="chimera.core.log.root
+chimera.core.path.ChimeraPath.root" class="py-name" href="#" onclick="return doclink('link-44', 'root', 'link-44');">root</a></tt><tt class="py-op">,</tt> <tt class="py-name">dirs</tt><tt class="py-op">,</tt> <tt class="py-name">files</tt> <tt class="py-keyword">in</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">walk</tt><tt class="py-op">(</tt><tt class="py-name">dir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                <tt class="py-name">filesToLoad</tt> <tt class="py-op">+=</tt> <tt class="py-op">[</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-45', 'path', 'link-11');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">dir</tt><tt class="py-op">,</tt> <tt id="link-46" class="py-name"><a title="chimera.core.log.root
+chimera.core.path.ChimeraPath.root" class="py-name" href="#" onclick="return doclink('link-46', 'root', 'link-44');">root</a></tt><tt class="py-op">,</tt> <tt id="link-47" class="py-name" targets="Variable chimera.drivers.sbig.tests.grab.f=chimera.drivers.sbig.tests.grab-module.html#f"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-47', 'f', 'link-47');">f</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt id="link-48" class="py-name"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-48', 'f', 'link-47');">f</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">files</tt> <tt class="py-keyword">if</tt> <tt id="link-49" class="py-name"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-49', 'f', 'link-47');">f</a></tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">".fits"</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                 </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">file</tt> <tt class="py-keyword">in</tt> <tt class="py-name">filesToLoad</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-50', 'log', 'link-32');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">'Loading %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">file</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer.register()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#register"><a title="chimera.controllers.imageserver.imageserver.ImageServer.register" class="py-name" href="#" onclick="return doclink('link-51', 'register', 'link-51');">register</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="chimera.util.image.Image" class="py-name" href="#" onclick="return doclink('link-52', 'Image', 'link-21');">Image</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Static Method chimera.core.systemconfig.SystemConfig.fromFile()=chimera.core.systemconfig.SystemConfig-class.html#fromFile,Static Method chimera.util.image.Image.fromFile()=chimera.util.image.Image-class.html#fromFile"><a title="chimera.core.systemconfig.SystemConfig.fromFile
+chimera.util.image.Image.fromFile" class="py-name" href="#" onclick="return doclink('link-53', 'fromFile', 'link-53');">fromFile</a></tt><tt class="py-op">(</tt><tt class="py-name">file</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.register"></a><div id="ImageServer.register-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="ImageServer.register-toggle" onclick="return toggle('ImageServer.register');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#register">register</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">image</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.register-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.register-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">"CHM_ID"</tt> <tt class="py-keyword">in</tt> <tt id="link-54" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-54', 'image', 'link-20');">image</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                <tt id="link-55" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-55', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt class="py-name">setGUID</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-56', 'image', 'link-20');">image</a></tt><tt class="py-op">[</tt><tt class="py-string">"CHM_ID"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt id="link-57" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-57', 'image', 'link-20');">image</a></tt> <tt class="py-op">+=</tt> <tt class="py-op">(</tt><tt class="py-string">"CHM_ID"</tt><tt class="py-op">,</tt> <tt id="link-58" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-58', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt class="py-name">GUID</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt id="link-59" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-59', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method chimera.util.image.Image.save()=chimera.util.image.Image-class.html#save"><a title="chimera.util.image.Image.save" class="py-name" href="#" onclick="return doclink('link-60', 'save', 'link-60');">save</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                 </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method chimera.core.manager.Manager.getDaemon()=chimera.core.manager.Manager-class.html#getDaemon"><a title="chimera.core.manager.Manager.getDaemon" class="py-name" href="#" onclick="return doclink('link-61', 'getDaemon', 'link-61');">getDaemon</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Method chimera.core.manager.ManagerAdapter.connect()=chimera.core.manager.ManagerAdapter-class.html#connect,Module chimera.drivers.sbig.tests.connect=chimera.drivers.sbig.tests.connect-module.html"><a title="chimera.core.manager.ManagerAdapter.connect
+chimera.drivers.sbig.tests.connect" class="py-name" href="#" onclick="return doclink('link-62', 'connect', 'link-62');">connect</a></tt><tt class="py-op">(</tt><tt id="link-63" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-63', 'image', 'link-20');">image</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt><tt class="py-op">[</tt><tt id="link-64" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-64', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt class="py-name">GUID</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt>    <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-65', 'image', 'link-20');">image</a></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByPath</tt><tt class="py-op">[</tt><tt id="link-66" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-66', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Variable chimera.controllers.scheduler.model.Exposure.filename=chimera.controllers.scheduler.model.Exposure-class.html#filename,Variable chimera.util.image.Image.filename=chimera.util.image.Image-class.html#filename"><a title="chimera.controllers.scheduler.model.Exposure.filename
+chimera.util.image.Image.filename" class="py-name" href="#" onclick="return doclink('link-67', 'filename', 'link-67');">filename</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-68', 'image', 'link-20');">image</a></tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-comment"># save Image's HTTP address</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt id="link-69" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-69', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="chimera.util.image.Image.http" class="py-name" href="#" onclick="return doclink('link-70', 'http', 'link-28');">http</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer.getHTTPByID()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#getHTTPByID"><a title="chimera.controllers.imageserver.imageserver.ImageServer.getHTTPByID" class="py-name" href="#" onclick="return doclink('link-71', 'getHTTPByID', 'link-71');">getHTTPByID</a></tt><tt class="py-op">(</tt><tt id="link-72" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-72', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt class="py-name">GUID</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-73" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-73', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt id="link-74" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.getProxy()=chimera.core.chimeraobject.ChimeraObject-class.html#getProxy,Method chimera.core.manager.Manager.getProxy()=chimera.core.manager.Manager-class.html#getProxy,Method chimera.core.remoteobject.RemoteObject.getProxy()=chimera.core.remoteobject.RemoteObject-class.html#getProxy,Method chimera.interfaces.lifecycle.ILifeCycle.getProxy()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getProxy"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-74', 'getProxy', 'link-74');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-75', 'util', 'link-19');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">getPyroTraceback</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.unregister"></a><div id="ImageServer.unregister-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="ImageServer.unregister-toggle" onclick="return toggle('ImageServer.unregister');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#unregister">unregister</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">image</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.unregister-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.unregister-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="chimera.core.manager.Manager.getDaemon" class="py-name" href="#" onclick="return doclink('link-76', 'getDaemon', 'link-61');">getDaemon</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">disconnect</tt><tt class="py-op">(</tt><tt id="link-77" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-77', 'image', 'link-20');">image</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt><tt class="py-op">[</tt><tt id="link-78" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-78', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt class="py-name">GUID</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByPath</tt><tt class="py-op">[</tt><tt id="link-79" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-79', 'image', 'link-20');">image</a></tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.filename
+chimera.util.image.Image.filename" class="py-name" href="#" onclick="return doclink('link-80', 'filename', 'link-67');">filename</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-81', 'util', 'link-19');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">getPyroTraceback</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">     </tt>
+<a name="ImageServer.getImageByID"></a><div id="ImageServer.getImageByID-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="ImageServer.getImageByID-toggle" onclick="return toggle('ImageServer.getImageByID');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#getImageByID">getImageByID</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.getImageByID-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.getImageByID-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-82" class="py-name" targets="Method chimera.util.ds9.DS9.id()=chimera.util.ds9.DS9-class.html#id"><a title="chimera.util.ds9.DS9.id" class="py-name" href="#" onclick="return doclink('link-82', 'id', 'link-82');">id</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByID</tt><tt class="py-op">[</tt><tt id="link-83" class="py-name"><a title="chimera.util.ds9.DS9.id" class="py-name" href="#" onclick="return doclink('link-83', 'id', 'link-82');">id</a></tt><tt class="py-op">]</tt> </tt>
+</div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.getImageByPath"></a><div id="ImageServer.getImageByPath-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="ImageServer.getImageByPath-toggle" onclick="return toggle('ImageServer.getImageByPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#getImageByPath">getImageByPath</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.getImageByPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.getImageByPath-expanded"><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-84" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-84', 'path', 'link-11');">path</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByPath</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">imagesByPath</tt><tt class="py-op">[</tt><tt id="link-85" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-85', 'path', 'link-11');">path</a></tt><tt class="py-op">]</tt> </tt>
+</div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.getProxyByID"></a><div id="ImageServer.getProxyByID-def"><a name="L102"></a><tt class="py-lineno">102</tt> <a class="py-toggle" href="#" id="ImageServer.getProxyByID-toggle" onclick="return toggle('ImageServer.getProxyByID');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#getProxyByID">getProxyByID</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.getProxyByID-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.getProxyByID-expanded"><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt id="link-86" class="py-name" targets="Variable chimera.drivers.sbig.tests.grab.img=chimera.drivers.sbig.tests.grab-module.html#img"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-86', 'img', 'link-86');">img</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer.getImageByID()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#getImageByID"><a title="chimera.controllers.imageserver.imageserver.ImageServer.getImageByID" class="py-name" href="#" onclick="return doclink('link-87', 'getImageByID', 'link-87');">getImageByID</a></tt><tt class="py-op">(</tt><tt id="link-88" class="py-name"><a title="chimera.util.ds9.DS9.id" class="py-name" href="#" onclick="return doclink('link-88', 'id', 'link-82');">id</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-89" class="py-name"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-89', 'img', 'link-86');">img</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-90" class="py-name"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-90', 'img', 'link-86');">img</a></tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-91', 'getProxy', 'link-74');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.getImageByPath"></a><div id="ImageServer.getImageByPath-def"><a name="L107"></a><tt class="py-lineno">107</tt> <a class="py-toggle" href="#" id="ImageServer.getImageByPath-toggle" onclick="return toggle('ImageServer.getImageByPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#getImageByPath">getImageByPath</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.getImageByPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.getImageByPath-expanded"><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt id="link-92" class="py-name"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-92', 'img', 'link-86');">img</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name" targets="Method chimera.controllers.imageserver.imageserver.ImageServer.getImageByPath()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#getImageByPath"><a title="chimera.controllers.imageserver.imageserver.ImageServer.getImageByPath" class="py-name" href="#" onclick="return doclink('link-93', 'getImageByPath', 'link-93');">getImageByPath</a></tt><tt class="py-op">(</tt><tt id="link-94" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-94', 'path', 'link-11');">path</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-95" class="py-name"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-95', 'img', 'link-86');">img</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-96" class="py-name"><a title="chimera.drivers.sbig.tests.grab.img" class="py-name" href="#" onclick="return doclink('link-96', 'img', 'link-86');">img</a></tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-97', 'getProxy', 'link-74');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="ImageServer.getHTTPByID"></a><div id="ImageServer.getHTTPByID-def"><a name="L112"></a><tt class="py-lineno">112</tt> <a class="py-toggle" href="#" id="ImageServer.getHTTPByID-toggle" onclick="return toggle('ImageServer.getHTTPByID');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.imageserver.ImageServer-class.html#getHTTPByID">getHTTPByID</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServer.getHTTPByID-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ImageServer.getHTTPByID-expanded"><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"http://%s:%d/image/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"http_host"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"http_port"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-98" class="py-name"><a title="chimera.util.ds9.DS9.id" class="py-name" href="#" onclick="return doclink('link-98', 'id', 'link-82');">id</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:01 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

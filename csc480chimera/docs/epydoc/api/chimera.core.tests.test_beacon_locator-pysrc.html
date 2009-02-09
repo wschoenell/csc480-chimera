@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.core.tests.test_beacon_locator</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.core-module.html">Package&nbsp;core</a> ::
+        <a href="chimera.core.tests-module.html">Package&nbsp;tests</a> ::
+        Module&nbsp;test_beacon_locator
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.core.tests.test_beacon_locator-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.core.tests.test_beacon_locator-module.html">Module chimera.core.tests.test_beacon_locator</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.manager=chimera.core.manager-module.html"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-2', 'manager', 'link-2');">manager</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.manager.Manager=chimera.core.manager.Manager-class.html"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-3', 'Manager', 'link-3');">Manager</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.managerlocator=chimera.core.managerlocator-module.html"><a title="chimera.core.managerlocator" class="py-name" href="#" onclick="return doclink('link-6', 'managerlocator', 'link-6');">managerlocator</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class chimera.core.managerlocator.ManagerLocator=chimera.core.managerlocator.ManagerLocator-class.html"><a title="chimera.core.managerlocator.ManagerLocator" class="py-name" href="#" onclick="return doclink('link-7', 'ManagerLocator', 'link-7');">ManagerLocator</a></tt><tt class="py-op">,</tt> <tt id="link-8" class="py-name" targets="Class chimera.core.managerlocator.ManagerNotFoundException=chimera.core.managerlocator.ManagerNotFoundException-class.html"><a title="chimera.core.managerlocator.ManagerNotFoundException" class="py-name" href="#" onclick="return doclink('link-8', 'ManagerNotFoundException', 'link-8');">ManagerNotFoundException</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">socket</tt> <tt class="py-keyword">import</tt> <tt class="py-name">gethostbyname</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">nose</tt><tt class="py-op">.</tt><tt class="py-name">tools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">assert_raises</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="TestBeaconLocator"></a><div id="TestBeaconLocator-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="TestBeaconLocator-toggle" onclick="return toggle('TestBeaconLocator');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.core.tests.test_beacon_locator.TestBeaconLocator-class.html">TestBeaconLocator</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestBeaconLocator-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="TestBeaconLocator-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="TestBeaconLocator.test_locate"></a><div id="TestBeaconLocator.test_locate-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="TestBeaconLocator.test_locate-toggle" onclick="return toggle('TestBeaconLocator.test_locate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_beacon_locator.TestBeaconLocator-class.html#test_locate">test_locate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestBeaconLocator.test_locate-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestBeaconLocator.test_locate-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">         </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt id="link-9" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-9', 'manager', 'link-2');">manager</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-10', 'Manager', 'link-3');">Manager</a></tt><tt class="py-op">(</tt><tt id="link-11" class="py-name" targets="Variable chimera.core.location.Location.host=chimera.core.location.Location-class.html#host"><a title="chimera.core.location.Location.host" class="py-name" href="#" onclick="return doclink('link-11', 'host', 'link-11');">host</a></tt><tt class="py-op">=</tt><tt class="py-string">'localhost'</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name" targets="Variable chimera.core.location.Location.port=chimera.core.location.Location-class.html#port"><a title="chimera.core.location.Location.port" class="py-name" href="#" onclick="return doclink('link-12', 'port', 'link-12');">port</a></tt><tt class="py-op">=</tt><tt class="py-number">9999</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt id="link-13" class="py-name" targets="Module chimera.core.proxy=chimera.core.proxy-module.html"><a title="chimera.core.proxy" class="py-name" href="#" onclick="return doclink('link-13', 'proxy', 'link-13');">proxy</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="chimera.core.managerlocator.ManagerLocator" class="py-name" href="#" onclick="return doclink('link-14', 'ManagerLocator', 'link-7');">ManagerLocator</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Static Method chimera.core.managerlocator.ManagerLocator.locate()=chimera.core.managerlocator.ManagerLocator-class.html#locate"><a title="chimera.core.managerlocator.ManagerLocator.locate" class="py-name" href="#" onclick="return doclink('link-15', 'locate', 'link-15');">locate</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-16" class="py-name"><a title="chimera.core.proxy" class="py-name" href="#" onclick="return doclink('link-16', 'proxy', 'link-13');">proxy</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method chimera.core.proxy.Proxy.ping()=chimera.core.proxy.Proxy-class.html#ping,Method chimera.drivers.fakecamera.FakeCamera.ping()=chimera.drivers.fakecamera.FakeCamera-class.html#ping,Method chimera.drivers.faketelescope.FakeTelescope.ping()=chimera.drivers.faketelescope.FakeTelescope-class.html#ping,Method chimera.drivers.sbig.sbig.SBIG.ping()=chimera.drivers.sbig.sbig.SBIG-class.html#ping,Method chimera.interfaces.cameradriver.ICameraDriver.ping()=chimera.interfaces.cameradriver.ICameraDriver-class.html#ping,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.ping()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#ping"><a title="chimera.core.proxy.Proxy.ping
+chimera.drivers.fakecamera.FakeCamera.ping
+chimera.drivers.faketelescope.FakeTelescope.ping
+chimera.drivers.sbig.sbig.SBIG.ping
+chimera.interfaces.cameradriver.ICameraDriver.ping
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.ping" class="py-name" href="#" onclick="return doclink('link-17', 'ping', 'link-17');">ping</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt id="link-18" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-18', 'True', 'link-18');">True</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-19" class="py-name"><a title="chimera.core.proxy" class="py-name" href="#" onclick="return doclink('link-19', 'proxy', 'link-13');">proxy</a></tt><tt class="py-op">.</tt><tt class="py-name">URI</tt><tt class="py-op">.</tt><tt class="py-name">address</tt> <tt class="py-op">==</tt> <tt class="py-name">gethostbyname</tt><tt class="py-op">(</tt><tt class="py-string">"localhost"</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-20" class="py-name"><a title="chimera.core.proxy" class="py-name" href="#" onclick="return doclink('link-20', 'proxy', 'link-13');">proxy</a></tt><tt class="py-op">.</tt><tt class="py-name">URI</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="chimera.core.location.Location.port" class="py-name" href="#" onclick="return doclink('link-21', 'port', 'link-12');">port</a></tt>    <tt class="py-op">==</tt> <tt class="py-number">9999</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt id="link-22" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-22', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Method chimera.controllers.site.main.SiteController.shutdown()=chimera.controllers.site.main.SiteController-class.html#shutdown,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#shutdown,Method chimera.controllers.xmlrpc.serverThread.shutdown()=chimera.controllers.xmlrpc.serverThread-class.html#shutdown,Method chimera.core.manager.Manager.shutdown()=chimera.core.manager.Manager-class.html#shutdown,Method chimera.core.managerbeacon.ManagerBeacon.shutdown()=chimera.core.managerbeacon.ManagerBeacon-class.html#shutdown"><a title="chimera.controllers.site.main.SiteController.shutdown
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown
+chimera.controllers.xmlrpc.serverThread.shutdown
+chimera.core.manager.Manager.shutdown
+chimera.core.managerbeacon.ManagerBeacon.shutdown" class="py-name" href="#" onclick="return doclink('link-23', 'shutdown', 'link-23');">shutdown</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-comment"># where are you</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">assert_raises</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="chimera.core.managerlocator.ManagerNotFoundException" class="py-name" href="#" onclick="return doclink('link-24', 'ManagerNotFoundException', 'link-8');">ManagerNotFoundException</a></tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="chimera.core.managerlocator.ManagerLocator" class="py-name" href="#" onclick="return doclink('link-25', 'ManagerLocator', 'link-7');">ManagerLocator</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="chimera.core.managerlocator.ManagerLocator.locate" class="py-name" href="#" onclick="return doclink('link-26', 'locate', 'link-15');">locate</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:01 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.core.methodwrapper</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.core-module.html">Package&nbsp;core</a> ::
+        Module&nbsp;methodwrapper
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.core.methodwrapper-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.core.methodwrapper-module.html">Module chimera.core.methodwrapper</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method chimera.controllers.autofocus.FocusFit.log()=chimera.controllers.autofocus.FocusFit-class.html#log,Variable chimera.controllers.imageserver.imagerequest.log=chimera.controllers.imageserver.imagerequest-module.html#log,Variable chimera.controllers.scheduler.machine.log=chimera.controllers.scheduler.machine-module.html#log,Variable chimera.controllers.scheduler.sequential.log=chimera.controllers.scheduler.sequential-module.html#log,Variable chimera.controllers.site.main.log=chimera.controllers.site.main-module.html#log,Variable chimera.core.config.log=chimera.core.config-module.html#log,Variable chimera.core.eventsproxy.log=chimera.core.eventsproxy-module.html#log,Variable chimera.core.location.log=chimera.core.location-module.html#log,Variable chimera.core.lockwrapper.log=chimera.core.lockwrapper-module.html#log,Module chimera.core.log=chimera.core.log-module.html,Variable chimera.core.manager.log=chimera.core.manager-module.html#log,Variable chimera.core.methodwrapper.log=chimera.core.methodwrapper-module.html#log,Variable chimera.core.proxy.log=chimera.core.proxy-module.html#log,Variable chimera.core.systemconfig.log=chimera.core.systemconfig-module.html#log,Variable chimera.core.tests.test_log.log=chimera.core.tests.test_log-module.html#log,Variable chimera.core.threads.log=chimera.core.threads-module.html#log,Variable chimera.drivers.sbig.sbigdrv.log=chimera.drivers.sbig.sbigdrv-module.html#log,Variable chimera.drivers.tests.test_meade.log=chimera.drivers.tests.test_meade-module.html#log,Variable chimera.drivers.theskytelescope.log=chimera.drivers.theskytelescope-module.html#log,Variable chimera.instruments.tests.test_camera.log=chimera.instruments.tests.test_camera-module.html#log,Variable chimera.util.astrometrynet.log=chimera.util.astrometrynet-module.html#log,Variable chimera.util.image.log=chimera.util.image-module.html#log"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-2', 'log', 'link-2');">log</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt id="link-3" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-3', 'log', 'link-2');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Variable chimera.core.methodwrapper.MethodWrapper.__name__=chimera.core.methodwrapper.MethodWrapper-class.html#__name__"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-4', '__name__', 'link-4');">__name__</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-name">__all__</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'MethodWrapper'</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">           <tt class="py-string">'MethodWrapperDispatcher'</tt><tt class="py-op">]</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="MethodWrapper"></a><div id="MethodWrapper-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="MethodWrapper-toggle" onclick="return toggle('MethodWrapper');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapper-class.html">MethodWrapper</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapper-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MethodWrapper-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt id="link-5" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-5', '__name__', 'link-4');">__name__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">     </tt>
+<a name="MethodWrapper.__init__"></a><div id="MethodWrapper.__init__-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="MethodWrapper.__init__-toggle" onclick="return toggle('MethodWrapper.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapper-class.html#__init__">__init__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">func</tt><tt class="py-op">,</tt> <tt class="py-param">specials</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">dispatcher</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapper.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapper.__init__-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-comment"># our wrapped function</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt> <tt class="py-op">=</tt> <tt class="py-name">func</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-comment"># will be bounded by the descriptor get</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable chimera.core.cli.Option.cls=chimera.core.cli.Option-class.html#cls,Variable chimera.core.location.Location.cls=chimera.core.location.Location-class.html#cls"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-6', 'cls', 'link-6');">cls</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt>         </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable chimera.core.resources.Resource.instance=chimera.core.resources.Resource-class.html#instance"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-7', 'instance', 'link-7');">instance</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">         </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">specials</tt>   <tt class="py-op">=</tt> <tt class="py-name">specials</tt> <tt class="py-keyword">or</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dispatcher</tt> <tt class="py-op">=</tt> <tt class="py-name">dispatcher</tt> <tt class="py-keyword">or</tt> <tt id="link-8" class="py-name" targets="Class chimera.core.methodwrapper.MethodWrapperDispatcher=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html"><a title="chimera.core.methodwrapper.MethodWrapperDispatcher" class="py-name" href="#" onclick="return doclink('link-8', 'MethodWrapperDispatcher', 'link-8');">MethodWrapperDispatcher</a></tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-comment"># like a real duck!</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-9', '__name__', 'link-4');">__name__</a></tt> <tt class="py-op">=</tt> <tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">func_name</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-comment"># resolver our specials dispatchers</tt> </tt>
+<a name="MethodWrapper.__getattr__"></a><div id="MethodWrapper.__getattr__-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="MethodWrapper.__getattr__-toggle" onclick="return toggle('MethodWrapper.__getattr__');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapper-class.html#__getattr__">__getattr__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">attr</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapper.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapper.__getattr__-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">attr</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">specials</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">specials</tt><tt class="py-op">[</tt><tt class="py-name">attr</tt><tt class="py-op">]</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-10', 'instance', 'link-7');">instance</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-11', 'cls', 'link-6');">cls</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">     </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-comment"># MOST important here: descriptor to bind our dispatcher to an instance and a class</tt> </tt>
+<a name="MethodWrapper.__get__"></a><div id="MethodWrapper.__get__-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="MethodWrapper.__get__-toggle" onclick="return toggle('MethodWrapper.__get__');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapper-class.html#__get__">__get__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">instance</tt><tt class="py-op">,</tt> <tt class="py-param">cls</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapper.__get__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapper.__get__-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-comment"># bind ourself to pass to our specials</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-12', 'cls', 'link-6');">cls</a></tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-13', 'cls', 'link-6');">cls</a></tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-14', 'instance', 'link-7');">instance</a></tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-15', 'instance', 'link-7');">instance</a></tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dispatcher</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-16', 'instance', 'link-7');">instance</a></tt><tt class="py-op">,</tt> <tt id="link-17" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-17', 'cls', 'link-6');">cls</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="MethodWrapperDispatcher"></a><div id="MethodWrapperDispatcher-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="MethodWrapperDispatcher-toggle" onclick="return toggle('MethodWrapperDispatcher');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapperDispatcher-class.html">MethodWrapperDispatcher</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapperDispatcher-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MethodWrapperDispatcher-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="MethodWrapperDispatcher.__init__"></a><div id="MethodWrapperDispatcher.__init__-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="MethodWrapperDispatcher.__init__-toggle" onclick="return toggle('MethodWrapperDispatcher.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__init__">__init__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">wrapper</tt><tt class="py-op">,</tt> <tt class="py-param">instance</tt><tt class="py-op">,</tt> <tt class="py-param">cls</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapperDispatcher.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapperDispatcher.__init__-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">wrapper</tt>  <tt class="py-op">=</tt> <tt class="py-name">wrapper</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt>     <tt class="py-op">=</tt> <tt class="py-name">wrapper</tt><tt class="py-op">.</tt><tt class="py-name">func</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-18', 'instance', 'link-7');">instance</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-19', 'instance', 'link-7');">instance</a></tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-20', 'cls', 'link-6');">cls</a></tt>      <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-21', 'cls', 'link-6');">cls</a></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-comment"># go duck, go!</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">bound_name</tt> <tt class="py-op">=</tt> <tt class="py-string">"&lt;bound method %s.%s.begin of %s&gt;"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-22', 'cls', 'link-6');">cls</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-23', '__name__', 'link-4');">__name__</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                                                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">func_name</tt><tt class="py-op">,</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                                                                <tt class="py-name">repr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-24', 'instance', 'link-7');">instance</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">unbound_name</tt> <tt class="py-op">=</tt> <tt class="py-string">"&lt;unbound method %s.%s&gt;"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-25', 'cls', 'link-6');">cls</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-26', '__name__', 'link-4');">__name__</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">func_name</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="MethodWrapperDispatcher.__repr__"></a><div id="MethodWrapperDispatcher.__repr__-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="MethodWrapperDispatcher.__repr__-toggle" onclick="return toggle('MethodWrapperDispatcher.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__repr__">__repr__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapperDispatcher.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapperDispatcher.__repr__-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-27', 'instance', 'link-7');">instance</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">bound_name</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">unbound_name</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">         </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="MethodWrapperDispatcher.__call__"></a><div id="MethodWrapperDispatcher.__call__-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="MethodWrapperDispatcher.__call__-toggle" onclick="return toggle('MethodWrapperDispatcher.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt>  <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__call__">__call__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapperDispatcher.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapperDispatcher.__call__-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-comment"># handle unbound cases (with or without instance as first argument)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-28', 'instance', 'link-7');">instance</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                <tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">]</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                 </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-29', 'cls', 'link-6');">cls</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"unbound method %s object must be called with %s instance "</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                                <tt class="py-string">"as first argument (got %s instance instead)"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt><tt class="py-op">.</tt><tt class="py-name">func_name</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="chimera.core.cli.Option.cls
+chimera.core.location.Location.cls" class="py-name" href="#" onclick="return doclink('link-30', 'cls', 'link-6');">cls</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-31', '__name__', 'link-4');">__name__</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                                                                                 <tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-32', '__name__', 'link-4');">__name__</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method chimera.core.eventwrapper.EventWrapperDispatcher.call()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#call,Method chimera.core.lockwrapper.LockWrapperDispatcher.call()=chimera.core.lockwrapper.LockWrapperDispatcher-class.html#call,Method chimera.core.methodwrapper.MethodWrapperDispatcher.call()=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#call"><a title="chimera.core.eventwrapper.EventWrapperDispatcher.call
+chimera.core.lockwrapper.LockWrapperDispatcher.call
+chimera.core.methodwrapper.MethodWrapperDispatcher.call" class="py-name" href="#" onclick="return doclink('link-33', 'call', 'link-33');">call</a></tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-comment">#log.debug("[calling] %s %s" % (self.instance, self.func.__name__))</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="chimera.core.eventwrapper.EventWrapperDispatcher.call
+chimera.core.lockwrapper.LockWrapperDispatcher.call
+chimera.core.methodwrapper.MethodWrapperDispatcher.call" class="py-name" href="#" onclick="return doclink('link-34', 'call', 'link-33');">call</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="chimera.core.resources.Resource.instance" class="py-name" href="#" onclick="return doclink('link-35', 'instance', 'link-7');">instance</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-comment"># override this to implement custom behaviour (default just wrap without tricks)</tt> </tt>
+<a name="MethodWrapperDispatcher.call"></a><div id="MethodWrapperDispatcher.call-def"><a name="L111"></a><tt class="py-lineno">111</tt> <a class="py-toggle" href="#" id="MethodWrapperDispatcher.call-toggle" onclick="return toggle('MethodWrapperDispatcher.call');">-</a><tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#call">call</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MethodWrapperDispatcher.call-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MethodWrapperDispatcher.call-expanded"><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">func</tt> <tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:55 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

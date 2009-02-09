@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.site.main</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.site-module.html">Package&nbsp;site</a> ::
+        Module&nbsp;main
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.site.main-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.site.main-module.html">Module chimera.controllers.site.main</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module chimera.core.path=chimera.core.path-module.html"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-0', 'path', 'link-0');">path</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">optparse</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-1', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-2', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable chimera.core.cli.Option.location=chimera.core.cli.Option-class.html#location,Module chimera.core.location=chimera.core.location-module.html,Variable chimera.core.resources.Resource.location=chimera.core.resources.Resource-class.html#location"><a title="chimera.core.cli.Option.location
+chimera.core.location
+chimera.core.resources.Resource.location" class="py-name" href="#" onclick="return doclink('link-3', 'location', 'link-3');">location</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Class chimera.core.location.Location=chimera.core.location.Location-class.html"><a title="chimera.core.location.Location" class="py-name" href="#" onclick="return doclink('link-4', 'Location', 'link-4');">Location</a></tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-5', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-6', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module chimera.core.manager=chimera.core.manager-module.html"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-7', 'manager', 'link-7');">manager</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Class chimera.core.manager.Manager=chimera.core.manager.Manager-class.html"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-8', 'Manager', 'link-8');">Manager</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-9', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-10', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Module chimera.core.systemconfig=chimera.core.systemconfig-module.html"><a title="chimera.core.systemconfig" class="py-name" href="#" onclick="return doclink('link-11', 'systemconfig', 'link-11');">systemconfig</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Class chimera.core.systemconfig.SystemConfig=chimera.core.systemconfig.SystemConfig-class.html"><a title="chimera.core.systemconfig.SystemConfig" class="py-name" href="#" onclick="return doclink('link-12', 'SystemConfig', 'link-12');">SystemConfig</a></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-13" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-13', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-14', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Module chimera.core.version=chimera.core.version-module.html"><a title="chimera.core.version" class="py-name" href="#" onclick="return doclink('link-15', 'version', 'link-15');">version</a></tt> <tt class="py-keyword">import</tt> <tt id="link-16" class="py-name" targets="Variable chimera.core.version._chimera_version_=chimera.core.version-module.html#_chimera_version_"><a title="chimera.core.version._chimera_version_" class="py-name" href="#" onclick="return doclink('link-16', '_chimera_version_', 'link-16');">_chimera_version_</a></tt><tt class="py-op">,</tt> <tt id="link-17" class="py-name" targets="Variable chimera.core.version._chimera_description_=chimera.core.version-module.html#_chimera_description_"><a title="chimera.core.version._chimera_description_" class="py-name" href="#" onclick="return doclink('link-17', '_chimera_description_', 'link-17');">_chimera_description_</a></tt><tt class="py-op">,</tt> <tt id="link-18" class="py-name" targets="Function chimera.core.version.find_dev_version()=chimera.core.version-module.html#find_dev_version"><a title="chimera.core.version.find_dev_version" class="py-name" href="#" onclick="return doclink('link-18', 'find_dev_version', 'link-18');">find_dev_version</a></tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-19" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-19', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-20', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-21', 'exceptions', 'link-21');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-22" class="py-name" targets="Function chimera.core.exceptions.printException()=chimera.core.exceptions-module.html#printException"><a title="chimera.core.exceptions.printException" class="py-name" href="#" onclick="return doclink('link-22', 'printException', 'link-22');">printException</a></tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name" targets="Class chimera.core.exceptions.InvalidLocationException=chimera.core.exceptions.InvalidLocationException-class.html"><a title="chimera.core.exceptions.InvalidLocationException" class="py-name" href="#" onclick="return doclink('link-23', 'InvalidLocationException', 'link-23');">InvalidLocationException</a></tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name" targets="Class chimera.core.exceptions.ChimeraException=chimera.core.exceptions.ChimeraException-class.html"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-24', 'ChimeraException', 'link-24');">ChimeraException</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-25" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-25', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-26', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Module chimera.core.constants=chimera.core.constants-module.html"><a title="chimera.core.constants" class="py-name" href="#" onclick="return doclink('link-27', 'constants', 'link-27');">constants</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">(</tt><tt id="link-28" class="py-name" targets="Variable chimera.core.constants.MANAGER_DEFAULT_HOST=chimera.core.constants-module.html#MANAGER_DEFAULT_HOST"><a title="chimera.core.constants.MANAGER_DEFAULT_HOST" class="py-name" href="#" onclick="return doclink('link-28', 'MANAGER_DEFAULT_HOST', 'link-28');">MANAGER_DEFAULT_HOST</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">                                    <tt id="link-29" class="py-name" targets="Variable chimera.core.constants.MANAGER_DEFAULT_PORT=chimera.core.constants-module.html#MANAGER_DEFAULT_PORT"><a title="chimera.core.constants.MANAGER_DEFAULT_PORT" class="py-name" href="#" onclick="return doclink('link-29', 'MANAGER_DEFAULT_PORT', 'link-29');">MANAGER_DEFAULT_PORT</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">                                    <tt id="link-30" class="py-name" targets="Variable chimera.core.constants.SYSTEM_CONFIG_DEFAULT_FILENAME=chimera.core.constants-module.html#SYSTEM_CONFIG_DEFAULT_FILENAME"><a title="chimera.core.constants.SYSTEM_CONFIG_DEFAULT_FILENAME" class="py-name" href="#" onclick="return doclink('link-30', 'SYSTEM_CONFIG_DEFAULT_FILENAME', 'link-30');">SYSTEM_CONFIG_DEFAULT_FILENAME</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">                                    <tt id="link-31" class="py-name" targets="Variable chimera.core.constants.SYSTEM_CONFIG_DEFAULT_GLOBAL=chimera.core.constants-module.html#SYSTEM_CONFIG_DEFAULT_GLOBAL"><a title="chimera.core.constants.SYSTEM_CONFIG_DEFAULT_GLOBAL" class="py-name" href="#" onclick="return doclink('link-31', 'SYSTEM_CONFIG_DEFAULT_GLOBAL', 'link-31');">SYSTEM_CONFIG_DEFAULT_GLOBAL</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-32" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-32', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-33', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Module chimera.controllers.console.commands.site=chimera.controllers.console.commands.site-module.html,Package chimera.controllers.site=chimera.controllers.site-module.html,Module chimera.core.site=chimera.core.site-module.html"><a title="chimera.controllers.console.commands.site
+chimera.controllers.site
+chimera.core.site" class="py-name" href="#" onclick="return doclink('link-34', 'site', 'link-34');">site</a></tt> <tt class="py-keyword">import</tt> <tt id="link-35" class="py-name" targets="Class chimera.core.site.Site=chimera.core.site.Site-class.html"><a title="chimera.core.site.Site" class="py-name" href="#" onclick="return doclink('link-35', 'Site', 'link-35');">Site</a></tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-36" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-36', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-37', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-38', 'path', 'link-0');">path</a></tt> <tt class="py-keyword">import</tt> <tt id="link-39" class="py-name" targets="Class chimera.core.path.ChimeraPath=chimera.core.path.ChimeraPath-class.html"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-39', 'ChimeraPath', 'link-39');">ChimeraPath</a></tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-40" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-40', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-41', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method chimera.controllers.autofocus.FocusFit.log()=chimera.controllers.autofocus.FocusFit-class.html#log,Variable chimera.controllers.imageserver.imagerequest.log=chimera.controllers.imageserver.imagerequest-module.html#log,Variable chimera.controllers.scheduler.machine.log=chimera.controllers.scheduler.machine-module.html#log,Variable chimera.controllers.scheduler.sequential.log=chimera.controllers.scheduler.sequential-module.html#log,Variable chimera.controllers.site.main.log=chimera.controllers.site.main-module.html#log,Variable chimera.core.config.log=chimera.core.config-module.html#log,Variable chimera.core.eventsproxy.log=chimera.core.eventsproxy-module.html#log,Variable chimera.core.location.log=chimera.core.location-module.html#log,Variable chimera.core.lockwrapper.log=chimera.core.lockwrapper-module.html#log,Module chimera.core.log=chimera.core.log-module.html,Variable chimera.core.manager.log=chimera.core.manager-module.html#log,Variable chimera.core.methodwrapper.log=chimera.core.methodwrapper-module.html#log,Variable chimera.core.proxy.log=chimera.core.proxy-module.html#log,Variable chimera.core.systemconfig.log=chimera.core.systemconfig-module.html#log,Variable chimera.core.tests.test_log.log=chimera.core.tests.test_log-module.html#log,Variable chimera.core.threads.log=chimera.core.threads-module.html#log,Variable chimera.drivers.sbig.sbigdrv.log=chimera.drivers.sbig.sbigdrv-module.html#log,Variable chimera.drivers.tests.test_meade.log=chimera.drivers.tests.test_meade-module.html#log,Variable chimera.drivers.theskytelescope.log=chimera.drivers.theskytelescope-module.html#log,Variable chimera.instruments.tests.test_camera.log=chimera.instruments.tests.test_camera-module.html#log,Variable chimera.util.astrometrynet.log=chimera.util.astrometrynet-module.html#log,Variable chimera.util.image.log=chimera.util.image-module.html#log"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-42', 'log', 'link-42');">log</a></tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt id="link-43" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-43', 'log', 'link-42');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt id="link-44" class="py-name" targets="Variable chimera.core.methodwrapper.MethodWrapper.__name__=chimera.core.methodwrapper.MethodWrapper-class.html#__name__"><a title="chimera.core.methodwrapper.MethodWrapper.__name__" class="py-name" href="#" onclick="return doclink('link-44', '__name__', 'link-44');">__name__</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="SiteController"></a><div id="SiteController-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="SiteController-toggle" onclick="return toggle('SiteController');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html">SiteController</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SiteController-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="SiteController.__init__"></a><div id="SiteController.__init__-def"><a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="SiteController.__init__-toggle" onclick="return toggle('SiteController.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">wait</tt><tt class="py-op">=</tt><tt id="link-45" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-45', 'True', 'link-45');">True</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SiteController.__init__-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">         </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.wait()=chimera.core.chimeraobject.ChimeraObject-class.html#wait,Method chimera.core.manager.Manager.wait()=chimera.core.manager.Manager-class.html#wait"><a title="chimera.core.chimeraobject.ChimeraObject.wait
+chimera.core.manager.Manager.wait" class="py-name" href="#" onclick="return doclink('link-46', 'wait', 'link-46');">wait</a></tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.wait
+chimera.core.manager.Manager.wait" class="py-name" href="#" onclick="return doclink('link-47', 'wait', 'link-46');">wait</a></tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method chimera.controllers.site.main.SiteController.parseArgs()=chimera.controllers.site.main.SiteController-class.html#parseArgs"><a title="chimera.controllers.site.main.SiteController.parseArgs" class="py-name" href="#" onclick="return doclink('link-48', 'parseArgs', 'link-48');">parseArgs</a></tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">verbose</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">            <tt id="link-49" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-49', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-50', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-51', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Function chimera.core.log.setConsoleLevel()=chimera.core.log-module.html#setConsoleLevel"><a title="chimera.core.log.setConsoleLevel" class="py-name" href="#" onclick="return doclink('link-52', 'setConsoleLevel', 'link-52');">setConsoleLevel</a></tt><tt class="py-op">(</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">INFO</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">             </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">verbose</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt id="link-53" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-53', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-54', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-55', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="chimera.core.log.setConsoleLevel" class="py-name" href="#" onclick="return doclink('link-56', 'setConsoleLevel', 'link-52');">setConsoleLevel</a></tt><tt class="py-op">(</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">DEBUG</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-57', 'manager', 'link-7');">manager</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"instruments"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                      <tt class="py-string">"controllers"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                      <tt class="py-string">"drivers"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">}</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-comment"># add system path</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"instruments"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.append()=chimera.util.etree.ElementTree._ElementInterface-class.html#append,Method chimera.util.votable.VOTable.append()=chimera.util.votable.VOTable-class.html#append"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-58', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt id="link-59" class="py-name"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-59', 'ChimeraPath', 'link-39');">ChimeraPath</a></tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Static Method chimera.core.path.ChimeraPath.instruments()=chimera.core.path.ChimeraPath-class.html#instruments,Package chimera.instruments=chimera.instruments-module.html"><a title="chimera.core.path.ChimeraPath.instruments
+chimera.instruments" class="py-name" href="#" onclick="return doclink('link-60', 'instruments', 'link-60');">instruments</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"controllers"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-61', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-62', 'ChimeraPath', 'link-39');">ChimeraPath</a></tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Package chimera.controllers=chimera.controllers-module.html,Static Method chimera.core.path.ChimeraPath.controllers()=chimera.core.path.ChimeraPath-class.html#controllers"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-63', 'controllers', 'link-63');">controllers</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"drivers"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-64', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt id="link-65" class="py-name"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-65', 'ChimeraPath', 'link-39');">ChimeraPath</a></tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Static Method chimera.core.path.ChimeraPath.drivers()=chimera.core.path.ChimeraPath-class.html#drivers,Package chimera.drivers=chimera.drivers-module.html"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-66', 'drivers', 'link-66');">drivers</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="SiteController.parseArgs"></a><div id="SiteController.parseArgs-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="SiteController.parseArgs-toggle" onclick="return toggle('SiteController.parseArgs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html#parseArgs">parseArgs</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController.parseArgs-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SiteController.parseArgs-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">check_location</tt> <tt class="py-op">(</tt><tt class="py-param">option</tt><tt class="py-op">,</tt> <tt class="py-param">opt_str</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">,</tt> <tt class="py-param">parser</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                <tt class="py-name">l</tt> <tt class="py-op">=</tt> <tt id="link-67" class="py-name"><a title="chimera.core.location.Location" class="py-name" href="#" onclick="return doclink('link-67', 'Location', 'link-4');">Location</a></tt> <tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt id="link-68" class="py-name"><a title="chimera.core.exceptions.InvalidLocationException" class="py-name" href="#" onclick="return doclink('link-68', 'InvalidLocationException', 'link-23');">InvalidLocationException</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionValueError</tt> <tt class="py-op">(</tt><tt class="py-string">"%s isnt't a valid location."</tt> <tt class="py-op">%</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">            <tt class="py-name">eval</tt> <tt class="py-op">(</tt><tt class="py-string">'parser.values.%s.append ("%s")'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">option</tt><tt class="py-op">.</tt><tt class="py-name">dest</tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">check_includepath</tt> <tt class="py-op">(</tt><tt class="py-param">option</tt><tt class="py-op">,</tt> <tt class="py-param">opt_str</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">,</tt> <tt class="py-param">parser</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">value</tt> <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-69', 'path', 'link-0');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt> <tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-70', 'path', 'link-0');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionValueError</tt> <tt class="py-op">(</tt><tt class="py-string">"Couldn't found %s include path."</tt> <tt class="py-op">%</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">eval</tt> <tt class="py-op">(</tt><tt class="py-string">'parser.values.%s.append ("%s")'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">option</tt><tt class="py-op">.</tt><tt class="py-name">dest</tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">parser</tt> <tt class="py-op">=</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionParser</tt><tt class="py-op">(</tt><tt class="py-name">prog</tt><tt class="py-op">=</tt><tt class="py-string">"chimera"</tt><tt class="py-op">,</tt> <tt id="link-71" class="py-name"><a title="chimera.core.version" class="py-name" href="#" onclick="return doclink('link-71', 'version', 'link-15');">version</a></tt><tt class="py-op">=</tt><tt id="link-72" class="py-name"><a title="chimera.core.version.find_dev_version" class="py-name" href="#" onclick="return doclink('link-72', 'find_dev_version', 'link-18');">find_dev_version</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt id="link-73" class="py-name"><a title="chimera.core.version._chimera_version_" class="py-name" href="#" onclick="return doclink('link-73', '_chimera_version_', 'link-16');">_chimera_version_</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                                       <tt class="py-name">description</tt><tt class="py-op">=</tt><tt id="link-74" class="py-name"><a title="chimera.core.version._chimera_description_" class="py-name" href="#" onclick="return doclink('link-74', '_chimera_description_', 'link-17');">_chimera_description_</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                                       <tt class="py-name">usage</tt><tt class="py-op">=</tt><tt class="py-string">"chimera --help for more information"</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">manag_group</tt> <tt class="py-op">=</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionGroup</tt><tt class="py-op">(</tt><tt class="py-name">parser</tt><tt class="py-op">,</tt> <tt class="py-string">"Basic options"</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">manag_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-H"</tt><tt class="py-op">,</tt> <tt class="py-string">"--host"</tt><tt class="py-op">,</tt> <tt id="link-75" class="py-name" targets="Function chimera.core.cli.action()=chimera.core.cli-module.html#action"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-75', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                               <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"pyro_host"</tt><tt class="py-op">,</tt> <tt id="link-76" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.type=chimera.controllers.scheduler.model.Constraint-class.html#type,Variable chimera.core.cli.Option.type=chimera.core.cli.Option-class.html#type"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-76', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                               <tt id="link-77" class="py-name" targets="Variable chimera.core.cli.Option.help=chimera.core.cli.Option-class.html#help"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-77', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Host name/IP address to run as; [default=%default]"</tt><tt class="py-op">,</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                               <tt id="link-78" class="py-name" targets="Variable chimera.core.cli.Option.metavar=chimera.core.cli.Option-class.html#metavar"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-78', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"HOST"</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">manag_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-P"</tt><tt class="py-op">,</tt> <tt class="py-string">"--port"</tt><tt class="py-op">,</tt> <tt id="link-79" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-79', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                               <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"pyro_port"</tt><tt class="py-op">,</tt> <tt id="link-80" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-80', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                               <tt id="link-81" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-81', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Port on which to listen for requests; [default=%default]"</tt><tt class="py-op">,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                               <tt id="link-82" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-82', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"PORT"</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">config_group</tt> <tt class="py-op">=</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionGroup</tt><tt class="py-op">(</tt><tt class="py-name">parser</tt><tt class="py-op">,</tt> <tt class="py-string">"Configuration"</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">config_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"--config"</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"config_file"</tt><tt class="py-op">,</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                              <tt id="link-83" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-83', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Start Chimera using configuration from FILE."</tt><tt class="py-op">,</tt> <tt id="link-84" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-84', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"FILE"</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">config_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"--skip-global"</tt><tt class="py-op">,</tt> <tt id="link-85" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-85', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store_false"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"use_global"</tt><tt class="py-op">,</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                              <tt id="link-86" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-86', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Don't use global coniguration file."</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">config_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"--daemon"</tt><tt class="py-op">,</tt> <tt id="link-87" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-87', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store_true"</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'daemon'</tt><tt class="py-op">,</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                              <tt id="link-88" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-88', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Run Chimera in Daemon mode (will detach from current terminal)."</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">misc_group</tt> <tt class="py-op">=</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionGroup</tt><tt class="py-op">(</tt><tt class="py-name">parser</tt><tt class="py-op">,</tt> <tt class="py-string">"General"</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-name">misc_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"--dry-run"</tt><tt class="py-op">,</tt> <tt id="link-89" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-89', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store_true"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"dry"</tt><tt class="py-op">,</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                              <tt id="link-90" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-90', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Only list all configured objects (from command line and configuration files) without starting the system."</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">         </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">misc_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-v"</tt><tt class="py-op">,</tt> <tt class="py-string">"--verbose"</tt><tt class="py-op">,</tt> <tt id="link-91" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-91', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"count"</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'verbose'</tt><tt class="py-op">,</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                              <tt id="link-92" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-92', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Increase log level (multiple v's to increase even more)."</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt> <tt class="py-op">=</tt> <tt class="py-name">optparse</tt><tt class="py-op">.</tt><tt class="py-name">OptionGroup</tt><tt class="py-op">(</tt><tt class="py-name">parser</tt><tt class="py-op">,</tt> <tt class="py-string">"Instruments, Controllers and Drivers Management"</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-i"</tt><tt class="py-op">,</tt> <tt class="py-string">"--instrument"</tt><tt class="py-op">,</tt> <tt id="link-93" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-93', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-94" class="py-name" targets="Module chimera.core.callback=chimera.core.callback-module.html,Function chimera.core.callback.callback()=chimera.core.callback-module.html#callback"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-94', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-95" class="py-name" targets="Static Method chimera.core.cli.CLICheckers.check_location()=chimera.core.cli.CLICheckers-class.html#check_location"><a title="chimera.core.cli.CLICheckers.check_location" class="py-name" href="#" onclick="return doclink('link-95', 'check_location', 'link-95');">check_location</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"instruments"</tt><tt class="py-op">,</tt> <tt id="link-96" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-96', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                              <tt id="link-97" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-97', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Load the instrument defined by LOCATION."</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                              <tt class="py-string">"This option could be setted many times to load multiple instruments."</tt><tt class="py-op">,</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                              <tt id="link-98" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-98', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"LOCATION"</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-c"</tt><tt class="py-op">,</tt> <tt class="py-string">"--controller"</tt><tt class="py-op">,</tt> <tt id="link-99" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-99', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-100" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-100', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-101" class="py-name"><a title="chimera.core.cli.CLICheckers.check_location" class="py-name" href="#" onclick="return doclink('link-101', 'check_location', 'link-95');">check_location</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"controllers"</tt><tt class="py-op">,</tt> <tt id="link-102" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-102', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                              <tt id="link-103" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-103', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Load the controller defined by LOCATION."</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                              <tt class="py-string">"This option could be setted many times to load multiple controllers."</tt><tt class="py-op">,</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                              <tt id="link-104" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-104', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"LOCATION"</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-d"</tt><tt class="py-op">,</tt> <tt class="py-string">"--driver"</tt><tt class="py-op">,</tt> <tt id="link-105" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-105', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-106" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-106', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-107" class="py-name"><a title="chimera.core.cli.CLICheckers.check_location" class="py-name" href="#" onclick="return doclink('link-107', 'check_location', 'link-95');">check_location</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"drivers"</tt><tt class="py-op">,</tt> <tt id="link-108" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-108', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                              <tt id="link-109" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-109', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Load the driver defined by LOCATION."</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                              <tt class="py-string">"This option could be setted many times to load multiple drivers."</tt><tt class="py-op">,</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                              <tt id="link-110" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-110', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"LOCATION"</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-I"</tt><tt class="py-op">,</tt> <tt class="py-string">"--instruments-dir"</tt><tt class="py-op">,</tt> <tt id="link-111" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-111', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-112" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-112', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-113" class="py-name" targets="Static Method chimera.core.cli.CLICheckers.check_includepath()=chimera.core.cli.CLICheckers-class.html#check_includepath"><a title="chimera.core.cli.CLICheckers.check_includepath" class="py-name" href="#" onclick="return doclink('link-113', 'check_includepath', 'link-113');">check_includepath</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"inst_dir"</tt><tt class="py-op">,</tt> <tt id="link-114" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-114', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                              <tt id="link-115" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-115', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Append PATH to instruments load path."</tt><tt class="py-op">,</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                              <tt id="link-116" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-116', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"PATH"</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-C"</tt><tt class="py-op">,</tt> <tt class="py-string">"--controllers-dir"</tt><tt class="py-op">,</tt> <tt id="link-117" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-117', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-118" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-118', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-119" class="py-name"><a title="chimera.core.cli.CLICheckers.check_includepath" class="py-name" href="#" onclick="return doclink('link-119', 'check_includepath', 'link-113');">check_includepath</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"ctrl_dir"</tt><tt class="py-op">,</tt> <tt id="link-120" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-120', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                              <tt id="link-121" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-121', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Append PATH to controllers load path."</tt><tt class="py-op">,</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">                              <tt id="link-122" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-122', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"PATH"</tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">inst_group</tt><tt class="py-op">.</tt><tt class="py-name">add_option</tt><tt class="py-op">(</tt><tt class="py-string">"-D"</tt><tt class="py-op">,</tt> <tt class="py-string">"--drivers-dir"</tt><tt class="py-op">,</tt> <tt id="link-123" class="py-name"><a title="chimera.core.cli.action" class="py-name" href="#" onclick="return doclink('link-123', 'action', 'link-75');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"callback"</tt><tt class="py-op">,</tt> <tt id="link-124" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-124', 'callback', 'link-94');">callback</a></tt><tt class="py-op">=</tt><tt id="link-125" class="py-name"><a title="chimera.core.cli.CLICheckers.check_includepath" class="py-name" href="#" onclick="return doclink('link-125', 'check_includepath', 'link-113');">check_includepath</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                              <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">"drv_dir"</tt><tt class="py-op">,</tt> <tt id="link-126" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-126', 'type', 'link-76');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">"string"</tt><tt class="py-op">,</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">                              <tt id="link-127" class="py-name"><a title="chimera.core.cli.Option.help" class="py-name" href="#" onclick="return doclink('link-127', 'help', 'link-77');">help</a></tt><tt class="py-op">=</tt><tt class="py-string">"Append PATH to drivers load path."</tt><tt class="py-op">,</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">                              <tt id="link-128" class="py-name"><a title="chimera.core.cli.Option.metavar" class="py-name" href="#" onclick="return doclink('link-128', 'metavar', 'link-78');">metavar</a></tt><tt class="py-op">=</tt><tt class="py-string">"PATH"</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">         </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">add_option_group</tt><tt class="py-op">(</tt><tt class="py-name">manag_group</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">add_option_group</tt><tt class="py-op">(</tt><tt class="py-name">config_group</tt><tt class="py-op">)</tt>         </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">add_option_group</tt><tt class="py-op">(</tt><tt class="py-name">misc_group</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">add_option_group</tt><tt class="py-op">(</tt><tt class="py-name">inst_group</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">set_defaults</tt><tt class="py-op">(</tt><tt id="link-129" class="py-name"><a title="chimera.core.path.ChimeraPath.instruments
+chimera.instruments" class="py-name" href="#" onclick="return doclink('link-129', 'instruments', 'link-60');">instruments</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">                            <tt id="link-130" class="py-name"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-130', 'controllers', 'link-63');">controllers</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">                            <tt id="link-131" class="py-name"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-131', 'drivers', 'link-66');">drivers</a></tt>     <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                            <tt class="py-name">config_file</tt> <tt class="py-op">=</tt> <tt id="link-132" class="py-name"><a title="chimera.core.constants.SYSTEM_CONFIG_DEFAULT_FILENAME" class="py-name" href="#" onclick="return doclink('link-132', 'SYSTEM_CONFIG_DEFAULT_FILENAME', 'link-30');">SYSTEM_CONFIG_DEFAULT_FILENAME</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                            <tt class="py-name">inst_dir</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">                            <tt class="py-name">ctrl_dir</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">                            <tt class="py-name">drv_dir</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                            <tt class="py-name">dry</tt><tt class="py-op">=</tt><tt id="link-133" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-133', 'False', 'link-133');">False</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">                            <tt class="py-name">use_global</tt><tt class="py-op">=</tt><tt id="link-134" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-134', 'True', 'link-45');">True</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                            <tt class="py-name">verbose</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                            <tt class="py-name">daemon</tt><tt class="py-op">=</tt><tt id="link-135" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-135', 'False', 'link-133');">False</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">                            <tt class="py-name">pyro_host</tt><tt class="py-op">=</tt><tt id="link-136" class="py-name"><a title="chimera.core.constants.MANAGER_DEFAULT_HOST" class="py-name" href="#" onclick="return doclink('link-136', 'MANAGER_DEFAULT_HOST', 'link-28');">MANAGER_DEFAULT_HOST</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">                            <tt class="py-name">pyro_port</tt><tt class="py-op">=</tt><tt id="link-137" class="py-name"><a title="chimera.core.constants.MANAGER_DEFAULT_PORT" class="py-name" href="#" onclick="return doclink('link-137', 'MANAGER_DEFAULT_PORT', 'link-29');">MANAGER_DEFAULT_PORT</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt class="py-name">parse_args</tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt>
+<a name="SiteController.startup"></a><div id="SiteController.startup-def"><a name="L181"></a><tt class="py-lineno">181</tt> <a class="py-toggle" href="#" id="SiteController.startup-toggle" onclick="return toggle('SiteController.startup');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html#startup">startup</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController.startup-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SiteController.startup-expanded"><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">daemon</tt><tt class="py-op">:</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">            <tt class="py-comment"># detach</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt id="link-138" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-138', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"FIXME: Daemon..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">             </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-comment"># system config</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-139" class="py-name" targets="Module chimera.core.config=chimera.core.config-module.html,Variable chimera.core.location.Location.config=chimera.core.location.Location-class.html#config"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-139', 'config', 'link-139');">config</a></tt> <tt class="py-op">=</tt> <tt id="link-140" class="py-name"><a title="chimera.core.systemconfig.SystemConfig" class="py-name" href="#" onclick="return doclink('link-140', 'SystemConfig', 'link-12');">SystemConfig</a></tt><tt class="py-op">.</tt><tt id="link-141" class="py-name" targets="Static Method chimera.core.systemconfig.SystemConfig.fromFile()=chimera.core.systemconfig.SystemConfig-class.html#fromFile,Static Method chimera.util.image.Image.fromFile()=chimera.util.image.Image-class.html#fromFile"><a title="chimera.core.systemconfig.SystemConfig.fromFile
+chimera.util.image.Image.fromFile" class="py-name" href="#" onclick="return doclink('link-141', 'fromFile', 'link-141');">fromFile</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">config_file</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">use_global</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">         </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-comment"># manager</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">            <tt id="link-142" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-142', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Starting system."</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">            <tt id="link-143" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-143', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera version: %s"</tt> <tt class="py-op">%</tt> <tt id="link-144" class="py-name"><a title="chimera.core.version.find_dev_version" class="py-name" href="#" onclick="return doclink('link-144', 'find_dev_version', 'link-18');">find_dev_version</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt id="link-145" class="py-name"><a title="chimera.core.version._chimera_version_" class="py-name" href="#" onclick="return doclink('link-145', '_chimera_version_', 'link-16');">_chimera_version_</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">            <tt id="link-146" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-146', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera prefix: %s"</tt> <tt class="py-op">%</tt> <tt id="link-147" class="py-name"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-147', 'ChimeraPath', 'link-39');">ChimeraPath</a></tt><tt class="py-op">.</tt><tt id="link-148" class="py-name" targets="Variable chimera.core.log.root=chimera.core.log-module.html#root,Static Method chimera.core.path.ChimeraPath.root()=chimera.core.path.ChimeraPath-class.html#root"><a title="chimera.core.log.root
+chimera.core.path.ChimeraPath.root" class="py-name" href="#" onclick="return doclink('link-148', 'root', 'link-148');">root</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">                 </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-149" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-149', 'manager', 'link-7');">manager</a></tt> <tt class="py-op">=</tt> <tt id="link-150" class="py-name"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-150', 'Manager', 'link-8');">Manager</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-151" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-151', 'config', 'link-139');">config</a></tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-152', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt id="link-153" class="py-name"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-153', 'ChimeraException', 'link-24');">ChimeraException</a></tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt id="link-154" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-154', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera is already running on this machine. Use chimera-admin to manage it."</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt id="link-155" class="py-name" targets="Method chimera.core.cli.ChimeraCLI.exit()=chimera.core.cli.ChimeraCLI-class.html#exit"><a title="chimera.core.cli.ChimeraCLI.exit" class="py-name" href="#" onclick="return doclink('link-155', 'exit', 'link-155');">exit</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">            <tt id="link-156" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-156', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera: running on "</tt><tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-157" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-157', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-158" class="py-name" targets="Method chimera.core.manager.Manager.getHostname()=chimera.core.manager.Manager-class.html#getHostname"><a title="chimera.core.manager.Manager.getHostname" class="py-name" href="#" onclick="return doclink('link-158', 'getHostname', 'link-158');">getHostname</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">":"</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-159" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-159', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-160" class="py-name" targets="Method chimera.core.manager.Manager.getPort()=chimera.core.manager.Manager-class.html#getPort"><a title="chimera.core.manager.Manager.getPort" class="py-name" href="#" onclick="return doclink('link-160', 'getPort', 'link-160');">getPort</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">use_global</tt><tt class="py-op">:</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt id="link-161" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-161', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera: reading configuration from %s"</tt> <tt class="py-op">%</tt> <tt id="link-162" class="py-name"><a title="chimera.core.constants.SYSTEM_CONFIG_DEFAULT_GLOBAL" class="py-name" href="#" onclick="return doclink('link-162', 'SYSTEM_CONFIG_DEFAULT_GLOBAL', 'link-31');">SYSTEM_CONFIG_DEFAULT_GLOBAL</a></tt><tt class="py-op">)</tt>             </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">            <tt id="link-163" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-163', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Chimera: reading configuration from %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-164" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-164', 'path', 'link-0');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">realpath</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">config_file</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-comment"># add site object</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">             </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-165" class="py-name"><a title="chimera.controllers.console.commands.site
+chimera.controllers.site
+chimera.core.site" class="py-name" href="#" onclick="return doclink('link-165', 'site', 'link-34');">site</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-166" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-166', 'config', 'link-139');">config</a></tt><tt class="py-op">.</tt><tt class="py-name">sites</tt><tt class="py-op">:</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-167" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-167', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-168" class="py-name" targets="Method chimera.core.manager.Manager.addClass()=chimera.core.manager.Manager-class.html#addClass"><a title="chimera.core.manager.Manager.addClass" class="py-name" href="#" onclick="return doclink('link-168', 'addClass', 'link-168');">addClass</a></tt><tt class="py-op">(</tt><tt id="link-169" class="py-name"><a title="chimera.core.site.Site" class="py-name" href="#" onclick="return doclink('link-169', 'Site', 'link-35');">Site</a></tt><tt class="py-op">,</tt> <tt id="link-170" class="py-name"><a title="chimera.controllers.console.commands.site
+chimera.controllers.site
+chimera.core.site" class="py-name" href="#" onclick="return doclink('link-170', 'site', 'link-34');">site</a></tt><tt class="py-op">.</tt><tt id="link-171" class="py-name" targets="Method chimera.controllers.console.command.Command.name()=chimera.controllers.console.command.Command-class.html#name,Variable chimera.controllers.scheduler.model.Setting.name=chimera.controllers.scheduler.model.Setting-class.html#name,Variable chimera.core.cli.Option.name=chimera.core.cli.Option-class.html#name,Variable chimera.core.location.Location.name=chimera.core.location.Location-class.html#name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-171', 'name', 'link-171');">name</a></tt><tt class="py-op">,</tt> <tt id="link-172" class="py-name"><a title="chimera.controllers.console.commands.site
+chimera.controllers.site
+chimera.core.site" class="py-name" href="#" onclick="return doclink('link-172', 'site', 'link-34');">site</a></tt><tt class="py-op">.</tt><tt id="link-173" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-173', 'config', 'link-139');">config</a></tt><tt class="py-op">,</tt> <tt id="link-174" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-174', 'True', 'link-45');">True</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">             </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-comment"># search paths</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-175" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-175', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Setting objects include path from command line parameters..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">inst_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"instruments"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-176" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-176', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">     </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">ctrl_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"controllers"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-177" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-177', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">         </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">drv_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"drivers"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-178" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-178', 'append', 'link-58');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-comment"># init from config</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-179" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-179', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Trying to start drivers..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">drv</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-180" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-180', 'config', 'link-139');">config</a></tt><tt class="py-op">.</tt><tt id="link-181" class="py-name"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-181', 'drivers', 'link-66');">drivers</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt id="link-182" class="py-name"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-182', 'drivers', 'link-66');">drivers</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-name">drv</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-183" class="py-name" targets="Method chimera.controllers.site.main.SiteController._add()=chimera.controllers.site.main.SiteController-class.html#_add"><a title="chimera.controllers.site.main.SiteController._add" class="py-name" href="#" onclick="return doclink('link-183', '_add', 'link-183');">_add</a></tt><tt class="py-op">(</tt><tt class="py-name">drv</tt><tt class="py-op">,</tt> <tt id="link-184" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-184', 'path', 'link-0');">path</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"drivers"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-185" class="py-name" targets="Method chimera.core.manager.Manager.start()=chimera.core.manager.Manager-class.html#start,Method chimera.util.etree.ElementTree.TreeBuilder.start()=chimera.util.etree.ElementTree.TreeBuilder-class.html#start"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-185', 'start', 'link-185');">start</a></tt><tt class="py-op">=</tt><tt id="link-186" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-186', 'True', 'link-45');">True</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt id="link-187" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-187', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Trying to start instruments..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">inst</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-188" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-188', 'config', 'link-139');">config</a></tt><tt class="py-op">.</tt><tt id="link-189" class="py-name"><a title="chimera.core.path.ChimeraPath.instruments
+chimera.instruments" class="py-name" href="#" onclick="return doclink('link-189', 'instruments', 'link-60');">instruments</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt id="link-190" class="py-name"><a title="chimera.core.path.ChimeraPath.instruments
+chimera.instruments" class="py-name" href="#" onclick="return doclink('link-190', 'instruments', 'link-60');">instruments</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">             </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-name">inst</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-191" class="py-name"><a title="chimera.controllers.site.main.SiteController._add" class="py-name" href="#" onclick="return doclink('link-191', '_add', 'link-183');">_add</a></tt><tt class="py-op">(</tt><tt class="py-name">inst</tt><tt class="py-op">,</tt> <tt id="link-192" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-192', 'path', 'link-0');">path</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"instruments"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-193" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-193', 'start', 'link-185');">start</a></tt><tt class="py-op">=</tt><tt id="link-194" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-194', 'True', 'link-45');">True</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt id="link-195" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-195', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Trying to start controllers..."</tt><tt class="py-op">)</tt>                 </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">ctrl</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-196" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-196', 'config', 'link-139');">config</a></tt><tt class="py-op">.</tt><tt id="link-197" class="py-name"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-197', 'controllers', 'link-63');">controllers</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt id="link-198" class="py-name"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-198', 'controllers', 'link-63');">controllers</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">             </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-name">ctrl</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-199" class="py-name"><a title="chimera.controllers.site.main.SiteController._add" class="py-name" href="#" onclick="return doclink('link-199', '_add', 'link-183');">_add</a></tt><tt class="py-op">(</tt><tt class="py-name">ctrl</tt><tt class="py-op">,</tt> <tt id="link-200" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-200', 'path', 'link-0');">path</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">paths</tt><tt class="py-op">[</tt><tt class="py-string">"controllers"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-201" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-201', 'start', 'link-185');">start</a></tt><tt class="py-op">=</tt><tt id="link-202" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-202', 'True', 'link-45');">True</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt id="link-203" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-203', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"System up and running."</tt><tt class="py-op">)</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-comment"># ok, let's wait manager work</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-204" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.wait
+chimera.core.manager.Manager.wait" class="py-name" href="#" onclick="return doclink('link-204', 'wait', 'link-46');">wait</a></tt> <tt class="py-keyword">and</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">dry</tt><tt class="py-op">:</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-205" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-205', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-206" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.wait
+chimera.core.manager.Manager.wait" class="py-name" href="#" onclick="return doclink('link-206', 'wait', 'link-46');">wait</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"> </tt>
+<a name="SiteController._add"></a><div id="SiteController._add-def"><a name="L255"></a><tt class="py-lineno">255</tt> <a class="py-toggle" href="#" id="SiteController._add-toggle" onclick="return toggle('SiteController._add');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html#_add">_add</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">location</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController._add-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SiteController._add-expanded"><a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-207" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-207', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-208" class="py-name" targets="Method chimera.core.manager.Manager.addLocation()=chimera.core.manager.Manager-class.html#addLocation"><a title="chimera.core.manager.Manager.addLocation" class="py-name" href="#" onclick="return doclink('link-208', 'addLocation', 'link-208');">addLocation</a></tt><tt class="py-op">(</tt><tt id="link-209" class="py-name"><a title="chimera.core.cli.Option.location
+chimera.core.location
+chimera.core.resources.Resource.location" class="py-name" href="#" onclick="return doclink('link-209', 'location', 'link-3');">location</a></tt><tt class="py-op">,</tt> <tt id="link-210" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-210', 'path', 'link-0');">path</a></tt><tt class="py-op">,</tt> <tt id="link-211" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-211', 'start', 'link-185');">start</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">            <tt id="link-212" class="py-name"><a title="chimera.core.exceptions.printException" class="py-name" href="#" onclick="return doclink('link-212', 'printException', 'link-22');">printException</a></tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">             </tt>
+<a name="SiteController.shutdown"></a><div id="SiteController.shutdown-def"><a name="L261"></a><tt class="py-lineno">261</tt> <a class="py-toggle" href="#" id="SiteController.shutdown-toggle" onclick="return toggle('SiteController.shutdown');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.site.main.SiteController-class.html#shutdown">shutdown</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SiteController.shutdown-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SiteController.shutdown-expanded"><a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">        <tt id="link-213" class="py-name"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-213', 'log', 'link-42');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"Shutting down system."</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-214" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-214', 'manager', 'link-7');">manager</a></tt><tt class="py-op">.</tt><tt id="link-215" class="py-name" targets="Method chimera.controllers.site.main.SiteController.shutdown()=chimera.controllers.site.main.SiteController-class.html#shutdown,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#shutdown,Method chimera.controllers.xmlrpc.serverThread.shutdown()=chimera.controllers.xmlrpc.serverThread-class.html#shutdown,Method chimera.core.manager.Manager.shutdown()=chimera.core.manager.Manager-class.html#shutdown,Method chimera.core.managerbeacon.ManagerBeacon.shutdown()=chimera.core.managerbeacon.ManagerBeacon-class.html#shutdown"><a title="chimera.controllers.site.main.SiteController.shutdown
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown
+chimera.controllers.xmlrpc.serverThread.shutdown
+chimera.core.manager.Manager.shutdown
+chimera.core.managerbeacon.ManagerBeacon.shutdown" class="py-name" href="#" onclick="return doclink('link-215', 'shutdown', 'link-215');">shutdown</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:55 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

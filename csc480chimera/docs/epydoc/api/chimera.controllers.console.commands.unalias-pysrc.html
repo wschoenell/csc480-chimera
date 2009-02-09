@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.console.commands.unalias</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.console-module.html">Package&nbsp;console</a> ::
+        <a href="chimera.controllers.console.commands-module.html">Package&nbsp;commands</a> ::
+        Module&nbsp;unalias
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.console.commands.unalias-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.console.commands.unalias-module.html">Module chimera.controllers.console.commands.unalias</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.controllers=chimera.controllers-module.html,Static Method chimera.core.path.ChimeraPath.controllers()=chimera.core.path.ChimeraPath-class.html#controllers"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-1', 'controllers', 'link-1');">controllers</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package chimera.controllers.console=chimera.controllers.console-module.html,Module chimera.controllers.console.console=chimera.controllers.console.console-module.html"><a title="chimera.controllers.console
+chimera.controllers.console.console" class="py-name" href="#" onclick="return doclink('link-2', 'console', 'link-2');">console</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Module chimera.controllers.console.command=chimera.controllers.console.command-module.html,Function chimera.controllers.console.command.command()=chimera.controllers.console.command-module.html#command"><a title="chimera.controllers.console.command
+chimera.controllers.console.command.command" class="py-name" href="#" onclick="return doclink('link-3', 'command', 'link-3');">command</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Class chimera.controllers.console.command.Command=chimera.controllers.console.command.Command-class.html"><a title="chimera.controllers.console.command.Command" class="py-name" href="#" onclick="return doclink('link-4', 'Command', 'link-4');">Command</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-5', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-6', 'controllers', 'link-1');">controllers</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="chimera.controllers.console
+chimera.controllers.console.console" class="py-name" href="#" onclick="return doclink('link-7', 'console', 'link-2');">console</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Module chimera.controllers.console.controller=chimera.controllers.console.controller-module.html,Module chimera.controllers.scheduler.controller=chimera.controllers.scheduler.controller-module.html"><a title="chimera.controllers.console.controller
+chimera.controllers.scheduler.controller" class="py-name" href="#" onclick="return doclink('link-8', 'controller', 'link-8');">controller</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Function chimera.controllers.console.controller.ConsoleController()=chimera.controllers.console.controller-module.html#ConsoleController"><a title="chimera.controllers.console.controller.ConsoleController" class="py-name" href="#" onclick="return doclink('link-9', 'ConsoleController', 'link-9');">ConsoleController</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-10" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-10', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-11', 'controllers', 'link-1');">controllers</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="chimera.controllers.console
+chimera.controllers.console.console" class="py-name" href="#" onclick="return doclink('link-12', 'console', 'link-2');">console</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Module chimera.controllers.console.message=chimera.controllers.console.message-module.html"><a title="chimera.controllers.console.message" class="py-name" href="#" onclick="return doclink('link-13', 'message', 'link-13');">message</a></tt> <tt class="py-keyword">import</tt> <tt id="link-14" class="py-name" targets="Class chimera.controllers.console.message.Message=chimera.controllers.console.message.Message-class.html"><a title="chimera.controllers.console.message.Message" class="py-name" href="#" onclick="return doclink('link-14', 'Message', 'link-14');">Message</a></tt><tt class="py-op">,</tt> <tt id="link-15" class="py-name" targets="Class chimera.controllers.console.message.Error=chimera.controllers.console.message.Error-class.html"><a title="chimera.controllers.console.message.Error" class="py-name" href="#" onclick="return doclink('link-15', 'Error', 'link-15');">Error</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="UnaliasCommand"></a><div id="UnaliasCommand-def"><a name="L6"></a><tt class="py-lineno"> 6</tt> <a class="py-toggle" href="#" id="UnaliasCommand-toggle" onclick="return toggle('UnaliasCommand');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.console.commands.unalias.UnaliasCommand-class.html">UnaliasCommand</a> <tt class="py-op">(</tt><tt class="py-base-class">Command</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnaliasCommand-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="UnaliasCommand-expanded"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="UnaliasCommand.__init__"></a><div id="UnaliasCommand.__init__-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="UnaliasCommand.__init__-toggle" onclick="return toggle('UnaliasCommand.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#__init__">__init__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnaliasCommand.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="UnaliasCommand.__init__-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt id="link-16" class="py-name"><a title="chimera.controllers.console.command.Command" class="py-name" href="#" onclick="return doclink('link-16', 'Command', 'link-4');">Command</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method chimera.controllers.autofocus.Autofocus.__init__()=chimera.controllers.autofocus.Autofocus-class.html#__init__,Method chimera.controllers.autofocus.FocusFit.__init__()=chimera.controllers.autofocus.FocusFit-class.html#__init__,Method chimera.controllers.console.command.Command.__init__()=chimera.controllers.console.command.Command-class.html#__init__,Method chimera.controllers.console.command.HighLevelCommand.__init__()=chimera.controllers.console.command.HighLevelCommand-class.html#__init__,Method chimera.controllers.console.commander.Commander.__init__()=chimera.controllers.console.commander.Commander-class.html#__init__,Method chimera.controllers.console.commands.alias.AliasCommand.__init__()=chimera.controllers.console.commands.alias.AliasCommand-class.html#__init__,Method chimera.controllers.console.commands.object.ObjectCommand.__init__()=chimera.controllers.console.commands.object.ObjectCommand-class.html#__init__,Method chimera.controllers.console.commands.quit.QuitCommand.__init__()=chimera.controllers.console.commands.quit.QuitCommand-class.html#__init__,Method chimera.controllers.console.commands.site.SiteCommand.__init__()=chimera.controllers.console.commands.site.SiteCommand-class.html#__init__,Method chimera.controllers.console.commands.unalias.UnaliasCommand.__init__()=chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#__init__,Method chimera.controllers.console.console.Console.__init__()=chimera.controllers.console.console.Console-class.html#__init__,Method chimera.controllers.console.controller._ConsoleControllerSingleton.__init__()=chimera.controllers.console.controller._ConsoleControllerSingleton-class.html#__init__,Method chimera.controllers.console.message.Config.__init__()=chimera.controllers.console.message.Config-class.html#__init__,Method chimera.controllers.console.message.Error.__init__()=chimera.controllers.console.message.Error-class.html#__init__,Method chimera.controllers.console.message.Hint.__init__()=chimera.controllers.console.message.Hint-class.html#__init__,Method chimera.controllers.console.message.Message.__init__()=chimera.controllers.console.message.Message-class.html#__init__,Method chimera.controllers.console.namespace.Namespace.__init__()=chimera.controllers.console.namespace.Namespace-class.html#__init__,Method chimera.controllers.extinction.Extinction.__init__()=chimera.controllers.extinction.Extinction-class.html#__init__,Method chimera.controllers.imageserver.imagerequest.ImageRequest.__init__()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#__init__,Method chimera.controllers.imageserver.imageserver.ImageServer.__init__()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__init__,Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#__init__,Method chimera.controllers.pointverify.PointVerify.__init__()=chimera.controllers.pointverify.PointVerify-class.html#__init__,Method chimera.controllers.reduction.calibration.Calibration.__init__()=chimera.controllers.reduction.calibration.Calibration-class.html#__init__,Method chimera.controllers.reduction.chimera_pipe.Reduction.__init__()=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__init__,Method chimera.controllers.scheduler.constraints.Constraints.__init__()=chimera.controllers.scheduler.constraints.Constraints-class.html#__init__,Method chimera.controllers.scheduler.constraints.IConstraint.__init__()=chimera.controllers.scheduler.constraints.IConstraint-class.html#__init__,Method chimera.controllers.scheduler.controller.Controller.__init__()=chimera.controllers.scheduler.controller.Controller-class.html#__init__,Method chimera.controllers.scheduler.machine.Machine.__init__()=chimera.controllers.scheduler.machine.Machine-class.html#__init__,Method chimera.controllers.scheduler.sequential.SequentialScheduler.__init__()=chimera.controllers.scheduler.sequential.SequentialScheduler-class.html#__init__,Method chimera.controllers.site.main.SiteController.__init__()=chimera.controllers.site.main.SiteController-class.html#__init__,Method chimera.controllers.xephem.XEphem.__init__()=chimera.controllers.xephem.XEphem-class.html#__init__,Method chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__()=chimera.controllers.xmlrpc.ChimeraXMLDispatcher-class.html#__init__,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#__init__,Method chimera.controllers.xmlrpc.XMLRPC.__init__()=chimera.controllers.xmlrpc.XMLRPC-class.html#__init__,Method chimera.controllers.xmlrpc.serverThread.__init__()=chimera.controllers.xmlrpc.serverThread-class.html#__init__,Method chimera.core.async.BeginDispatcher.__init__()=chimera.core.async.BeginDispatcher-class.html#__init__,Method chimera.core.async.EndDispatcher.__init__()=chimera.core.async.EndDispatcher-class.html#__init__,Method chimera.core.chimeraobject.ChimeraObject.__init__()=chimera.core.chimeraobject.ChimeraObject-class.html#__init__,Method chimera.core.classloader.ClassLoader.__init__()=chimera.core.classloader.ClassLoader-class.html#__init__,Method chimera.core.cli.CLIValues.__init__()=chimera.core.cli.CLIValues-class.html#__init__,Method chimera.core.cli.ChimeraCLI.__init__()=chimera.core.cli.ChimeraCLI-class.html#__init__,Method chimera.core.cli.Option.__init__()=chimera.core.cli.Option-class.html#__init__,Method chimera.core.config.BoolChecker.__init__()=chimera.core.config.BoolChecker-class.html#__init__,Method chimera.core.config.Config.__init__()=chimera.core.config.Config-class.html#__init__,Method chimera.core.config.CoordChecker.__init__()=chimera.core.config.CoordChecker-class.html#__init__,Method chimera.core.config.CoordOption.__init__()=chimera.core.config.CoordOption-class.html#__init__,Method chimera.core.config.EnumChecker.__init__()=chimera.core.config.EnumChecker-class.html#__init__,Method chimera.core.config.FloatChecker.__init__()=chimera.core.config.FloatChecker-class.html#__init__,Method chimera.core.config.IgnoreChecker.__init__()=chimera.core.config.IgnoreChecker-class.html#__init__,Method chimera.core.config.IntChecker.__init__()=chimera.core.config.IntChecker-class.html#__init__,Method chimera.core.config.Option.__init__()=chimera.core.config.Option-class.html#__init__,Method chimera.core.config.OptionsChecker.__init__()=chimera.core.config.OptionsChecker-class.html#__init__,Method chimera.core.config.RangeChecker.__init__()=chimera.core.config.RangeChecker-class.html#__init__,Method chimera.core.config.StringChecker.__init__()=chimera.core.config.StringChecker-class.html#__init__,Method chimera.core.eventsproxy.EventsProxy.__init__()=chimera.core.eventsproxy.EventsProxy-class.html#__init__,Method chimera.core.eventwrapper.EventWrapperDispatcher.__init__()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#__init__,Method chimera.core.exceptions.ChimeraException.__init__()=chimera.core.exceptions.ChimeraException-class.html#__init__,Method chimera.core.location.Location.__init__()=chimera.core.location.Location-class.html#__init__,Method chimera.core.lockwrapper.LockWrapper.__init__()=chimera.core.lockwrapper.LockWrapper-class.html#__init__,Method chimera.core.lockwrapper.LockWrapperDispatcher.__init__()=chimera.core.lockwrapper.LockWrapperDispatcher-class.html#__init__,Method chimera.core.log.ChimeraFormatter.__init__()=chimera.core.log.ChimeraFormatter-class.html#__init__,Method chimera.core.manager.Manager.__init__()=chimera.core.manager.Manager-class.html#__init__,Method chimera.core.manager.ManagerAdapter.__init__()=chimera.core.manager.ManagerAdapter-class.html#__init__,Method chimera.core.managerbeacon.ManagerBeacon.__init__()=chimera.core.managerbeacon.ManagerBeacon-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapper.__init__()=chimera.core.methodwrapper.MethodWrapper-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapperDispatcher.__init__()=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__init__,Method chimera.core.monitor.Monitor.__init__()=chimera.core.monitor.Monitor-class.html#__init__,Method chimera.core.proxy.Proxy.__init__()=chimera.core.proxy.Proxy-class.html#__init__,Method chimera.core.proxy.ProxyMethod.__init__()=chimera.core.proxy.ProxyMethod-class.html#__init__,Method chimera.core.remoteobject.RemoteObject.__init__()=chimera.core.remoteobject.RemoteObject-class.html#__init__,Method chimera.core.resources.Resource.__init__()=chimera.core.resources.Resource-class.html#__init__,Method chimera.core.resources.ResourcesManager.__init__()=chimera.core.resources.ResourcesManager-class.html#__init__,Method chimera.core.rwlock.ReadWriteLock.__init__()=chimera.core.rwlock.ReadWriteLock-class.html#__init__,Method chimera.core.site.AstroDate.__init__()=chimera.core.site.AstroDate-class.html#__init__,Method chimera.core.site.Site.__init__()=chimera.core.site.Site-class.html#__init__,Method chimera.core.systemconfig.SystemConfig.__init__()=chimera.core.systemconfig.SystemConfig-class.html#__init__,Method chimera.core.tests.managerhelper.ManagerHelper.__init__()=chimera.core.tests.managerhelper.ManagerHelper-class.html#__init__,Method chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__()=chimera.core.tests.managerhelperwitherror.ManagerHelperWithError-class.html#__init__,Method chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__()=chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException-class.html#__init__,Method chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__()=chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException-class.html#__init__,Method chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__()=chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException-class.html#__init__,Method chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__()=chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException-class.html#__init__,Method chimera.core.tests.test_events.Publisher.__init__()=chimera.core.tests.test_events.Publisher-class.html#__init__,Method chimera.core.tests.test_events.Subscriber.__init__()=chimera.core.tests.test_events.Subscriber-class.html#__init__,Method chimera.core.tests.test_manager.Simple.__init__()=chimera.core.tests.test_manager.Simple-class.html#__init__,Method chimera.core.tests.test_resources.TestResources.__init__()=chimera.core.tests.test_resources.TestResources-class.html#__init__,Method chimera.core.threads.ThreadPool.__init__()=chimera.core.threads.ThreadPool-class.html#__init__,Method chimera.core.threads.ThreadPoolThread.__init__()=chimera.core.threads.ThreadPoolThread-class.html#__init__,Method chimera.drivers.domelna40cm.DomeLNA40cm.__init__()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__init__,Method chimera.drivers.fakecamera.FakeCamera.__init__()=chimera.drivers.fakecamera.FakeCamera-class.html#__init__,Method chimera.drivers.fakedome.FakeDome.__init__()=chimera.drivers.fakedome.FakeDome-class.html#__init__,Method chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__()=chimera.drivers.fakefilterwheel.FakeFilterWheel-class.html#__init__,Method chimera.drivers.fakefocuser.FakeFocuser.__init__()=chimera.drivers.fakefocuser.FakeFocuser-class.html#__init__,Method chimera.drivers.faketelescope.FakeTelescope.__init__()=chimera.drivers.faketelescope.FakeTelescope-class.html#__init__,Method chimera.drivers.meade.Meade.__init__()=chimera.drivers.meade.Meade-class.html#__init__,Method chimera.drivers.optectcfs.OptecTCFS.__init__()=chimera.drivers.optectcfs.OptecTCFS-class.html#__init__,Method chimera.drivers.remoteclient.RemoteClient.__init__()=chimera.drivers.remoteclient.RemoteClient-class.html#__init__,Method chimera.drivers.remoteclient.RemoteMethodWrapper.__init__()=chimera.drivers.remoteclient.RemoteMethodWrapper-class.html#__init__,Method chimera.drivers.sbig.sbig.SBIG.__init__()=chimera.drivers.sbig.sbig.SBIG-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGException.__init__()=chimera.drivers.sbig.sbigdrv.SBIGException-class.html#__init__,Method chimera.drivers.theskytelescope.TheSkyTelescope.__init__()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__init__,Method chimera.instruments.camera.Camera.__init__()=chimera.instruments.camera.Camera-class.html#__init__,Method chimera.instruments.dome.Dome.__init__()=chimera.instruments.dome.Dome-class.html#__init__,Method chimera.instruments.filterwheel.FilterWheel.__init__()=chimera.instruments.filterwheel.FilterWheel-class.html#__init__,Method chimera.instruments.focuser.Focuser.__init__()=chimera.instruments.focuser.Focuser-class.html#__init__,Method chimera.instruments.telescope.Telescope.__init__()=chimera.instruments.telescope.Telescope-class.html#__init__,Method chimera.interfaces.lifecycle.ILifeCycle.__init__()=chimera.interfaces.lifecycle.ILifeCycle-class.html#__init__,Method chimera.util.catalogs.landolt.Landolt.__init__()=chimera.util.catalogs.landolt.Landolt-class.html#__init__,Method chimera.util.catalogs.ppm.PPM.__init__()=chimera.util.catalogs.ppm.PPM-class.html#__init__,Method chimera.util.catalogs.ucac2.UCAC2.__init__()=chimera.util.catalogs.ucac2.UCAC2-class.html#__init__,Method chimera.util.coord.Coord.__init__()=chimera.util.coord.Coord-class.html#__init__,Method chimera.util.ds9.DS9.__init__()=chimera.util.ds9.DS9-class.html#__init__,Method chimera.util.etree.ElementPath.Path.__init__()=chimera.util.etree.ElementPath.Path-class.html#__init__,Method chimera.util.etree.ElementTree.ElementTree.__init__()=chimera.util.etree.ElementTree.ElementTree-class.html#__init__,Method chimera.util.etree.ElementTree.QName.__init__()=chimera.util.etree.ElementTree.QName-class.html#__init__,Method chimera.util.etree.ElementTree.TreeBuilder.__init__()=chimera.util.etree.ElementTree.TreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree.XMLTreeBuilder.__init__()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree._ElementInterface.__init__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__init__,Method chimera.util.etree.ElementTree._iterparse.__init__()=chimera.util.etree.ElementTree._iterparse-class.html#__init__,Method chimera.util.filenamesequence.FilenameSequence.__init__()=chimera.util.filenamesequence.FilenameSequence-class.html#__init__,Method chimera.util.image.Image.__init__()=chimera.util.image.Image-class.html#__init__,Method chimera.util.position.Position.__init__()=chimera.util.position.Position-class.html#__init__,Method chimera.util.sexcatalog.SExtractorfile.__init__()=chimera.util.sexcatalog.SExtractorfile-class.html#__init__,Method chimera.util.sextractor.SExtractor.__init__()=chimera.util.sextractor.SExtractor-class.html#__init__,Method chimera.util.simbad.Simbad.__init__()=chimera.util.simbad.Simbad-class.html#__init__,Method chimera.util.telescopelimits.TelescopeLimits.__init__()=chimera.util.telescopelimits.TelescopeLimits-class.html#__init__,Method chimera.util.vizquery.VizQuery.__init__()=chimera.util.vizquery.VizQuery-class.html#__init__,Method chimera.util.votable.VONode.__init__()=chimera.util.votable.VONode-class.html#__init__,Method chimera.util.votable.VOTable.__init__()=chimera.util.votable.VOTable-class.html#__init__,Method chimera.util.votable.VOTableHandler.__init__()=chimera.util.votable.VOTableHandler-class.html#__init__"><a title="chimera.controllers.autofocus.Autofocus.__init__
+chimera.controllers.autofocus.FocusFit.__init__
+chimera.controllers.console.command.Command.__init__
+chimera.controllers.console.command.HighLevelCommand.__init__
+chimera.controllers.console.commander.Commander.__init__
+chimera.controllers.console.commands.alias.AliasCommand.__init__
+chimera.controllers.console.commands.object.ObjectCommand.__init__
+chimera.controllers.console.commands.quit.QuitCommand.__init__
+chimera.controllers.console.commands.site.SiteCommand.__init__
+chimera.controllers.console.commands.unalias.UnaliasCommand.__init__
+chimera.controllers.console.console.Console.__init__
+chimera.controllers.console.controller._ConsoleControllerSingleton.__init__
+chimera.controllers.console.message.Config.__init__
+chimera.controllers.console.message.Error.__init__
+chimera.controllers.console.message.Hint.__init__
+chimera.controllers.console.message.Message.__init__
+chimera.controllers.console.namespace.Namespace.__init__
+chimera.controllers.extinction.Extinction.__init__
+chimera.controllers.imageserver.imagerequest.ImageRequest.__init__
+chimera.controllers.imageserver.imageserver.ImageServer.__init__
+chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__
+chimera.controllers.pointverify.PointVerify.__init__
+chimera.controllers.reduction.calibration.Calibration.__init__
+chimera.controllers.reduction.chimera_pipe.Reduction.__init__
+chimera.controllers.scheduler.constraints.Constraints.__init__
+chimera.controllers.scheduler.constraints.IConstraint.__init__
+chimera.controllers.scheduler.controller.Controller.__init__
+chimera.controllers.scheduler.machine.Machine.__init__
+chimera.controllers.scheduler.sequential.SequentialScheduler.__init__
+chimera.controllers.site.main.SiteController.__init__
+chimera.controllers.xephem.XEphem.__init__
+chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__
+chimera.controllers.xmlrpc.XMLRPC.__init__
+chimera.controllers.xmlrpc.serverThread.__init__
+chimera.core.async.BeginDispatcher.__init__
+chimera.core.async.EndDispatcher.__init__
+chimera.core.chimeraobject.ChimeraObject.__init__
+chimera.core.classloader.ClassLoader.__init__
+chimera.core.cli.CLIValues.__init__
+chimera.core.cli.ChimeraCLI.__init__
+chimera.core.cli.Option.__init__
+chimera.core.config.BoolChecker.__init__
+chimera.core.config.Config.__init__
+chimera.core.config.CoordChecker.__init__
+chimera.core.config.CoordOption.__init__
+chimera.core.config.EnumChecker.__init__
+chimera.core.config.FloatChecker.__init__
+chimera.core.config.IgnoreChecker.__init__
+chimera.core.config.IntChecker.__init__
+chimera.core.config.Option.__init__
+chimera.core.config.OptionsChecker.__init__
+chimera.core.config.RangeChecker.__init__
+chimera.core.config.StringChecker.__init__
+chimera.core.eventsproxy.EventsProxy.__init__
+chimera.core.eventwrapper.EventWrapperDispatcher.__init__
+chimera.core.exceptions.ChimeraException.__init__
+chimera.core.location.Location.__init__
+chimera.core.lockwrapper.LockWrapper.__init__
+chimera.core.lockwrapper.LockWrapperDispatcher.__init__
+chimera.core.log.ChimeraFormatter.__init__
+chimera.core.manager.Manager.__init__
+chimera.core.manager.ManagerAdapter.__init__
+chimera.core.managerbeacon.ManagerBeacon.__init__
+chimera.core.methodwrapper.MethodWrapper.__init__
+chimera.core.methodwrapper.MethodWrapperDispatcher.__init__
+chimera.core.monitor.Monitor.__init__
+chimera.core.proxy.Proxy.__init__
+chimera.core.proxy.ProxyMethod.__init__
+chimera.core.remoteobject.RemoteObject.__init__
+chimera.core.resources.Resource.__init__
+chimera.core.resources.ResourcesManager.__init__
+chimera.core.rwlock.ReadWriteLock.__init__
+chimera.core.site.AstroDate.__init__
+chimera.core.site.Site.__init__
+chimera.core.systemconfig.SystemConfig.__init__
+chimera.core.tests.managerhelper.ManagerHelper.__init__
+chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__
+chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__
+chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__
+chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__
+chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__
+chimera.core.tests.test_events.Publisher.__init__
+chimera.core.tests.test_events.Subscriber.__init__
+chimera.core.tests.test_manager.Simple.__init__
+chimera.core.tests.test_resources.TestResources.__init__
+chimera.core.threads.ThreadPool.__init__
+chimera.core.threads.ThreadPoolThread.__init__
+chimera.drivers.domelna40cm.DomeLNA40cm.__init__
+chimera.drivers.fakecamera.FakeCamera.__init__
+chimera.drivers.fakedome.FakeDome.__init__
+chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__
+chimera.drivers.fakefocuser.FakeFocuser.__init__
+chimera.drivers.faketelescope.FakeTelescope.__init__
+chimera.drivers.meade.Meade.__init__
+chimera.drivers.optectcfs.OptecTCFS.__init__
+chimera.drivers.remoteclient.RemoteClient.__init__
+chimera.drivers.remoteclient.RemoteMethodWrapper.__init__
+chimera.drivers.sbig.sbig.SBIG.__init__
+chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__
+chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__
+chimera.drivers.sbig.sbigdrv.SBIGException.__init__
+chimera.drivers.theskytelescope.TheSkyTelescope.__init__
+chimera.instruments.camera.Camera.__init__
+chimera.instruments.dome.Dome.__init__
+chimera.instruments.filterwheel.FilterWheel.__init__
+chimera.instruments.focuser.Focuser.__init__
+chimera.instruments.telescope.Telescope.__init__
+chimera.interfaces.lifecycle.ILifeCycle.__init__
+chimera.util.catalogs.landolt.Landolt.__init__
+chimera.util.catalogs.ppm.PPM.__init__
+chimera.util.catalogs.ucac2.UCAC2.__init__
+chimera.util.coord.Coord.__init__
+chimera.util.ds9.DS9.__init__
+chimera.util.etree.ElementPath.Path.__init__
+chimera.util.etree.ElementTree.ElementTree.__init__
+chimera.util.etree.ElementTree.QName.__init__
+chimera.util.etree.ElementTree.TreeBuilder.__init__
+chimera.util.etree.ElementTree.XMLTreeBuilder.__init__
+chimera.util.etree.ElementTree._ElementInterface.__init__
+chimera.util.etree.ElementTree._iterparse.__init__
+chimera.util.filenamesequence.FilenameSequence.__init__
+chimera.util.image.Image.__init__
+chimera.util.position.Position.__init__
+chimera.util.sexcatalog.SExtractorfile.__init__
+chimera.util.sextractor.SExtractor.__init__
+chimera.util.simbad.Simbad.__init__
+chimera.util.telescopelimits.TelescopeLimits.__init__
+chimera.util.vizquery.VizQuery.__init__
+chimera.util.votable.VONode.__init__
+chimera.util.votable.VOTable.__init__
+chimera.util.votable.VOTableHandler.__init__" class="py-name" href="#" onclick="return doclink('link-17', '__init__', 'link-17');">__init__</a></tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-string">"unalias"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="UnaliasCommand.execute"></a><div id="UnaliasCommand.execute-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="UnaliasCommand.execute-toggle" onclick="return toggle('UnaliasCommand.execute');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#execute">execute</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-param">namespace</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnaliasCommand.execute-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="UnaliasCommand.execute-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-18" class="py-name"><a title="chimera.controllers.console.message.Error" class="py-name" href="#" onclick="return doclink('link-18', 'Error', 'link-15');">Error</a></tt> <tt class="py-op">(</tt><tt class="py-string">"invalid syntax"</tt><tt class="py-op">)</tt>        </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">         </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt id="link-19" class="py-name" targets="Method chimera.controllers.console.namespace.Namespace.names()=chimera.controllers.console.namespace.Namespace-class.html#names"><a title="chimera.controllers.console.namespace.Namespace.names" class="py-name" href="#" onclick="return doclink('link-19', 'names', 'link-19');">names</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">         </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">            <tt id="link-20" class="py-name"><a title="chimera.controllers.console.namespace.Namespace.names" class="py-name" href="#" onclick="return doclink('link-20', 'names', 'link-19');">names</a></tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">split</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">ValueError</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-21" class="py-name"><a title="chimera.controllers.console.message.Error" class="py-name" href="#" onclick="return doclink('link-21', 'Error', 'link-15');">Error</a></tt> <tt class="py-op">(</tt><tt class="py-string">"invalid syntax"</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-22" class="py-name" targets="Method chimera.controllers.console.command.Command.name()=chimera.controllers.console.command.Command-class.html#name,Variable chimera.controllers.scheduler.model.Setting.name=chimera.controllers.scheduler.model.Setting-class.html#name,Variable chimera.core.cli.Option.name=chimera.core.cli.Option-class.html#name,Variable chimera.core.location.Location.name=chimera.core.location.Location-class.html#name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-22', 'name', 'link-22');">name</a></tt> <tt class="py-keyword">in</tt> <tt id="link-23" class="py-name"><a title="chimera.controllers.console.namespace.Namespace.names" class="py-name" href="#" onclick="return doclink('link-23', 'names', 'link-19');">names</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">cmd</tt> <tt class="py-keyword">for</tt> <tt class="py-name">cmd</tt> <tt class="py-keyword">in</tt> <tt id="link-24" class="py-name" targets="Module chimera.controllers.console.namespace=chimera.controllers.console.namespace-module.html"><a title="chimera.controllers.console.namespace" class="py-name" href="#" onclick="return doclink('link-24', 'namespace', 'link-24');">namespace</a></tt> <tt class="py-keyword">if</tt> <tt id="link-25" class="py-name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-25', 'name', 'link-22');">name</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">cmd</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method chimera.controllers.console.command.Command.aliases()=chimera.controllers.console.command.Command-class.html#aliases"><a title="chimera.controllers.console.command.Command.aliases" class="py-name" href="#" onclick="return doclink('link-26', 'aliases', 'link-26');">aliases</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">cmd</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">                <tt class="py-name">results</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.append()=chimera.util.etree.ElementTree._ElementInterface-class.html#append,Method chimera.util.votable.VOTable.append()=chimera.util.votable.VOTable-class.html#append"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-27', 'append', 'link-27');">append</a></tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="chimera.controllers.console.message.Error" class="py-name" href="#" onclick="return doclink('link-28', 'Error', 'link-15');">Error</a></tt> <tt class="py-op">(</tt><tt class="py-string">"'%s' it's not defined."</tt> <tt class="py-op">%</tt> <tt id="link-29" class="py-name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-29', 'name', 'link-22');">name</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">            <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-name">cmd</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">            <tt class="py-name">cmd</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method chimera.controllers.console.command.Command.delAlias()=chimera.controllers.console.command.Command-class.html#delAlias"><a title="chimera.controllers.console.command.Command.delAlias" class="py-name" href="#" onclick="return doclink('link-30', 'delAlias', 'link-30');">delAlias</a></tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-31', 'name', 'link-22');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">results</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
+<a name="UnaliasCommand.longhelp"></a><div id="UnaliasCommand.longhelp-def"><a name="L37"></a><tt class="py-lineno">37</tt> <a class="py-toggle" href="#" id="UnaliasCommand.longhelp-toggle" onclick="return toggle('UnaliasCommand.longhelp');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#longhelp">longhelp</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnaliasCommand.longhelp-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="UnaliasCommand.longhelp-expanded"><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"long long help for unalias"</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
+<a name="UnaliasCommand.shorthelp"></a><div id="UnaliasCommand.shorthelp-def"><a name="L40"></a><tt class="py-lineno">40</tt> <a class="py-toggle" href="#" id="UnaliasCommand.shorthelp-toggle" onclick="return toggle('UnaliasCommand.shorthelp');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#shorthelp">shorthelp</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnaliasCommand.shorthelp-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="UnaliasCommand.shorthelp-expanded"><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"Usage: unalias name"</tt> </tt>
+</div></div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:02 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

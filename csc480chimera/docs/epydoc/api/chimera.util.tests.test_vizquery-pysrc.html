@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.util.tests.test_vizquery</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.util-module.html">Package&nbsp;util</a> ::
+        <a href="chimera.util.tests-module.html">Package&nbsp;tests</a> ::
+        Module&nbsp;test_vizquery
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.util.tests.test_vizquery-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.util.tests.test_vizquery-module.html">Module chimera.util.tests.test_vizquery</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-1', 'util', 'link-1');">util</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.util.vizquery=chimera.util.vizquery-module.html"><a title="chimera.util.vizquery" class="py-name" href="#" onclick="return doclink('link-2', 'vizquery', 'link-2');">vizquery</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.util.vizquery.VizQuery=chimera.util.vizquery.VizQuery-class.html"><a title="chimera.util.vizquery.VizQuery" class="py-name" href="#" onclick="return doclink('link-3', 'VizQuery', 'link-3');">VizQuery</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-5', 'util', 'link-1');">util</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable chimera.controllers.extinction.ExtinctionData.position=chimera.controllers.extinction.ExtinctionData-class.html#position,Module chimera.util.position=chimera.util.position-module.html"><a title="chimera.controllers.extinction.ExtinctionData.position
+chimera.util.position" class="py-name" href="#" onclick="return doclink('link-6', 'position', 'link-6');">position</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class chimera.util.position.Position=chimera.util.position.Position-class.html"><a title="chimera.util.position.Position" class="py-name" href="#" onclick="return doclink('link-7', 'Position', 'link-7');">Position</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="TestVizQuery"></a><div id="TestVizQuery-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="TestVizQuery-toggle" onclick="return toggle('TestVizQuery');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.util.tests.test_vizquery.TestVizQuery-class.html">TestVizQuery</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestVizQuery-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="TestVizQuery-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="TestVizQuery.test_find"></a><div id="TestVizQuery.test_find-def"><a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="TestVizQuery.test_find-toggle" onclick="return toggle('TestVizQuery.test_find');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.tests.test_vizquery.TestVizQuery-class.html#test_find">test_find</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestVizQuery.test_find-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestVizQuery.test_find-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="chimera.util.vizquery.VizQuery" class="py-name" href="#" onclick="return doclink('link-8', 'VizQuery', 'link-3');">VizQuery</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method chimera.util.vizquery.VizQuery.useCat()=chimera.util.vizquery.VizQuery-class.html#useCat"><a title="chimera.util.vizquery.VizQuery.useCat" class="py-name" href="#" onclick="return doclink('link-9', 'useCat', 'link-9');">useCat</a></tt><tt class="py-op">(</tt><tt class="py-string">"II/183A/"</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method chimera.util.vizquery.VizQuery.useColumns()=chimera.util.vizquery.VizQuery-class.html#useColumns"><a title="chimera.util.vizquery.VizQuery.useColumns" class="py-name" href="#" onclick="return doclink('link-10', 'useColumns', 'link-10');">useColumns</a></tt><tt class="py-op">(</tt><tt class="py-string">"*POS_EQ_RA_MAIN,*POS_EQ_DEC_MAIN,*ID_MAIN,Vmag,_r"</tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">                     <tt id="link-11" class="py-name" targets="Method chimera.util.vizquery.VizQuery.sortBy()=chimera.util.vizquery.VizQuery-class.html#sortBy"><a title="chimera.util.vizquery.VizQuery.sortBy" class="py-name" href="#" onclick="return doclink('link-11', 'sortBy', 'link-11');">sortBy</a></tt><tt class="py-op">=</tt><tt class="py-string">"*POS_EQ_RA_MAIN"</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method chimera.util.vizquery.VizQuery.useTarget()=chimera.util.vizquery.VizQuery-class.html#useTarget"><a title="chimera.util.vizquery.VizQuery.useTarget" class="py-name" href="#" onclick="return doclink('link-12', 'useTarget', 'link-12');">useTarget</a></tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="chimera.util.position.Position" class="py-name" href="#" onclick="return doclink('link-13', 'Position', 'link-7');">Position</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Static Method chimera.util.position.Position.fromRaDec()=chimera.util.position.Position-class.html#fromRaDec"><a title="chimera.util.position.Position.fromRaDec" class="py-name" href="#" onclick="return doclink('link-14', 'fromRaDec', 'link-14');">fromRaDec</a></tt><tt class="py-op">(</tt><tt class="py-string">"14:00:00"</tt><tt class="py-op">,</tt><tt class="py-string">"-22:00:00"</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">radius</tt><tt class="py-op">=</tt><tt class="py-number">45</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">         </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">        <tt id="link-15" class="py-name" targets="Method chimera.util.etree.ElementTree.TreeBuilder.data()=chimera.util.etree.ElementTree.TreeBuilder-class.html#data"><a title="chimera.util.etree.ElementTree.TreeBuilder.data" class="py-name" href="#" onclick="return doclink('link-15', 'data', 'link-15');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method chimera.util.catalog.Catalog.find()=chimera.util.catalog.Catalog-class.html#find,Method chimera.util.catalogs.landolt.Landolt.find()=chimera.util.catalogs.landolt.Landolt-class.html#find,Method chimera.util.catalogs.ppm.PPM.find()=chimera.util.catalogs.ppm.PPM-class.html#find,Method chimera.util.catalogs.ucac2.UCAC2.find()=chimera.util.catalogs.ucac2.UCAC2-class.html#find,Method chimera.util.etree.ElementPath.Path.find()=chimera.util.etree.ElementPath.Path-class.html#find,Function chimera.util.etree.ElementPath.find()=chimera.util.etree.ElementPath-module.html#find,Method chimera.util.etree.ElementTree.ElementTree.find()=chimera.util.etree.ElementTree.ElementTree-class.html#find,Method chimera.util.etree.ElementTree._ElementInterface.find()=chimera.util.etree.ElementTree._ElementInterface-class.html#find,Method chimera.util.etree.ElementTree._SimpleElementPath.find()=chimera.util.etree.ElementTree._SimpleElementPath-class.html#find,Method chimera.util.vizquery.VizQuery.find()=chimera.util.vizquery.VizQuery-class.html#find"><a title="chimera.util.catalog.Catalog.find
+chimera.util.catalogs.landolt.Landolt.find
+chimera.util.catalogs.ppm.PPM.find
+chimera.util.catalogs.ucac2.UCAC2.find
+chimera.util.etree.ElementPath.Path.find
+chimera.util.etree.ElementPath.find
+chimera.util.etree.ElementTree.ElementTree.find
+chimera.util.etree.ElementTree._ElementInterface.find
+chimera.util.etree.ElementTree._SimpleElementPath.find
+chimera.util.vizquery.VizQuery.find" class="py-name" href="#" onclick="return doclink('link-16', 'find', 'link-16');">find</a></tt><tt class="py-op">(</tt><tt class="py-name">limit</tt><tt class="py-op">=</tt><tt class="py-number">5</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">obj</tt> <tt class="py-keyword">in</tt> <tt id="link-17" class="py-name"><a title="chimera.util.etree.ElementTree.TreeBuilder.data" class="py-name" href="#" onclick="return doclink('link-17', 'data', 'link-15');">data</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt><tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt class="py-name">obj</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method chimera.core.config.Config.items()=chimera.core.config.Config-class.html#items,Variable chimera.core.resources.ResourcesManager.items=chimera.core.resources.ResourcesManager-class.html#items,Method chimera.util.etree.ElementTree._ElementInterface.items()=chimera.util.etree.ElementTree._ElementInterface-class.html#items,Method chimera.util.image.Image.items()=chimera.util.image.Image-class.html#items"><a title="chimera.core.config.Config.items
+chimera.core.resources.ResourcesManager.items
+chimera.util.etree.ElementTree._ElementInterface.items
+chimera.util.image.Image.items" class="py-name" href="#" onclick="return doclink('link-18', 'items', 'link-18');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">v</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> </tt>
+</div></div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:02 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

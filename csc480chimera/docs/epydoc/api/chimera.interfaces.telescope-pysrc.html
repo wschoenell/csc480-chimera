@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.interfaces.telescope</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.interfaces-module.html">Package&nbsp;interfaces</a> ::
+        Module&nbsp;telescope
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.interfaces.telescope-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.interfaces.telescope-module.html">Module chimera.interfaces.telescope</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.interface=chimera.core.interface-module.html"><a title="chimera.core.interface" class="py-name" href="#" onclick="return doclink('link-2', 'interface', 'link-2');">interface</a></tt>  <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.interface.Interface=chimera.core.interface.Interface-class.html"><a title="chimera.core.interface.Interface" class="py-name" href="#" onclick="return doclink('link-3', 'Interface', 'link-3');">Interface</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.event=chimera.core.event-module.html,Function chimera.core.event.event()=chimera.core.event-module.html#event"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-6', 'event', 'link-6');">event</a></tt>      <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-7', 'event', 'link-6');">event</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-8', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-9', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-10', 'exceptions', 'link-10');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class chimera.core.exceptions.ChimeraException=chimera.core.exceptions.ChimeraException-class.html"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-11', 'ChimeraException', 'link-11');">ChimeraException</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-12" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-12', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-13', 'util', 'link-13');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">enum</tt>       <tt class="py-keyword">import</tt> <tt class="py-name">Enum</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-14" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-14', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Package chimera.interfaces=chimera.interfaces-module.html"><a title="chimera.interfaces" class="py-name" href="#" onclick="return doclink('link-15', 'interfaces', 'link-15');">interfaces</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Module chimera.interfaces.telescopedriver=chimera.interfaces.telescopedriver-module.html"><a title="chimera.interfaces.telescopedriver" class="py-name" href="#" onclick="return doclink('link-16', 'telescopedriver', 'link-16');">telescopedriver</a></tt> <tt class="py-keyword">import</tt> <tt id="link-17" class="py-name" targets="Variable chimera.interfaces.telescopedriver.SlewRate=chimera.interfaces.telescopedriver-module.html#SlewRate"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-17', 'SlewRate', 'link-17');">SlewRate</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="PositionOutsideLimitsException"></a><div id="PositionOutsideLimitsException-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="PositionOutsideLimitsException-toggle" onclick="return toggle('PositionOutsideLimitsException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.PositionOutsideLimitsException-class.html">PositionOutsideLimitsException</a> <tt class="py-op">(</tt><tt class="py-base-class">ChimeraException</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PositionOutsideLimitsException-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="PositionOutsideLimitsException-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="ITelescope"></a><div id="ITelescope-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="ITelescope-toggle" onclick="return toggle('ITelescope');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescope-class.html">ITelescope</a> <tt class="py-op">(</tt><tt class="py-base-class">Interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescope-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ITelescope-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    Telescope base interface.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-18" class="py-name" targets="Variable chimera.controllers.imageserver.imageserver.ImageServer.__config__=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__config__,Variable chimera.controllers.pointverify.PointVerify.__config__=chimera.controllers.pointverify.PointVerify-class.html#__config__,Variable chimera.controllers.reduction.chimera_pipe.Reduction.__config__=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__config__,Variable chimera.controllers.scheduler.controller.Controller.__config__=chimera.controllers.scheduler.controller.Controller-class.html#__config__,Variable chimera.controllers.xephem.XEphem.__config__=chimera.controllers.xephem.XEphem-class.html#__config__,Variable chimera.controllers.xmlrpc.XMLRPC.__config__=chimera.controllers.xmlrpc.XMLRPC-class.html#__config__,Variable chimera.core.site.Site.__config__=chimera.core.site.Site-class.html#__config__,Variable chimera.drivers.fakecamera.FakeCamera.__config__=chimera.drivers.fakecamera.FakeCamera-class.html#__config__,Variable chimera.drivers.faketelescope.FakeTelescope.__config__=chimera.drivers.faketelescope.FakeTelescope-class.html#__config__,Variable chimera.drivers.meade.Meade.__config__=chimera.drivers.meade.Meade-class.html#__config__,Variable chimera.drivers.theskytelescope.TheSkyTelescope.__config__=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__config__,Variable chimera.interfaces.autofocus.IAutofocus.__config__=chimera.interfaces.autofocus.IAutofocus-class.html#__config__,Variable chimera.interfaces.camera.ICamera.__config__=chimera.interfaces.camera.ICamera-class.html#__config__,Variable chimera.interfaces.cameradriver.ICameraDriver.__config__=chimera.interfaces.cameradriver.ICameraDriver-class.html#__config__,Variable chimera.interfaces.dome.IDome.__config__=chimera.interfaces.dome.IDome-class.html#__config__,Variable chimera.interfaces.domedriver.IDomeDriver.__config__=chimera.interfaces.domedriver.IDomeDriver-class.html#__config__,Variable chimera.interfaces.filterwheel.IFilterWheel.__config__=chimera.interfaces.filterwheel.IFilterWheel-class.html#__config__,Variable chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__=chimera.interfaces.filterwheeldriver.IFilterWheelDriver-class.html#__config__,Variable chimera.interfaces.focuser.IFocuser.__config__=chimera.interfaces.focuser.IFocuser-class.html#__config__,Variable chimera.interfaces.focuserdriver.IFocuserDriver.__config__=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#__config__,Variable chimera.interfaces.telescope.ITelescope.__config__=chimera.interfaces.telescope.ITelescope-class.html#__config__,Variable chimera.interfaces.telescope.ITelescopePark.__config__=chimera.interfaces.telescope.ITelescopePark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriver.__config__=chimera.interfaces.telescopedriver.ITelescopeDriver-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverPark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#__config__,Variable chimera.interfaces.weatherstation.IWeatherStation.__config__=chimera.interfaces.weatherstation.IWeatherStation-class.html#__config__"><a title="chimera.controllers.imageserver.imageserver.ImageServer.__config__
+chimera.controllers.pointverify.PointVerify.__config__
+chimera.controllers.reduction.chimera_pipe.Reduction.__config__
+chimera.controllers.scheduler.controller.Controller.__config__
+chimera.controllers.xephem.XEphem.__config__
+chimera.controllers.xmlrpc.XMLRPC.__config__
+chimera.core.site.Site.__config__
+chimera.drivers.fakecamera.FakeCamera.__config__
+chimera.drivers.faketelescope.FakeTelescope.__config__
+chimera.drivers.meade.Meade.__config__
+chimera.drivers.theskytelescope.TheSkyTelescope.__config__
+chimera.interfaces.autofocus.IAutofocus.__config__
+chimera.interfaces.camera.ICamera.__config__
+chimera.interfaces.cameradriver.ICameraDriver.__config__
+chimera.interfaces.dome.IDome.__config__
+chimera.interfaces.domedriver.IDomeDriver.__config__
+chimera.interfaces.filterwheel.IFilterWheel.__config__
+chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__
+chimera.interfaces.focuser.IFocuser.__config__
+chimera.interfaces.focuserdriver.IFocuserDriver.__config__
+chimera.interfaces.telescope.ITelescope.__config__
+chimera.interfaces.telescope.ITelescopePark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriver.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__
+chimera.interfaces.weatherstation.IWeatherStation.__config__" class="py-name" href="#" onclick="return doclink('link-18', '__config__', 'link-18');">__config__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"driver"</tt><tt class="py-op">:</tt> <tt class="py-string">"/FakeTelescope/0"</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                  <tt class="py-string">"limits"</tt><tt class="py-op">:</tt> <tt class="py-string">"limits.filename"</tt><tt class="py-op">,</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">                  <tt class="py-string">"model"</tt>           <tt class="py-op">:</tt> <tt class="py-string">"Fake Telescopes Inc."</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                  <tt class="py-string">"optics"</tt>          <tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-string">"Newtonian"</tt><tt class="py-op">,</tt> <tt class="py-string">"SCT"</tt><tt class="py-op">,</tt> <tt class="py-string">"RCT"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                  <tt class="py-string">"mount"</tt>           <tt class="py-op">:</tt> <tt class="py-string">"Mount type Inc."</tt><tt class="py-op">,</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                  <tt class="py-string">"aperture"</tt>        <tt class="py-op">:</tt> <tt class="py-number">100.0</tt><tt class="py-op">,</tt>  <tt class="py-comment"># mm</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">                  <tt class="py-string">"focal_length"</tt>    <tt class="py-op">:</tt> <tt class="py-number">1000.0</tt><tt class="py-op">,</tt> <tt class="py-comment"># mm</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                  <tt class="py-string">"focal_reduction"</tt> <tt class="py-op">:</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt>    <tt class="py-comment"># unit (ex., 0.5 for a half length focal reducer)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                  <tt class="py-op">}</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew"></a><div id="ITelescopeSlew-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="ITelescopeSlew-toggle" onclick="return toggle('ITelescopeSlew');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html">ITelescopeSlew</a> <tt class="py-op">(</tt><tt class="py-base-class">ITelescope</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ITelescopeSlew-expanded"><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-docstring">"""Basic interface for telescopes.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.slewToObject"></a><div id="ITelescopeSlew.slewToObject-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.slewToObject-toggle" onclick="return toggle('ITelescopeSlew.slewToObject');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#slewToObject">slewToObject</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.slewToObject-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.slewToObject-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-docstring">"""Slew the scope to the the coordinates of the given</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        object. Object name will be converted to a coordinate using a</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">        resolver like SIMBAD or NED.</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        @param name: Object name to slew to.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @type  name: str</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: Nothing.</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.slewToRaDec"></a><div id="ITelescopeSlew.slewToRaDec-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.slewToRaDec-toggle" onclick="return toggle('ITelescopeSlew.slewToRaDec');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#slewToRaDec">slewToRaDec</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.slewToRaDec-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.slewToRaDec-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-docstring">"""Slew the scope to the given equatorial coordinates.</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: the equatorial coordinates to slew to. It can</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        be given as a Position object or as a tuple with arguments to</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        Position.fromRaDec factory.</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        @type position: L{Position} or tuple</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: Nothing.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.slewToAltAz"></a><div id="ITelescopeSlew.slewToAltAz-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.slewToAltAz-toggle" onclick="return toggle('ITelescopeSlew.slewToAltAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#slewToAltAz">slewToAltAz</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.slewToAltAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.slewToAltAz-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-docstring">"""Slew the scope to the given local coordinates.</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: the local coordinates to slew to. It can be</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        given as a Position object or as a tuple with arguments to</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        Position.fromAltAz factory.</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        @type position: L{Position} or tuple</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: Nothing.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.abortSlew"></a><div id="ITelescopeSlew.abortSlew-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.abortSlew-toggle" onclick="return toggle('ITelescopeSlew.abortSlew');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#abortSlew">abortSlew</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.abortSlew-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.abortSlew-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-docstring">"""Try to abort the current slew.</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.isSlewing"></a><div id="ITelescopeSlew.isSlewing-def"><a name="L102"></a><tt class="py-lineno">102</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.isSlewing-toggle" onclick="return toggle('ITelescopeSlew.isSlewing');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#isSlewing">isSlewing</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.isSlewing-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.isSlewing-expanded"><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-docstring">"""Ask if the telescope is slewing right now.</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        @return: True if the telescope is slewing, False otherwise.</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: bool</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.moveEast"></a><div id="ITelescopeSlew.moveEast-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.moveEast-toggle" onclick="return toggle('ITelescopeSlew.moveEast');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#moveEast">moveEast</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt id="link-19" class="py-name"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-19', 'SlewRate', 'link-17');">SlewRate</a></tt><tt class="py-op">.</tt><tt class="py-name">MAX</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.moveEast-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.moveEast-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-docstring">"""Move the scope I{offset} arcseconds East (if offset positive, West</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">        otherwise)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">        @param offset: Arcseconds to move East.</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offset: int or float</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">        @param rate: Slew rate to be used when moving.</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">        @type  rate: L{SlewRate}</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        @note: float accepted only to make life easier, probably we can't handle such precision.</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.moveWest"></a><div id="ITelescopeSlew.moveWest-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.moveWest-toggle" onclick="return toggle('ITelescopeSlew.moveWest');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#moveWest">moveWest</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt id="link-20" class="py-name"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-20', 'SlewRate', 'link-17');">SlewRate</a></tt><tt class="py-op">.</tt><tt class="py-name">MAX</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.moveWest-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.moveWest-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-docstring">"""Move the scope I{offset} arcseconds West (if offset positive, East</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">        otherwise)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">        @param offset: Arcseconds to move West.</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offset: int or float</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">        @param rate: Slew rate to be used when moving.</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">        @type  rate: L{SlewRate}</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        @note: float accepted only to make life easier, probably we</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">        can't handle such precision.</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.moveNorth"></a><div id="ITelescopeSlew.moveNorth-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.moveNorth-toggle" onclick="return toggle('ITelescopeSlew.moveNorth');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#moveNorth">moveNorth</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt id="link-21" class="py-name"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-21', 'SlewRate', 'link-17');">SlewRate</a></tt><tt class="py-op">.</tt><tt class="py-name">MAX</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.moveNorth-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.moveNorth-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-docstring">"""Move the scope I{offset} arcseconds North (if offset positive, South</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">        otherwise)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">        @param offset: Arcseconds to move North.</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offset: int or float</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">        @param rate: Slew rate to be used when moving.</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">        @type  rate: L{SlewRate}</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">        @note: float accepted only to make life easier, probably we</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">        can't handle such precision.</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.moveSouth"></a><div id="ITelescopeSlew.moveSouth-def"><a name="L159"></a><tt class="py-lineno">159</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.moveSouth-toggle" onclick="return toggle('ITelescopeSlew.moveSouth');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#moveSouth">moveSouth</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt id="link-22" class="py-name"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-22', 'SlewRate', 'link-17');">SlewRate</a></tt><tt class="py-op">.</tt><tt class="py-name">MAX</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.moveSouth-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.moveSouth-expanded"><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-docstring">"""Move the scope {offset} arcseconds South (if offset positive, North</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">        otherwise)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">        @param offset: Arcseconds to move South.</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offset: int or float</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">        @param rate: Slew rate to be used when moving.</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        @type  rate: L{SlewRate}</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">        @note: float accepted only to make life easier, probably we</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">        can't handle such precision.</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.moveOffset"></a><div id="ITelescopeSlew.moveOffset-def"><a name="L176"></a><tt class="py-lineno">176</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.moveOffset-toggle" onclick="return toggle('ITelescopeSlew.moveOffset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#moveOffset">moveOffset</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offsetRA</tt><tt class="py-op">,</tt> <tt class="py-param">offsetDec</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt id="link-23" class="py-name"><a title="chimera.interfaces.telescopedriver.SlewRate" class="py-name" href="#" onclick="return doclink('link-23', 'SlewRate', 'link-17');">SlewRate</a></tt><tt class="py-op">.</tt><tt class="py-name">GUIDE</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.moveOffset-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.moveOffset-expanded"><a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring">        @param offsetRA: Arcseconds to move in RA.</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offsetDec: int or float</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">        @param offsetDec: Arcseconds to move in Dec</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">        @type  offsetDec: int or float</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-docstring">        @param rate: Slew rate to be used when moving.</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-docstring">        @type  rate: L{SlewRate}</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        @note: float accepted only to make life easier, probably we</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        can't handle such precision.</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getRa"></a><div id="ITelescopeSlew.getRa-def"><a name="L194"></a><tt class="py-lineno">194</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getRa-toggle" onclick="return toggle('ITelescopeSlew.getRa');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getRa">getRa</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getRa-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getRa-expanded"><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope Right Ascension.</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current Right Ascension.</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Coord}</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getDec"></a><div id="ITelescopeSlew.getDec-def"><a name="L201"></a><tt class="py-lineno">201</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getDec-toggle" onclick="return toggle('ITelescopeSlew.getDec');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getDec">getDec</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getDec-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getDec-expanded"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope Declination.</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current Declination.</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Coord}</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getAz"></a><div id="ITelescopeSlew.getAz-def"><a name="L208"></a><tt class="py-lineno">208</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getAz-toggle" onclick="return toggle('ITelescopeSlew.getAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getAz">getAz</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getAz-expanded"><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope Azimuth.</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current Azimuth.</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Coord}</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getAlt"></a><div id="ITelescopeSlew.getAlt-def"><a name="L215"></a><tt class="py-lineno">215</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getAlt-toggle" onclick="return toggle('ITelescopeSlew.getAlt');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getAlt">getAlt</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getAlt-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getAlt-expanded"><a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope Altitude.</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current Alt</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Coord}</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getPositionRaDec"></a><div id="ITelescopeSlew.getPositionRaDec-def"><a name="L222"></a><tt class="py-lineno">222</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getPositionRaDec-toggle" onclick="return toggle('ITelescopeSlew.getPositionRaDec');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getPositionRaDec">getPositionRaDec</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getPositionRaDec-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getPositionRaDec-expanded"><a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current position of the telescope in equatorial coordinates.</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current position (ra, dec).</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Position}</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getPositionAltAz"></a><div id="ITelescopeSlew.getPositionAltAz-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getPositionAltAz-toggle" onclick="return toggle('ITelescopeSlew.getPositionAltAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getPositionAltAz">getPositionAltAz</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getPositionAltAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getPositionAltAz-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current position of the telescope in local coordinates.</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current position (alt, az).</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Position}</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getTargetRaDec"></a><div id="ITelescopeSlew.getTargetRaDec-def"><a name="L236"></a><tt class="py-lineno">236</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getTargetRaDec-toggle" onclick="return toggle('ITelescopeSlew.getTargetRaDec');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getTargetRaDec">getTargetRaDec</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getTargetRaDec-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getTargetRaDec-expanded"><a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope target in equatorial coordinates.</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current target (ra, dec).</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Position}</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSlew.getTargetAltAz"></a><div id="ITelescopeSlew.getTargetAltAz-def"><a name="L243"></a><tt class="py-lineno">243</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.getTargetAltAz-toggle" onclick="return toggle('ITelescopeSlew.getTargetAltAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#getTargetAltAz">getTargetAltAz</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.getTargetAltAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.getTargetAltAz-expanded"><a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the current telescope target in local coordinates.</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Telescope's current target (alt, az).</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Position}</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopeSlew.slewBegin"></a><div id="ITelescopeSlew.slewBegin-def"><a name="L251"></a><tt class="py-lineno">251</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.slewBegin-toggle" onclick="return toggle('ITelescopeSlew.slewBegin');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#slewBegin">slewBegin</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">target</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.slewBegin-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.slewBegin-expanded"><a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">        <tt class="py-docstring">"""Indicates that a slew operation started.</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"><tt class="py-docstring">        @param target: The target position where the telescope will</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring">        slew to.</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring">        @type target: L{Position}</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopeSlew.slewComplete"></a><div id="ITelescopeSlew.slewComplete-def"><a name="L261"></a><tt class="py-lineno">261</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.slewComplete-toggle" onclick="return toggle('ITelescopeSlew.slewComplete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#slewComplete">slewComplete</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.slewComplete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.slewComplete-expanded"><a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">        <tt class="py-docstring">"""Indicates that the last slew operation finished without</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"><tt class="py-docstring">        being aborted. This event will be fired even when problems</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"><tt class="py-docstring">        impedes complete slew (altitude limits, for example).</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: The telescope current position when the slew finished..</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position}</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopeSlew.abortComplete"></a><div id="ITelescopeSlew.abortComplete-def"><a name="L271"></a><tt class="py-lineno">271</tt> <a class="py-toggle" href="#" id="ITelescopeSlew.abortComplete-toggle" onclick="return toggle('ITelescopeSlew.abortComplete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSlew-class.html#abortComplete">abortComplete</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSlew.abortComplete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSlew.abortComplete-expanded"><a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-docstring">"""Indicates that the last slew operation was aborted.</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: The telescope position when the scope aborted.</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position}</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line"> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSync"></a><div id="ITelescopeSync-def"><a name="L279"></a><tt class="py-lineno">279</tt> <a class="py-toggle" href="#" id="ITelescopeSync-toggle" onclick="return toggle('ITelescopeSync');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSync-class.html">ITelescopeSync</a> <tt class="py-op">(</tt><tt class="py-base-class">ITelescope</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSync-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ITelescopeSync-expanded"><a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">    <tt class="py-docstring">"""Telescope with sync support.</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSync.syncObject"></a><div id="ITelescopeSync.syncObject-def"><a name="L284"></a><tt class="py-lineno">284</tt> <a class="py-toggle" href="#" id="ITelescopeSync.syncObject-toggle" onclick="return toggle('ITelescopeSync.syncObject');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSync-class.html#syncObject">syncObject</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSync.syncObject-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSync.syncObject-expanded"><a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">        <tt class="py-docstring">"""Synchronize the telescope using the coordinates of the</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-docstring">        given object.</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"><tt class="py-docstring">        @param name: Object name to sync in.</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"><tt class="py-docstring">        @type  name: str</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSync.syncRaDec"></a><div id="ITelescopeSync.syncRaDec-def"><a name="L292"></a><tt class="py-lineno">292</tt> <a class="py-toggle" href="#" id="ITelescopeSync.syncRaDec-toggle" onclick="return toggle('ITelescopeSync.syncRaDec');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSync-class.html#syncRaDec">syncRaDec</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSync.syncRaDec-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSync.syncRaDec-expanded"><a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-docstring">"""Synchronizes the telescope on the given equatorial</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"><tt class="py-docstring">        coordinates.</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line"><tt class="py-docstring">        This mean different things to different telescopes, but the</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"><tt class="py-docstring">        general idea is that after this command, the logical position</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line"><tt class="py-docstring">        that the telescope will return when asked about will be equal</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"><tt class="py-docstring">        to the given position.</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: coordinates to sync on as a Position or a</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"><tt class="py-docstring">        tuple with arguments to Position.fromRaDec.</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position} or tuple</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: Nothing</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeSync.syncAltAz"></a><div id="ITelescopeSync.syncAltAz-def"><a name="L310"></a><tt class="py-lineno">310</tt> <a class="py-toggle" href="#" id="ITelescopeSync.syncAltAz-toggle" onclick="return toggle('ITelescopeSync.syncAltAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSync-class.html#syncAltAz">syncAltAz</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSync.syncAltAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSync.syncAltAz-expanded"><a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">        <tt class="py-docstring">"""Synchronizes the telescope on the given local coordinates.</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">        See L{syncRaDec} for more information.</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: coordinates to sync on as a Position or a</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"><tt class="py-docstring">        tuple with arguments to Position.fromAltAz.</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position} or tuple</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: Nothing</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopeSync.syncComplete"></a><div id="ITelescopeSync.syncComplete-def"><a name="L325"></a><tt class="py-lineno">325</tt> <a class="py-toggle" href="#" id="ITelescopeSync.syncComplete-toggle" onclick="return toggle('ITelescopeSync.syncComplete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeSync-class.html#syncComplete">syncComplete</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeSync.syncComplete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeSync.syncComplete-expanded"><a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">        <tt class="py-docstring">"""Fired when a synchronization operation finishes.</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: The position where the telescope synced in.</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position}</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopePark"></a><div id="ITelescopePark-def"><a name="L333"></a><tt class="py-lineno">333</tt> <a class="py-toggle" href="#" id="ITelescopePark-toggle" onclick="return toggle('ITelescopePark');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html">ITelescopePark</a> <tt class="py-op">(</tt><tt class="py-base-class">ITelescope</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ITelescopePark-expanded"><a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">    <tt class="py-docstring">"""Telescope with park/unpark support.</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line"> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">    <tt id="link-24" class="py-name"><a title="chimera.controllers.imageserver.imageserver.ImageServer.__config__
+chimera.controllers.pointverify.PointVerify.__config__
+chimera.controllers.reduction.chimera_pipe.Reduction.__config__
+chimera.controllers.scheduler.controller.Controller.__config__
+chimera.controllers.xephem.XEphem.__config__
+chimera.controllers.xmlrpc.XMLRPC.__config__
+chimera.core.site.Site.__config__
+chimera.drivers.fakecamera.FakeCamera.__config__
+chimera.drivers.faketelescope.FakeTelescope.__config__
+chimera.drivers.meade.Meade.__config__
+chimera.drivers.theskytelescope.TheSkyTelescope.__config__
+chimera.interfaces.autofocus.IAutofocus.__config__
+chimera.interfaces.camera.ICamera.__config__
+chimera.interfaces.cameradriver.ICameraDriver.__config__
+chimera.interfaces.dome.IDome.__config__
+chimera.interfaces.domedriver.IDomeDriver.__config__
+chimera.interfaces.filterwheel.IFilterWheel.__config__
+chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__
+chimera.interfaces.focuser.IFocuser.__config__
+chimera.interfaces.focuserdriver.IFocuserDriver.__config__
+chimera.interfaces.telescope.ITelescope.__config__
+chimera.interfaces.telescope.ITelescopePark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriver.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__
+chimera.interfaces.weatherstation.IWeatherStation.__config__" class="py-name" href="#" onclick="return doclink('link-24', '__config__', 'link-18');">__config__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"default_park_position_az"</tt> <tt class="py-op">:</tt> <tt class="py-number">180.0</tt><tt class="py-op">,</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">                  <tt class="py-string">"default_park_position_alt"</tt><tt class="py-op">:</tt> <tt class="py-number">90.0</tt><tt class="py-op">}</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopePark.park"></a><div id="ITelescopePark.park-def"><a name="L341"></a><tt class="py-lineno">341</tt> <a class="py-toggle" href="#" id="ITelescopePark.park-toggle" onclick="return toggle('ITelescopePark.park');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#park">park</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.park-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.park-expanded"><a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">        <tt class="py-docstring">"""Park the telescope on the actual saved park position</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"><tt class="py-docstring">        (L{setParkPosition}) or on the default position if none</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line"><tt class="py-docstring">        setted.</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"><tt class="py-docstring">        When parked, the telescope will not track objects and may be</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"><tt class="py-docstring">        turned off (if the scope was able to).</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopePark.unpark"></a><div id="ITelescopePark.unpark-def"><a name="L353"></a><tt class="py-lineno">353</tt> <a class="py-toggle" href="#" id="ITelescopePark.unpark-toggle" onclick="return toggle('ITelescopePark.unpark');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#unpark">unpark</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.unpark-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.unpark-expanded"><a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line">        <tt class="py-docstring">"""Wake up the telescope of the last park operation.</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopePark.isParked"></a><div id="ITelescopePark.isParked-def"><a name="L360"></a><tt class="py-lineno">360</tt> <a class="py-toggle" href="#" id="ITelescopePark.isParked-toggle" onclick="return toggle('ITelescopePark.isParked');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#isParked">isParked</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.isParked-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.isParked-expanded"><a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line">        <tt class="py-docstring">"""Ask if the telescope is at park position.</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line"><tt class="py-docstring">        @return: True if the telescope is parked, False otherwise.</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: bool</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopePark.setParkPosition"></a><div id="ITelescopePark.setParkPosition-def"><a name="L367"></a><tt class="py-lineno">367</tt> <a class="py-toggle" href="#" id="ITelescopePark.setParkPosition-toggle" onclick="return toggle('ITelescopePark.setParkPosition');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#setParkPosition">setParkPosition</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.setParkPosition-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.setParkPosition-expanded"><a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line">        <tt class="py-docstring">"""Defines where the scope will park when asked to.</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"><tt class="py-docstring">        @param position: local coordinates to aprk the scope</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line"><tt class="py-docstring">        @type  position: L{Position}</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing.</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopePark.parkComplete"></a><div id="ITelescopePark.parkComplete-def"><a name="L378"></a><tt class="py-lineno">378</tt> <a class="py-toggle" href="#" id="ITelescopePark.parkComplete-toggle" onclick="return toggle('ITelescopePark.parkComplete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#parkComplete">parkComplete</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.parkComplete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.parkComplete-expanded"><a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line">        <tt class="py-docstring">"""Indicates that the scope has parked successfuly.</tt> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"> </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="ITelescopePark.unparkComplete"></a><div id="ITelescopePark.unparkComplete-def"><a name="L383"></a><tt class="py-lineno">383</tt> <a class="py-toggle" href="#" id="ITelescopePark.unparkComplete-toggle" onclick="return toggle('ITelescopePark.unparkComplete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopePark-class.html#unparkComplete">unparkComplete</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopePark.unparkComplete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopePark.unparkComplete-expanded"><a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line">        <tt class="py-docstring">"""Indicates that the scope has unparked (waked up)</tt> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line"><tt class="py-docstring">        successfuly.</tt> </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeTracking"></a><div id="ITelescopeTracking-def"><a name="L388"></a><tt class="py-lineno">388</tt> <a class="py-toggle" href="#" id="ITelescopeTracking-toggle" onclick="return toggle('ITelescopeTracking');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeTracking-class.html">ITelescopeTracking</a> <tt class="py-op">(</tt><tt class="py-base-class">ITelescope</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeTracking-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ITelescopeTracking-expanded"><a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line"><tt class="py-docstring">    Telescope with support to start/stop tracking.</tt> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeTracking.startTracking"></a><div id="ITelescopeTracking.startTracking-def"><a name="L393"></a><tt class="py-lineno">393</tt> <a class="py-toggle" href="#" id="ITelescopeTracking.startTracking-toggle" onclick="return toggle('ITelescopeTracking.startTracking');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeTracking-class.html#startTracking">startTracking</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeTracking.startTracking-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeTracking.startTracking-expanded"><a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line"><tt class="py-docstring">        Start telescope tracking.</tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing</tt> </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeTracking.stopTracking"></a><div id="ITelescopeTracking.stopTracking-def"><a name="L401"></a><tt class="py-lineno">401</tt> <a class="py-toggle" href="#" id="ITelescopeTracking.stopTracking-toggle" onclick="return toggle('ITelescopeTracking.stopTracking');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeTracking-class.html#stopTracking">stopTracking</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeTracking.stopTracking-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeTracking.stopTracking-expanded"><a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L403"></a><tt class="py-lineno">403</tt>  <tt class="py-line"><tt class="py-docstring">        Stop telescope tracking.</tt> </tt>
+<a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L405"></a><tt class="py-lineno">405</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Nothing</tt> </tt>
+<a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line"> </tt>
+<a name="ITelescopeTracking.isTracking"></a><div id="ITelescopeTracking.isTracking-def"><a name="L409"></a><tt class="py-lineno">409</tt> <a class="py-toggle" href="#" id="ITelescopeTracking.isTracking-toggle" onclick="return toggle('ITelescopeTracking.isTracking');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.telescope.ITelescopeTracking-class.html#isTracking">isTracking</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ITelescopeTracking.isTracking-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ITelescopeTracking.isTracking-expanded"><a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line"><tt class="py-docstring">        Ask if the telescope is tracking.</tt> </tt>
+<a name="L412"></a><tt class="py-lineno">412</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L413"></a><tt class="py-lineno">413</tt>  <tt class="py-line"><tt class="py-docstring">        @return: True if the telescope is tracking, False otherwise.</tt> </tt>
+<a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: bool</tt> </tt>
+<a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:04 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

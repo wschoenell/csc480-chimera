@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.instruments.camera</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.instruments-module.html">Package&nbsp;instruments</a> ::
+        Module&nbsp;camera
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.instruments.camera-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.instruments.camera-module.html">Module chimera.instruments.camera</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">threading</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-0', 'util', 'link-0');">util</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-1', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-2', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Module chimera.core.chimeraobject=chimera.core.chimeraobject-module.html"><a title="chimera.core.chimeraobject" class="py-name" href="#" onclick="return doclink('link-3', 'chimeraobject', 'link-3');">chimeraobject</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Class chimera.core.chimeraobject.ChimeraObject=chimera.core.chimeraobject.ChimeraObject-class.html"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-4', 'ChimeraObject', 'link-4');">ChimeraObject</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-5', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Package chimera.interfaces=chimera.interfaces-module.html"><a title="chimera.interfaces" class="py-name" href="#" onclick="return doclink('link-6', 'interfaces', 'link-6');">interfaces</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module chimera.instruments.camera=chimera.instruments.camera-module.html,Module chimera.interfaces.camera=chimera.interfaces.camera-module.html"><a title="chimera.instruments.camera
+chimera.interfaces.camera" class="py-name" href="#" onclick="return doclink('link-7', 'camera', 'link-7');">camera</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">(</tt><tt id="link-8" class="py-name" targets="Class chimera.interfaces.camera.ICameraExpose=chimera.interfaces.camera.ICameraExpose-class.html"><a title="chimera.interfaces.camera.ICameraExpose" class="py-name" href="#" onclick="return doclink('link-8', 'ICameraExpose', 'link-8');">ICameraExpose</a></tt><tt class="py-op">,</tt> <tt id="link-9" class="py-name" targets="Class chimera.interfaces.camera.ICameraTemperature=chimera.interfaces.camera.ICameraTemperature-class.html"><a title="chimera.interfaces.camera.ICameraTemperature" class="py-name" href="#" onclick="return doclink('link-9', 'ICameraTemperature', 'link-9');">ICameraTemperature</a></tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name" targets="Class chimera.interfaces.camera.ICameraInformation=chimera.interfaces.camera.ICameraInformation-class.html"><a title="chimera.interfaces.camera.ICameraInformation" class="py-name" href="#" onclick="return doclink('link-10', 'ICameraInformation', 'link-10');">ICameraInformation</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-11', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Package chimera.controllers=chimera.controllers-module.html,Static Method chimera.core.path.ChimeraPath.controllers()=chimera.core.path.ChimeraPath-class.html#controllers"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-12', 'controllers', 'link-12');">controllers</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Package chimera.controllers.imageserver=chimera.controllers.imageserver-module.html,Module chimera.controllers.imageserver.imageserver=chimera.controllers.imageserver.imageserver-module.html"><a title="chimera.controllers.imageserver
+chimera.controllers.imageserver.imageserver" class="py-name" href="#" onclick="return doclink('link-13', 'imageserver', 'link-13');">imageserver</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Module chimera.controllers.imageserver.imagerequest=chimera.controllers.imageserver.imagerequest-module.html"><a title="chimera.controllers.imageserver.imagerequest" class="py-name" href="#" onclick="return doclink('link-14', 'imagerequest', 'link-14');">imagerequest</a></tt> <tt class="py-keyword">import</tt> <tt id="link-15" class="py-name" targets="Class chimera.controllers.imageserver.imagerequest.ImageRequest=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest" class="py-name" href="#" onclick="return doclink('link-15', 'ImageRequest', 'link-15');">ImageRequest</a></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-16" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-16', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-17', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-18', 'exceptions', 'link-18');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-19" class="py-name" targets="Class chimera.core.exceptions.ChimeraValueError=chimera.core.exceptions.ChimeraValueError-class.html"><a title="chimera.core.exceptions.ChimeraValueError" class="py-name" href="#" onclick="return doclink('link-19', 'ChimeraValueError', 'link-19');">ChimeraValueError</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-20" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-20', 'chimera', 'link-1');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-21', 'core', 'link-2');">core</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Module chimera.core.lock=chimera.core.lock-module.html,Function chimera.core.lock.lock()=chimera.core.lock-module.html#lock"><a title="chimera.core.lock
+chimera.core.lock.lock" class="py-name" href="#" onclick="return doclink('link-22', 'lock', 'link-22');">lock</a></tt> <tt class="py-keyword">import</tt> <tt id="link-23" class="py-name"><a title="chimera.core.lock
+chimera.core.lock.lock" class="py-name" href="#" onclick="return doclink('link-23', 'lock', 'link-22');">lock</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="Camera"></a><div id="Camera-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="Camera-toggle" onclick="return toggle('Camera');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html">Camera</a> <tt class="py-op">(</tt><tt class="py-base-class">ChimeraObject</tt><tt class="py-op">,</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">              <tt class="py-base-class">ICameraExpose</tt><tt class="py-op">,</tt> <tt class="py-base-class">ICameraTemperature</tt><tt class="py-op">,</tt> <tt class="py-base-class">ICameraInformation</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Camera-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="Camera.__init__"></a><div id="Camera.__init__-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="Camera.__init__-toggle" onclick="return toggle('Camera.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.__init__-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt id="link-24" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-24', 'ChimeraObject', 'link-4');">ChimeraObject</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method chimera.controllers.autofocus.Autofocus.__init__()=chimera.controllers.autofocus.Autofocus-class.html#__init__,Method chimera.controllers.autofocus.FocusFit.__init__()=chimera.controllers.autofocus.FocusFit-class.html#__init__,Method chimera.controllers.console.command.Command.__init__()=chimera.controllers.console.command.Command-class.html#__init__,Method chimera.controllers.console.command.HighLevelCommand.__init__()=chimera.controllers.console.command.HighLevelCommand-class.html#__init__,Method chimera.controllers.console.commander.Commander.__init__()=chimera.controllers.console.commander.Commander-class.html#__init__,Method chimera.controllers.console.commands.alias.AliasCommand.__init__()=chimera.controllers.console.commands.alias.AliasCommand-class.html#__init__,Method chimera.controllers.console.commands.object.ObjectCommand.__init__()=chimera.controllers.console.commands.object.ObjectCommand-class.html#__init__,Method chimera.controllers.console.commands.quit.QuitCommand.__init__()=chimera.controllers.console.commands.quit.QuitCommand-class.html#__init__,Method chimera.controllers.console.commands.site.SiteCommand.__init__()=chimera.controllers.console.commands.site.SiteCommand-class.html#__init__,Method chimera.controllers.console.commands.unalias.UnaliasCommand.__init__()=chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#__init__,Method chimera.controllers.console.console.Console.__init__()=chimera.controllers.console.console.Console-class.html#__init__,Method chimera.controllers.console.controller._ConsoleControllerSingleton.__init__()=chimera.controllers.console.controller._ConsoleControllerSingleton-class.html#__init__,Method chimera.controllers.console.message.Config.__init__()=chimera.controllers.console.message.Config-class.html#__init__,Method chimera.controllers.console.message.Error.__init__()=chimera.controllers.console.message.Error-class.html#__init__,Method chimera.controllers.console.message.Hint.__init__()=chimera.controllers.console.message.Hint-class.html#__init__,Method chimera.controllers.console.message.Message.__init__()=chimera.controllers.console.message.Message-class.html#__init__,Method chimera.controllers.console.namespace.Namespace.__init__()=chimera.controllers.console.namespace.Namespace-class.html#__init__,Method chimera.controllers.extinction.Extinction.__init__()=chimera.controllers.extinction.Extinction-class.html#__init__,Method chimera.controllers.imageserver.imagerequest.ImageRequest.__init__()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#__init__,Method chimera.controllers.imageserver.imageserver.ImageServer.__init__()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__init__,Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#__init__,Method chimera.controllers.pointverify.PointVerify.__init__()=chimera.controllers.pointverify.PointVerify-class.html#__init__,Method chimera.controllers.reduction.calibration.Calibration.__init__()=chimera.controllers.reduction.calibration.Calibration-class.html#__init__,Method chimera.controllers.reduction.chimera_pipe.Reduction.__init__()=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__init__,Method chimera.controllers.scheduler.constraints.Constraints.__init__()=chimera.controllers.scheduler.constraints.Constraints-class.html#__init__,Method chimera.controllers.scheduler.constraints.IConstraint.__init__()=chimera.controllers.scheduler.constraints.IConstraint-class.html#__init__,Method chimera.controllers.scheduler.controller.Controller.__init__()=chimera.controllers.scheduler.controller.Controller-class.html#__init__,Method chimera.controllers.scheduler.machine.Machine.__init__()=chimera.controllers.scheduler.machine.Machine-class.html#__init__,Method chimera.controllers.scheduler.sequential.SequentialScheduler.__init__()=chimera.controllers.scheduler.sequential.SequentialScheduler-class.html#__init__,Method chimera.controllers.site.main.SiteController.__init__()=chimera.controllers.site.main.SiteController-class.html#__init__,Method chimera.controllers.xephem.XEphem.__init__()=chimera.controllers.xephem.XEphem-class.html#__init__,Method chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__()=chimera.controllers.xmlrpc.ChimeraXMLDispatcher-class.html#__init__,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#__init__,Method chimera.controllers.xmlrpc.XMLRPC.__init__()=chimera.controllers.xmlrpc.XMLRPC-class.html#__init__,Method chimera.controllers.xmlrpc.serverThread.__init__()=chimera.controllers.xmlrpc.serverThread-class.html#__init__,Method chimera.core.async.BeginDispatcher.__init__()=chimera.core.async.BeginDispatcher-class.html#__init__,Method chimera.core.async.EndDispatcher.__init__()=chimera.core.async.EndDispatcher-class.html#__init__,Method chimera.core.chimeraobject.ChimeraObject.__init__()=chimera.core.chimeraobject.ChimeraObject-class.html#__init__,Method chimera.core.classloader.ClassLoader.__init__()=chimera.core.classloader.ClassLoader-class.html#__init__,Method chimera.core.cli.CLIValues.__init__()=chimera.core.cli.CLIValues-class.html#__init__,Method chimera.core.cli.ChimeraCLI.__init__()=chimera.core.cli.ChimeraCLI-class.html#__init__,Method chimera.core.cli.Option.__init__()=chimera.core.cli.Option-class.html#__init__,Method chimera.core.config.BoolChecker.__init__()=chimera.core.config.BoolChecker-class.html#__init__,Method chimera.core.config.Config.__init__()=chimera.core.config.Config-class.html#__init__,Method chimera.core.config.CoordChecker.__init__()=chimera.core.config.CoordChecker-class.html#__init__,Method chimera.core.config.CoordOption.__init__()=chimera.core.config.CoordOption-class.html#__init__,Method chimera.core.config.EnumChecker.__init__()=chimera.core.config.EnumChecker-class.html#__init__,Method chimera.core.config.FloatChecker.__init__()=chimera.core.config.FloatChecker-class.html#__init__,Method chimera.core.config.IgnoreChecker.__init__()=chimera.core.config.IgnoreChecker-class.html#__init__,Method chimera.core.config.IntChecker.__init__()=chimera.core.config.IntChecker-class.html#__init__,Method chimera.core.config.Option.__init__()=chimera.core.config.Option-class.html#__init__,Method chimera.core.config.OptionsChecker.__init__()=chimera.core.config.OptionsChecker-class.html#__init__,Method chimera.core.config.RangeChecker.__init__()=chimera.core.config.RangeChecker-class.html#__init__,Method chimera.core.config.StringChecker.__init__()=chimera.core.config.StringChecker-class.html#__init__,Method chimera.core.eventsproxy.EventsProxy.__init__()=chimera.core.eventsproxy.EventsProxy-class.html#__init__,Method chimera.core.eventwrapper.EventWrapperDispatcher.__init__()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#__init__,Method chimera.core.exceptions.ChimeraException.__init__()=chimera.core.exceptions.ChimeraException-class.html#__init__,Method chimera.core.location.Location.__init__()=chimera.core.location.Location-class.html#__init__,Method chimera.core.lockwrapper.LockWrapper.__init__()=chimera.core.lockwrapper.LockWrapper-class.html#__init__,Method chimera.core.lockwrapper.LockWrapperDispatcher.__init__()=chimera.core.lockwrapper.LockWrapperDispatcher-class.html#__init__,Method chimera.core.log.ChimeraFormatter.__init__()=chimera.core.log.ChimeraFormatter-class.html#__init__,Method chimera.core.manager.Manager.__init__()=chimera.core.manager.Manager-class.html#__init__,Method chimera.core.manager.ManagerAdapter.__init__()=chimera.core.manager.ManagerAdapter-class.html#__init__,Method chimera.core.managerbeacon.ManagerBeacon.__init__()=chimera.core.managerbeacon.ManagerBeacon-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapper.__init__()=chimera.core.methodwrapper.MethodWrapper-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapperDispatcher.__init__()=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__init__,Method chimera.core.monitor.Monitor.__init__()=chimera.core.monitor.Monitor-class.html#__init__,Method chimera.core.proxy.Proxy.__init__()=chimera.core.proxy.Proxy-class.html#__init__,Method chimera.core.proxy.ProxyMethod.__init__()=chimera.core.proxy.ProxyMethod-class.html#__init__,Method chimera.core.remoteobject.RemoteObject.__init__()=chimera.core.remoteobject.RemoteObject-class.html#__init__,Method chimera.core.resources.Resource.__init__()=chimera.core.resources.Resource-class.html#__init__,Method chimera.core.resources.ResourcesManager.__init__()=chimera.core.resources.ResourcesManager-class.html#__init__,Method chimera.core.rwlock.ReadWriteLock.__init__()=chimera.core.rwlock.ReadWriteLock-class.html#__init__,Method chimera.core.site.AstroDate.__init__()=chimera.core.site.AstroDate-class.html#__init__,Method chimera.core.site.Site.__init__()=chimera.core.site.Site-class.html#__init__,Method chimera.core.systemconfig.SystemConfig.__init__()=chimera.core.systemconfig.SystemConfig-class.html#__init__,Method chimera.core.tests.managerhelper.ManagerHelper.__init__()=chimera.core.tests.managerhelper.ManagerHelper-class.html#__init__,Method chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__()=chimera.core.tests.managerhelperwitherror.ManagerHelperWithError-class.html#__init__,Method chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__()=chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException-class.html#__init__,Method chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__()=chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException-class.html#__init__,Method chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__()=chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException-class.html#__init__,Method chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__()=chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException-class.html#__init__,Method chimera.core.tests.test_events.Publisher.__init__()=chimera.core.tests.test_events.Publisher-class.html#__init__,Method chimera.core.tests.test_events.Subscriber.__init__()=chimera.core.tests.test_events.Subscriber-class.html#__init__,Method chimera.core.tests.test_manager.Simple.__init__()=chimera.core.tests.test_manager.Simple-class.html#__init__,Method chimera.core.tests.test_resources.TestResources.__init__()=chimera.core.tests.test_resources.TestResources-class.html#__init__,Method chimera.core.threads.ThreadPool.__init__()=chimera.core.threads.ThreadPool-class.html#__init__,Method chimera.core.threads.ThreadPoolThread.__init__()=chimera.core.threads.ThreadPoolThread-class.html#__init__,Method chimera.drivers.domelna40cm.DomeLNA40cm.__init__()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__init__,Method chimera.drivers.fakecamera.FakeCamera.__init__()=chimera.drivers.fakecamera.FakeCamera-class.html#__init__,Method chimera.drivers.fakedome.FakeDome.__init__()=chimera.drivers.fakedome.FakeDome-class.html#__init__,Method chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__()=chimera.drivers.fakefilterwheel.FakeFilterWheel-class.html#__init__,Method chimera.drivers.fakefocuser.FakeFocuser.__init__()=chimera.drivers.fakefocuser.FakeFocuser-class.html#__init__,Method chimera.drivers.faketelescope.FakeTelescope.__init__()=chimera.drivers.faketelescope.FakeTelescope-class.html#__init__,Method chimera.drivers.meade.Meade.__init__()=chimera.drivers.meade.Meade-class.html#__init__,Method chimera.drivers.optectcfs.OptecTCFS.__init__()=chimera.drivers.optectcfs.OptecTCFS-class.html#__init__,Method chimera.drivers.remoteclient.RemoteClient.__init__()=chimera.drivers.remoteclient.RemoteClient-class.html#__init__,Method chimera.drivers.remoteclient.RemoteMethodWrapper.__init__()=chimera.drivers.remoteclient.RemoteMethodWrapper-class.html#__init__,Method chimera.drivers.sbig.sbig.SBIG.__init__()=chimera.drivers.sbig.sbig.SBIG-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGException.__init__()=chimera.drivers.sbig.sbigdrv.SBIGException-class.html#__init__,Method chimera.drivers.theskytelescope.TheSkyTelescope.__init__()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__init__,Method chimera.instruments.camera.Camera.__init__()=chimera.instruments.camera.Camera-class.html#__init__,Method chimera.instruments.dome.Dome.__init__()=chimera.instruments.dome.Dome-class.html#__init__,Method chimera.instruments.filterwheel.FilterWheel.__init__()=chimera.instruments.filterwheel.FilterWheel-class.html#__init__,Method chimera.instruments.focuser.Focuser.__init__()=chimera.instruments.focuser.Focuser-class.html#__init__,Method chimera.instruments.telescope.Telescope.__init__()=chimera.instruments.telescope.Telescope-class.html#__init__,Method chimera.interfaces.lifecycle.ILifeCycle.__init__()=chimera.interfaces.lifecycle.ILifeCycle-class.html#__init__,Method chimera.util.catalogs.landolt.Landolt.__init__()=chimera.util.catalogs.landolt.Landolt-class.html#__init__,Method chimera.util.catalogs.ppm.PPM.__init__()=chimera.util.catalogs.ppm.PPM-class.html#__init__,Method chimera.util.catalogs.ucac2.UCAC2.__init__()=chimera.util.catalogs.ucac2.UCAC2-class.html#__init__,Method chimera.util.coord.Coord.__init__()=chimera.util.coord.Coord-class.html#__init__,Method chimera.util.ds9.DS9.__init__()=chimera.util.ds9.DS9-class.html#__init__,Method chimera.util.etree.ElementPath.Path.__init__()=chimera.util.etree.ElementPath.Path-class.html#__init__,Method chimera.util.etree.ElementTree.ElementTree.__init__()=chimera.util.etree.ElementTree.ElementTree-class.html#__init__,Method chimera.util.etree.ElementTree.QName.__init__()=chimera.util.etree.ElementTree.QName-class.html#__init__,Method chimera.util.etree.ElementTree.TreeBuilder.__init__()=chimera.util.etree.ElementTree.TreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree.XMLTreeBuilder.__init__()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree._ElementInterface.__init__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__init__,Method chimera.util.etree.ElementTree._iterparse.__init__()=chimera.util.etree.ElementTree._iterparse-class.html#__init__,Method chimera.util.filenamesequence.FilenameSequence.__init__()=chimera.util.filenamesequence.FilenameSequence-class.html#__init__,Method chimera.util.image.Image.__init__()=chimera.util.image.Image-class.html#__init__,Method chimera.util.position.Position.__init__()=chimera.util.position.Position-class.html#__init__,Method chimera.util.sexcatalog.SExtractorfile.__init__()=chimera.util.sexcatalog.SExtractorfile-class.html#__init__,Method chimera.util.sextractor.SExtractor.__init__()=chimera.util.sextractor.SExtractor-class.html#__init__,Method chimera.util.simbad.Simbad.__init__()=chimera.util.simbad.Simbad-class.html#__init__,Method chimera.util.telescopelimits.TelescopeLimits.__init__()=chimera.util.telescopelimits.TelescopeLimits-class.html#__init__,Method chimera.util.vizquery.VizQuery.__init__()=chimera.util.vizquery.VizQuery-class.html#__init__,Method chimera.util.votable.VONode.__init__()=chimera.util.votable.VONode-class.html#__init__,Method chimera.util.votable.VOTable.__init__()=chimera.util.votable.VOTable-class.html#__init__,Method chimera.util.votable.VOTableHandler.__init__()=chimera.util.votable.VOTableHandler-class.html#__init__"><a title="chimera.controllers.autofocus.Autofocus.__init__
+chimera.controllers.autofocus.FocusFit.__init__
+chimera.controllers.console.command.Command.__init__
+chimera.controllers.console.command.HighLevelCommand.__init__
+chimera.controllers.console.commander.Commander.__init__
+chimera.controllers.console.commands.alias.AliasCommand.__init__
+chimera.controllers.console.commands.object.ObjectCommand.__init__
+chimera.controllers.console.commands.quit.QuitCommand.__init__
+chimera.controllers.console.commands.site.SiteCommand.__init__
+chimera.controllers.console.commands.unalias.UnaliasCommand.__init__
+chimera.controllers.console.console.Console.__init__
+chimera.controllers.console.controller._ConsoleControllerSingleton.__init__
+chimera.controllers.console.message.Config.__init__
+chimera.controllers.console.message.Error.__init__
+chimera.controllers.console.message.Hint.__init__
+chimera.controllers.console.message.Message.__init__
+chimera.controllers.console.namespace.Namespace.__init__
+chimera.controllers.extinction.Extinction.__init__
+chimera.controllers.imageserver.imagerequest.ImageRequest.__init__
+chimera.controllers.imageserver.imageserver.ImageServer.__init__
+chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__
+chimera.controllers.pointverify.PointVerify.__init__
+chimera.controllers.reduction.calibration.Calibration.__init__
+chimera.controllers.reduction.chimera_pipe.Reduction.__init__
+chimera.controllers.scheduler.constraints.Constraints.__init__
+chimera.controllers.scheduler.constraints.IConstraint.__init__
+chimera.controllers.scheduler.controller.Controller.__init__
+chimera.controllers.scheduler.machine.Machine.__init__
+chimera.controllers.scheduler.sequential.SequentialScheduler.__init__
+chimera.controllers.site.main.SiteController.__init__
+chimera.controllers.xephem.XEphem.__init__
+chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__
+chimera.controllers.xmlrpc.XMLRPC.__init__
+chimera.controllers.xmlrpc.serverThread.__init__
+chimera.core.async.BeginDispatcher.__init__
+chimera.core.async.EndDispatcher.__init__
+chimera.core.chimeraobject.ChimeraObject.__init__
+chimera.core.classloader.ClassLoader.__init__
+chimera.core.cli.CLIValues.__init__
+chimera.core.cli.ChimeraCLI.__init__
+chimera.core.cli.Option.__init__
+chimera.core.config.BoolChecker.__init__
+chimera.core.config.Config.__init__
+chimera.core.config.CoordChecker.__init__
+chimera.core.config.CoordOption.__init__
+chimera.core.config.EnumChecker.__init__
+chimera.core.config.FloatChecker.__init__
+chimera.core.config.IgnoreChecker.__init__
+chimera.core.config.IntChecker.__init__
+chimera.core.config.Option.__init__
+chimera.core.config.OptionsChecker.__init__
+chimera.core.config.RangeChecker.__init__
+chimera.core.config.StringChecker.__init__
+chimera.core.eventsproxy.EventsProxy.__init__
+chimera.core.eventwrapper.EventWrapperDispatcher.__init__
+chimera.core.exceptions.ChimeraException.__init__
+chimera.core.location.Location.__init__
+chimera.core.lockwrapper.LockWrapper.__init__
+chimera.core.lockwrapper.LockWrapperDispatcher.__init__
+chimera.core.log.ChimeraFormatter.__init__
+chimera.core.manager.Manager.__init__
+chimera.core.manager.ManagerAdapter.__init__
+chimera.core.managerbeacon.ManagerBeacon.__init__
+chimera.core.methodwrapper.MethodWrapper.__init__
+chimera.core.methodwrapper.MethodWrapperDispatcher.__init__
+chimera.core.monitor.Monitor.__init__
+chimera.core.proxy.Proxy.__init__
+chimera.core.proxy.ProxyMethod.__init__
+chimera.core.remoteobject.RemoteObject.__init__
+chimera.core.resources.Resource.__init__
+chimera.core.resources.ResourcesManager.__init__
+chimera.core.rwlock.ReadWriteLock.__init__
+chimera.core.site.AstroDate.__init__
+chimera.core.site.Site.__init__
+chimera.core.systemconfig.SystemConfig.__init__
+chimera.core.tests.managerhelper.ManagerHelper.__init__
+chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__
+chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__
+chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__
+chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__
+chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__
+chimera.core.tests.test_events.Publisher.__init__
+chimera.core.tests.test_events.Subscriber.__init__
+chimera.core.tests.test_manager.Simple.__init__
+chimera.core.tests.test_resources.TestResources.__init__
+chimera.core.threads.ThreadPool.__init__
+chimera.core.threads.ThreadPoolThread.__init__
+chimera.drivers.domelna40cm.DomeLNA40cm.__init__
+chimera.drivers.fakecamera.FakeCamera.__init__
+chimera.drivers.fakedome.FakeDome.__init__
+chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__
+chimera.drivers.fakefocuser.FakeFocuser.__init__
+chimera.drivers.faketelescope.FakeTelescope.__init__
+chimera.drivers.meade.Meade.__init__
+chimera.drivers.optectcfs.OptecTCFS.__init__
+chimera.drivers.remoteclient.RemoteClient.__init__
+chimera.drivers.remoteclient.RemoteMethodWrapper.__init__
+chimera.drivers.sbig.sbig.SBIG.__init__
+chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__
+chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__
+chimera.drivers.sbig.sbigdrv.SBIGException.__init__
+chimera.drivers.theskytelescope.TheSkyTelescope.__init__
+chimera.instruments.camera.Camera.__init__
+chimera.instruments.dome.Dome.__init__
+chimera.instruments.filterwheel.FilterWheel.__init__
+chimera.instruments.focuser.Focuser.__init__
+chimera.instruments.telescope.Telescope.__init__
+chimera.interfaces.lifecycle.ILifeCycle.__init__
+chimera.util.catalogs.landolt.Landolt.__init__
+chimera.util.catalogs.ppm.PPM.__init__
+chimera.util.catalogs.ucac2.UCAC2.__init__
+chimera.util.coord.Coord.__init__
+chimera.util.ds9.DS9.__init__
+chimera.util.etree.ElementPath.Path.__init__
+chimera.util.etree.ElementTree.ElementTree.__init__
+chimera.util.etree.ElementTree.QName.__init__
+chimera.util.etree.ElementTree.TreeBuilder.__init__
+chimera.util.etree.ElementTree.XMLTreeBuilder.__init__
+chimera.util.etree.ElementTree._ElementInterface.__init__
+chimera.util.etree.ElementTree._iterparse.__init__
+chimera.util.filenamesequence.FilenameSequence.__init__
+chimera.util.image.Image.__init__
+chimera.util.position.Position.__init__
+chimera.util.sexcatalog.SExtractorfile.__init__
+chimera.util.sextractor.SExtractor.__init__
+chimera.util.simbad.Simbad.__init__
+chimera.util.telescopelimits.TelescopeLimits.__init__
+chimera.util.vizquery.VizQuery.__init__
+chimera.util.votable.VONode.__init__
+chimera.util.votable.VOTable.__init__
+chimera.util.votable.VOTableHandler.__init__" class="py-name" href="#" onclick="return doclink('link-25', '__init__', 'link-25');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">abort</tt> <tt class="py-op">=</tt> <tt class="py-name">threading</tt><tt class="py-op">.</tt><tt class="py-name">Event</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">abort</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.clear()=chimera.util.etree.ElementTree._ElementInterface-class.html#clear"><a title="chimera.util.etree.ElementTree._ElementInterface.clear" class="py-name" href="#" onclick="return doclink('link-26', 'clear', 'link-26');">clear</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getDriver"></a><div id="Camera.getDriver-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="Camera.getDriver-toggle" onclick="return toggle('Camera.getDriver');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getDriver">getDriver</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getDriver-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getDriver-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        Get a Proxy to the instrument driver. This function is necessary '</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        cause Proxies cannot be shared among different threads.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        So, every time you need a driver Proxy you need to call this to</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        get a Proxy to the current thread.</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method chimera.controllers.console.controller._ConsoleControllerSingleton.getManager()=chimera.controllers.console.controller._ConsoleControllerSingleton-class.html#getManager,Method chimera.core.chimeraobject.ChimeraObject.getManager()=chimera.core.chimeraobject.ChimeraObject-class.html#getManager,Method chimera.core.manager.ManagerAdapter.getManager()=chimera.core.manager.ManagerAdapter-class.html#getManager,Method chimera.interfaces.lifecycle.ILifeCycle.getManager()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getManager"><a title="chimera.controllers.console.controller._ConsoleControllerSingleton.getManager
+chimera.core.chimeraobject.ChimeraObject.getManager
+chimera.core.manager.ManagerAdapter.getManager
+chimera.interfaces.lifecycle.ILifeCycle.getManager" class="py-name" href="#" onclick="return doclink('link-27', 'getManager', 'link-27');">getManager</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.getProxy()=chimera.core.chimeraobject.ChimeraObject-class.html#getProxy,Method chimera.core.manager.Manager.getProxy()=chimera.core.manager.Manager-class.html#getProxy,Method chimera.core.remoteobject.RemoteObject.getProxy()=chimera.core.remoteobject.RemoteObject-class.html#getProxy,Method chimera.interfaces.lifecycle.ILifeCycle.getProxy()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getProxy"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-28', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">'driver'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt id="link-29" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-29', 'True', 'link-29');">True</a></tt><tt class="py-op">)</tt>         </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">         </tt>
+<a name="Camera.__start__"></a><div id="Camera.__start__-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="Camera.__start__-toggle" onclick="return toggle('Camera.__start__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#__start__">__start__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.__start__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.__start__-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method chimera.instruments.camera.Camera.getDriver()=chimera.instruments.camera.Camera-class.html#getDriver,Method chimera.instruments.dome.Dome.getDriver()=chimera.instruments.dome.Dome-class.html#getDriver,Method chimera.instruments.filterwheel.FilterWheel.getDriver()=chimera.instruments.filterwheel.FilterWheel-class.html#getDriver,Method chimera.instruments.focuser.Focuser.getDriver()=chimera.instruments.focuser.Focuser-class.html#getDriver,Method chimera.instruments.telescope.Telescope.getDriver()=chimera.instruments.telescope.Telescope-class.html#getDriver"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-30', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-comment"># connect callbacks to driver events</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.exposeBegin()=chimera.interfaces.camera.ICameraExpose-class.html#exposeBegin,Method chimera.interfaces.cameradriver.ICameraDriver.exposeBegin()=chimera.interfaces.cameradriver.ICameraDriver-class.html#exposeBegin"><a title="chimera.interfaces.camera.ICameraExpose.exposeBegin
+chimera.interfaces.cameradriver.ICameraDriver.exposeBegin" class="py-name" href="#" onclick="return doclink('link-31', 'exposeBegin', 'link-31');">exposeBegin</a></tt>       <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-32', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method chimera.instruments.camera.Camera._exposeBeginDrvClbk()=chimera.instruments.camera.Camera-class.html#_exposeBeginDrvClbk"><a title="chimera.instruments.camera.Camera._exposeBeginDrvClbk" class="py-name" href="#" onclick="return doclink('link-33', '_exposeBeginDrvClbk', 'link-33');">_exposeBeginDrvClbk</a></tt>         </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.exposeComplete()=chimera.interfaces.camera.ICameraExpose-class.html#exposeComplete,Method chimera.interfaces.cameradriver.ICameraDriver.exposeComplete()=chimera.interfaces.cameradriver.ICameraDriver-class.html#exposeComplete"><a title="chimera.interfaces.camera.ICameraExpose.exposeComplete
+chimera.interfaces.cameradriver.ICameraDriver.exposeComplete" class="py-name" href="#" onclick="return doclink('link-34', 'exposeComplete', 'link-34');">exposeComplete</a></tt>    <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-35', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method chimera.instruments.camera.Camera._exposeCompleteDrvClbk()=chimera.instruments.camera.Camera-class.html#_exposeCompleteDrvClbk"><a title="chimera.instruments.camera.Camera._exposeCompleteDrvClbk" class="py-name" href="#" onclick="return doclink('link-36', '_exposeCompleteDrvClbk', 'link-36');">_exposeCompleteDrvClbk</a></tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.readoutBegin()=chimera.interfaces.camera.ICameraExpose-class.html#readoutBegin,Method chimera.interfaces.cameradriver.ICameraDriver.readoutBegin()=chimera.interfaces.cameradriver.ICameraDriver-class.html#readoutBegin"><a title="chimera.interfaces.camera.ICameraExpose.readoutBegin
+chimera.interfaces.cameradriver.ICameraDriver.readoutBegin" class="py-name" href="#" onclick="return doclink('link-37', 'readoutBegin', 'link-37');">readoutBegin</a></tt>      <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-38', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method chimera.instruments.camera.Camera._readoutBeginDrvClbk()=chimera.instruments.camera.Camera-class.html#_readoutBeginDrvClbk"><a title="chimera.instruments.camera.Camera._readoutBeginDrvClbk" class="py-name" href="#" onclick="return doclink('link-39', '_readoutBeginDrvClbk', 'link-39');">_readoutBeginDrvClbk</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.readoutComplete()=chimera.interfaces.camera.ICameraExpose-class.html#readoutComplete,Method chimera.interfaces.cameradriver.ICameraDriver.readoutComplete()=chimera.interfaces.cameradriver.ICameraDriver-class.html#readoutComplete"><a title="chimera.interfaces.camera.ICameraExpose.readoutComplete
+chimera.interfaces.cameradriver.ICameraDriver.readoutComplete" class="py-name" href="#" onclick="return doclink('link-40', 'readoutComplete', 'link-40');">readoutComplete</a></tt>   <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-41', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method chimera.instruments.camera.Camera._readoutCompleteDrvClbk()=chimera.instruments.camera.Camera-class.html#_readoutCompleteDrvClbk"><a title="chimera.instruments.camera.Camera._readoutCompleteDrvClbk" class="py-name" href="#" onclick="return doclink('link-42', '_readoutCompleteDrvClbk', 'link-42');">_readoutCompleteDrvClbk</a></tt>         </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.abortComplete()=chimera.interfaces.camera.ICameraExpose-class.html#abortComplete,Method chimera.interfaces.cameradriver.ICameraDriver.abortComplete()=chimera.interfaces.cameradriver.ICameraDriver-class.html#abortComplete,Method chimera.interfaces.dome.IDome.abortComplete()=chimera.interfaces.dome.IDome-class.html#abortComplete,Method chimera.interfaces.domedriver.IDomeDriver.abortComplete()=chimera.interfaces.domedriver.IDomeDriver-class.html#abortComplete,Method chimera.interfaces.telescope.ITelescopeSlew.abortComplete()=chimera.interfaces.telescope.ITelescopeSlew-class.html#abortComplete,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#abortComplete"><a title="chimera.interfaces.camera.ICameraExpose.abortComplete
+chimera.interfaces.cameradriver.ICameraDriver.abortComplete
+chimera.interfaces.dome.IDome.abortComplete
+chimera.interfaces.domedriver.IDomeDriver.abortComplete
+chimera.interfaces.telescope.ITelescopeSlew.abortComplete
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete" class="py-name" href="#" onclick="return doclink('link-43', 'abortComplete', 'link-43');">abortComplete</a></tt>     <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-44', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method chimera.instruments.camera.Camera._abortDrvClbk()=chimera.instruments.camera.Camera-class.html#_abortDrvClbk"><a title="chimera.instruments.camera.Camera._abortDrvClbk" class="py-name" href="#" onclick="return doclink('link-45', '_abortDrvClbk', 'link-45');">_abortDrvClbk</a></tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method chimera.interfaces.camera.ICameraTemperature.temperatureChange()=chimera.interfaces.camera.ICameraTemperature-class.html#temperatureChange,Method chimera.interfaces.cameradriver.ICameraDriver.temperatureChange()=chimera.interfaces.cameradriver.ICameraDriver-class.html#temperatureChange,Method chimera.interfaces.weatherstation.IWeatherStation.temperatureChange()=chimera.interfaces.weatherstation.IWeatherStation-class.html#temperatureChange"><a title="chimera.interfaces.camera.ICameraTemperature.temperatureChange
+chimera.interfaces.cameradriver.ICameraDriver.temperatureChange
+chimera.interfaces.weatherstation.IWeatherStation.temperatureChange" class="py-name" href="#" onclick="return doclink('link-46', 'temperatureChange', 'link-46');">temperatureChange</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-47', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method chimera.instruments.camera.Camera._tempChangeDrvClbk()=chimera.instruments.camera.Camera-class.html#_tempChangeDrvClbk"><a title="chimera.instruments.camera.Camera._tempChangeDrvClbk" class="py-name" href="#" onclick="return doclink('link-48', '_tempChangeDrvClbk', 'link-48');">_tempChangeDrvClbk</a></tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-49" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-49', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="Camera.__stop__"></a><div id="Camera.__stop__-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="Camera.__stop__-toggle" onclick="return toggle('Camera.__stop__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#__stop__">__stop__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.__stop__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.__stop__-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">         </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.isExposing()=chimera.drivers.fakecamera.FakeCamera-class.html#isExposing,Method chimera.drivers.sbig.sbig.SBIG.isExposing()=chimera.drivers.sbig.sbig.SBIG-class.html#isExposing,Method chimera.instruments.camera.Camera.isExposing()=chimera.instruments.camera.Camera-class.html#isExposing,Method chimera.interfaces.camera.ICameraExpose.isExposing()=chimera.interfaces.camera.ICameraExpose-class.html#isExposing,Method chimera.interfaces.cameradriver.ICameraDriver.isExposing()=chimera.interfaces.cameradriver.ICameraDriver-class.html#isExposing"><a title="chimera.drivers.fakecamera.FakeCamera.isExposing
+chimera.drivers.sbig.sbig.SBIG.isExposing
+chimera.instruments.camera.Camera.isExposing
+chimera.interfaces.camera.ICameraExpose.isExposing
+chimera.interfaces.cameradriver.ICameraDriver.isExposing" class="py-name" href="#" onclick="return doclink('link-50', 'isExposing', 'link-50');">isExposing</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.abortExposure()=chimera.drivers.fakecamera.FakeCamera-class.html#abortExposure,Method chimera.drivers.sbig.sbig.SBIG.abortExposure()=chimera.drivers.sbig.sbig.SBIG-class.html#abortExposure,Method chimera.instruments.camera.Camera.abortExposure()=chimera.instruments.camera.Camera-class.html#abortExposure,Method chimera.interfaces.camera.ICameraExpose.abortExposure()=chimera.interfaces.camera.ICameraExpose-class.html#abortExposure,Method chimera.interfaces.cameradriver.ICameraDriver.abortExposure()=chimera.interfaces.cameradriver.ICameraDriver-class.html#abortExposure"><a title="chimera.drivers.fakecamera.FakeCamera.abortExposure
+chimera.drivers.sbig.sbig.SBIG.abortExposure
+chimera.instruments.camera.Camera.abortExposure
+chimera.interfaces.camera.ICameraExpose.abortExposure
+chimera.interfaces.cameradriver.ICameraDriver.abortExposure" class="py-name" href="#" onclick="return doclink('link-51', 'abortExposure', 'link-51');">abortExposure</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-52', 'False', 'link-52');">False</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-keyword">while</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.isExposing
+chimera.drivers.sbig.sbig.SBIG.isExposing
+chimera.instruments.camera.Camera.isExposing
+chimera.interfaces.camera.ICameraExpose.isExposing
+chimera.interfaces.cameradriver.ICameraDriver.isExposing" class="py-name" href="#" onclick="return doclink('link-53', 'isExposing', 'link-50');">isExposing</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt class="py-name">time</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method chimera.controllers.scheduler.machine.Machine.sleep()=chimera.controllers.scheduler.machine.Machine-class.html#sleep"><a title="chimera.controllers.scheduler.machine.Machine.sleep" class="py-name" href="#" onclick="return doclink('link-54', 'sleep', 'link-54');">sleep</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">         </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-comment"># disconnect our callbacks</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-55', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.exposeBegin
+chimera.interfaces.cameradriver.ICameraDriver.exposeBegin" class="py-name" href="#" onclick="return doclink('link-56', 'exposeBegin', 'link-31');">exposeBegin</a></tt>       <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-57', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="chimera.instruments.camera.Camera._exposeBeginDrvClbk" class="py-name" href="#" onclick="return doclink('link-58', '_exposeBeginDrvClbk', 'link-33');">_exposeBeginDrvClbk</a></tt>         </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.exposeComplete
+chimera.interfaces.cameradriver.ICameraDriver.exposeComplete" class="py-name" href="#" onclick="return doclink('link-59', 'exposeComplete', 'link-34');">exposeComplete</a></tt>    <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-60', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="chimera.instruments.camera.Camera._exposeCompleteDrvClbk" class="py-name" href="#" onclick="return doclink('link-61', '_exposeCompleteDrvClbk', 'link-36');">_exposeCompleteDrvClbk</a></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.readoutBegin
+chimera.interfaces.cameradriver.ICameraDriver.readoutBegin" class="py-name" href="#" onclick="return doclink('link-62', 'readoutBegin', 'link-37');">readoutBegin</a></tt>      <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-63', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="chimera.instruments.camera.Camera._readoutBeginDrvClbk" class="py-name" href="#" onclick="return doclink('link-64', '_readoutBeginDrvClbk', 'link-39');">_readoutBeginDrvClbk</a></tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.readoutComplete
+chimera.interfaces.cameradriver.ICameraDriver.readoutComplete" class="py-name" href="#" onclick="return doclink('link-65', 'readoutComplete', 'link-40');">readoutComplete</a></tt>   <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-66', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="chimera.instruments.camera.Camera._readoutCompleteDrvClbk" class="py-name" href="#" onclick="return doclink('link-67', '_readoutCompleteDrvClbk', 'link-42');">_readoutCompleteDrvClbk</a></tt>         </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.abortComplete
+chimera.interfaces.cameradriver.ICameraDriver.abortComplete
+chimera.interfaces.dome.IDome.abortComplete
+chimera.interfaces.domedriver.IDomeDriver.abortComplete
+chimera.interfaces.telescope.ITelescopeSlew.abortComplete
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete" class="py-name" href="#" onclick="return doclink('link-68', 'abortComplete', 'link-43');">abortComplete</a></tt>     <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-69', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="chimera.instruments.camera.Camera._abortDrvClbk" class="py-name" href="#" onclick="return doclink('link-70', '_abortDrvClbk', 'link-45');">_abortDrvClbk</a></tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="chimera.interfaces.camera.ICameraTemperature.temperatureChange
+chimera.interfaces.cameradriver.ICameraDriver.temperatureChange
+chimera.interfaces.weatherstation.IWeatherStation.temperatureChange" class="py-name" href="#" onclick="return doclink('link-71', 'temperatureChange', 'link-46');">temperatureChange</a></tt> <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-72', 'getProxy', 'link-28');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="chimera.instruments.camera.Camera._tempChangeDrvClbk" class="py-name" href="#" onclick="return doclink('link-73', '_tempChangeDrvClbk', 'link-48');">_tempChangeDrvClbk</a></tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="Camera._exposeBeginDrvClbk"></a><div id="Camera._exposeBeginDrvClbk-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="Camera._exposeBeginDrvClbk-toggle" onclick="return toggle('Camera._exposeBeginDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_exposeBeginDrvClbk">_exposeBeginDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._exposeBeginDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._exposeBeginDrvClbk-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.exposeBegin
+chimera.interfaces.cameradriver.ICameraDriver.exposeBegin" class="py-name" href="#" onclick="return doclink('link-74', 'exposeBegin', 'link-31');">exposeBegin</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">     </tt>
+<a name="Camera._exposeCompleteDrvClbk"></a><div id="Camera._exposeCompleteDrvClbk-def"><a name="L88"></a><tt class="py-lineno"> 88</tt> <a class="py-toggle" href="#" id="Camera._exposeCompleteDrvClbk-toggle" onclick="return toggle('Camera._exposeCompleteDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_exposeCompleteDrvClbk">_exposeCompleteDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._exposeCompleteDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._exposeCompleteDrvClbk-expanded"><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.exposeComplete
+chimera.interfaces.cameradriver.ICameraDriver.exposeComplete" class="py-name" href="#" onclick="return doclink('link-75', 'exposeComplete', 'link-34');">exposeComplete</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="Camera._readoutBeginDrvClbk"></a><div id="Camera._readoutBeginDrvClbk-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="Camera._readoutBeginDrvClbk-toggle" onclick="return toggle('Camera._readoutBeginDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_readoutBeginDrvClbk">_readoutBeginDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._readoutBeginDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._readoutBeginDrvClbk-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.readoutBegin
+chimera.interfaces.cameradriver.ICameraDriver.readoutBegin" class="py-name" href="#" onclick="return doclink('link-76', 'readoutBegin', 'link-37');">readoutBegin</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">     </tt>
+<a name="Camera._readoutCompleteDrvClbk"></a><div id="Camera._readoutCompleteDrvClbk-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Camera._readoutCompleteDrvClbk-toggle" onclick="return toggle('Camera._readoutCompleteDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_readoutCompleteDrvClbk">_readoutCompleteDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._readoutCompleteDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._readoutCompleteDrvClbk-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.readoutComplete
+chimera.interfaces.cameradriver.ICameraDriver.readoutComplete" class="py-name" href="#" onclick="return doclink('link-77', 'readoutComplete', 'link-40');">readoutComplete</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="Camera._abortDrvClbk"></a><div id="Camera._abortDrvClbk-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="Camera._abortDrvClbk-toggle" onclick="return toggle('Camera._abortDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_abortDrvClbk">_abortDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._abortDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._abortDrvClbk-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="chimera.interfaces.camera.ICameraExpose.abortComplete
+chimera.interfaces.cameradriver.ICameraDriver.abortComplete
+chimera.interfaces.dome.IDome.abortComplete
+chimera.interfaces.domedriver.IDomeDriver.abortComplete
+chimera.interfaces.telescope.ITelescopeSlew.abortComplete
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete" class="py-name" href="#" onclick="return doclink('link-78', 'abortComplete', 'link-43');">abortComplete</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">     </tt>
+<a name="Camera._tempChangeDrvClbk"></a><div id="Camera._tempChangeDrvClbk-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="Camera._tempChangeDrvClbk-toggle" onclick="return toggle('Camera._tempChangeDrvClbk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#_tempChangeDrvClbk">_tempChangeDrvClbk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">temp</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera._tempChangeDrvClbk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera._tempChangeDrvClbk-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="chimera.interfaces.camera.ICameraTemperature.temperatureChange
+chimera.interfaces.cameradriver.ICameraDriver.temperatureChange
+chimera.interfaces.weatherstation.IWeatherStation.temperatureChange" class="py-name" href="#" onclick="return doclink('link-79', 'temperatureChange', 'link-46');">temperatureChange</a></tt><tt class="py-op">(</tt><tt class="py-name">temp</tt><tt class="py-op">,</tt> <tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.expose"></a><div id="Camera.expose-def"><a name="L104"></a><tt class="py-lineno">104</tt> <a class="py-toggle" href="#" id="Camera.expose-toggle" onclick="return toggle('Camera.expose');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#expose">expose</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.expose-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.expose-expanded"><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">request</tt><tt class="py-op">:</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt id="link-80" class="py-name"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest" class="py-name" href="#" onclick="return doclink('link-80', 'ImageRequest', 'link-15');">ImageRequest</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-name">imageRequest</tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-name">dict</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-name">imageRequest</tt> <tt class="py-op">=</tt> <tt id="link-81" class="py-name"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest" class="py-name" href="#" onclick="return doclink('link-81', 'ImageRequest', 'link-15');">ImageRequest</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">kwargs</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-name">imageRequest</tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest" class="py-name" href="#" onclick="return doclink('link-82', 'ImageRequest', 'link-15');">ImageRequest</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-name">imageRequest</tt> <tt class="py-op">=</tt> <tt id="link-83" class="py-name"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest" class="py-name" href="#" onclick="return doclink('link-83', 'ImageRequest', 'link-15');">ImageRequest</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">         </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt id="link-84" class="py-name" targets="Variable chimera.controllers.scheduler.model.Exposure.frames=chimera.controllers.scheduler.model.Exposure-class.html#frames"><a title="chimera.controllers.scheduler.model.Exposure.frames" class="py-name" href="#" onclick="return doclink('link-84', 'frames', 'link-84');">frames</a></tt> <tt class="py-op">=</tt> <tt class="py-name">imageRequest</tt><tt class="py-op">[</tt><tt class="py-string">'frames'</tt><tt class="py-op">]</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">interval</tt> <tt class="py-op">=</tt> <tt class="py-name">imageRequest</tt><tt class="py-op">[</tt><tt class="py-string">'interval'</tt><tt class="py-op">]</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-85" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.frames" class="py-name" href="#" onclick="return doclink('link-85', 'frames', 'link-84');">frames</a></tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">            <tt class="py-name">interval</tt> <tt class="py-op">=</tt> <tt class="py-number">0.0</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-comment"># clear abort setting</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">abort</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="chimera.util.etree.ElementTree._ElementInterface.clear" class="py-name" href="#" onclick="return doclink('link-86', 'clear', 'link-26');">clear</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-comment"># config driver</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-87', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">images</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">frame_num</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt id="link-88" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.frames" class="py-name" href="#" onclick="return doclink('link-88', 'frames', 'link-84');">frames</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">             </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">abort</tt><tt class="py-op">.</tt><tt class="py-name">isSet</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">images</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">             </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-name">imageRequest</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name" targets="Method chimera.controllers.imageserver.imagerequest.ImageRequest.fetchPreHeaders()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#fetchPreHeaders"><a title="chimera.controllers.imageserver.imagerequest.ImageRequest.fetchPreHeaders" class="py-name" href="#" onclick="return doclink('link-89', 'fetchPreHeaders', 'link-89');">fetchPreHeaders</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="chimera.controllers.console.controller._ConsoleControllerSingleton.getManager
+chimera.core.chimeraobject.ChimeraObject.getManager
+chimera.core.manager.ManagerAdapter.getManager
+chimera.interfaces.lifecycle.ILifeCycle.getManager" class="py-name" href="#" onclick="return doclink('link-90', 'getManager', 'link-27');">getManager</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt id="link-91" class="py-name" targets="Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#image,Module chimera.util.image=chimera.util.image-module.html"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-91', 'image', 'link-91');">image</a></tt> <tt class="py-op">=</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.expose()=chimera.drivers.fakecamera.FakeCamera-class.html#expose,Method chimera.drivers.sbig.sbig.SBIG.expose()=chimera.drivers.sbig.sbig.SBIG-class.html#expose,Method chimera.instruments.camera.Camera.expose()=chimera.instruments.camera.Camera-class.html#expose,Method chimera.interfaces.camera.ICameraExpose.expose()=chimera.interfaces.camera.ICameraExpose-class.html#expose,Method chimera.interfaces.cameradriver.ICameraDriver.expose()=chimera.interfaces.cameradriver.ICameraDriver-class.html#expose"><a title="chimera.drivers.fakecamera.FakeCamera.expose
+chimera.drivers.sbig.sbig.SBIG.expose
+chimera.instruments.camera.Camera.expose
+chimera.interfaces.camera.ICameraExpose.expose
+chimera.interfaces.cameradriver.ICameraDriver.expose" class="py-name" href="#" onclick="return doclink('link-92', 'expose', 'link-92');">expose</a></tt><tt class="py-op">(</tt><tt class="py-name">imageRequest</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">            <tt class="py-name">images</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.append()=chimera.util.etree.ElementTree._ElementInterface-class.html#append,Method chimera.util.votable.VOTable.append()=chimera.util.votable.VOTable-class.html#append"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-93', 'append', 'link-93');">append</a></tt><tt class="py-op">(</tt><tt id="link-94" class="py-name"><a title="chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.image
+chimera.util.image" class="py-name" href="#" onclick="return doclink('link-94', 'image', 'link-91');">image</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">             </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">interval</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt class="py-name">frame_num</tt> <tt class="py-op">&lt;</tt> <tt id="link-95" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.frames" class="py-name" href="#" onclick="return doclink('link-95', 'frames', 'link-84');">frames</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                <tt class="py-name">time</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="chimera.controllers.scheduler.machine.Machine.sleep" class="py-name" href="#" onclick="return doclink('link-96', 'sleep', 'link-54');">sleep</a></tt><tt class="py-op">(</tt><tt class="py-name">interval</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">tuple</tt><tt class="py-op">(</tt><tt class="py-name">images</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                 </tt>
+<a name="Camera.abortExposure"></a><div id="Camera.abortExposure-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="Camera.abortExposure-toggle" onclick="return toggle('Camera.abortExposure');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#abortExposure">abortExposure</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">readout</tt><tt class="py-op">=</tt><tt id="link-97" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-97', 'True', 'link-29');">True</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.abortExposure-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.abortExposure-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-98', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-99" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.abortExposure
+chimera.drivers.sbig.sbig.SBIG.abortExposure
+chimera.instruments.camera.Camera.abortExposure
+chimera.interfaces.camera.ICameraExpose.abortExposure
+chimera.interfaces.cameradriver.ICameraDriver.abortExposure" class="py-name" href="#" onclick="return doclink('link-99', 'abortExposure', 'link-51');">abortExposure</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-100" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-100', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">     </tt>
+<a name="Camera.isExposing"></a><div id="Camera.isExposing-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="Camera.isExposing-toggle" onclick="return toggle('Camera.isExposing');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#isExposing">isExposing</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.isExposing-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.isExposing-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-101', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.isExposing
+chimera.drivers.sbig.sbig.SBIG.isExposing
+chimera.instruments.camera.Camera.isExposing
+chimera.interfaces.camera.ICameraExpose.isExposing
+chimera.interfaces.cameradriver.ICameraDriver.isExposing" class="py-name" href="#" onclick="return doclink('link-102', 'isExposing', 'link-50');">isExposing</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.startCooling"></a><div id="Camera.startCooling-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="Camera.startCooling-toggle" onclick="return toggle('Camera.startCooling');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#startCooling">startCooling</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">tempC</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.startCooling-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.startCooling-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-103" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-103', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.startCooling()=chimera.drivers.fakecamera.FakeCamera-class.html#startCooling,Method chimera.drivers.sbig.sbig.SBIG.startCooling()=chimera.drivers.sbig.sbig.SBIG-class.html#startCooling,Method chimera.instruments.camera.Camera.startCooling()=chimera.instruments.camera.Camera-class.html#startCooling,Method chimera.interfaces.camera.ICameraTemperature.startCooling()=chimera.interfaces.camera.ICameraTemperature-class.html#startCooling,Method chimera.interfaces.cameradriver.ICameraDriver.startCooling()=chimera.interfaces.cameradriver.ICameraDriver-class.html#startCooling"><a title="chimera.drivers.fakecamera.FakeCamera.startCooling
+chimera.drivers.sbig.sbig.SBIG.startCooling
+chimera.instruments.camera.Camera.startCooling
+chimera.interfaces.camera.ICameraTemperature.startCooling
+chimera.interfaces.cameradriver.ICameraDriver.startCooling" class="py-name" href="#" onclick="return doclink('link-104', 'startCooling', 'link-104');">startCooling</a></tt><tt class="py-op">(</tt><tt class="py-name">tempC</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-105" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-105', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.stopCooling"></a><div id="Camera.stopCooling-def"><a name="L163"></a><tt class="py-lineno">163</tt> <a class="py-toggle" href="#" id="Camera.stopCooling-toggle" onclick="return toggle('Camera.stopCooling');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#stopCooling">stopCooling</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.stopCooling-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.stopCooling-expanded"><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-106', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.stopCooling()=chimera.drivers.fakecamera.FakeCamera-class.html#stopCooling,Method chimera.drivers.sbig.sbig.SBIG.stopCooling()=chimera.drivers.sbig.sbig.SBIG-class.html#stopCooling,Method chimera.instruments.camera.Camera.stopCooling()=chimera.instruments.camera.Camera-class.html#stopCooling,Method chimera.interfaces.camera.ICameraTemperature.stopCooling()=chimera.interfaces.camera.ICameraTemperature-class.html#stopCooling,Method chimera.interfaces.cameradriver.ICameraDriver.stopCooling()=chimera.interfaces.cameradriver.ICameraDriver-class.html#stopCooling"><a title="chimera.drivers.fakecamera.FakeCamera.stopCooling
+chimera.drivers.sbig.sbig.SBIG.stopCooling
+chimera.instruments.camera.Camera.stopCooling
+chimera.interfaces.camera.ICameraTemperature.stopCooling
+chimera.interfaces.cameradriver.ICameraDriver.stopCooling" class="py-name" href="#" onclick="return doclink('link-107', 'stopCooling', 'link-107');">stopCooling</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-108" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-108', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="Camera.isCooling"></a><div id="Camera.isCooling-def"><a name="L168"></a><tt class="py-lineno">168</tt> <a class="py-toggle" href="#" id="Camera.isCooling-toggle" onclick="return toggle('Camera.isCooling');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#isCooling">isCooling</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.isCooling-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.isCooling-expanded"><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-109" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-109', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-110" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.isCooling()=chimera.drivers.fakecamera.FakeCamera-class.html#isCooling,Method chimera.drivers.sbig.sbig.SBIG.isCooling()=chimera.drivers.sbig.sbig.SBIG-class.html#isCooling,Method chimera.instruments.camera.Camera.isCooling()=chimera.instruments.camera.Camera-class.html#isCooling,Method chimera.interfaces.camera.ICameraTemperature.isCooling()=chimera.interfaces.camera.ICameraTemperature-class.html#isCooling,Method chimera.interfaces.cameradriver.ICameraDriver.isCooling()=chimera.interfaces.cameradriver.ICameraDriver-class.html#isCooling"><a title="chimera.drivers.fakecamera.FakeCamera.isCooling
+chimera.drivers.sbig.sbig.SBIG.isCooling
+chimera.instruments.camera.Camera.isCooling
+chimera.interfaces.camera.ICameraTemperature.isCooling
+chimera.interfaces.cameradriver.ICameraDriver.isCooling" class="py-name" href="#" onclick="return doclink('link-110', 'isCooling', 'link-110');">isCooling</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.getTemperature"></a><div id="Camera.getTemperature-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="Camera.getTemperature-toggle" onclick="return toggle('Camera.getTemperature');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getTemperature">getTemperature</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getTemperature-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getTemperature-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-111', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-112" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getTemperature()=chimera.drivers.fakecamera.FakeCamera-class.html#getTemperature,Method chimera.drivers.sbig.sbig.SBIG.getTemperature()=chimera.drivers.sbig.sbig.SBIG-class.html#getTemperature,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.getTemperature()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#getTemperature,Method chimera.instruments.camera.Camera.getTemperature()=chimera.instruments.camera.Camera-class.html#getTemperature,Method chimera.interfaces.camera.ICameraTemperature.getTemperature()=chimera.interfaces.camera.ICameraTemperature-class.html#getTemperature,Method chimera.interfaces.cameradriver.ICameraDriver.getTemperature()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getTemperature"><a title="chimera.drivers.fakecamera.FakeCamera.getTemperature
+chimera.drivers.sbig.sbig.SBIG.getTemperature
+chimera.drivers.sbig.sbigdrv.SBIGDrv.getTemperature
+chimera.instruments.camera.Camera.getTemperature
+chimera.interfaces.camera.ICameraTemperature.getTemperature
+chimera.interfaces.cameradriver.ICameraDriver.getTemperature" class="py-name" href="#" onclick="return doclink('link-112', 'getTemperature', 'link-112');">getTemperature</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.getSetPoint"></a><div id="Camera.getSetPoint-def"><a name="L178"></a><tt class="py-lineno">178</tt> <a class="py-toggle" href="#" id="Camera.getSetPoint-toggle" onclick="return toggle('Camera.getSetPoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getSetPoint">getSetPoint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getSetPoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getSetPoint-expanded"><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-113" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-113', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-114" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getSetPoint()=chimera.drivers.fakecamera.FakeCamera-class.html#getSetPoint,Method chimera.drivers.sbig.sbig.SBIG.getSetPoint()=chimera.drivers.sbig.sbig.SBIG-class.html#getSetPoint,Method chimera.instruments.camera.Camera.getSetPoint()=chimera.instruments.camera.Camera-class.html#getSetPoint,Method chimera.interfaces.camera.ICameraTemperature.getSetPoint()=chimera.interfaces.camera.ICameraTemperature-class.html#getSetPoint,Method chimera.interfaces.cameradriver.ICameraDriver.getSetPoint()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getSetPoint"><a title="chimera.drivers.fakecamera.FakeCamera.getSetPoint
+chimera.drivers.sbig.sbig.SBIG.getSetPoint
+chimera.instruments.camera.Camera.getSetPoint
+chimera.interfaces.camera.ICameraTemperature.getSetPoint
+chimera.interfaces.cameradriver.ICameraDriver.getSetPoint" class="py-name" href="#" onclick="return doclink('link-114', 'getSetPoint', 'link-114');">getSetPoint</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.startFan"></a><div id="Camera.startFan-def"><a name="L183"></a><tt class="py-lineno">183</tt> <a class="py-toggle" href="#" id="Camera.startFan-toggle" onclick="return toggle('Camera.startFan');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#startFan">startFan</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">rate</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.startFan-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.startFan-expanded"><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-115" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-115', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-116" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.startFan()=chimera.drivers.sbig.sbig.SBIG-class.html#startFan,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.startFan()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#startFan,Method chimera.instruments.camera.Camera.startFan()=chimera.instruments.camera.Camera-class.html#startFan,Method chimera.interfaces.camera.ICameraTemperature.startFan()=chimera.interfaces.camera.ICameraTemperature-class.html#startFan,Method chimera.interfaces.cameradriver.ICameraDriver.startFan()=chimera.interfaces.cameradriver.ICameraDriver-class.html#startFan"><a title="chimera.drivers.sbig.sbig.SBIG.startFan
+chimera.drivers.sbig.sbigdrv.SBIGDrv.startFan
+chimera.instruments.camera.Camera.startFan
+chimera.interfaces.camera.ICameraTemperature.startFan
+chimera.interfaces.cameradriver.ICameraDriver.startFan" class="py-name" href="#" onclick="return doclink('link-116', 'startFan', 'link-116');">startFan</a></tt><tt class="py-op">(</tt><tt class="py-name">rate</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="Camera.stopFan"></a><div id="Camera.stopFan-def"><a name="L188"></a><tt class="py-lineno">188</tt> <a class="py-toggle" href="#" id="Camera.stopFan-toggle" onclick="return toggle('Camera.stopFan');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#stopFan">stopFan</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.stopFan-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.stopFan-expanded"><a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-117" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-117', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-118" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.stopFan()=chimera.drivers.sbig.sbig.SBIG-class.html#stopFan,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.stopFan()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#stopFan,Method chimera.instruments.camera.Camera.stopFan()=chimera.instruments.camera.Camera-class.html#stopFan,Method chimera.interfaces.camera.ICameraTemperature.stopFan()=chimera.interfaces.camera.ICameraTemperature-class.html#stopFan,Method chimera.interfaces.cameradriver.ICameraDriver.stopFan()=chimera.interfaces.cameradriver.ICameraDriver-class.html#stopFan"><a title="chimera.drivers.sbig.sbig.SBIG.stopFan
+chimera.drivers.sbig.sbigdrv.SBIGDrv.stopFan
+chimera.instruments.camera.Camera.stopFan
+chimera.interfaces.camera.ICameraTemperature.stopFan
+chimera.interfaces.cameradriver.ICameraDriver.stopFan" class="py-name" href="#" onclick="return doclink('link-118', 'stopFan', 'link-118');">stopFan</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"> </tt>
+<a name="Camera.isFanning"></a><div id="Camera.isFanning-def"><a name="L192"></a><tt class="py-lineno">192</tt> <a class="py-toggle" href="#" id="Camera.isFanning-toggle" onclick="return toggle('Camera.isFanning');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#isFanning">isFanning</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.isFanning-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.isFanning-expanded"><a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-119', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-120" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.isFanning()=chimera.drivers.sbig.sbig.SBIG-class.html#isFanning,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.isFanning()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#isFanning,Method chimera.instruments.camera.Camera.isFanning()=chimera.instruments.camera.Camera-class.html#isFanning,Method chimera.interfaces.camera.ICameraTemperature.isFanning()=chimera.interfaces.camera.ICameraTemperature-class.html#isFanning,Method chimera.interfaces.cameradriver.ICameraDriver.isFanning()=chimera.interfaces.cameradriver.ICameraDriver-class.html#isFanning"><a title="chimera.drivers.sbig.sbig.SBIG.isFanning
+chimera.drivers.sbig.sbigdrv.SBIGDrv.isFanning
+chimera.instruments.camera.Camera.isFanning
+chimera.interfaces.camera.ICameraTemperature.isFanning
+chimera.interfaces.cameradriver.ICameraDriver.isFanning" class="py-name" href="#" onclick="return doclink('link-120', 'isFanning', 'link-120');">isFanning</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">     </tt>
+<a name="Camera.getMetadata"></a><div id="Camera.getMetadata-def"><a name="L197"></a><tt class="py-lineno">197</tt> <a class="py-toggle" href="#" id="Camera.getMetadata-toggle" onclick="return toggle('Camera.getMetadata');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getMetadata">getMetadata</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getMetadata-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getMetadata-expanded"><a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-121" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-121', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CAMERA'</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">'camera_model'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'Camera Model'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CCD'</tt><tt class="py-op">,</tt>    <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">'ccd_model'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'CCD Model'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CCD_DIMX'</tt><tt class="py-op">,</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-122" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getPhysicalSize()=chimera.drivers.fakecamera.FakeCamera-class.html#getPhysicalSize,Method chimera.drivers.sbig.sbig.SBIG.getPhysicalSize()=chimera.drivers.sbig.sbig.SBIG-class.html#getPhysicalSize,Method chimera.instruments.camera.Camera.getPhysicalSize()=chimera.instruments.camera.Camera-class.html#getPhysicalSize,Method chimera.interfaces.camera.ICameraInformation.getPhysicalSize()=chimera.interfaces.camera.ICameraInformation-class.html#getPhysicalSize,Method chimera.interfaces.cameradriver.ICameraDriver.getPhysicalSize()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getPhysicalSize"><a title="chimera.drivers.fakecamera.FakeCamera.getPhysicalSize
+chimera.drivers.sbig.sbig.SBIG.getPhysicalSize
+chimera.instruments.camera.Camera.getPhysicalSize
+chimera.interfaces.camera.ICameraInformation.getPhysicalSize
+chimera.interfaces.cameradriver.ICameraDriver.getPhysicalSize" class="py-name" href="#" onclick="return doclink('link-122', 'getPhysicalSize', 'link-122');">getPhysicalSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'CCD X Dimension Size'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CCD_DIMY'</tt><tt class="py-op">,</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-123" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.getPhysicalSize
+chimera.drivers.sbig.sbig.SBIG.getPhysicalSize
+chimera.instruments.camera.Camera.getPhysicalSize
+chimera.interfaces.camera.ICameraInformation.getPhysicalSize
+chimera.interfaces.cameradriver.ICameraDriver.getPhysicalSize" class="py-name" href="#" onclick="return doclink('link-123', 'getPhysicalSize', 'link-122');">getPhysicalSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'CCD Y Dimension Size'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CCDPXSZX'</tt><tt class="py-op">,</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-124" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getPixelSize()=chimera.drivers.fakecamera.FakeCamera-class.html#getPixelSize,Method chimera.drivers.sbig.sbig.SBIG.getPixelSize()=chimera.drivers.sbig.sbig.SBIG-class.html#getPixelSize,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.getPixelSize()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#getPixelSize,Method chimera.instruments.camera.Camera.getPixelSize()=chimera.instruments.camera.Camera-class.html#getPixelSize,Method chimera.interfaces.camera.ICameraInformation.getPixelSize()=chimera.interfaces.camera.ICameraInformation-class.html#getPixelSize,Method chimera.interfaces.cameradriver.ICameraDriver.getPixelSize()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getPixelSize"><a title="chimera.drivers.fakecamera.FakeCamera.getPixelSize
+chimera.drivers.sbig.sbig.SBIG.getPixelSize
+chimera.drivers.sbig.sbigdrv.ReadoutMode.getPixelSize
+chimera.instruments.camera.Camera.getPixelSize
+chimera.interfaces.camera.ICameraInformation.getPixelSize
+chimera.interfaces.cameradriver.ICameraDriver.getPixelSize" class="py-name" href="#" onclick="return doclink('link-124', 'getPixelSize', 'link-124');">getPixelSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'CCD X Pixel Size [micrometer]'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'CCDPXSZY'</tt><tt class="py-op">,</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-125" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.getPixelSize
+chimera.drivers.sbig.sbig.SBIG.getPixelSize
+chimera.drivers.sbig.sbigdrv.ReadoutMode.getPixelSize
+chimera.instruments.camera.Camera.getPixelSize
+chimera.interfaces.camera.ICameraInformation.getPixelSize
+chimera.interfaces.cameradriver.ICameraDriver.getPixelSize" class="py-name" href="#" onclick="return doclink('link-125', 'getPixelSize', 'link-124');">getPixelSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'CCD Y Pixel Size [micrometer]'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt>  <tt class="py-op">+</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-126" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.getMetadata()=chimera.core.chimeraobject.ChimeraObject-class.html#getMetadata,Method chimera.core.site.Site.getMetadata()=chimera.core.site.Site-class.html#getMetadata,Method chimera.instruments.camera.Camera.getMetadata()=chimera.instruments.camera.Camera-class.html#getMetadata,Method chimera.instruments.dome.Dome.getMetadata()=chimera.instruments.dome.Dome-class.html#getMetadata,Method chimera.instruments.filterwheel.FilterWheel.getMetadata()=chimera.instruments.filterwheel.FilterWheel-class.html#getMetadata,Method chimera.instruments.focuser.Focuser.getMetadata()=chimera.instruments.focuser.Focuser-class.html#getMetadata,Method chimera.instruments.telescope.Telescope.getMetadata()=chimera.instruments.telescope.Telescope-class.html#getMetadata,Method chimera.interfaces.lifecycle.ILifeCycle.getMetadata()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getMetadata,Method chimera.util.catalog.Catalog.getMetadata()=chimera.util.catalog.Catalog-class.html#getMetadata,Method chimera.util.catalogs.ppm.PPM.getMetadata()=chimera.util.catalogs.ppm.PPM-class.html#getMetadata,Method chimera.util.catalogs.ucac2.UCAC2.getMetadata()=chimera.util.catalogs.ucac2.UCAC2-class.html#getMetadata"><a title="chimera.core.chimeraobject.ChimeraObject.getMetadata
+chimera.core.site.Site.getMetadata
+chimera.instruments.camera.Camera.getMetadata
+chimera.instruments.dome.Dome.getMetadata
+chimera.instruments.filterwheel.FilterWheel.getMetadata
+chimera.instruments.focuser.Focuser.getMetadata
+chimera.instruments.telescope.Telescope.getMetadata
+chimera.interfaces.lifecycle.ILifeCycle.getMetadata
+chimera.util.catalog.Catalog.getMetadata
+chimera.util.catalogs.ppm.PPM.getMetadata
+chimera.util.catalogs.ucac2.UCAC2.getMetadata" class="py-name" href="#" onclick="return doclink('link-126', 'getMetadata', 'link-126');">getMetadata</a></tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">                <tt class="py-comment">#('XBINNING', int(request.binning[0]), 'Readout CCD Binning (x-axis)'),</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-comment"></tt>                <tt class="py-comment">#('YBINNING', int(request.binning[-1]), 'Readout CCD Binning (y-axis)'),</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-comment"></tt>                <tt class="py-comment">#('IMAGETYP', request['type'], 'Image type')]</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="Camera.getCCDs"></a><div id="Camera.getCCDs-def"><a name="L210"></a><tt class="py-lineno">210</tt> <a class="py-toggle" href="#" id="Camera.getCCDs-toggle" onclick="return toggle('Camera.getCCDs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getCCDs">getCCDs</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getCCDs-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getCCDs-expanded"><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-127" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-127', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-128" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.getCCDs()=chimera.drivers.sbig.sbig.SBIG-class.html#getCCDs,Method chimera.instruments.camera.Camera.getCCDs()=chimera.instruments.camera.Camera-class.html#getCCDs,Method chimera.interfaces.camera.ICameraInformation.getCCDs()=chimera.interfaces.camera.ICameraInformation-class.html#getCCDs,Method chimera.interfaces.cameradriver.ICameraDriver.getCCDs()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getCCDs"><a title="chimera.drivers.sbig.sbig.SBIG.getCCDs
+chimera.instruments.camera.Camera.getCCDs
+chimera.interfaces.camera.ICameraInformation.getCCDs
+chimera.interfaces.cameradriver.ICameraDriver.getCCDs" class="py-name" href="#" onclick="return doclink('link-128', 'getCCDs', 'link-128');">getCCDs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getCurrentCCD"></a><div id="Camera.getCurrentCCD-def"><a name="L214"></a><tt class="py-lineno">214</tt> <a class="py-toggle" href="#" id="Camera.getCurrentCCD-toggle" onclick="return toggle('Camera.getCurrentCCD');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getCurrentCCD">getCurrentCCD</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getCurrentCCD-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getCurrentCCD-expanded"><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-129" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-129', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-130" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.getCurrentCCD()=chimera.drivers.sbig.sbig.SBIG-class.html#getCurrentCCD,Method chimera.instruments.camera.Camera.getCurrentCCD()=chimera.instruments.camera.Camera-class.html#getCurrentCCD,Method chimera.interfaces.camera.ICameraInformation.getCurrentCCD()=chimera.interfaces.camera.ICameraInformation-class.html#getCurrentCCD,Method chimera.interfaces.cameradriver.ICameraDriver.getCurrentCCD()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getCurrentCCD"><a title="chimera.drivers.sbig.sbig.SBIG.getCurrentCCD
+chimera.instruments.camera.Camera.getCurrentCCD
+chimera.interfaces.camera.ICameraInformation.getCurrentCCD
+chimera.interfaces.cameradriver.ICameraDriver.getCurrentCCD" class="py-name" href="#" onclick="return doclink('link-130', 'getCurrentCCD', 'link-130');">getCurrentCCD</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getBinnings"></a><div id="Camera.getBinnings-def"><a name="L218"></a><tt class="py-lineno">218</tt> <a class="py-toggle" href="#" id="Camera.getBinnings-toggle" onclick="return toggle('Camera.getBinnings');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getBinnings">getBinnings</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getBinnings-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getBinnings-expanded"><a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-131" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-131', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-132" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getBinnings()=chimera.drivers.fakecamera.FakeCamera-class.html#getBinnings,Method chimera.drivers.sbig.sbig.SBIG.getBinnings()=chimera.drivers.sbig.sbig.SBIG-class.html#getBinnings,Method chimera.instruments.camera.Camera.getBinnings()=chimera.instruments.camera.Camera-class.html#getBinnings,Method chimera.interfaces.camera.ICameraInformation.getBinnings()=chimera.interfaces.camera.ICameraInformation-class.html#getBinnings,Method chimera.interfaces.cameradriver.ICameraDriver.getBinnings()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getBinnings"><a title="chimera.drivers.fakecamera.FakeCamera.getBinnings
+chimera.drivers.sbig.sbig.SBIG.getBinnings
+chimera.instruments.camera.Camera.getBinnings
+chimera.interfaces.camera.ICameraInformation.getBinnings
+chimera.interfaces.cameradriver.ICameraDriver.getBinnings" class="py-name" href="#" onclick="return doclink('link-132', 'getBinnings', 'link-132');">getBinnings</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getADCs"></a><div id="Camera.getADCs-def"><a name="L222"></a><tt class="py-lineno">222</tt> <a class="py-toggle" href="#" id="Camera.getADCs-toggle" onclick="return toggle('Camera.getADCs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getADCs">getADCs</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getADCs-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getADCs-expanded"><a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-133" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-133', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-134" class="py-name" targets="Method chimera.drivers.fakecamera.FakeCamera.getADCs()=chimera.drivers.fakecamera.FakeCamera-class.html#getADCs,Method chimera.drivers.sbig.sbig.SBIG.getADCs()=chimera.drivers.sbig.sbig.SBIG-class.html#getADCs,Method chimera.instruments.camera.Camera.getADCs()=chimera.instruments.camera.Camera-class.html#getADCs,Method chimera.interfaces.camera.ICameraInformation.getADCs()=chimera.interfaces.camera.ICameraInformation-class.html#getADCs,Method chimera.interfaces.cameradriver.ICameraDriver.getADCs()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getADCs"><a title="chimera.drivers.fakecamera.FakeCamera.getADCs
+chimera.drivers.sbig.sbig.SBIG.getADCs
+chimera.instruments.camera.Camera.getADCs
+chimera.interfaces.camera.ICameraInformation.getADCs
+chimera.interfaces.cameradriver.ICameraDriver.getADCs" class="py-name" href="#" onclick="return doclink('link-134', 'getADCs', 'link-134');">getADCs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getPhysicalSize"></a><div id="Camera.getPhysicalSize-def"><a name="L226"></a><tt class="py-lineno">226</tt> <a class="py-toggle" href="#" id="Camera.getPhysicalSize-toggle" onclick="return toggle('Camera.getPhysicalSize');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getPhysicalSize">getPhysicalSize</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getPhysicalSize-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getPhysicalSize-expanded"><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-135" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-135', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-136" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.getPhysicalSize
+chimera.drivers.sbig.sbig.SBIG.getPhysicalSize
+chimera.instruments.camera.Camera.getPhysicalSize
+chimera.interfaces.camera.ICameraInformation.getPhysicalSize
+chimera.interfaces.cameradriver.ICameraDriver.getPhysicalSize" class="py-name" href="#" onclick="return doclink('link-136', 'getPhysicalSize', 'link-122');">getPhysicalSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getPixelSize"></a><div id="Camera.getPixelSize-def"><a name="L230"></a><tt class="py-lineno">230</tt> <a class="py-toggle" href="#" id="Camera.getPixelSize-toggle" onclick="return toggle('Camera.getPixelSize');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getPixelSize">getPixelSize</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getPixelSize-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getPixelSize-expanded"><a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-137', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-138" class="py-name"><a title="chimera.drivers.fakecamera.FakeCamera.getPixelSize
+chimera.drivers.sbig.sbig.SBIG.getPixelSize
+chimera.drivers.sbig.sbigdrv.ReadoutMode.getPixelSize
+chimera.instruments.camera.Camera.getPixelSize
+chimera.interfaces.camera.ICameraInformation.getPixelSize
+chimera.interfaces.cameradriver.ICameraDriver.getPixelSize" class="py-name" href="#" onclick="return doclink('link-138', 'getPixelSize', 'link-124');">getPixelSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"> </tt>
+<a name="Camera.getOverscanSize"></a><div id="Camera.getOverscanSize-def"><a name="L234"></a><tt class="py-lineno">234</tt> <a class="py-toggle" href="#" id="Camera.getOverscanSize-toggle" onclick="return toggle('Camera.getOverscanSize');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#getOverscanSize">getOverscanSize</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">ccd</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.getOverscanSize-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.getOverscanSize-expanded"><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-139" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-139', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-140" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.getOverscanSize()=chimera.drivers.sbig.sbig.SBIG-class.html#getOverscanSize,Method chimera.instruments.camera.Camera.getOverscanSize()=chimera.instruments.camera.Camera-class.html#getOverscanSize,Method chimera.interfaces.camera.ICameraInformation.getOverscanSize()=chimera.interfaces.camera.ICameraInformation-class.html#getOverscanSize,Method chimera.interfaces.cameradriver.ICameraDriver.getOverscanSize()=chimera.interfaces.cameradriver.ICameraDriver-class.html#getOverscanSize"><a title="chimera.drivers.sbig.sbig.SBIG.getOverscanSize
+chimera.instruments.camera.Camera.getOverscanSize
+chimera.interfaces.camera.ICameraInformation.getOverscanSize
+chimera.interfaces.cameradriver.ICameraDriver.getOverscanSize" class="py-name" href="#" onclick="return doclink('link-140', 'getOverscanSize', 'link-140');">getOverscanSize</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="Camera.supports"></a><div id="Camera.supports-def"><a name="L238"></a><tt class="py-lineno">238</tt> <a class="py-toggle" href="#" id="Camera.supports-toggle" onclick="return toggle('Camera.supports');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.camera.Camera-class.html#supports">supports</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">feature</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Camera.supports-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Camera.supports-expanded"><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-name">drv</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-141" class="py-name"><a title="chimera.instruments.camera.Camera.getDriver
+chimera.instruments.dome.Dome.getDriver
+chimera.instruments.filterwheel.FilterWheel.getDriver
+chimera.instruments.focuser.Focuser.getDriver
+chimera.instruments.telescope.Telescope.getDriver" class="py-name" href="#" onclick="return doclink('link-141', 'getDriver', 'link-30');">getDriver</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">drv</tt><tt class="py-op">.</tt><tt id="link-142" class="py-name" targets="Method chimera.drivers.sbig.sbig.SBIG.supports()=chimera.drivers.sbig.sbig.SBIG-class.html#supports,Method chimera.instruments.camera.Camera.supports()=chimera.instruments.camera.Camera-class.html#supports,Method chimera.interfaces.camera.ICameraInformation.supports()=chimera.interfaces.camera.ICameraInformation-class.html#supports,Method chimera.interfaces.cameradriver.ICameraDriver.supports()=chimera.interfaces.cameradriver.ICameraDriver-class.html#supports"><a title="chimera.drivers.sbig.sbig.SBIG.supports
+chimera.instruments.camera.Camera.supports
+chimera.interfaces.camera.ICameraInformation.supports
+chimera.interfaces.cameradriver.ICameraDriver.supports" class="py-name" href="#" onclick="return doclink('link-142', 'supports', 'link-142');">supports</a></tt><tt class="py-op">(</tt><tt class="py-name">feature</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:03 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>
