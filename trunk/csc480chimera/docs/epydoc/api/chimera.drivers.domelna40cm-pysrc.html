@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.drivers.domelna40cm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.drivers-module.html">Package&nbsp;drivers</a> ::
+        Module&nbsp;domelna40cm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.drivers.domelna40cm-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.drivers.domelna40cm-module.html">Module chimera.drivers.domelna40cm</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">serial</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">threading</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.chimeraobject=chimera.core.chimeraobject-module.html"><a title="chimera.core.chimeraobject" class="py-name" href="#" onclick="return doclink('link-2', 'chimeraobject', 'link-2');">chimeraobject</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.chimeraobject.ChimeraObject=chimera.core.chimeraobject.ChimeraObject-class.html"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-3', 'ChimeraObject', 'link-3');">ChimeraObject</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package chimera.interfaces=chimera.interfaces-module.html"><a title="chimera.interfaces" class="py-name" href="#" onclick="return doclink('link-5', 'interfaces', 'link-5');">interfaces</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.instruments.dome=chimera.instruments.dome-module.html,Module chimera.interfaces.dome=chimera.interfaces.dome-module.html"><a title="chimera.instruments.dome
+chimera.interfaces.dome" class="py-name" href="#" onclick="return doclink('link-6', 'dome', 'link-6');">dome</a></tt>    <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class chimera.interfaces.dome.InvalidDomePositionException=chimera.interfaces.dome.InvalidDomePositionException-class.html"><a title="chimera.interfaces.dome.InvalidDomePositionException" class="py-name" href="#" onclick="return doclink('link-7', 'InvalidDomePositionException', 'link-7');">InvalidDomePositionException</a></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-8', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-9', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-10', 'exceptions', 'link-10');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class chimera.core.exceptions.ChimeraException=chimera.core.exceptions.ChimeraException-class.html"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-11', 'ChimeraException', 'link-11');">ChimeraException</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-12" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-12', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-13', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Module chimera.core.lock=chimera.core.lock-module.html,Function chimera.core.lock.lock()=chimera.core.lock-module.html#lock"><a title="chimera.core.lock
+chimera.core.lock.lock" class="py-name" href="#" onclick="return doclink('link-14', 'lock', 'link-14');">lock</a></tt> <tt class="py-keyword">import</tt> <tt id="link-15" class="py-name"><a title="chimera.core.lock
+chimera.core.lock.lock" class="py-name" href="#" onclick="return doclink('link-15', 'lock', 'link-14');">lock</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-16" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-16', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="chimera.interfaces" class="py-name" href="#" onclick="return doclink('link-17', 'interfaces', 'link-5');">interfaces</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Module chimera.interfaces.domedriver=chimera.interfaces.domedriver-module.html"><a title="chimera.interfaces.domedriver" class="py-name" href="#" onclick="return doclink('link-18', 'domedriver', 'link-18');">domedriver</a></tt> <tt class="py-keyword">import</tt> <tt id="link-19" class="py-name" targets="Class chimera.interfaces.domedriver.IDomeDriver=chimera.interfaces.domedriver.IDomeDriver-class.html"><a title="chimera.interfaces.domedriver.IDomeDriver" class="py-name" href="#" onclick="return doclink('link-19', 'IDomeDriver', 'link-19');">IDomeDriver</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-20" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-20', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-21', 'util', 'link-21');">util</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Module chimera.util.coord=chimera.util.coord-module.html"><a title="chimera.util.coord" class="py-name" href="#" onclick="return doclink('link-22', 'coord', 'link-22');">coord</a></tt> <tt class="py-keyword">import</tt> <tt id="link-23" class="py-name" targets="Class chimera.util.coord.Coord=chimera.util.coord.Coord-class.html"><a title="chimera.util.coord.Coord" class="py-name" href="#" onclick="return doclink('link-23', 'Coord', 'link-23');">Coord</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm"></a><div id="DomeLNA40cm-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="DomeLNA40cm-toggle" onclick="return toggle('DomeLNA40cm');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html">DomeLNA40cm</a> <tt class="py-op">(</tt><tt class="py-base-class">ChimeraObject</tt><tt class="py-op">,</tt> <tt class="py-base-class">IDomeDriver</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="DomeLNA40cm-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.__init__"></a><div id="DomeLNA40cm.__init__-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.__init__-toggle" onclick="return toggle('DomeLNA40cm.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.__init__-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt id="link-24" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject" class="py-name" href="#" onclick="return doclink('link-24', 'ChimeraObject', 'link-3');">ChimeraObject</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method chimera.controllers.autofocus.Autofocus.__init__()=chimera.controllers.autofocus.Autofocus-class.html#__init__,Method chimera.controllers.autofocus.FocusFit.__init__()=chimera.controllers.autofocus.FocusFit-class.html#__init__,Method chimera.controllers.console.command.Command.__init__()=chimera.controllers.console.command.Command-class.html#__init__,Method chimera.controllers.console.command.HighLevelCommand.__init__()=chimera.controllers.console.command.HighLevelCommand-class.html#__init__,Method chimera.controllers.console.commander.Commander.__init__()=chimera.controllers.console.commander.Commander-class.html#__init__,Method chimera.controllers.console.commands.alias.AliasCommand.__init__()=chimera.controllers.console.commands.alias.AliasCommand-class.html#__init__,Method chimera.controllers.console.commands.object.ObjectCommand.__init__()=chimera.controllers.console.commands.object.ObjectCommand-class.html#__init__,Method chimera.controllers.console.commands.quit.QuitCommand.__init__()=chimera.controllers.console.commands.quit.QuitCommand-class.html#__init__,Method chimera.controllers.console.commands.site.SiteCommand.__init__()=chimera.controllers.console.commands.site.SiteCommand-class.html#__init__,Method chimera.controllers.console.commands.unalias.UnaliasCommand.__init__()=chimera.controllers.console.commands.unalias.UnaliasCommand-class.html#__init__,Method chimera.controllers.console.console.Console.__init__()=chimera.controllers.console.console.Console-class.html#__init__,Method chimera.controllers.console.controller._ConsoleControllerSingleton.__init__()=chimera.controllers.console.controller._ConsoleControllerSingleton-class.html#__init__,Method chimera.controllers.console.message.Config.__init__()=chimera.controllers.console.message.Config-class.html#__init__,Method chimera.controllers.console.message.Error.__init__()=chimera.controllers.console.message.Error-class.html#__init__,Method chimera.controllers.console.message.Hint.__init__()=chimera.controllers.console.message.Hint-class.html#__init__,Method chimera.controllers.console.message.Message.__init__()=chimera.controllers.console.message.Message-class.html#__init__,Method chimera.controllers.console.namespace.Namespace.__init__()=chimera.controllers.console.namespace.Namespace-class.html#__init__,Method chimera.controllers.extinction.Extinction.__init__()=chimera.controllers.extinction.Extinction-class.html#__init__,Method chimera.controllers.imageserver.imagerequest.ImageRequest.__init__()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#__init__,Method chimera.controllers.imageserver.imageserver.ImageServer.__init__()=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__init__,Method chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__()=chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP-class.html#__init__,Method chimera.controllers.pointverify.PointVerify.__init__()=chimera.controllers.pointverify.PointVerify-class.html#__init__,Method chimera.controllers.reduction.calibration.Calibration.__init__()=chimera.controllers.reduction.calibration.Calibration-class.html#__init__,Method chimera.controllers.reduction.chimera_pipe.Reduction.__init__()=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__init__,Method chimera.controllers.scheduler.constraints.Constraints.__init__()=chimera.controllers.scheduler.constraints.Constraints-class.html#__init__,Method chimera.controllers.scheduler.constraints.IConstraint.__init__()=chimera.controllers.scheduler.constraints.IConstraint-class.html#__init__,Method chimera.controllers.scheduler.controller.Controller.__init__()=chimera.controllers.scheduler.controller.Controller-class.html#__init__,Method chimera.controllers.scheduler.machine.Machine.__init__()=chimera.controllers.scheduler.machine.Machine-class.html#__init__,Method chimera.controllers.scheduler.sequential.SequentialScheduler.__init__()=chimera.controllers.scheduler.sequential.SequentialScheduler-class.html#__init__,Method chimera.controllers.site.main.SiteController.__init__()=chimera.controllers.site.main.SiteController-class.html#__init__,Method chimera.controllers.xephem.XEphem.__init__()=chimera.controllers.xephem.XEphem-class.html#__init__,Method chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__()=chimera.controllers.xmlrpc.ChimeraXMLDispatcher-class.html#__init__,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#__init__,Method chimera.controllers.xmlrpc.XMLRPC.__init__()=chimera.controllers.xmlrpc.XMLRPC-class.html#__init__,Method chimera.controllers.xmlrpc.serverThread.__init__()=chimera.controllers.xmlrpc.serverThread-class.html#__init__,Method chimera.core.async.BeginDispatcher.__init__()=chimera.core.async.BeginDispatcher-class.html#__init__,Method chimera.core.async.EndDispatcher.__init__()=chimera.core.async.EndDispatcher-class.html#__init__,Method chimera.core.chimeraobject.ChimeraObject.__init__()=chimera.core.chimeraobject.ChimeraObject-class.html#__init__,Method chimera.core.classloader.ClassLoader.__init__()=chimera.core.classloader.ClassLoader-class.html#__init__,Method chimera.core.cli.CLIValues.__init__()=chimera.core.cli.CLIValues-class.html#__init__,Method chimera.core.cli.ChimeraCLI.__init__()=chimera.core.cli.ChimeraCLI-class.html#__init__,Method chimera.core.cli.Option.__init__()=chimera.core.cli.Option-class.html#__init__,Method chimera.core.config.BoolChecker.__init__()=chimera.core.config.BoolChecker-class.html#__init__,Method chimera.core.config.Config.__init__()=chimera.core.config.Config-class.html#__init__,Method chimera.core.config.CoordChecker.__init__()=chimera.core.config.CoordChecker-class.html#__init__,Method chimera.core.config.CoordOption.__init__()=chimera.core.config.CoordOption-class.html#__init__,Method chimera.core.config.EnumChecker.__init__()=chimera.core.config.EnumChecker-class.html#__init__,Method chimera.core.config.FloatChecker.__init__()=chimera.core.config.FloatChecker-class.html#__init__,Method chimera.core.config.IgnoreChecker.__init__()=chimera.core.config.IgnoreChecker-class.html#__init__,Method chimera.core.config.IntChecker.__init__()=chimera.core.config.IntChecker-class.html#__init__,Method chimera.core.config.Option.__init__()=chimera.core.config.Option-class.html#__init__,Method chimera.core.config.OptionsChecker.__init__()=chimera.core.config.OptionsChecker-class.html#__init__,Method chimera.core.config.RangeChecker.__init__()=chimera.core.config.RangeChecker-class.html#__init__,Method chimera.core.config.StringChecker.__init__()=chimera.core.config.StringChecker-class.html#__init__,Method chimera.core.eventsproxy.EventsProxy.__init__()=chimera.core.eventsproxy.EventsProxy-class.html#__init__,Method chimera.core.eventwrapper.EventWrapperDispatcher.__init__()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#__init__,Method chimera.core.exceptions.ChimeraException.__init__()=chimera.core.exceptions.ChimeraException-class.html#__init__,Method chimera.core.location.Location.__init__()=chimera.core.location.Location-class.html#__init__,Method chimera.core.lockwrapper.LockWrapper.__init__()=chimera.core.lockwrapper.LockWrapper-class.html#__init__,Method chimera.core.lockwrapper.LockWrapperDispatcher.__init__()=chimera.core.lockwrapper.LockWrapperDispatcher-class.html#__init__,Method chimera.core.log.ChimeraFormatter.__init__()=chimera.core.log.ChimeraFormatter-class.html#__init__,Method chimera.core.manager.Manager.__init__()=chimera.core.manager.Manager-class.html#__init__,Method chimera.core.manager.ManagerAdapter.__init__()=chimera.core.manager.ManagerAdapter-class.html#__init__,Method chimera.core.managerbeacon.ManagerBeacon.__init__()=chimera.core.managerbeacon.ManagerBeacon-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapper.__init__()=chimera.core.methodwrapper.MethodWrapper-class.html#__init__,Method chimera.core.methodwrapper.MethodWrapperDispatcher.__init__()=chimera.core.methodwrapper.MethodWrapperDispatcher-class.html#__init__,Method chimera.core.monitor.Monitor.__init__()=chimera.core.monitor.Monitor-class.html#__init__,Method chimera.core.proxy.Proxy.__init__()=chimera.core.proxy.Proxy-class.html#__init__,Method chimera.core.proxy.ProxyMethod.__init__()=chimera.core.proxy.ProxyMethod-class.html#__init__,Method chimera.core.remoteobject.RemoteObject.__init__()=chimera.core.remoteobject.RemoteObject-class.html#__init__,Method chimera.core.resources.Resource.__init__()=chimera.core.resources.Resource-class.html#__init__,Method chimera.core.resources.ResourcesManager.__init__()=chimera.core.resources.ResourcesManager-class.html#__init__,Method chimera.core.rwlock.ReadWriteLock.__init__()=chimera.core.rwlock.ReadWriteLock-class.html#__init__,Method chimera.core.site.AstroDate.__init__()=chimera.core.site.AstroDate-class.html#__init__,Method chimera.core.site.Site.__init__()=chimera.core.site.Site-class.html#__init__,Method chimera.core.systemconfig.SystemConfig.__init__()=chimera.core.systemconfig.SystemConfig-class.html#__init__,Method chimera.core.tests.managerhelper.ManagerHelper.__init__()=chimera.core.tests.managerhelper.ManagerHelper-class.html#__init__,Method chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__()=chimera.core.tests.managerhelperwitherror.ManagerHelperWithError-class.html#__init__,Method chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__()=chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException-class.html#__init__,Method chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__()=chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException-class.html#__init__,Method chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__()=chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException-class.html#__init__,Method chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__()=chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException-class.html#__init__,Method chimera.core.tests.test_events.Publisher.__init__()=chimera.core.tests.test_events.Publisher-class.html#__init__,Method chimera.core.tests.test_events.Subscriber.__init__()=chimera.core.tests.test_events.Subscriber-class.html#__init__,Method chimera.core.tests.test_manager.Simple.__init__()=chimera.core.tests.test_manager.Simple-class.html#__init__,Method chimera.core.tests.test_resources.TestResources.__init__()=chimera.core.tests.test_resources.TestResources-class.html#__init__,Method chimera.core.threads.ThreadPool.__init__()=chimera.core.threads.ThreadPool-class.html#__init__,Method chimera.core.threads.ThreadPoolThread.__init__()=chimera.core.threads.ThreadPoolThread-class.html#__init__,Method chimera.drivers.domelna40cm.DomeLNA40cm.__init__()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__init__,Method chimera.drivers.fakecamera.FakeCamera.__init__()=chimera.drivers.fakecamera.FakeCamera-class.html#__init__,Method chimera.drivers.fakedome.FakeDome.__init__()=chimera.drivers.fakedome.FakeDome-class.html#__init__,Method chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__()=chimera.drivers.fakefilterwheel.FakeFilterWheel-class.html#__init__,Method chimera.drivers.fakefocuser.FakeFocuser.__init__()=chimera.drivers.fakefocuser.FakeFocuser-class.html#__init__,Method chimera.drivers.faketelescope.FakeTelescope.__init__()=chimera.drivers.faketelescope.FakeTelescope-class.html#__init__,Method chimera.drivers.meade.Meade.__init__()=chimera.drivers.meade.Meade-class.html#__init__,Method chimera.drivers.optectcfs.OptecTCFS.__init__()=chimera.drivers.optectcfs.OptecTCFS-class.html#__init__,Method chimera.drivers.remoteclient.RemoteClient.__init__()=chimera.drivers.remoteclient.RemoteClient-class.html#__init__,Method chimera.drivers.remoteclient.RemoteMethodWrapper.__init__()=chimera.drivers.remoteclient.RemoteMethodWrapper-class.html#__init__,Method chimera.drivers.sbig.sbig.SBIG.__init__()=chimera.drivers.sbig.sbig.SBIG-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__()=chimera.drivers.sbig.sbigdrv.SBIGDrv-class.html#__init__,Method chimera.drivers.sbig.sbigdrv.SBIGException.__init__()=chimera.drivers.sbig.sbigdrv.SBIGException-class.html#__init__,Method chimera.drivers.theskytelescope.TheSkyTelescope.__init__()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__init__,Method chimera.instruments.camera.Camera.__init__()=chimera.instruments.camera.Camera-class.html#__init__,Method chimera.instruments.dome.Dome.__init__()=chimera.instruments.dome.Dome-class.html#__init__,Method chimera.instruments.filterwheel.FilterWheel.__init__()=chimera.instruments.filterwheel.FilterWheel-class.html#__init__,Method chimera.instruments.focuser.Focuser.__init__()=chimera.instruments.focuser.Focuser-class.html#__init__,Method chimera.instruments.telescope.Telescope.__init__()=chimera.instruments.telescope.Telescope-class.html#__init__,Method chimera.interfaces.lifecycle.ILifeCycle.__init__()=chimera.interfaces.lifecycle.ILifeCycle-class.html#__init__,Method chimera.util.catalogs.landolt.Landolt.__init__()=chimera.util.catalogs.landolt.Landolt-class.html#__init__,Method chimera.util.catalogs.ppm.PPM.__init__()=chimera.util.catalogs.ppm.PPM-class.html#__init__,Method chimera.util.catalogs.ucac2.UCAC2.__init__()=chimera.util.catalogs.ucac2.UCAC2-class.html#__init__,Method chimera.util.coord.Coord.__init__()=chimera.util.coord.Coord-class.html#__init__,Method chimera.util.ds9.DS9.__init__()=chimera.util.ds9.DS9-class.html#__init__,Method chimera.util.etree.ElementPath.Path.__init__()=chimera.util.etree.ElementPath.Path-class.html#__init__,Method chimera.util.etree.ElementTree.ElementTree.__init__()=chimera.util.etree.ElementTree.ElementTree-class.html#__init__,Method chimera.util.etree.ElementTree.QName.__init__()=chimera.util.etree.ElementTree.QName-class.html#__init__,Method chimera.util.etree.ElementTree.TreeBuilder.__init__()=chimera.util.etree.ElementTree.TreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree.XMLTreeBuilder.__init__()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#__init__,Method chimera.util.etree.ElementTree._ElementInterface.__init__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__init__,Method chimera.util.etree.ElementTree._iterparse.__init__()=chimera.util.etree.ElementTree._iterparse-class.html#__init__,Method chimera.util.filenamesequence.FilenameSequence.__init__()=chimera.util.filenamesequence.FilenameSequence-class.html#__init__,Method chimera.util.image.Image.__init__()=chimera.util.image.Image-class.html#__init__,Method chimera.util.position.Position.__init__()=chimera.util.position.Position-class.html#__init__,Method chimera.util.sexcatalog.SExtractorfile.__init__()=chimera.util.sexcatalog.SExtractorfile-class.html#__init__,Method chimera.util.sextractor.SExtractor.__init__()=chimera.util.sextractor.SExtractor-class.html#__init__,Method chimera.util.simbad.Simbad.__init__()=chimera.util.simbad.Simbad-class.html#__init__,Method chimera.util.telescopelimits.TelescopeLimits.__init__()=chimera.util.telescopelimits.TelescopeLimits-class.html#__init__,Method chimera.util.vizquery.VizQuery.__init__()=chimera.util.vizquery.VizQuery-class.html#__init__,Method chimera.util.votable.VONode.__init__()=chimera.util.votable.VONode-class.html#__init__,Method chimera.util.votable.VOTable.__init__()=chimera.util.votable.VOTable-class.html#__init__,Method chimera.util.votable.VOTableHandler.__init__()=chimera.util.votable.VOTableHandler-class.html#__init__"><a title="chimera.controllers.autofocus.Autofocus.__init__
+chimera.controllers.autofocus.FocusFit.__init__
+chimera.controllers.console.command.Command.__init__
+chimera.controllers.console.command.HighLevelCommand.__init__
+chimera.controllers.console.commander.Commander.__init__
+chimera.controllers.console.commands.alias.AliasCommand.__init__
+chimera.controllers.console.commands.object.ObjectCommand.__init__
+chimera.controllers.console.commands.quit.QuitCommand.__init__
+chimera.controllers.console.commands.site.SiteCommand.__init__
+chimera.controllers.console.commands.unalias.UnaliasCommand.__init__
+chimera.controllers.console.console.Console.__init__
+chimera.controllers.console.controller._ConsoleControllerSingleton.__init__
+chimera.controllers.console.message.Config.__init__
+chimera.controllers.console.message.Error.__init__
+chimera.controllers.console.message.Hint.__init__
+chimera.controllers.console.message.Message.__init__
+chimera.controllers.console.namespace.Namespace.__init__
+chimera.controllers.extinction.Extinction.__init__
+chimera.controllers.imageserver.imagerequest.ImageRequest.__init__
+chimera.controllers.imageserver.imageserver.ImageServer.__init__
+chimera.controllers.imageserver.imageserverhttp.ImageServerHTTP.__init__
+chimera.controllers.pointverify.PointVerify.__init__
+chimera.controllers.reduction.calibration.Calibration.__init__
+chimera.controllers.reduction.chimera_pipe.Reduction.__init__
+chimera.controllers.scheduler.constraints.Constraints.__init__
+chimera.controllers.scheduler.constraints.IConstraint.__init__
+chimera.controllers.scheduler.controller.Controller.__init__
+chimera.controllers.scheduler.machine.Machine.__init__
+chimera.controllers.scheduler.sequential.SequentialScheduler.__init__
+chimera.controllers.site.main.SiteController.__init__
+chimera.controllers.xephem.XEphem.__init__
+chimera.controllers.xmlrpc.ChimeraXMLDispatcher.__init__
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.__init__
+chimera.controllers.xmlrpc.XMLRPC.__init__
+chimera.controllers.xmlrpc.serverThread.__init__
+chimera.core.async.BeginDispatcher.__init__
+chimera.core.async.EndDispatcher.__init__
+chimera.core.chimeraobject.ChimeraObject.__init__
+chimera.core.classloader.ClassLoader.__init__
+chimera.core.cli.CLIValues.__init__
+chimera.core.cli.ChimeraCLI.__init__
+chimera.core.cli.Option.__init__
+chimera.core.config.BoolChecker.__init__
+chimera.core.config.Config.__init__
+chimera.core.config.CoordChecker.__init__
+chimera.core.config.CoordOption.__init__
+chimera.core.config.EnumChecker.__init__
+chimera.core.config.FloatChecker.__init__
+chimera.core.config.IgnoreChecker.__init__
+chimera.core.config.IntChecker.__init__
+chimera.core.config.Option.__init__
+chimera.core.config.OptionsChecker.__init__
+chimera.core.config.RangeChecker.__init__
+chimera.core.config.StringChecker.__init__
+chimera.core.eventsproxy.EventsProxy.__init__
+chimera.core.eventwrapper.EventWrapperDispatcher.__init__
+chimera.core.exceptions.ChimeraException.__init__
+chimera.core.location.Location.__init__
+chimera.core.lockwrapper.LockWrapper.__init__
+chimera.core.lockwrapper.LockWrapperDispatcher.__init__
+chimera.core.log.ChimeraFormatter.__init__
+chimera.core.manager.Manager.__init__
+chimera.core.manager.ManagerAdapter.__init__
+chimera.core.managerbeacon.ManagerBeacon.__init__
+chimera.core.methodwrapper.MethodWrapper.__init__
+chimera.core.methodwrapper.MethodWrapperDispatcher.__init__
+chimera.core.monitor.Monitor.__init__
+chimera.core.proxy.Proxy.__init__
+chimera.core.proxy.ProxyMethod.__init__
+chimera.core.remoteobject.RemoteObject.__init__
+chimera.core.resources.Resource.__init__
+chimera.core.resources.ResourcesManager.__init__
+chimera.core.rwlock.ReadWriteLock.__init__
+chimera.core.site.AstroDate.__init__
+chimera.core.site.Site.__init__
+chimera.core.systemconfig.SystemConfig.__init__
+chimera.core.tests.managerhelper.ManagerHelper.__init__
+chimera.core.tests.managerhelperwitherror.ManagerHelperWithError.__init__
+chimera.core.tests.managerhelperwithinitexception.ManagerHelperWithInitException.__init__
+chimera.core.tests.managerhelperwithmainexception.ManagerHelperWithMainException.__init__
+chimera.core.tests.managerhelperwithstartexception.ManagerHelperWithStartException.__init__
+chimera.core.tests.managerhelperwithstopexception.ManagerHelperWithStopException.__init__
+chimera.core.tests.test_events.Publisher.__init__
+chimera.core.tests.test_events.Subscriber.__init__
+chimera.core.tests.test_manager.Simple.__init__
+chimera.core.tests.test_resources.TestResources.__init__
+chimera.core.threads.ThreadPool.__init__
+chimera.core.threads.ThreadPoolThread.__init__
+chimera.drivers.domelna40cm.DomeLNA40cm.__init__
+chimera.drivers.fakecamera.FakeCamera.__init__
+chimera.drivers.fakedome.FakeDome.__init__
+chimera.drivers.fakefilterwheel.FakeFilterWheel.__init__
+chimera.drivers.fakefocuser.FakeFocuser.__init__
+chimera.drivers.faketelescope.FakeTelescope.__init__
+chimera.drivers.meade.Meade.__init__
+chimera.drivers.optectcfs.OptecTCFS.__init__
+chimera.drivers.remoteclient.RemoteClient.__init__
+chimera.drivers.remoteclient.RemoteMethodWrapper.__init__
+chimera.drivers.sbig.sbig.SBIG.__init__
+chimera.drivers.sbig.sbigdrv.ReadoutMode.__init__
+chimera.drivers.sbig.sbigdrv.SBIGDrv.__init__
+chimera.drivers.sbig.sbigdrv.SBIGException.__init__
+chimera.drivers.theskytelescope.TheSkyTelescope.__init__
+chimera.instruments.camera.Camera.__init__
+chimera.instruments.dome.Dome.__init__
+chimera.instruments.filterwheel.FilterWheel.__init__
+chimera.instruments.focuser.Focuser.__init__
+chimera.instruments.telescope.Telescope.__init__
+chimera.interfaces.lifecycle.ILifeCycle.__init__
+chimera.util.catalogs.landolt.Landolt.__init__
+chimera.util.catalogs.ppm.PPM.__init__
+chimera.util.catalogs.ucac2.UCAC2.__init__
+chimera.util.coord.Coord.__init__
+chimera.util.ds9.DS9.__init__
+chimera.util.etree.ElementPath.Path.__init__
+chimera.util.etree.ElementTree.ElementTree.__init__
+chimera.util.etree.ElementTree.QName.__init__
+chimera.util.etree.ElementTree.TreeBuilder.__init__
+chimera.util.etree.ElementTree.XMLTreeBuilder.__init__
+chimera.util.etree.ElementTree._ElementInterface.__init__
+chimera.util.etree.ElementTree._iterparse.__init__
+chimera.util.filenamesequence.FilenameSequence.__init__
+chimera.util.image.Image.__init__
+chimera.util.position.Position.__init__
+chimera.util.sexcatalog.SExtractorfile.__init__
+chimera.util.sextractor.SExtractor.__init__
+chimera.util.simbad.Simbad.__init__
+chimera.util.telescopelimits.TelescopeLimits.__init__
+chimera.util.vizquery.VizQuery.__init__
+chimera.util.votable.VONode.__init__
+chimera.util.votable.VOTable.__init__
+chimera.util.votable.VOTableHandler.__init__" class="py-name" href="#" onclick="return doclink('link-25', '__init__', 'link-25');">__init__</a></tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">abort</tt> <tt class="py-op">=</tt> <tt class="py-name">threading</tt><tt class="py-op">.</tt><tt class="py-name">Event</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slewing</tt>  <tt class="py-op">=</tt> <tt id="link-26" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-26', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slitOpen</tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-27', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_az_shift</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.__start__"></a><div id="DomeLNA40cm.__start__-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.__start__-toggle" onclick="return toggle('DomeLNA40cm.__start__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__start__">__start__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.__start__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.__start__-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.open()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#open,Method chimera.drivers.fakecamera.FakeCamera.open()=chimera.drivers.fakecamera.FakeCamera-class.html#open,Method chimera.drivers.faketelescope.FakeTelescope.open()=chimera.drivers.faketelescope.FakeTelescope-class.html#open,Method chimera.drivers.meade.Meade.open()=chimera.drivers.meade.Meade-class.html#open,Method chimera.drivers.optectcfs.OptecTCFS.open()=chimera.drivers.optectcfs.OptecTCFS-class.html#open,Method chimera.drivers.sbig.sbig.SBIG.open()=chimera.drivers.sbig.sbig.SBIG-class.html#open,Method chimera.drivers.theskytelescope.TheSkyTelescope.open()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#open,Method chimera.interfaces.cameradriver.ICameraDriver.open()=chimera.interfaces.cameradriver.ICameraDriver-class.html#open,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#open,Method chimera.util.ds9.DS9.open()=chimera.util.ds9.DS9-class.html#open,Function chimera.util.sexcatalog.open()=chimera.util.sexcatalog-module.html#open"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-28', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-29" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-29', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.__stop__"></a><div id="DomeLNA40cm.__stop__-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.__stop__-toggle" onclick="return toggle('DomeLNA40cm.__stop__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#__stop__">__stop__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.__stop__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.__stop__-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.close()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#close,Method chimera.drivers.fakecamera.FakeCamera.close()=chimera.drivers.fakecamera.FakeCamera-class.html#close,Method chimera.drivers.faketelescope.FakeTelescope.close()=chimera.drivers.faketelescope.FakeTelescope-class.html#close,Method chimera.drivers.meade.Meade.close()=chimera.drivers.meade.Meade-class.html#close,Method chimera.drivers.optectcfs.OptecTCFS.close()=chimera.drivers.optectcfs.OptecTCFS-class.html#close,Method chimera.drivers.sbig.sbig.SBIG.close()=chimera.drivers.sbig.sbig.SBIG-class.html#close,Method chimera.drivers.theskytelescope.TheSkyTelescope.close()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#close,Method chimera.interfaces.cameradriver.ICameraDriver.close()=chimera.interfaces.cameradriver.ICameraDriver-class.html#close,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#close,Method chimera.util.etree.ElementTree.TreeBuilder.close()=chimera.util.etree.ElementTree.TreeBuilder-class.html#close,Method chimera.util.etree.ElementTree.XMLTreeBuilder.close()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#close,Method chimera.util.sexcatalog.SExtractorfile.close()=chimera.util.sexcatalog.SExtractorfile-class.html#close"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-30', 'close', 'link-30');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-31" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-31', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm._checkDome"></a><div id="DomeLNA40cm._checkDome-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._checkDome-toggle" onclick="return toggle('DomeLNA40cm._checkDome');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_checkDome">_checkDome</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._checkDome-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._checkDome-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-comment"># just for test, ask azimuth</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.getAz()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#getAz,Method chimera.drivers.fakedome.FakeDome.getAz()=chimera.drivers.fakedome.FakeDome-class.html#getAz,Method chimera.drivers.faketelescope.FakeTelescope.getAz()=chimera.drivers.faketelescope.FakeTelescope-class.html#getAz,Method chimera.drivers.meade.Meade.getAz()=chimera.drivers.meade.Meade-class.html#getAz,Method chimera.drivers.theskytelescope.TheSkyTelescope.getAz()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#getAz,Method chimera.instruments.dome.Dome.getAz()=chimera.instruments.dome.Dome-class.html#getAz,Method chimera.instruments.telescope.Telescope.getAz()=chimera.instruments.telescope.Telescope-class.html#getAz,Method chimera.interfaces.dome.IDome.getAz()=chimera.interfaces.dome.IDome-class.html#getAz,Method chimera.interfaces.domedriver.IDomeDriver.getAz()=chimera.interfaces.domedriver.IDomeDriver-class.html#getAz,Method chimera.interfaces.telescope.ITelescopeSlew.getAz()=chimera.interfaces.telescope.ITelescopeSlew-class.html#getAz,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#getAz"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.getAz
+chimera.drivers.fakedome.FakeDome.getAz
+chimera.drivers.faketelescope.FakeTelescope.getAz
+chimera.drivers.meade.Meade.getAz
+chimera.drivers.theskytelescope.TheSkyTelescope.getAz
+chimera.instruments.dome.Dome.getAz
+chimera.instruments.telescope.Telescope.getAz
+chimera.interfaces.dome.IDome.getAz
+chimera.interfaces.domedriver.IDomeDriver.getAz
+chimera.interfaces.telescope.ITelescopeSlew.getAz
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz" class="py-name" href="#" onclick="return doclink('link-32', 'getAz', 'link-32');">getAz</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-33" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-33', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm._checkQuirk"></a><div id="DomeLNA40cm._checkQuirk-def"><a name="L64"></a><tt class="py-lineno"> 64</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._checkQuirk-toggle" onclick="return toggle('DomeLNA40cm._checkQuirk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_checkQuirk">_checkQuirk</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._checkQuirk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._checkQuirk-expanded"><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-comment"># clear uC command buffer sending and \r, this makes the uC happy!</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm._write()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_write,Method chimera.drivers.meade.Meade._write()=chimera.drivers.meade.Meade-class.html#_write,Method chimera.drivers.optectcfs.OptecTCFS._write()=chimera.drivers.optectcfs.OptecTCFS-class.html#_write,Method chimera.util.etree.ElementTree.ElementTree._write()=chimera.util.etree.ElementTree.ElementTree-class.html#_write"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-34', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">ret</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm._readline()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_readline,Method chimera.drivers.meade.Meade._readline()=chimera.drivers.meade.Meade-class.html#_readline,Method chimera.drivers.optectcfs.OptecTCFS._readline()=chimera.drivers.optectcfs.OptecTCFS-class.html#_readline"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-35', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ret</tt> <tt class="py-op">!=</tt> <tt class="py-string">"INVALIDO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-36" class="py-name"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-36', 'ChimeraException', 'link-11');">ChimeraException</a></tt> <tt class="py-op">(</tt><tt class="py-string">"Quirk error!!! (%s)"</tt> <tt class="py-op">%</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">ret</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-37" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-37', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.open"></a><div id="DomeLNA40cm.open-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.open-toggle" onclick="return toggle('DomeLNA40cm.open');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#open">open</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.open-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.open-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt> <tt class="py-op">=</tt> <tt class="py-name">serial</tt><tt class="py-op">.</tt><tt class="py-name">Serial</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"device"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">baudrate</tt><tt class="py-op">=</tt><tt class="py-number">9600</tt><tt class="py-op">,</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                                 <tt class="py-name">bytesize</tt><tt class="py-op">=</tt><tt class="py-name">serial</tt><tt class="py-op">.</tt><tt class="py-name">EIGHTBITS</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                                 <tt class="py-name">parity</tt><tt class="py-op">=</tt><tt class="py-name">serial</tt><tt class="py-op">.</tt><tt class="py-name">PARITY_NONE</tt><tt class="py-op">,</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                                 <tt class="py-name">stopbits</tt><tt class="py-op">=</tt><tt class="py-name">serial</tt><tt class="py-op">.</tt><tt class="py-name">STOPBITS_ONE</tt><tt class="py-op">,</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                                 <tt class="py-name">timeout</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"init_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">xonxoff</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">rtscts</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-38', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">flushInput</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">flushOutput</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm._checkDome()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_checkDome"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkDome" class="py-name" href="#" onclick="return doclink('link-39', '_checkDome', 'link-39');">_checkDome</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.close"></a><div id="DomeLNA40cm.close-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.close-toggle" onclick="return toggle('DomeLNA40cm.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.close-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method chimera.util.ds9.DS9.isOpen()=chimera.util.ds9.DS9-class.html#isOpen"><a title="chimera.util.ds9.DS9.isOpen" class="py-name" href="#" onclick="return doclink('link-40', 'isOpen', 'link-40');">isOpen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-41', 'close', 'link-30');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.slewToAz"></a><div id="DomeLNA40cm.slewToAz-def"><a name="L96"></a><tt class="py-lineno"> 96</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.slewToAz-toggle" onclick="return toggle('DomeLNA40cm.slewToAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#slewToAz">slewToAz</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">az</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.slewToAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.slewToAz-expanded"><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_checkQuirk"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk" class="py-name" href="#" onclick="return doclink('link-42', '_checkQuirk', 'link-42');">_checkQuirk</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-comment"># correct dome/telescope phase difference</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">dome_az</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name" targets="Variable chimera.util.position.Position.az=chimera.util.position.Position-class.html#az"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-43', 'az', 'link-43');">az</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Variable chimera.util.coord.Coord.D=chimera.util.coord.Coord-class.html#D,Variable chimera.util.position.Position.D=chimera.util.position.Position-class.html#D"><a title="chimera.util.coord.Coord.D
+chimera.util.position.Position.D" class="py-name" href="#" onclick="return doclink('link-44', 'D', 'link-44');">D</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_az_shift</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">dome_az</tt> <tt class="py-op">=</tt> <tt class="py-name">dome_az</tt> <tt class="py-op">%</tt> <tt class="py-number">360</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">         </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">dome_az</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt> <tt class="py-op">(</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">ceil</tt> <tt class="py-op">(</tt><tt class="py-name">dome_az</tt> <tt class="py-op">/</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"az_resolution"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">pstn</tt> <tt class="py-op">=</tt> <tt class="py-string">"CUPULA=%03d"</tt> <tt class="py-op">%</tt> <tt class="py-name">dome_az</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">setTimeout</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"slew_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-45', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-name">pstn</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-46', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">==</tt> <tt class="py-string">"INVALIDO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error trying to slew the dome to"</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                          <tt class="py-string">"azimuth '%s' (dome azimuth '%s')."</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-47" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-47', 'az', 'link-43');">az</a></tt><tt class="py-op">,</tt> <tt class="py-name">dome_az</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-comment"># ok, we are slewing now</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slewing</tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-48', 'True', 'link-29');">True</a></tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Method chimera.interfaces.dome.IDome.slewBegin()=chimera.interfaces.dome.IDome-class.html#slewBegin,Method chimera.interfaces.domedriver.IDomeDriver.slewBegin()=chimera.interfaces.domedriver.IDomeDriver-class.html#slewBegin,Method chimera.interfaces.telescope.ITelescopeSlew.slewBegin()=chimera.interfaces.telescope.ITelescopeSlew-class.html#slewBegin,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.slewBegin()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#slewBegin"><a title="chimera.interfaces.dome.IDome.slewBegin
+chimera.interfaces.domedriver.IDomeDriver.slewBegin
+chimera.interfaces.telescope.ITelescopeSlew.slewBegin
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.slewBegin" class="py-name" href="#" onclick="return doclink('link-49', 'slewBegin', 'link-49');">slewBegin</a></tt><tt class="py-op">(</tt><tt id="link-50" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-50', 'az', 'link-43');">az</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-comment"># FIXME: add abort option here</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">fin</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-51', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">fin</tt> <tt class="py-op">==</tt> <tt class="py-string">"ALARME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">            <tt class="py-comment"># FIXME: restart the dome and try again</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error while slewing dome. Some barcodes"</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                          <tt class="py-string">" couldn't be read correctly."</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                          <tt class="py-string">" Restarting the dome and trying again."</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">fin</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt> <tt class="py-op">(</tt><tt class="py-string">"CUPULA="</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slewing</tt> <tt class="py-op">=</tt> <tt id="link-52" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-52', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">            <tt class="py-name">time</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Method chimera.controllers.scheduler.machine.Machine.sleep()=chimera.controllers.scheduler.machine.Machine-class.html#sleep"><a title="chimera.controllers.scheduler.machine.Machine.sleep" class="py-name" href="#" onclick="return doclink('link-53', 'sleep', 'link-53');">sleep</a></tt> <tt class="py-op">(</tt><tt class="py-number">0.3</tt><tt class="py-op">)</tt> <tt class="py-comment"># FIXME: how much sleep we need?</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method chimera.interfaces.dome.IDome.slewComplete()=chimera.interfaces.dome.IDome-class.html#slewComplete,Method chimera.interfaces.domedriver.IDomeDriver.slewComplete()=chimera.interfaces.domedriver.IDomeDriver-class.html#slewComplete,Method chimera.interfaces.telescope.ITelescopeSlew.slewComplete()=chimera.interfaces.telescope.ITelescopeSlew-class.html#slewComplete,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.slewComplete()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#slewComplete"><a title="chimera.interfaces.dome.IDome.slewComplete
+chimera.interfaces.domedriver.IDomeDriver.slewComplete
+chimera.interfaces.telescope.ITelescopeSlew.slewComplete
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.slewComplete" class="py-name" href="#" onclick="return doclink('link-54', 'slewComplete', 'link-54');">slewComplete</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.getAz
+chimera.drivers.fakedome.FakeDome.getAz
+chimera.drivers.faketelescope.FakeTelescope.getAz
+chimera.drivers.meade.Meade.getAz
+chimera.drivers.theskytelescope.TheSkyTelescope.getAz
+chimera.instruments.dome.Dome.getAz
+chimera.instruments.telescope.Telescope.getAz
+chimera.interfaces.dome.IDome.getAz
+chimera.interfaces.domedriver.IDomeDriver.getAz
+chimera.interfaces.telescope.ITelescopeSlew.getAz
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz" class="py-name" href="#" onclick="return doclink('link-55', 'getAz', 'link-32');">getAz</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slewing</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-56', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Unknow error while slewing. Received '%s' from dome."</tt> <tt class="py-op">%</tt> <tt class="py-name">fin</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.isSlewing"></a><div id="DomeLNA40cm.isSlewing-def"><a name="L139"></a><tt class="py-lineno">139</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.isSlewing-toggle" onclick="return toggle('DomeLNA40cm.isSlewing');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#isSlewing">isSlewing</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.isSlewing-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.isSlewing-expanded"><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slewing</tt> </tt>
+</div><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.abortSlew"></a><div id="DomeLNA40cm.abortSlew-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.abortSlew-toggle" onclick="return toggle('DomeLNA40cm.abortSlew');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#abortSlew">abortSlew</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.abortSlew-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.abortSlew-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-comment"># FIXME: make abort work</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.isSlewing()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#isSlewing,Method chimera.drivers.fakedome.FakeDome.isSlewing()=chimera.drivers.fakedome.FakeDome-class.html#isSlewing,Method chimera.drivers.faketelescope.FakeTelescope.isSlewing()=chimera.drivers.faketelescope.FakeTelescope-class.html#isSlewing,Method chimera.drivers.meade.Meade.isSlewing()=chimera.drivers.meade.Meade-class.html#isSlewing,Method chimera.drivers.theskytelescope.TheSkyTelescope.isSlewing()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#isSlewing,Method chimera.instruments.dome.Dome.isSlewing()=chimera.instruments.dome.Dome-class.html#isSlewing,Method chimera.instruments.telescope.Telescope.isSlewing()=chimera.instruments.telescope.Telescope-class.html#isSlewing,Method chimera.interfaces.dome.IDome.isSlewing()=chimera.interfaces.dome.IDome-class.html#isSlewing,Method chimera.interfaces.domedriver.IDomeDriver.isSlewing()=chimera.interfaces.domedriver.IDomeDriver-class.html#isSlewing,Method chimera.interfaces.telescope.ITelescopeSlew.isSlewing()=chimera.interfaces.telescope.ITelescopeSlew-class.html#isSlewing,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.isSlewing()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#isSlewing"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.isSlewing
+chimera.drivers.fakedome.FakeDome.isSlewing
+chimera.drivers.faketelescope.FakeTelescope.isSlewing
+chimera.drivers.meade.Meade.isSlewing
+chimera.drivers.theskytelescope.TheSkyTelescope.isSlewing
+chimera.instruments.dome.Dome.isSlewing
+chimera.instruments.telescope.Telescope.isSlewing
+chimera.interfaces.dome.IDome.isSlewing
+chimera.interfaces.domedriver.IDomeDriver.isSlewing
+chimera.interfaces.telescope.ITelescopeSlew.isSlewing
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.isSlewing" class="py-name" href="#" onclick="return doclink('link-57', 'isSlewing', 'link-57');">isSlewing</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk" class="py-name" href="#" onclick="return doclink('link-58', '_checkQuirk', 'link-42');">_checkQuirk</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-59', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-string">"PARAR"</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">setTimeout</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"abort_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-60', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">!=</tt> <tt class="py-string">"PARADO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error while trying to stop the dome."</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method chimera.interfaces.camera.ICameraExpose.abortComplete()=chimera.interfaces.camera.ICameraExpose-class.html#abortComplete,Method chimera.interfaces.cameradriver.ICameraDriver.abortComplete()=chimera.interfaces.cameradriver.ICameraDriver-class.html#abortComplete,Method chimera.interfaces.dome.IDome.abortComplete()=chimera.interfaces.dome.IDome-class.html#abortComplete,Method chimera.interfaces.domedriver.IDomeDriver.abortComplete()=chimera.interfaces.domedriver.IDomeDriver-class.html#abortComplete,Method chimera.interfaces.telescope.ITelescopeSlew.abortComplete()=chimera.interfaces.telescope.ITelescopeSlew-class.html#abortComplete,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#abortComplete"><a title="chimera.interfaces.camera.ICameraExpose.abortComplete
+chimera.interfaces.cameradriver.ICameraDriver.abortComplete
+chimera.interfaces.dome.IDome.abortComplete
+chimera.interfaces.domedriver.IDomeDriver.abortComplete
+chimera.interfaces.telescope.ITelescopeSlew.abortComplete
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.abortComplete" class="py-name" href="#" onclick="return doclink('link-61', 'abortComplete', 'link-61');">abortComplete</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.getAz
+chimera.drivers.fakedome.FakeDome.getAz
+chimera.drivers.faketelescope.FakeTelescope.getAz
+chimera.drivers.meade.Meade.getAz
+chimera.drivers.theskytelescope.TheSkyTelescope.getAz
+chimera.instruments.dome.Dome.getAz
+chimera.instruments.telescope.Telescope.getAz
+chimera.interfaces.dome.IDome.getAz
+chimera.interfaces.domedriver.IDomeDriver.getAz
+chimera.interfaces.telescope.ITelescopeSlew.getAz
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz" class="py-name" href="#" onclick="return doclink('link-62', 'getAz', 'link-32');">getAz</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.getAz"></a><div id="DomeLNA40cm.getAz-def"><a name="L160"></a><tt class="py-lineno">160</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.getAz-toggle" onclick="return toggle('DomeLNA40cm.getAz');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#getAz">getAz</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.getAz-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.getAz-expanded"><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk" class="py-name" href="#" onclick="return doclink('link-63', '_checkQuirk', 'link-42');">_checkQuirk</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">setTimeout</tt> <tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-string">"POSICAO?"</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-64', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-name">cmd</tt><tt class="py-op">)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-65', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-comment"># check timeout</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">ack</tt><tt class="py-op">:</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Couldn't get azimuth after %d seconds."</tt> <tt class="py-op">%</tt> <tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt class="py-comment"># uC is going crazy</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">==</tt> <tt class="py-string">"INVALIDO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error getting dome azimuth (ack=INVALIDO)."</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-comment"># get ack return</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">"CUPULA="</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">            <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">ack</tt><tt class="py-op">[</tt><tt class="py-name">ack</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method chimera.util.catalog.Catalog.find()=chimera.util.catalog.Catalog-class.html#find,Method chimera.util.catalogs.landolt.Landolt.find()=chimera.util.catalogs.landolt.Landolt-class.html#find,Method chimera.util.catalogs.ppm.PPM.find()=chimera.util.catalogs.ppm.PPM-class.html#find,Method chimera.util.catalogs.ucac2.UCAC2.find()=chimera.util.catalogs.ucac2.UCAC2-class.html#find,Method chimera.util.etree.ElementPath.Path.find()=chimera.util.etree.ElementPath.Path-class.html#find,Function chimera.util.etree.ElementPath.find()=chimera.util.etree.ElementPath-module.html#find,Method chimera.util.etree.ElementTree.ElementTree.find()=chimera.util.etree.ElementTree.ElementTree-class.html#find,Method chimera.util.etree.ElementTree._ElementInterface.find()=chimera.util.etree.ElementTree._ElementInterface-class.html#find,Method chimera.util.etree.ElementTree._SimpleElementPath.find()=chimera.util.etree.ElementTree._SimpleElementPath-class.html#find,Method chimera.util.vizquery.VizQuery.find()=chimera.util.vizquery.VizQuery-class.html#find"><a title="chimera.util.catalog.Catalog.find
+chimera.util.catalogs.landolt.Landolt.find
+chimera.util.catalogs.ppm.PPM.find
+chimera.util.catalogs.ucac2.UCAC2.find
+chimera.util.etree.ElementPath.Path.find
+chimera.util.etree.ElementPath.find
+chimera.util.etree.ElementTree.ElementTree.find
+chimera.util.etree.ElementTree._ElementInterface.find
+chimera.util.etree.ElementTree._SimpleElementPath.find
+chimera.util.vizquery.VizQuery.find" class="py-name" href="#" onclick="return doclink('link-66', 'find', 'link-66');">find</a></tt><tt class="py-op">(</tt><tt class="py-string">"="</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">==</tt> <tt class="py-string">"ERRO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">            <tt class="py-comment"># FIXME: restart and try again</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">raise</tt> <tt id="link-67" class="py-name"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-67', 'ChimeraException', 'link-11');">ChimeraException</a></tt> <tt class="py-op">(</tt><tt class="py-string">"Dome is in invalid state. Hard restart needed."</tt><tt class="py-op">)</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-comment"># correct dome/telescope phase difference</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-68" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-68', 'az', 'link-43');">az</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">ceil</tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">ack</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"az_resolution"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt id="link-69" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-69', 'az', 'link-43');">az</a></tt> <tt class="py-op">-=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_az_shift</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt id="link-70" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-70', 'az', 'link-43');">az</a></tt> <tt class="py-op">=</tt> <tt id="link-71" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-71', 'az', 'link-43');">az</a></tt> <tt class="py-op">%</tt> <tt class="py-number">360</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-72" class="py-name"><a title="chimera.util.coord.Coord" class="py-name" href="#" onclick="return doclink('link-72', 'Coord', 'link-23');">Coord</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Static Method chimera.util.coord.Coord.fromDMS()=chimera.util.coord.Coord-class.html#fromDMS"><a title="chimera.util.coord.Coord.fromDMS" class="py-name" href="#" onclick="return doclink('link-73', 'fromDMS', 'link-73');">fromDMS</a></tt><tt class="py-op">(</tt><tt id="link-74" class="py-name"><a title="chimera.util.position.Position.az" class="py-name" href="#" onclick="return doclink('link-74', 'az', 'link-43');">az</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.openSlit"></a><div id="DomeLNA40cm.openSlit-def"><a name="L196"></a><tt class="py-lineno">196</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.openSlit-toggle" onclick="return toggle('DomeLNA40cm.openSlit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#openSlit">openSlit</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.openSlit-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.openSlit-expanded"><a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk" class="py-name" href="#" onclick="return doclink('link-75', '_checkQuirk', 'link-42');">_checkQuirk</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-string">"ABRIR"</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-76', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-name">cmd</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">        <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-77', '_readline', 'link-35');">_readline</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">!=</tt> <tt class="py-string">"ABRINDO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error trying to open the slit."</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">setTimeout</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"open_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">fin</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-78', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-comment"># check timeout</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">fin</tt><tt class="py-op">:</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Dome is still opening after %d seconds"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"open_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">fin</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt> <tt class="py-op">(</tt><tt class="py-string">"ABERTO"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error opening slit."</tt><tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slitOpen</tt> <tt class="py-op">=</tt> <tt id="link-79" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-79', 'True', 'link-29');">True</a></tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name" targets="Method chimera.interfaces.dome.IDome.slitOpened()=chimera.interfaces.dome.IDome-class.html#slitOpened,Method chimera.interfaces.domedriver.IDomeDriver.slitOpened()=chimera.interfaces.domedriver.IDomeDriver-class.html#slitOpened"><a title="chimera.interfaces.dome.IDome.slitOpened
+chimera.interfaces.domedriver.IDomeDriver.slitOpened" class="py-name" href="#" onclick="return doclink('link-80', 'slitOpened', 'link-80');">slitOpened</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.getAz
+chimera.drivers.fakedome.FakeDome.getAz
+chimera.drivers.faketelescope.FakeTelescope.getAz
+chimera.drivers.meade.Meade.getAz
+chimera.drivers.theskytelescope.TheSkyTelescope.getAz
+chimera.instruments.dome.Dome.getAz
+chimera.instruments.telescope.Telescope.getAz
+chimera.interfaces.dome.IDome.getAz
+chimera.interfaces.domedriver.IDomeDriver.getAz
+chimera.interfaces.telescope.ITelescopeSlew.getAz
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz" class="py-name" href="#" onclick="return doclink('link-81', 'getAz', 'link-32');">getAz</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lock</tt> </tt>
+<a name="DomeLNA40cm.closeSlit"></a><div id="DomeLNA40cm.closeSlit-def"><a name="L224"></a><tt class="py-lineno">224</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.closeSlit-toggle" onclick="return toggle('DomeLNA40cm.closeSlit');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#closeSlit">closeSlit</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.closeSlit-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.closeSlit-expanded"><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._checkQuirk" class="py-name" href="#" onclick="return doclink('link-82', '_checkQuirk', 'link-42');">_checkQuirk</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-string">"FECHAR"</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._write
+chimera.drivers.meade.Meade._write
+chimera.drivers.optectcfs.OptecTCFS._write
+chimera.util.etree.ElementTree.ElementTree._write" class="py-name" href="#" onclick="return doclink('link-83', '_write', 'link-34');">_write</a></tt><tt class="py-op">(</tt><tt class="py-name">cmd</tt><tt class="py-op">)</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-name">ack</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-84', '_readline', 'link-35');">_readline</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ack</tt> <tt class="py-op">!=</tt> <tt class="py-string">"FECHANDO"</tt><tt class="py-op">:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error trying to close the slit."</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">setTimeout</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"close_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-name">fin</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._readline
+chimera.drivers.meade.Meade._readline
+chimera.drivers.optectcfs.OptecTCFS._readline" class="py-name" href="#" onclick="return doclink('link-85', '_readline', 'link-35');">_readline</a></tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-comment"># check timeout</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">fin</tt><tt class="py-op">:</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Dome is still closing after %d seconds"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-string">"close_timeout"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">fin</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt> <tt class="py-op">(</tt><tt class="py-string">"FECHADO"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Error closing slit."</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slitOpen</tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-86', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name" targets="Method chimera.interfaces.dome.IDome.slitClosed()=chimera.interfaces.dome.IDome-class.html#slitClosed,Method chimera.interfaces.domedriver.IDomeDriver.slitClosed()=chimera.interfaces.domedriver.IDomeDriver-class.html#slitClosed"><a title="chimera.interfaces.dome.IDome.slitClosed
+chimera.interfaces.domedriver.IDomeDriver.slitClosed" class="py-name" href="#" onclick="return doclink('link-87', 'slitClosed', 'link-87');">slitClosed</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.getAz
+chimera.drivers.fakedome.FakeDome.getAz
+chimera.drivers.faketelescope.FakeTelescope.getAz
+chimera.drivers.meade.Meade.getAz
+chimera.drivers.theskytelescope.TheSkyTelescope.getAz
+chimera.instruments.dome.Dome.getAz
+chimera.instruments.telescope.Telescope.getAz
+chimera.interfaces.dome.IDome.getAz
+chimera.interfaces.domedriver.IDomeDriver.getAz
+chimera.interfaces.telescope.ITelescopeSlew.getAz
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.getAz" class="py-name" href="#" onclick="return doclink('link-88', 'getAz', 'link-32');">getAz</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm.isSlitOpen"></a><div id="DomeLNA40cm.isSlitOpen-def"><a name="L250"></a><tt class="py-lineno">250</tt> <a class="py-toggle" href="#" id="DomeLNA40cm.isSlitOpen-toggle" onclick="return toggle('DomeLNA40cm.isSlitOpen');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#isSlitOpen">isSlitOpen</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm.isSlitOpen-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm.isSlitOpen-expanded"><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_slitOpen</tt> </tt>
+</div><a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt class="py-comment">#</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># low level</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment">#</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="DomeLNA40cm._read"></a><div id="DomeLNA40cm._read-def"><a name="L258"></a><tt class="py-lineno">258</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._read-toggle" onclick="return toggle('DomeLNA40cm._read');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_read">_read</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">n</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._read-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._read-expanded"><a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="chimera.util.ds9.DS9.isOpen" class="py-name" href="#" onclick="return doclink('link-89', 'isOpen', 'link-40');">isOpen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Device not open"</tt><tt class="py-op">)</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">flushInput</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name" targets="Method chimera.util.sexcatalog.SExtractorfile.read()=chimera.util.sexcatalog.SExtractorfile-class.html#read"><a title="chimera.util.sexcatalog.SExtractorfile.read" class="py-name" href="#" onclick="return doclink('link-90', 'read', 'link-90');">read</a></tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm._readline"></a><div id="DomeLNA40cm._readline-def"><a name="L266"></a><tt class="py-lineno">266</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._readline-toggle" onclick="return toggle('DomeLNA40cm._readline');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_readline">_readline</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">eol</tt><tt class="py-op">=</tt><tt class="py-string">"\n"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._readline-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._readline-expanded"><a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="chimera.util.ds9.DS9.isOpen" class="py-name" href="#" onclick="return doclink('link-91', 'isOpen', 'link-40');">isOpen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Device not open"</tt><tt class="py-op">)</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">flushInput</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-name">ret</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name" targets="Method chimera.util.sexcatalog.SExtractorfile.readline()=chimera.util.sexcatalog.SExtractorfile-class.html#readline"><a title="chimera.util.sexcatalog.SExtractorfile.readline" class="py-name" href="#" onclick="return doclink('link-92', 'readline', 'link-92');">readline</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">eol</tt><tt class="py-op">)</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ret</tt><tt class="py-op">:</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">            <tt class="py-comment"># remove eol marks</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">return</tt> <tt class="py-name">ret</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-string">""</tt> </tt>
+</div><a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm._readbool"></a><div id="DomeLNA40cm._readbool-def"><a name="L280"></a><tt class="py-lineno">280</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._readbool-toggle" onclick="return toggle('DomeLNA40cm._readbool');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_readbool">_readbool</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">n</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._readbool-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._readbool-expanded"><a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-name">ret</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm._read()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_read,Method chimera.drivers.meade.Meade._read()=chimera.drivers.meade.Meade-class.html#_read,Method chimera.drivers.optectcfs.OptecTCFS._read()=chimera.drivers.optectcfs.OptecTCFS-class.html#_read"><a title="chimera.drivers.domelna40cm.DomeLNA40cm._read
+chimera.drivers.meade.Meade._read
+chimera.drivers.optectcfs.OptecTCFS._read" class="py-name" href="#" onclick="return doclink('link-93', '_read', 'link-93');">_read</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">ret</tt><tt class="py-op">:</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-94" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-94', 'False', 'link-26');">False</a></tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-95" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-95', 'True', 'link-29');">True</a></tt> </tt>
+</div><a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"> </tt>
+<a name="DomeLNA40cm._write"></a><div id="DomeLNA40cm._write-def"><a name="L288"></a><tt class="py-lineno">288</tt> <a class="py-toggle" href="#" id="DomeLNA40cm._write-toggle" onclick="return toggle('DomeLNA40cm._write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.drivers.domelna40cm.DomeLNA40cm-class.html#_write">_write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">eol</tt><tt class="py-op">=</tt><tt class="py-string">"\r"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DomeLNA40cm._write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DomeLNA40cm._write-expanded"><a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="chimera.util.ds9.DS9.isOpen" class="py-name" href="#" onclick="return doclink('link-96', 'isOpen', 'link-40');">isOpen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Device not open"</tt><tt class="py-op">)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt class="py-name">flushOutput</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-97" class="py-name" targets="Method chimera.util.etree.ElementTree.ElementTree.write()=chimera.util.etree.ElementTree.ElementTree-class.html#write"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-97', 'write', 'link-97');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"%s%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-98" class="py-name" targets="Method chimera.util.etree.ElementTree.TreeBuilder.data()=chimera.util.etree.ElementTree.TreeBuilder-class.html#data"><a title="chimera.util.etree.ElementTree.TreeBuilder.data" class="py-name" href="#" onclick="return doclink('link-98', 'data', 'link-98');">data</a></tt><tt class="py-op">,</tt> <tt class="py-name">eol</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:02 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

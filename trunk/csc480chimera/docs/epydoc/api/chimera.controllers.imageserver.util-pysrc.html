@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.imageserver.util</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.imageserver-module.html">Package&nbsp;imageserver</a> ::
+        Module&nbsp;util
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.imageserver.util-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.imageserver.util-module.html">Module chimera.controllers.imageserver.util</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-2', 'exceptions', 'link-2');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.exceptions.ChimeraException=chimera.core.exceptions.ChimeraException-class.html"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-3', 'ChimeraException', 'link-3');">ChimeraException</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class chimera.core.exceptions.ObjectNotFoundException=chimera.core.exceptions.ObjectNotFoundException-class.html"><a title="chimera.core.exceptions.ObjectNotFoundException" class="py-name" href="#" onclick="return doclink('link-4', 'ObjectNotFoundException', 'link-4');">ObjectNotFoundException</a></tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Class chimera.core.exceptions.ClassLoaderException=chimera.core.exceptions.ClassLoaderException-class.html"><a title="chimera.core.exceptions.ClassLoaderException" class="py-name" href="#" onclick="return doclink('link-5', 'ClassLoaderException', 'link-5');">ClassLoaderException</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-6', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-7', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Module chimera.core.path=chimera.core.path-module.html"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-8', 'path', 'link-8');">path</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Class chimera.core.path.ChimeraPath=chimera.core.path.ChimeraPath-class.html"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-9', 'ChimeraPath', 'link-9');">ChimeraPath</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-10', 'util', 'link-10');">util</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="getImageServer"></a><div id="getImageServer-def"><a name="L6"></a><tt class="py-lineno"> 6</tt> <a class="py-toggle" href="#" id="getImageServer-toggle" onclick="return toggle('getImageServer');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.imageserver.util-module.html#getImageServer">getImageServer</a><tt class="py-op">(</tt><tt class="py-param">manager</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getImageServer-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="getImageServer-expanded"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-name">toReturn</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name" targets="Module chimera.core.manager=chimera.core.manager-module.html"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-11', 'manager', 'link-11');">manager</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.getProxy()=chimera.core.chimeraobject.ChimeraObject-class.html#getProxy,Method chimera.core.manager.Manager.getProxy()=chimera.core.manager.Manager-class.html#getProxy,Method chimera.core.remoteobject.RemoteObject.getProxy()=chimera.core.remoteobject.RemoteObject-class.html#getProxy,Method chimera.interfaces.lifecycle.ILifeCycle.getProxy()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getProxy"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-12', 'getProxy', 'link-12');">getProxy</a></tt><tt class="py-op">(</tt><tt class="py-string">'/ImageServer/0'</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt id="link-13" class="py-name"><a title="chimera.core.exceptions.ObjectNotFoundException" class="py-name" href="#" onclick="return doclink('link-13', 'ObjectNotFoundException', 'link-4');">ObjectNotFoundException</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">            <tt class="py-name">toReturn</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-14', 'manager', 'link-11');">manager</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method chimera.core.manager.Manager.addLocation()=chimera.core.manager.Manager-class.html#addLocation"><a title="chimera.core.manager.Manager.addLocation" class="py-name" href="#" onclick="return doclink('link-15', 'addLocation', 'link-15');">addLocation</a></tt><tt class="py-op">(</tt><tt class="py-string">'/ImageServer/imageserver'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-16" class="py-name"><a title="chimera.core.path.ChimeraPath" class="py-name" href="#" onclick="return doclink('link-16', 'ChimeraPath', 'link-9');">ChimeraPath</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Package chimera.controllers=chimera.controllers-module.html,Static Method chimera.core.path.ChimeraPath.controllers()=chimera.core.path.ChimeraPath-class.html#controllers"><a title="chimera.controllers
+chimera.core.path.ChimeraPath.controllers" class="py-name" href="#" onclick="return doclink('link-17', 'controllers', 'link-17');">controllers</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">Pyro</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-18', 'util', 'link-10');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">getPyroTraceback</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-19" class="py-name"><a title="chimera.core.exceptions.ClassLoaderException" class="py-name" href="#" onclick="return doclink('link-19', 'ClassLoaderException', 'link-5');">ClassLoaderException</a></tt><tt class="py-op">(</tt><tt class="py-string">'Unable to create imageserver'</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">toReturn</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt id="link-20" class="py-name"><a title="chimera.core.exceptions.ClassLoaderException" class="py-name" href="#" onclick="return doclink('link-20', 'ClassLoaderException', 'link-5');">ClassLoaderException</a></tt><tt class="py-op">(</tt><tt class="py-string">'Unable to create or find an ImageServer'</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">toReturn</tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="ImageServerException"></a><div id="ImageServerException-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="ImageServerException-toggle" onclick="return toggle('ImageServerException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.imageserver.util.ImageServerException-class.html">ImageServerException</a><tt class="py-op">(</tt><tt class="py-base-class">ChimeraException</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ImageServerException-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ImageServerException-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="InvalidFitsImageException"></a><div id="InvalidFitsImageException-def"><a name="L25"></a><tt class="py-lineno">25</tt> <a class="py-toggle" href="#" id="InvalidFitsImageException-toggle" onclick="return toggle('InvalidFitsImageException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.imageserver.util.InvalidFitsImageException-class.html">InvalidFitsImageException</a><tt class="py-op">(</tt><tt class="py-base-class">ImageServerException</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="InvalidFitsImageException-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="InvalidFitsImageException-expanded"><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:55 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

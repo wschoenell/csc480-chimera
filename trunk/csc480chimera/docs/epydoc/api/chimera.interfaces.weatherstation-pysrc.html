@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.interfaces.weatherstation</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.interfaces-module.html">Package&nbsp;interfaces</a> ::
+        Module&nbsp;weatherstation
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.interfaces.weatherstation-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.interfaces.weatherstation-module.html">Module chimera.interfaces.weatherstation</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.interface=chimera.core.interface-module.html"><a title="chimera.core.interface" class="py-name" href="#" onclick="return doclink('link-2', 'interface', 'link-2');">interface</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.interface.Interface=chimera.core.interface.Interface-class.html"><a title="chimera.core.interface.Interface" class="py-name" href="#" onclick="return doclink('link-3', 'Interface', 'link-3');">Interface</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.event=chimera.core.event-module.html,Function chimera.core.event.event()=chimera.core.event-module.html#event"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-6', 'event', 'link-6');">event</a></tt>     <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-7', 'event', 'link-6');">event</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-8', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-9', 'util', 'link-9');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">enum</tt>      <tt class="py-keyword">import</tt> <tt class="py-name">Enum</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt id="link-10" class="py-name" targets="Variable chimera.interfaces.weatherstation.Unit=chimera.interfaces.weatherstation-module.html#Unit"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-10', 'Unit', 'link-10');">Unit</a></tt> <tt class="py-op">=</tt> <tt class="py-name">Enum</tt> <tt class="py-op">(</tt><tt class="py-string">"PERCENTUAL"</tt><tt class="py-op">,</tt> <tt class="py-comment"># Humidity</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">              </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">             <tt class="py-string">"CELSIUS"</tt><tt class="py-op">,</tt>    <tt class="py-comment"># Temperature, Dew point</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">             <tt class="py-string">"KELVIN"</tt><tt class="py-op">,</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">             <tt class="py-string">"FAHRENHEIT"</tt><tt class="py-op">,</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">             <tt class="py-string">"M_PER_S"</tt><tt class="py-op">,</tt>    <tt class="py-comment"># Wind</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">             <tt class="py-string">"KM_PER_H"</tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">             <tt class="py-string">"MILES_PER_H"</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">             <tt class="py-string">"FT_PER_S"</tt><tt class="py-op">,</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">             <tt class="py-string">"MS"</tt><tt class="py-op">,</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">             <tt class="py-string">"KMH"</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">             <tt class="py-string">"FTS"</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">             <tt class="py-string">"MPH"</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">             <tt class="py-string">"M_BAR"</tt><tt class="py-op">,</tt>      <tt class="py-comment"># Pressure</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">             <tt class="py-string">"MM_HG"</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">             <tt class="py-string">"TORR"</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">             <tt class="py-string">"ATM"</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">             <tt class="py-string">"PA"</tt><tt class="py-op">,</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">             <tt class="py-string">"PSI"</tt><tt class="py-op">,</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">             <tt class="py-string">"MM_PER_H"</tt><tt class="py-op">,</tt>       <tt class="py-comment"># Rain</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">             <tt class="py-string">"CM_PER_H"</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">             <tt class="py-string">"FT_PER_H"</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">             <tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation"></a><div id="IWeatherStation-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="IWeatherStation-toggle" onclick="return toggle('IWeatherStation');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html">IWeatherStation</a> <tt class="py-op">(</tt><tt class="py-base-class">Interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="IWeatherStation-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable chimera.controllers.imageserver.imageserver.ImageServer.__config__=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__config__,Variable chimera.controllers.pointverify.PointVerify.__config__=chimera.controllers.pointverify.PointVerify-class.html#__config__,Variable chimera.controllers.reduction.chimera_pipe.Reduction.__config__=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__config__,Variable chimera.controllers.scheduler.controller.Controller.__config__=chimera.controllers.scheduler.controller.Controller-class.html#__config__,Variable chimera.controllers.xephem.XEphem.__config__=chimera.controllers.xephem.XEphem-class.html#__config__,Variable chimera.controllers.xmlrpc.XMLRPC.__config__=chimera.controllers.xmlrpc.XMLRPC-class.html#__config__,Variable chimera.core.site.Site.__config__=chimera.core.site.Site-class.html#__config__,Variable chimera.drivers.fakecamera.FakeCamera.__config__=chimera.drivers.fakecamera.FakeCamera-class.html#__config__,Variable chimera.drivers.faketelescope.FakeTelescope.__config__=chimera.drivers.faketelescope.FakeTelescope-class.html#__config__,Variable chimera.drivers.meade.Meade.__config__=chimera.drivers.meade.Meade-class.html#__config__,Variable chimera.drivers.theskytelescope.TheSkyTelescope.__config__=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__config__,Variable chimera.interfaces.autofocus.IAutofocus.__config__=chimera.interfaces.autofocus.IAutofocus-class.html#__config__,Variable chimera.interfaces.camera.ICamera.__config__=chimera.interfaces.camera.ICamera-class.html#__config__,Variable chimera.interfaces.cameradriver.ICameraDriver.__config__=chimera.interfaces.cameradriver.ICameraDriver-class.html#__config__,Variable chimera.interfaces.dome.IDome.__config__=chimera.interfaces.dome.IDome-class.html#__config__,Variable chimera.interfaces.domedriver.IDomeDriver.__config__=chimera.interfaces.domedriver.IDomeDriver-class.html#__config__,Variable chimera.interfaces.filterwheel.IFilterWheel.__config__=chimera.interfaces.filterwheel.IFilterWheel-class.html#__config__,Variable chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__=chimera.interfaces.filterwheeldriver.IFilterWheelDriver-class.html#__config__,Variable chimera.interfaces.focuser.IFocuser.__config__=chimera.interfaces.focuser.IFocuser-class.html#__config__,Variable chimera.interfaces.focuserdriver.IFocuserDriver.__config__=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#__config__,Variable chimera.interfaces.telescope.ITelescope.__config__=chimera.interfaces.telescope.ITelescope-class.html#__config__,Variable chimera.interfaces.telescope.ITelescopePark.__config__=chimera.interfaces.telescope.ITelescopePark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriver.__config__=chimera.interfaces.telescopedriver.ITelescopeDriver-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverPark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#__config__,Variable chimera.interfaces.weatherstation.IWeatherStation.__config__=chimera.interfaces.weatherstation.IWeatherStation-class.html#__config__"><a title="chimera.controllers.imageserver.imageserver.ImageServer.__config__
+chimera.controllers.pointverify.PointVerify.__config__
+chimera.controllers.reduction.chimera_pipe.Reduction.__config__
+chimera.controllers.scheduler.controller.Controller.__config__
+chimera.controllers.xephem.XEphem.__config__
+chimera.controllers.xmlrpc.XMLRPC.__config__
+chimera.core.site.Site.__config__
+chimera.drivers.fakecamera.FakeCamera.__config__
+chimera.drivers.faketelescope.FakeTelescope.__config__
+chimera.drivers.meade.Meade.__config__
+chimera.drivers.theskytelescope.TheSkyTelescope.__config__
+chimera.interfaces.autofocus.IAutofocus.__config__
+chimera.interfaces.camera.ICamera.__config__
+chimera.interfaces.cameradriver.ICameraDriver.__config__
+chimera.interfaces.dome.IDome.__config__
+chimera.interfaces.domedriver.IDomeDriver.__config__
+chimera.interfaces.filterwheel.IFilterWheel.__config__
+chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__
+chimera.interfaces.focuser.IFocuser.__config__
+chimera.interfaces.focuserdriver.IFocuserDriver.__config__
+chimera.interfaces.telescope.ITelescope.__config__
+chimera.interfaces.telescope.ITelescopePark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriver.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__
+chimera.interfaces.weatherstation.IWeatherStation.__config__" class="py-name" href="#" onclick="return doclink('link-11', '__config__', 'link-11');">__config__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"driver"</tt><tt class="py-op">:</tt> <tt class="py-string">"/Fake/weather"</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                   </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                  <tt class="py-string">"humidity_unit"</tt>   <tt class="py-op">:</tt> <tt id="link-12" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-12', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">MM_HG</tt><tt class="py-op">,</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                  <tt class="py-string">"temperature_unit"</tt><tt class="py-op">:</tt> <tt id="link-13" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-13', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">CELSIUS</tt><tt class="py-op">,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                  <tt class="py-string">"wind_unit"</tt>       <tt class="py-op">:</tt> <tt id="link-14" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-14', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">KM_PER_H</tt><tt class="py-op">,</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                  <tt class="py-string">"dew_point_unit"</tt>  <tt class="py-op">:</tt> <tt id="link-15" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-15', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">CELSIUS</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                  <tt class="py-string">"pressure_unit"</tt>   <tt class="py-op">:</tt> <tt id="link-16" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-16', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">PERCENTUAL</tt><tt class="py-op">,</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                  <tt class="py-string">"rain_unit"</tt>       <tt class="py-op">:</tt> <tt id="link-17" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-17', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">MM_PER_H</tt><tt class="py-op">,</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                   </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                  <tt class="py-string">"humidity_delta"</tt>   <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                  <tt class="py-string">"temperature_delta"</tt><tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                  <tt class="py-string">"wind_delta"</tt>       <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                  <tt class="py-string">"dew_point_delta"</tt>  <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                  <tt class="py-string">"pressure_delta"</tt>   <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                  <tt class="py-string">"rain_delta"</tt>       <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                  <tt class="py-op">}</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.humididy"></a><div id="IWeatherStation.humididy-def"><a name="L74"></a><tt class="py-lineno"> 74</tt> <a class="py-toggle" href="#" id="IWeatherStation.humididy-toggle" onclick="return toggle('IWeatherStation.humididy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#humididy">humididy</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-18" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-18', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">PERCENTUAL</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.humididy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.humididy-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.temperature"></a><div id="IWeatherStation.temperature-def"><a name="L77"></a><tt class="py-lineno"> 77</tt> <a class="py-toggle" href="#" id="IWeatherStation.temperature-toggle" onclick="return toggle('IWeatherStation.temperature');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#temperature">temperature</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-19" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-19', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">CELSIUS</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.temperature-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.temperature-expanded"><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.wind"></a><div id="IWeatherStation.wind-def"><a name="L80"></a><tt class="py-lineno"> 80</tt> <a class="py-toggle" href="#" id="IWeatherStation.wind-toggle" onclick="return toggle('IWeatherStation.wind');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#wind">wind</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-20" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-20', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">M_PER_S</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.wind-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.wind-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.dewPoint"></a><div id="IWeatherStation.dewPoint-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="IWeatherStation.dewPoint-toggle" onclick="return toggle('IWeatherStation.dewPoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#dewPoint">dewPoint</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-21" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-21', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">CELSIUS</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.dewPoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.dewPoint-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.pressure"></a><div id="IWeatherStation.pressure-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="IWeatherStation.pressure-toggle" onclick="return toggle('IWeatherStation.pressure');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#pressure">pressure</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-22" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-22', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">MM_HG</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.pressure-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.pressure-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="IWeatherStation.rain"></a><div id="IWeatherStation.rain-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="IWeatherStation.rain-toggle" onclick="return toggle('IWeatherStation.rain');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#rain">rain</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">deltaT</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt id="link-23" class="py-name"><a title="chimera.interfaces.weatherstation.Unit" class="py-name" href="#" onclick="return doclink('link-23', 'Unit', 'link-10');">Unit</a></tt><tt class="py-op">.</tt><tt class="py-name">MM_PER_H</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.rain-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.rain-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.humidiyChange"></a><div id="IWeatherStation.humidiyChange-def"><a name="L93"></a><tt class="py-lineno"> 93</tt> <a class="py-toggle" href="#" id="IWeatherStation.humidiyChange-toggle" onclick="return toggle('IWeatherStation.humidiyChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#humidiyChange">humidiyChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">humidity</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.humidiyChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.humidiyChange-expanded"><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.temperatureChange"></a><div id="IWeatherStation.temperatureChange-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="IWeatherStation.temperatureChange-toggle" onclick="return toggle('IWeatherStation.temperatureChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#temperatureChange">temperatureChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">temperature</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.temperatureChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.temperatureChange-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.windChange"></a><div id="IWeatherStation.windChange-def"><a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="IWeatherStation.windChange-toggle" onclick="return toggle('IWeatherStation.windChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#windChange">windChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">wind</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.windChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.windChange-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.dewPointChange"></a><div id="IWeatherStation.dewPointChange-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="IWeatherStation.dewPointChange-toggle" onclick="return toggle('IWeatherStation.dewPointChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#dewPointChange">dewPointChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">dewPoint</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.dewPointChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.dewPointChange-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.pressureChange"></a><div id="IWeatherStation.pressureChange-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="IWeatherStation.pressureChange-toggle" onclick="return toggle('IWeatherStation.pressureChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#pressureChange">pressureChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pressure</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.pressureChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.pressureChange-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IWeatherStation.rainChange"></a><div id="IWeatherStation.rainChange-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="IWeatherStation.rainChange-toggle" onclick="return toggle('IWeatherStation.rainChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.weatherstation.IWeatherStation-class.html#rainChange">rainChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">rain</tt><tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IWeatherStation.rainChange-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="IWeatherStation.rainChange-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:03 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

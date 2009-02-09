@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.util.vizquery</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.util-module.html">Package&nbsp;util</a> ::
+        Module&nbsp;vizquery
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.util.vizquery-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.util.vizquery-module.html">Module chimera.util.vizquery</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-1', 'util', 'link-1');">util</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.util.votable=chimera.util.votable-module.html"><a title="chimera.util.votable" class="py-name" href="#" onclick="return doclink('link-2', 'votable', 'link-2');">votable</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.util.votable.VOTable=chimera.util.votable.VOTable-class.html"><a title="chimera.util.votable.VOTable" class="py-name" href="#" onclick="return doclink('link-3', 'VOTable', 'link-3');">VOTable</a></tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">httplib</tt> <tt class="py-keyword">import</tt> <tt class="py-name">HTTPConnection</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">tempfile</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urllib</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery"></a><div id="VizQuery-def"><a name="L8"></a><tt class="py-lineno">  8</tt> <a class="py-toggle" href="#" id="VizQuery-toggle" onclick="return toggle('VizQuery');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html">VizQuery</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="VizQuery-expanded"><a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">    Queries A catalog in Vizier for limit Landolt fields</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">    within a given radius or box of the zenith</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="VizQuery.__init__"></a><div id="VizQuery.__init__-def"><a name="L13"></a><tt class="py-lineno"> 13</tt> <a class="py-toggle" href="#" id="VizQuery.__init__-toggle" onclick="return toggle('VizQuery.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.__init__-expanded"><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-mime"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">"xml"</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">columns</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">     </tt>
+<a name="VizQuery.useCat"></a><div id="VizQuery.useCat-def"><a name="L19"></a><tt class="py-lineno"> 19</tt> <a class="py-toggle" href="#" id="VizQuery.useCat-toggle" onclick="return toggle('VizQuery.useCat');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#useCat">useCat</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">catName</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.useCat-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.useCat-expanded"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">        @param catName: the catalog's name in Vizier</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">        @type catName: str</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">        Simply sets the catalog's name</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-source"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">catName</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery.useColumns"></a><div id="VizQuery.useColumns-def"><a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="VizQuery.useColumns-toggle" onclick="return toggle('VizQuery.useColumns');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#useColumns">useColumns</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">columns</tt><tt class="py-op">,</tt> <tt class="py-param">sortBy</tt><tt class="py-op">,</tt> <tt class="py-param">reverse</tt><tt class="py-op">=</tt><tt id="link-4" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-4', 'False', 'link-4');">False</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.useColumns-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.useColumns-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        @param columns: list of catalog's columns to use</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        @type columns: list</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        @param sortBy: define which column to sort by</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        @type sortBy: str</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        @param reverse: decide to reverse sort @type reverse: bool</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        Define which columns will be fetched and which column will be used</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        for sorting.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">columns</tt> <tt class="py-op">=</tt> <tt class="py-name">columns</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">","</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-out"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">columns</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">reverse</tt><tt class="py-op">:</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-sort"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">"-"</tt><tt class="py-op">+</tt><tt id="link-5" class="py-name" targets="Method chimera.util.vizquery.VizQuery.sortBy()=chimera.util.vizquery.VizQuery-class.html#sortBy"><a title="chimera.util.vizquery.VizQuery.sortBy" class="py-name" href="#" onclick="return doclink('link-5', 'sortBy', 'link-5');">sortBy</a></tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-sort"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="chimera.util.vizquery.VizQuery.sortBy" class="py-name" href="#" onclick="return doclink('link-6', 'sortBy', 'link-5');">sortBy</a></tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery.sortBy"></a><div id="VizQuery.sortBy-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="VizQuery.sortBy-toggle" onclick="return toggle('VizQuery.sortBy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#sortBy">sortBy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">column</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.sortBy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.sortBy-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        One sets here which column to sort by</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        @param column: name of column to sort by</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        @type  column: str</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery.constrainColumns"></a><div id="VizQuery.constrainColumns-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="VizQuery.constrainColumns-toggle" onclick="return toggle('VizQuery.constrainColumns');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#constrainColumns">constrainColumns</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">columns</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.constrainColumns-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.constrainColumns-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        Use this to add constraints to any of the columns</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        @param columns: list of dictionaries {COLUMN:condition}</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @type  columns: list</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">update</tt><tt class="py-op">(</tt><tt class="py-name">columns</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery.useTarget"></a><div id="VizQuery.useTarget-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="VizQuery.useTarget-toggle" onclick="return toggle('VizQuery.useTarget');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#useTarget">useTarget</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">center</tt><tt class="py-op">,</tt> <tt class="py-param">radius</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">box</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.useTarget-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.useTarget-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        @param center: center of search in catalog</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        @type center: L{Position}</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        @param radius: radius of search</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        @type radius: float</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        @param box: box size, if you want a square use an integer</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">                    if you want a rectangle use a tuple (ww,hh)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        @type box: int | tuple</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-c"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name" targets="Variable chimera.util.image.Image.center=chimera.util.image.Image-class.html#center"><a title="chimera.util.image.Image.center" class="py-name" href="#" onclick="return doclink('link-7', 'center', 'link-7');">center</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-c.eq"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">"J2000"</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">         </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">radius</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-c.rd"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">radius</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">box</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-c.bd"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">"=%fx%f"</tt> <tt class="py-op">%</tt> <tt class="py-name">radius</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-c.bd"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">radius</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">"You must specify either radius or box size"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="VizQuery.find"></a><div id="VizQuery.find-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="VizQuery.find-toggle" onclick="return toggle('VizQuery.find');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.vizquery.VizQuery-class.html#find">find</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">=</tt><tt class="py-number">9999</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VizQuery.find-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VizQuery.find-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: Number of stars to return from Vizier</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @type limit: int</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-string">"-out.max"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">limit</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">         </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">NamedTemporaryFile</tt><tt class="py-op">(</tt><tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'w+'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                                              <tt class="py-name">prefix</tt><tt class="py-op">=</tt><tt class="py-string">"chimera.vizquery"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                                              <tt class="py-name">dir</tt><tt class="py-op">=</tt><tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">gettempdir</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-comment"># query the catalog in Vizier's database</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">conn</tt> <tt class="py-op">=</tt> <tt class="py-name">HTTPConnection</tt><tt class="py-op">(</tt><tt class="py-string">"webviz.u-strasbg.fr"</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt id="link-8" class="py-name" targets="Variable chimera.drivers.sbig.tests.connect.s=chimera.drivers.sbig.tests.connect-module.html#s,Variable chimera.drivers.sbig.tests.grab.s=chimera.drivers.sbig.tests.grab-module.html#s"><a title="chimera.drivers.sbig.tests.connect.s
+chimera.drivers.sbig.tests.grab.s" class="py-name" href="#" onclick="return doclink('link-8', 's', 'link-8');">s</a></tt> <tt class="py-op">=</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlencode</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">conn</tt><tt class="py-op">.</tt><tt class="py-name">request</tt><tt class="py-op">(</tt><tt class="py-string">"POST"</tt><tt class="py-op">,</tt> <tt class="py-string">"/viz-bin/votable"</tt><tt class="py-op">,</tt><tt id="link-9" class="py-name"><a title="chimera.drivers.sbig.tests.connect.s
+chimera.drivers.sbig.tests.grab.s" class="py-name" href="#" onclick="return doclink('link-9', 's', 'link-8');">s</a></tt><tt class="py-op">)</tt>   </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">resp</tt> <tt class="py-op">=</tt> <tt class="py-name">conn</tt><tt class="py-op">.</tt><tt class="py-name">getresponse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">ret</tt> <tt class="py-op">=</tt> <tt class="py-name">resp</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method chimera.util.sexcatalog.SExtractorfile.read()=chimera.util.sexcatalog.SExtractorfile-class.html#read"><a title="chimera.util.sexcatalog.SExtractorfile.read" class="py-name" href="#" onclick="return doclink('link-10', 'read', 'link-10');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Variable chimera.drivers.sbig.tests.grab.f=chimera.drivers.sbig.tests.grab-module.html#f"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-11', 'f', 'link-11');">f</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.open()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#open,Method chimera.drivers.fakecamera.FakeCamera.open()=chimera.drivers.fakecamera.FakeCamera-class.html#open,Method chimera.drivers.faketelescope.FakeTelescope.open()=chimera.drivers.faketelescope.FakeTelescope-class.html#open,Method chimera.drivers.meade.Meade.open()=chimera.drivers.meade.Meade-class.html#open,Method chimera.drivers.optectcfs.OptecTCFS.open()=chimera.drivers.optectcfs.OptecTCFS-class.html#open,Method chimera.drivers.sbig.sbig.SBIG.open()=chimera.drivers.sbig.sbig.SBIG-class.html#open,Method chimera.drivers.theskytelescope.TheSkyTelescope.open()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#open,Method chimera.interfaces.cameradriver.ICameraDriver.open()=chimera.interfaces.cameradriver.ICameraDriver-class.html#open,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#open,Method chimera.util.ds9.DS9.open()=chimera.util.ds9.DS9-class.html#open,Function chimera.util.sexcatalog.open()=chimera.util.sexcatalog-module.html#open"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-12', 'open', 'link-12');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method chimera.controllers.console.command.Command.name()=chimera.controllers.console.command.Command-class.html#name,Variable chimera.controllers.scheduler.model.Setting.name=chimera.controllers.scheduler.model.Setting-class.html#name,Variable chimera.core.cli.Option.name=chimera.core.cli.Option-class.html#name,Variable chimera.core.location.Location.name=chimera.core.location.Location-class.html#name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-13', 'name', 'link-13');">name</a></tt><tt class="py-op">,</tt> <tt class="py-string">"w"</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-14', 'f', 'link-11');">f</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method chimera.util.etree.ElementTree.ElementTree.write()=chimera.util.etree.ElementTree.ElementTree-class.html#write"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-15', 'write', 'link-15');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">ret</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt id="link-16" class="py-name"><a title="chimera.drivers.sbig.tests.grab.f" class="py-name" href="#" onclick="return doclink('link-16', 'f', 'link-11');">f</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.close()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#close,Method chimera.drivers.fakecamera.FakeCamera.close()=chimera.drivers.fakecamera.FakeCamera-class.html#close,Method chimera.drivers.faketelescope.FakeTelescope.close()=chimera.drivers.faketelescope.FakeTelescope-class.html#close,Method chimera.drivers.meade.Meade.close()=chimera.drivers.meade.Meade-class.html#close,Method chimera.drivers.optectcfs.OptecTCFS.close()=chimera.drivers.optectcfs.OptecTCFS-class.html#close,Method chimera.drivers.sbig.sbig.SBIG.close()=chimera.drivers.sbig.sbig.SBIG-class.html#close,Method chimera.drivers.theskytelescope.TheSkyTelescope.close()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#close,Method chimera.interfaces.cameradriver.ICameraDriver.close()=chimera.interfaces.cameradriver.ICameraDriver-class.html#close,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#close,Method chimera.util.etree.ElementTree.TreeBuilder.close()=chimera.util.etree.ElementTree.TreeBuilder-class.html#close,Method chimera.util.etree.ElementTree.XMLTreeBuilder.close()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#close,Method chimera.util.sexcatalog.SExtractorfile.close()=chimera.util.sexcatalog.SExtractorfile-class.html#close"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-17', 'close', 'link-17');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">obj</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="chimera.util.votable" class="py-name" href="#" onclick="return doclink('link-18', 'votable', 'link-2');">votable</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="chimera.util.votable.VOTable" class="py-name" href="#" onclick="return doclink('link-19', 'VOTable', 'link-3');">VOTable</a></tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="chimera.controllers.console.command.Command.name
+chimera.controllers.scheduler.model.Setting.name
+chimera.core.cli.Option.name
+chimera.core.location.Location.name" class="py-name" href="#" onclick="return doclink('link-20', 'name', 'link-13');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">         </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">linha</tt> <tt class="py-keyword">in</tt> <tt id="link-21" class="py-name"><a title="chimera.util.votable" class="py-name" href="#" onclick="return doclink('link-21', 'votable', 'link-2');">votable</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method chimera.util.votable.VOTable.getDataRows()=chimera.util.votable.VOTable-class.html#getDataRows"><a title="chimera.util.votable.VOTable.getDataRows" class="py-name" href="#" onclick="return doclink('link-22', 'getDataRows', 'link-22');">getDataRows</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt class="py-name">v</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Method chimera.util.votable.VONode.getContent()=chimera.util.votable.VONode-class.html#getContent,Method chimera.util.votable.VOTable.getContent()=chimera.util.votable.VOTable-class.html#getContent"><a title="chimera.util.votable.VONode.getContent
+chimera.util.votable.VOTable.getContent" class="py-name" href="#" onclick="return doclink('link-23', 'getContent', 'link-23');">getContent</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">c</tt> <tt class="py-keyword">in</tt> <tt class="py-name">linha</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method chimera.util.votable.VONode.getNodeList()=chimera.util.votable.VONode-class.html#getNodeList"><a title="chimera.util.votable.VONode.getNodeList" class="py-name" href="#" onclick="return doclink('link-24', 'getNodeList', 'link-24');">getNodeList</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">            <tt class="py-name">obj</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.append()=chimera.util.etree.ElementTree._ElementInterface-class.html#append,Method chimera.util.votable.VOTable.append()=chimera.util.votable.VOTable-class.html#append"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-25', 'append', 'link-25');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">zip</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">columns</tt><tt class="py-op">,</tt> <tt class="py-name">v</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">obj</tt> </tt>
+</div></div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:56 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

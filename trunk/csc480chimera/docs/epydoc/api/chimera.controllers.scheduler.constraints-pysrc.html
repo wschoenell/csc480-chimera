@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.scheduler.constraints</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.scheduler-module.html">Package&nbsp;scheduler</a> ::
+        Package&nbsp;constraints
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.scheduler.constraints-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.scheduler.constraints-module.html">Package chimera.controllers.scheduler.constraints</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-1', 'util', 'link-1');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">enum</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Enum</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable chimera.controllers.scheduler.constraints.ConstraintReturns=chimera.controllers.scheduler.constraints-module.html#ConstraintReturns"><a title="chimera.controllers.scheduler.constraints.ConstraintReturns" class="py-name" href="#" onclick="return doclink('link-2', 'ConstraintReturns', 'link-2');">ConstraintReturns</a></tt> <tt class="py-op">=</tt> <tt class="py-name">Enum</tt><tt class="py-op">(</tt><tt class="py-string">'GOOD'</tt><tt class="py-op">,</tt> <tt class="py-string">'BAD'</tt><tt class="py-op">,</tt> <tt class="py-string">'DONTCARE'</tt><tt class="py-op">)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-name">__all__</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-string">'ConstraintReturns'</tt><tt class="py-op">]</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="Constraints"></a><div id="Constraints-def"><a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="Constraints-toggle" onclick="return toggle('Constraints');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.Constraints-class.html">Constraints</a><tt class="py-op">:</tt> </tt>
+</div><div id="Constraints-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Constraints-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">     </tt>
+<a name="Constraints.__init__"></a><div id="Constraints.__init__-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="Constraints.__init__-toggle" onclick="return toggle('Constraints.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.Constraints-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Constraints.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Constraints.__init__-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__constraints</tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-string">'MoonDistance'</tt><tt class="py-op">:</tt> <tt id="link-3" class="py-name" targets="Class chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint=chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint-class.html"><a title="chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint" class="py-name" href="#" onclick="return doclink('link-3', 'MoonDistanceConstraint', 'link-3');">MoonDistanceConstraint</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">}</tt> </tt>
+</div><a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">     </tt>
+<a name="Constraints.checkConstraint"></a><div id="Constraints.checkConstraint-def"><a name="L12"></a><tt class="py-lineno">12</tt> <a class="py-toggle" href="#" id="Constraints.checkConstraint-toggle" onclick="return toggle('Constraints.checkConstraint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.Constraints-class.html#checkConstraint">checkConstraint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">constraintName</tt><tt class="py-op">,</tt> <tt class="py-param">paramMin</tt><tt class="py-op">,</tt> <tt class="py-param">paramMax</tt><tt class="py-op">,</tt> <tt class="py-param">exposure</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">observation</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">program</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Constraints.checkConstraint-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Constraints.checkConstraint-expanded"><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__constraints</tt><tt class="py-op">[</tt><tt class="py-name">constraintName</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method chimera.controllers.scheduler.constraints.Constraints.checkConstraint()=chimera.controllers.scheduler.constraints.Constraints-class.html#checkConstraint,Method chimera.controllers.scheduler.constraints.IConstraint.checkConstraint()=chimera.controllers.scheduler.constraints.IConstraint-class.html#checkConstraint,Method chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint.checkConstraint()=chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint-class.html#checkConstraint"><a title="chimera.controllers.scheduler.constraints.Constraints.checkConstraint
+chimera.controllers.scheduler.constraints.IConstraint.checkConstraint
+chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint.checkConstraint" class="py-name" href="#" onclick="return doclink('link-4', 'checkConstraint', 'link-4');">checkConstraint</a></tt><tt class="py-op">(</tt><tt class="py-name">paramMin</tt><tt class="py-op">,</tt> <tt class="py-name">paramMax</tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.exposure=chimera.controllers.scheduler.model.Constraint-class.html#exposure"><a title="chimera.controllers.scheduler.model.Constraint.exposure" class="py-name" href="#" onclick="return doclink('link-5', 'exposure', 'link-5');">exposure</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt id="link-6" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.observation=chimera.controllers.scheduler.model.Constraint-class.html#observation,Variable chimera.controllers.scheduler.model.Exposure.observation=chimera.controllers.scheduler.model.Exposure-class.html#observation"><a title="chimera.controllers.scheduler.model.Constraint.observation
+chimera.controllers.scheduler.model.Exposure.observation" class="py-name" href="#" onclick="return doclink('link-6', 'observation', 'link-6');">observation</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.program=chimera.controllers.scheduler.model.Constraint-class.html#program,Variable chimera.controllers.scheduler.model.Observation.program=chimera.controllers.scheduler.model.Observation-class.html#program"><a title="chimera.controllers.scheduler.model.Constraint.program
+chimera.controllers.scheduler.model.Observation.program" class="py-name" href="#" onclick="return doclink('link-7', 'program', 'link-7');">program</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="IConstraint"></a><div id="IConstraint-def"><a name="L15"></a><tt class="py-lineno">15</tt> <a class="py-toggle" href="#" id="IConstraint-toggle" onclick="return toggle('IConstraint');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.IConstraint-class.html">IConstraint</a><tt class="py-op">:</tt> </tt>
+</div><div id="IConstraint-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="IConstraint-expanded"><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">     </tt>
+<a name="IConstraint.__init__"></a><div id="IConstraint.__init__-def"><a name="L17"></a><tt class="py-lineno">17</tt> <a class="py-toggle" href="#" id="IConstraint.__init__-toggle" onclick="return toggle('IConstraint.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.IConstraint-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IConstraint.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IConstraint.__init__-expanded"><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">DONTCARE</tt><tt class="py-op">=</tt><tt id="link-8" class="py-name"><a title="chimera.controllers.scheduler.constraints.ConstraintReturns" class="py-name" href="#" onclick="return doclink('link-8', 'ConstraintReturns', 'link-2');">ConstraintReturns</a></tt><tt class="py-op">.</tt><tt class="py-name">DONTCARE</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">GOOD</tt><tt class="py-op">=</tt><tt id="link-9" class="py-name"><a title="chimera.controllers.scheduler.constraints.ConstraintReturns" class="py-name" href="#" onclick="return doclink('link-9', 'ConstraintReturns', 'link-2');">ConstraintReturns</a></tt><tt class="py-op">.</tt><tt class="py-name">GOOD</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">BAD</tt><tt class="py-op">=</tt><tt id="link-10" class="py-name"><a title="chimera.controllers.scheduler.constraints.ConstraintReturns" class="py-name" href="#" onclick="return doclink('link-10', 'ConstraintReturns', 'link-2');">ConstraintReturns</a></tt><tt class="py-op">.</tt><tt class="py-name">BAD</tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">     </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-string">    Return the name by which this constraint is referenced.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="IConstraint.getMyKey"></a><div id="IConstraint.getMyKey-def"><a name="L25"></a><tt class="py-lineno">25</tt> <a class="py-toggle" href="#" id="IConstraint.getMyKey-toggle" onclick="return toggle('IConstraint.getMyKey');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.IConstraint-class.html#getMyKey">getMyKey</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IConstraint.getMyKey-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IConstraint.getMyKey-expanded"><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-string">"This module failed to export its key."</tt>  </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">     </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-string">    Return the description of this constraint</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="IConstraint.getMyDescription"></a><div id="IConstraint.getMyDescription-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="IConstraint.getMyDescription-toggle" onclick="return toggle('IConstraint.getMyDescription');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.IConstraint-class.html#getMyDescription">getMyDescription</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IConstraint.getMyDescription-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IConstraint.getMyDescription-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method chimera.controllers.console.message.Config.__str__()=chimera.controllers.console.message.Config-class.html#__str__,Method chimera.controllers.console.message.Error.__str__()=chimera.controllers.console.message.Error-class.html#__str__,Method chimera.controllers.console.message.Hint.__str__()=chimera.controllers.console.message.Hint-class.html#__str__,Method chimera.controllers.console.message.Message.__str__()=chimera.controllers.console.message.Message-class.html#__str__,Method chimera.controllers.imageserver.imagerequest.ImageRequest.__str__()=chimera.controllers.imageserver.imagerequest.ImageRequest-class.html#__str__,Method chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint.__str__()=chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint-class.html#__str__,Method chimera.core.cli.Option.__str__()=chimera.core.cli.Option-class.html#__str__,Method chimera.core.proxy.Proxy.__str__()=chimera.core.proxy.Proxy-class.html#__str__,Method chimera.core.proxy.ProxyMethod.__str__()=chimera.core.proxy.ProxyMethod-class.html#__str__,Method chimera.core.resources.Resource.__str__()=chimera.core.resources.Resource-class.html#__str__,Method chimera.drivers.sbig.sbigdrv.ReadoutMode.__str__()=chimera.drivers.sbig.sbigdrv.ReadoutMode-class.html#__str__,Method chimera.drivers.sbig.sbigdrv.SBIGException.__str__()=chimera.drivers.sbig.sbigdrv.SBIGException-class.html#__str__,Method chimera.util.coord.Coord.__str__()=chimera.util.coord.Coord-class.html#__str__,Method chimera.util.etree.ElementTree.QName.__str__()=chimera.util.etree.ElementTree.QName-class.html#__str__,Method chimera.util.image.Image.__str__()=chimera.util.image.Image-class.html#__str__,Method chimera.util.position.Position.__str__()=chimera.util.position.Position-class.html#__str__,Method chimera.util.votable.VONode.__str__()=chimera.util.votable.VONode-class.html#__str__"><a title="chimera.controllers.console.message.Config.__str__
+chimera.controllers.console.message.Error.__str__
+chimera.controllers.console.message.Hint.__str__
+chimera.controllers.console.message.Message.__str__
+chimera.controllers.imageserver.imagerequest.ImageRequest.__str__
+chimera.controllers.scheduler.constraints.moondistanceconstraint.MoonDistanceConstraint.__str__
+chimera.core.cli.Option.__str__
+chimera.core.proxy.Proxy.__str__
+chimera.core.proxy.ProxyMethod.__str__
+chimera.core.resources.Resource.__str__
+chimera.drivers.sbig.sbigdrv.ReadoutMode.__str__
+chimera.drivers.sbig.sbigdrv.SBIGException.__str__
+chimera.util.coord.Coord.__str__
+chimera.util.etree.ElementTree.QName.__str__
+chimera.util.image.Image.__str__
+chimera.util.position.Position.__str__
+chimera.util.votable.VONode.__str__" class="py-name" href="#" onclick="return doclink('link-11', '__str__', 'link-11');">__str__</a></tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">     </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-string">    Check whether this constraint is satisfied</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="IConstraint.checkConstraint"></a><div id="IConstraint.checkConstraint-def"><a name="L37"></a><tt class="py-lineno">37</tt> <a class="py-toggle" href="#" id="IConstraint.checkConstraint-toggle" onclick="return toggle('IConstraint.checkConstraint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.scheduler.constraints.IConstraint-class.html#checkConstraint">checkConstraint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">paramMin</tt><tt class="py-op">,</tt> <tt class="py-param">paramMax</tt><tt class="py-op">,</tt> <tt class="py-param">exposure</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">observation</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">program</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IConstraint.checkConstraint-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IConstraint.checkConstraint-expanded"><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-12" class="py-name"><a title="chimera.controllers.scheduler.constraints.ConstraintReturns" class="py-name" href="#" onclick="return doclink('link-12', 'ConstraintReturns', 'link-2');">ConstraintReturns</a></tt><tt class="py-op">.</tt><tt class="py-name">DONTCARE</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-string">"This module didn't check any constraints."</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:58 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

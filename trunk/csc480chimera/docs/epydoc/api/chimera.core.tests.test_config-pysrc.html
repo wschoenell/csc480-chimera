@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.core.tests.test_config</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.core-module.html">Package&nbsp;core</a> ::
+        <a href="chimera.core.tests-module.html">Package&nbsp;tests</a> ::
+        Module&nbsp;test_config
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.core.tests.test_config-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.core.tests.test_config-module.html">Module chimera.core.tests.test_config</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.config=chimera.core.config-module.html,Variable chimera.core.location.Location.config=chimera.core.location.Location-class.html#config"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-2', 'config', 'link-2');">config</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.controllers.console.message.Config=chimera.controllers.console.message.Config-class.html,Class chimera.core.config.Config=chimera.core.config.Config-class.html"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-3', 'Config', 'link-3');">Config</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class chimera.core.exceptions.OptionConversionException=chimera.core.exceptions.OptionConversionException-class.html"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-4', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-5', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-6', 'util', 'link-6');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">enum</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Enum</tt><tt class="py-op">,</tt> <tt class="py-name">EnumValue</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">nose</tt><tt class="py-op">.</tt><tt class="py-name">tools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">assert_raises</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">types</tt> <tt class="py-keyword">import</tt> <tt class="py-name">StringType</tt><tt class="py-op">,</tt> <tt class="py-name">IntType</tt><tt class="py-op">,</tt> <tt class="py-name">FloatType</tt><tt class="py-op">,</tt> <tt class="py-name">BooleanType</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig"></a><div id="TestConfig-def"><a name="L10"></a><tt class="py-lineno"> 10</tt> <a class="py-toggle" href="#" id="TestConfig-toggle" onclick="return toggle('TestConfig');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html">TestConfig</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TestConfig-expanded"><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig.test_str"></a><div id="TestConfig.test_str-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="TestConfig.test_str-toggle" onclick="return toggle('TestConfig.test_str');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_str">test_str</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_str-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_str-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-7', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_str"</tt><tt class="py-op">:</tt> <tt class="py-string">"value"</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-8" class="py-name" targets="Variable chimera.drivers.sbig.tests.grab.i=chimera.drivers.sbig.tests.grab-module.html#i"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-8', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">"valid"</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt id="link-9" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-9', 'True', 'link-9');">True</a></tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name" targets="Module chimera.controllers.console.commands.object=chimera.controllers.console.commands.object-module.html"><a title="chimera.controllers.console.commands.object" class="py-name" href="#" onclick="return doclink('link-10', 'object', 'link-10');">object</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.__setitem__()=chimera.core.chimeraobject.ChimeraObject-class.html#__setitem__,Method chimera.core.config.Config.__setitem__()=chimera.core.config.Config-class.html#__setitem__,Method chimera.util.etree.ElementTree._ElementInterface.__setitem__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__setitem__,Method chimera.util.image.Image.__setitem__()=chimera.util.image.Image-class.html#__setitem__"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-11', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_str"</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-12', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-13" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-13', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid str configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-14', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-15" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.type=chimera.controllers.scheduler.model.Constraint-class.html#type,Variable chimera.core.cli.Option.type=chimera.core.cli.Option-class.html#type"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-15', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-16', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-17" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-17', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.__getitem__()=chimera.core.chimeraobject.ChimeraObject-class.html#__getitem__,Method chimera.core.config.Config.__getitem__()=chimera.core.config.Config-class.html#__getitem__,Method chimera.core.resources.ResourcesManager.__getitem__()=chimera.core.resources.ResourcesManager-class.html#__getitem__,Method chimera.util.etree.ElementTree._ElementInterface.__getitem__()=chimera.util.etree.ElementTree._ElementInterface-class.html#__getitem__,Method chimera.util.etree.ElementTree._iterparse.__getitem__()=chimera.util.etree.ElementTree._iterparse-class.html#__getitem__,Method chimera.util.image.Image.__getitem__()=chimera.util.image.Image-class.html#__getitem__,Method chimera.util.votable.VONode.__getitem__()=chimera.util.votable.VONode-class.html#__getitem__"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-18', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_str"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">StringType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return str object"</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># any?</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="TestConfig.test_number"></a><div id="TestConfig.test_number-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="TestConfig.test_number-toggle" onclick="return toggle('TestConfig.test_number');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_number">test_number</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_number-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_number-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-19', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_int"</tt><tt class="py-op">:</tt> <tt class="py-number">10</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">                    <tt class="py-string">"key_float"</tt><tt class="py-op">:</tt> <tt class="py-number">1.0</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-20" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-20', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-string">"1"</tt><tt class="py-op">,</tt> <tt class="py-string">"1.0"</tt><tt class="py-op">,</tt> <tt class="py-string">"-1"</tt><tt class="py-op">,</tt> <tt class="py-string">"-1.0"</tt><tt class="py-op">,</tt> <tt class="py-string">"   10  "</tt><tt class="py-op">,</tt> <tt id="link-21" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-21', 'True', 'link-9');">True</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-22', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_int"</tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-23', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-24" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-24', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid int configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-25', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-26', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-27', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-28" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-28', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-29', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_int"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">IntType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return int object"</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">             </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-30', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_float"</tt><tt class="py-op">,</tt> <tt id="link-31" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-31', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-32" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-32', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid float configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-33', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-34', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-35" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-35', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-36" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-36', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-37', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_float"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">FloatType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return str object"</tt>             </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-38" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-38', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="chimera.controllers.console.commands.object" class="py-name" href="#" onclick="return doclink('link-39', 'object', 'link-10');">object</a></tt><tt class="py-op">,</tt> <tt class="py-string">"a10"</tt><tt class="py-op">,</tt> <tt class="py-string">"1.a"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-40', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-41', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_int"</tt><tt class="py-op">,</tt> <tt id="link-42" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-42', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-43" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-43', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-44', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_float"</tt><tt class="py-op">,</tt> <tt id="link-45" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-45', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig.test_bool"></a><div id="TestConfig.test_bool-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="TestConfig.test_bool-toggle" onclick="return toggle('TestConfig.test_bool');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_bool">test_bool</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_bool-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_bool-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-46', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_bool"</tt><tt class="py-op">:</tt> <tt id="link-47" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-47', 'True', 'link-9');">True</a></tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-48" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-48', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-string">"y"</tt><tt class="py-op">,</tt> <tt class="py-string">"Y"</tt><tt class="py-op">,</tt> <tt class="py-string">"yes"</tt><tt class="py-op">,</tt> <tt class="py-string">"YES"</tt><tt class="py-op">,</tt> <tt class="py-string">"n"</tt><tt class="py-op">,</tt> <tt class="py-string">"N"</tt><tt class="py-op">,</tt> <tt class="py-string">"no"</tt><tt class="py-op">,</tt> <tt class="py-string">"NO"</tt><tt class="py-op">,</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                  <tt class="py-string">"on"</tt><tt class="py-op">,</tt> <tt class="py-string">"ON"</tt><tt class="py-op">,</tt> <tt class="py-string">"off"</tt><tt class="py-op">,</tt> <tt class="py-string">"OFF"</tt><tt class="py-op">,</tt> <tt class="py-string">"true"</tt><tt class="py-op">,</tt> <tt class="py-string">"TRUE"</tt><tt class="py-op">,</tt> <tt class="py-string">"false"</tt><tt class="py-op">,</tt> <tt class="py-string">"FALSE"</tt><tt class="py-op">,</tt> <tt id="link-49" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-49', 'True', 'link-9');">True</a></tt><tt class="py-op">,</tt> <tt id="link-50" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-50', 'False', 'link-13');">False</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">             </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-comment"># no assert because setitem returns the old and this can be False</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-comment"># we get errors if any set raises OptionConversionException</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-51', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_bool"</tt><tt class="py-op">,</tt> <tt id="link-52" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-52', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-53" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-53', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-54', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_bool"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">BooleanType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return bool object"</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-55" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-55', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="chimera.controllers.console.commands.object" class="py-name" href="#" onclick="return doclink('link-56', 'object', 'link-10');">object</a></tt><tt class="py-op">,</tt> <tt class="py-string">"ok"</tt><tt class="py-op">,</tt> <tt class="py-number">10</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-57" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-57', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-58', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_bool"</tt><tt class="py-op">,</tt> <tt id="link-59" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-59', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig.test_options"></a><div id="TestConfig.test_options-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="TestConfig.test_options-toggle" onclick="return toggle('TestConfig.test_options');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_options">test_options</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_options-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_options-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-60" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-60', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_opt_int"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                    <tt class="py-string">"key_opt_float"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2.0</tt><tt class="py-op">,</tt> <tt class="py-number">4.0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                    <tt class="py-string">"key_opt_bool"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt id="link-61" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-61', 'False', 'link-13');">False</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                    <tt class="py-string">"key_opt_str"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-string">"one"</tt><tt class="py-op">,</tt> <tt class="py-string">"two"</tt><tt class="py-op">,</tt> <tt class="py-string">"three"</tt><tt class="py-op">]</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-62" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-62', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">,</tt> <tt id="link-63" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-63', 'True', 'link-9');">True</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment"># True == 1</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-64', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_opt_int"</tt><tt class="py-op">,</tt> <tt id="link-65" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-65', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-66" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-66', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-67" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-67', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-68" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-68', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-69" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-69', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-70" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-70', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-71', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_opt_int"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">IntType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return int object"</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-72" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-72', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">"one"</tt><tt class="py-op">,</tt> <tt class="py-string">"two"</tt><tt class="py-op">,</tt> <tt class="py-string">"three"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-73', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_opt_str"</tt><tt class="py-op">,</tt> <tt id="link-74" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-74', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-75" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-75', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-76" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-76', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-77" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-77', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-78" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-78', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-79" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-79', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-80', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_opt_str"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">StringType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return str object"</tt>             </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-81" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-81', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-number">4</tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-string">"str"</tt><tt class="py-op">,</tt> <tt id="link-82" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-82', 'False', 'link-13');">False</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-83" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-83', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-84', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_opt_int"</tt><tt class="py-op">,</tt> <tt id="link-85" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-85', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-86" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-86', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">"four"</tt><tt class="py-op">,</tt> <tt class="py-string">"five"</tt><tt class="py-op">,</tt> <tt class="py-string">"six"</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">,</tt> <tt id="link-87" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-87', 'True', 'link-9');">True</a></tt><tt class="py-op">,</tt> <tt id="link-88" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-88', 'False', 'link-13');">False</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-89" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-89', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-90', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_opt_str"</tt><tt class="py-op">,</tt> <tt id="link-91" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-91', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">             </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">         </tt>
+<a name="TestConfig.test_range"></a><div id="TestConfig.test_range-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="TestConfig.test_range-toggle" onclick="return toggle('TestConfig.test_range');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_range">test_range</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_range-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_range-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-92" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-92', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_range"</tt><tt class="py-op">:</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">10</tt><tt class="py-op">)</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> <tt class="py-comment"># ranges are inclusive</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-93" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-93', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">11</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-94', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_range"</tt><tt class="py-op">,</tt> <tt id="link-95" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-95', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-96" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-96', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-97" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-97', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-98" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-98', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-99" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-99', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-100" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-100', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-101', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_range"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">IntType</tt><tt class="py-op">,</tt> <tt class="py-string">"should return int object"</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-102" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-102', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">11</tt><tt class="py-op">,</tt> <tt class="py-string">"str"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">assert_raises</tt> <tt class="py-op">(</tt><tt id="link-103" class="py-name"><a title="chimera.core.exceptions.OptionConversionException" class="py-name" href="#" onclick="return doclink('link-103', 'OptionConversionException', 'link-4');">OptionConversionException</a></tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-104', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"key_range"</tt><tt class="py-op">,</tt> <tt id="link-105" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-105', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig.test_iter"></a><div id="TestConfig.test_iter-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="TestConfig.test_iter-toggle" onclick="return toggle('TestConfig.test_iter');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_iter">test_iter</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_iter-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_iter-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">d</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"device"</tt>       <tt class="py-op">:</tt> <tt class="py-string">"/dev/ttyS0"</tt><tt class="py-op">,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">             <tt class="py-string">"ccd"</tt>          <tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-string">"imaging"</tt><tt class="py-op">,</tt> <tt class="py-string">"tracking"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">             <tt class="py-string">"exp_time"</tt>     <tt class="py-op">:</tt> <tt class="py-op">(</tt><tt class="py-number">0.1</tt><tt class="py-op">,</tt> <tt class="py-number">6000.0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">             <tt class="py-string">"shutter"</tt>      <tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-string">"open"</tt><tt class="py-op">,</tt> <tt class="py-string">"close"</tt><tt class="py-op">,</tt> <tt class="py-string">"leave"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">             <tt class="py-string">"readout_aborted"</tt><tt class="py-op">:</tt> <tt id="link-106" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-106', 'True', 'link-9');">True</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">             <tt class="py-string">"readout_mode"</tt> <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">             <tt class="py-string">"date_format"</tt>  <tt class="py-op">:</tt> <tt class="py-string">"%d%m%y"</tt><tt class="py-op">,</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">             <tt class="py-string">"file_format"</tt>  <tt class="py-op">:</tt> <tt class="py-string">"$num-$observer-$date-%objname"</tt><tt class="py-op">,</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">             <tt class="py-string">"directory"</tt>    <tt class="py-op">:</tt> <tt class="py-string">"/home/someuser/images"</tt><tt class="py-op">,</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">             <tt class="py-string">"save_on_temp"</tt> <tt class="py-op">:</tt> <tt id="link-107" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-107', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">             <tt class="py-string">"seq_num"</tt>      <tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">             <tt class="py-string">"observer"</tt>     <tt class="py-op">:</tt> <tt class="py-string">"observer name"</tt><tt class="py-op">,</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">             <tt class="py-string">"obj_name"</tt>     <tt class="py-op">:</tt> <tt class="py-string">"object name"</tt><tt class="py-op">}</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-108" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-108', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-name">d</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-comment"># len</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">assert</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">d</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-comment"># contains</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">assert</tt> <tt class="py-string">"device"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">c</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-string">"stuff"</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">c</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-comment"># iter protocol</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-109" class="py-name" targets="Method chimera.core.config.Config.keys()=chimera.core.config.Config-class.html#keys,Variable chimera.core.resources.ResourcesManager.keys=chimera.core.resources.ResourcesManager-class.html#keys,Method chimera.util.etree.ElementTree._ElementInterface.keys()=chimera.util.etree.ElementTree._ElementInterface-class.html#keys,Method chimera.util.image.Image.keys()=chimera.util.image.Image-class.html#keys,Method chimera.util.sexcatalog.SExtractorfile.keys()=chimera.util.sexcatalog.SExtractorfile-class.html#keys"><a title="chimera.core.config.Config.keys
+chimera.core.resources.ResourcesManager.keys
+chimera.util.etree.ElementTree._ElementInterface.keys
+chimera.util.image.Image.keys
+chimera.util.sexcatalog.SExtractorfile.keys" class="py-name" href="#" onclick="return doclink('link-109', 'keys', 'link-109');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-110" class="py-name"><a title="chimera.core.config.Config.keys
+chimera.core.resources.ResourcesManager.keys
+chimera.util.etree.ElementTree._ElementInterface.keys
+chimera.util.image.Image.keys
+chimera.util.sexcatalog.SExtractorfile.keys" class="py-name" href="#" onclick="return doclink('link-110', 'keys', 'link-109');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-111" class="py-name" targets="Method chimera.core.config.Config.values()=chimera.core.config.Config-class.html#values,Variable chimera.core.resources.ResourcesManager.values=chimera.core.resources.ResourcesManager-class.html#values"><a title="chimera.core.config.Config.values
+chimera.core.resources.ResourcesManager.values" class="py-name" href="#" onclick="return doclink('link-111', 'values', 'link-111');">values</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-112" class="py-name"><a title="chimera.core.config.Config.values
+chimera.core.resources.ResourcesManager.values" class="py-name" href="#" onclick="return doclink('link-112', 'values', 'link-111');">values</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>         </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-113" class="py-name" targets="Method chimera.core.config.Config.items()=chimera.core.config.Config-class.html#items,Variable chimera.core.resources.ResourcesManager.items=chimera.core.resources.ResourcesManager-class.html#items,Method chimera.util.etree.ElementTree._ElementInterface.items()=chimera.util.etree.ElementTree._ElementInterface-class.html#items,Method chimera.util.image.Image.items()=chimera.util.image.Image-class.html#items"><a title="chimera.core.config.Config.items
+chimera.core.resources.ResourcesManager.items
+chimera.util.etree.ElementTree._ElementInterface.items
+chimera.util.image.Image.items" class="py-name" href="#" onclick="return doclink('link-113', 'items', 'link-113');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-114" class="py-name"><a title="chimera.core.config.Config.items
+chimera.core.resources.ResourcesManager.items
+chimera.util.etree.ElementTree._ElementInterface.items
+chimera.util.image.Image.items" class="py-name" href="#" onclick="return doclink('link-114', 'items', 'link-113');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-comment"># config using +=</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-115" class="py-name" targets="Method chimera.util.position.Position.dd()=chimera.util.position.Position-class.html#dd"><a title="chimera.util.position.Position.dd" class="py-name" href="#" onclick="return doclink('link-115', 'dd', 'link-115');">dd</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"new"</tt><tt class="py-op">:</tt> <tt class="py-number">10</tt><tt class="py-op">}</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">assert_raises</tt><tt class="py-op">(</tt><tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-116" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.__iadd__()=chimera.core.chimeraobject.ChimeraObject-class.html#__iadd__,Method chimera.core.config.Config.__iadd__()=chimera.core.config.Config-class.html#__iadd__,Method chimera.core.eventwrapper.EventWrapperDispatcher.__iadd__()=chimera.core.eventwrapper.EventWrapperDispatcher-class.html#__iadd__,Method chimera.core.proxy.Proxy.__iadd__()=chimera.core.proxy.Proxy-class.html#__iadd__,Method chimera.core.proxy.ProxyMethod.__iadd__()=chimera.core.proxy.ProxyMethod-class.html#__iadd__,Method chimera.util.image.Image.__iadd__()=chimera.util.image.Image-class.html#__iadd__"><a title="chimera.core.chimeraobject.ChimeraObject.__iadd__
+chimera.core.config.Config.__iadd__
+chimera.core.eventwrapper.EventWrapperDispatcher.__iadd__
+chimera.core.proxy.Proxy.__iadd__
+chimera.core.proxy.ProxyMethod.__iadd__
+chimera.util.image.Image.__iadd__" class="py-name" href="#" onclick="return doclink('link-116', '__iadd__', 'link-116');">__iadd__</a></tt><tt class="py-op">,</tt> <tt id="link-117" class="py-name"><a title="chimera.util.position.Position.dd" class="py-name" href="#" onclick="return doclink('link-117', 'dd', 'link-115');">dd</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-keyword">not</tt> <tt class="py-string">"new"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">c</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">+=</tt> <tt class="py-op">{</tt><tt class="py-string">"device"</tt><tt class="py-op">:</tt><tt class="py-string">"foo"</tt><tt class="py-op">}</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">[</tt><tt class="py-string">"device"</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"foo"</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">isinstance</tt> <tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">,</tt> <tt id="link-118" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-118', 'Config', 'link-3');">Config</a></tt><tt class="py-op">)</tt> <tt class="py-comment"># __iadd__ protocol, return self to allow daisy chaining</tt> </tt>
+</div><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"> </tt>
+<a name="TestConfig.test_enum"></a><div id="TestConfig.test_enum-def"><a name="L141"></a><tt class="py-lineno">141</tt> <a class="py-toggle" href="#" id="TestConfig.test_enum-toggle" onclick="return toggle('TestConfig.test_enum');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.core.tests.test_config.TestConfig-class.html#test_enum">test_enum</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestConfig.test_enum-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TestConfig.test_enum-expanded"><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">Values</tt> <tt class="py-op">=</tt> <tt class="py-name">Enum</tt><tt class="py-op">(</tt><tt class="py-string">"A_VALUE"</tt><tt class="py-op">,</tt> <tt class="py-string">"OTHER_VALUE"</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-119" class="py-name"><a title="chimera.controllers.console.message.Config
+chimera.core.config.Config" class="py-name" href="#" onclick="return doclink('link-119', 'Config', 'link-3');">Config</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">:</tt> <tt class="py-name">Values</tt><tt class="py-op">.</tt><tt class="py-name">A_VALUE</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-comment"># default</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">[</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-name">Values</tt><tt class="py-op">.</tt><tt class="py-name">A_VALUE</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-comment"># valid</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">for</tt> <tt id="link-120" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-120', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">Values</tt><tt class="py-op">:</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-121" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-121', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">,</tt> <tt id="link-122" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-122', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-123" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-123', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid enum configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-124" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-124', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-125" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-125', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-126" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-126', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-127" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-127', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-128" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-128', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">EnumValue</tt><tt class="py-op">,</tt> <tt class="py-string">"should return EnumValue object"</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-129" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-129', 'i', 'link-8');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">"A_VALUE"</tt><tt class="py-op">,</tt> <tt class="py-string">"OTHER_VALUE"</tt><tt class="py-op">,</tt> <tt class="py-string">"a_value"</tt><tt class="py-op">,</tt> <tt class="py-string">"other_value"</tt><tt class="py-op">,</tt> <tt class="py-string">"a_vAlUe"</tt><tt class="py-op">,</tt> <tt class="py-string">"oThEr_VaLuE"</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-130" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__setitem__
+chimera.core.config.Config.__setitem__
+chimera.util.etree.ElementTree._ElementInterface.__setitem__
+chimera.util.image.Image.__setitem__" class="py-name" href="#" onclick="return doclink('link-130', '__setitem__', 'link-11');">__setitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">,</tt> <tt id="link-131" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-131', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt id="link-132" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-132', 'False', 'link-13');">False</a></tt><tt class="py-op">,</tt> <tt class="py-string">"%s (%s) is a valid enum configuration"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-133" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-133', 'i', 'link-8');">i</a></tt><tt class="py-op">,</tt> <tt id="link-134" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-134', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt id="link-135" class="py-name"><a title="chimera.drivers.sbig.tests.grab.i" class="py-name" href="#" onclick="return doclink('link-135', 'i', 'link-8');">i</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt> <tt id="link-136" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.type
+chimera.core.cli.Option.type" class="py-name" href="#" onclick="return doclink('link-136', 'type', 'link-15');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-137', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">(</tt><tt class="py-string">"key_enum"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">EnumValue</tt><tt class="py-op">,</tt> <tt class="py-string">"should return EnumValue object"</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-comment"># invalid</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">assert_raises</tt><tt class="py-op">(</tt><tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-138" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.__getitem__
+chimera.core.config.Config.__getitem__
+chimera.core.resources.ResourcesManager.__getitem__
+chimera.util.etree.ElementTree._ElementInterface.__getitem__
+chimera.util.etree.ElementTree._iterparse.__getitem__
+chimera.util.image.Image.__getitem__
+chimera.util.votable.VONode.__getitem__" class="py-name" href="#" onclick="return doclink('link-138', '__getitem__', 'link-18');">__getitem__</a></tt><tt class="py-op">,</tt> <tt class="py-string">"WHATERVER"</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:02 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

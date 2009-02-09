@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.interfaces.filterwheel</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.interfaces-module.html">Package&nbsp;interfaces</a> ::
+        Module&nbsp;filterwheel
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.interfaces.filterwheel-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.interfaces.filterwheel-module.html">Module chimera.interfaces.filterwheel</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.interface=chimera.core.interface-module.html"><a title="chimera.core.interface" class="py-name" href="#" onclick="return doclink('link-2', 'interface', 'link-2');">interface</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.interface.Interface=chimera.core.interface.Interface-class.html"><a title="chimera.core.interface.Interface" class="py-name" href="#" onclick="return doclink('link-3', 'Interface', 'link-3');">Interface</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.event=chimera.core.event-module.html,Function chimera.core.event.event()=chimera.core.event-module.html#event"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-6', 'event', 'link-6');">event</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name"><a title="chimera.core.event
+chimera.core.event.event" class="py-name" href="#" onclick="return doclink('link-7', 'event', 'link-6');">event</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-8', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module chimera.controllers.imageserver.util=chimera.controllers.imageserver.util-module.html,Module chimera.core.util=chimera.core.util-module.html,Package chimera.util=chimera.util-module.html"><a title="chimera.controllers.imageserver.util
+chimera.core.util
+chimera.util" class="py-name" href="#" onclick="return doclink('link-9', 'util', 'link-9');">util</a></tt><tt class="py-op">.</tt><tt class="py-name">enum</tt>  <tt class="py-keyword">import</tt> <tt class="py-name">Enum</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-10" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-10', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-11', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-12', 'exceptions', 'link-12');">exceptions</a></tt> <tt class="py-keyword">import</tt> <tt id="link-13" class="py-name" targets="Class chimera.core.exceptions.ChimeraException=chimera.core.exceptions.ChimeraException-class.html"><a title="chimera.core.exceptions.ChimeraException" class="py-name" href="#" onclick="return doclink('link-13', 'ChimeraException', 'link-13');">ChimeraException</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable chimera.interfaces.filterwheel.Filter=chimera.interfaces.filterwheel-module.html#Filter"><a title="chimera.interfaces.filterwheel.Filter" class="py-name" href="#" onclick="return doclink('link-14', 'Filter', 'link-14');">Filter</a></tt> <tt class="py-op">=</tt> <tt class="py-name">Enum</tt> <tt class="py-op">(</tt><tt class="py-string">"U"</tt><tt class="py-op">,</tt> <tt class="py-string">"B"</tt><tt class="py-op">,</tt> <tt class="py-string">"V"</tt><tt class="py-op">,</tt> <tt class="py-string">"R"</tt><tt class="py-op">,</tt> <tt class="py-string">"I"</tt><tt class="py-op">,</tt>  <tt class="py-comment"># Johnson-Cousins</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">               <tt class="py-string">"C"</tt><tt class="py-op">,</tt> <tt class="py-string">"M"</tt><tt class="py-op">,</tt> <tt class="py-string">"T1"</tt><tt class="py-op">,</tt> <tt class="py-string">"T2"</tt><tt class="py-op">,</tt>     <tt class="py-comment"># Washington</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">               <tt class="py-string">"u"</tt><tt class="py-op">,</tt> <tt class="py-string">"g"</tt><tt class="py-op">,</tt> <tt class="py-string">"r"</tt><tt class="py-op">,</tt> <tt class="py-string">"i"</tt><tt class="py-op">,</tt> <tt class="py-string">"z"</tt><tt class="py-op">,</tt>  <tt class="py-comment"># SDSS</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">               <tt class="py-string">"J"</tt><tt class="py-op">,</tt> <tt class="py-string">"H"</tt><tt class="py-op">,</tt> <tt class="py-string">"K"</tt><tt class="py-op">,</tt> <tt class="py-string">"Kp"</tt><tt class="py-op">,</tt>      <tt class="py-comment"># MKO</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">               <tt class="py-string">"Z"</tt><tt class="py-op">,</tt> <tt class="py-string">"Y"</tt><tt class="py-op">,</tt> <tt class="py-string">"J"</tt><tt class="py-op">,</tt> <tt class="py-string">"H"</tt><tt class="py-op">,</tt> <tt class="py-string">"K"</tt><tt class="py-op">,</tt>  <tt class="py-comment"># UKIDSS design</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">               <tt class="py-string">"R"</tt><tt class="py-op">,</tt> <tt class="py-string">"G"</tt><tt class="py-op">,</tt> <tt class="py-string">"B"</tt><tt class="py-op">,</tt> <tt class="py-string">"RGB"</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">               <tt class="py-string">"RED"</tt><tt class="py-op">,</tt> <tt class="py-string">"GREEN"</tt><tt class="py-op">,</tt> <tt class="py-string">"BLUE"</tt><tt class="py-op">,</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">               <tt class="py-string">"H_ALPHA"</tt><tt class="py-op">,</tt> <tt class="py-string">"H_BETA"</tt><tt class="py-op">,</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">               <tt class="py-string">"CLEAR"</tt><tt class="py-op">,</tt> <tt class="py-string">"LUNAR"</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">               <tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="InvalidFilterPositionException"></a><div id="InvalidFilterPositionException-def"><a name="L41"></a><tt class="py-lineno">41</tt> <a class="py-toggle" href="#" id="InvalidFilterPositionException-toggle" onclick="return toggle('InvalidFilterPositionException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.InvalidFilterPositionException-class.html">InvalidFilterPositionException</a> <tt class="py-op">(</tt><tt class="py-base-class">ChimeraException</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="InvalidFilterPositionException-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="InvalidFilterPositionException-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="IFilterWheel"></a><div id="IFilterWheel-def"><a name="L45"></a><tt class="py-lineno">45</tt> <a class="py-toggle" href="#" id="IFilterWheel-toggle" onclick="return toggle('IFilterWheel');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.IFilterWheel-class.html">IFilterWheel</a> <tt class="py-op">(</tt><tt class="py-base-class">Interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IFilterWheel-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="IFilterWheel-expanded"><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt class="py-docstring">""" An interface for electromechanical filter wheels.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    Allow simple control and monitor filter changes    </tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Variable chimera.controllers.imageserver.imageserver.ImageServer.__config__=chimera.controllers.imageserver.imageserver.ImageServer-class.html#__config__,Variable chimera.controllers.pointverify.PointVerify.__config__=chimera.controllers.pointverify.PointVerify-class.html#__config__,Variable chimera.controllers.reduction.chimera_pipe.Reduction.__config__=chimera.controllers.reduction.chimera_pipe.Reduction-class.html#__config__,Variable chimera.controllers.scheduler.controller.Controller.__config__=chimera.controllers.scheduler.controller.Controller-class.html#__config__,Variable chimera.controllers.xephem.XEphem.__config__=chimera.controllers.xephem.XEphem-class.html#__config__,Variable chimera.controllers.xmlrpc.XMLRPC.__config__=chimera.controllers.xmlrpc.XMLRPC-class.html#__config__,Variable chimera.core.site.Site.__config__=chimera.core.site.Site-class.html#__config__,Variable chimera.drivers.fakecamera.FakeCamera.__config__=chimera.drivers.fakecamera.FakeCamera-class.html#__config__,Variable chimera.drivers.faketelescope.FakeTelescope.__config__=chimera.drivers.faketelescope.FakeTelescope-class.html#__config__,Variable chimera.drivers.meade.Meade.__config__=chimera.drivers.meade.Meade-class.html#__config__,Variable chimera.drivers.theskytelescope.TheSkyTelescope.__config__=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#__config__,Variable chimera.interfaces.autofocus.IAutofocus.__config__=chimera.interfaces.autofocus.IAutofocus-class.html#__config__,Variable chimera.interfaces.camera.ICamera.__config__=chimera.interfaces.camera.ICamera-class.html#__config__,Variable chimera.interfaces.cameradriver.ICameraDriver.__config__=chimera.interfaces.cameradriver.ICameraDriver-class.html#__config__,Variable chimera.interfaces.dome.IDome.__config__=chimera.interfaces.dome.IDome-class.html#__config__,Variable chimera.interfaces.domedriver.IDomeDriver.__config__=chimera.interfaces.domedriver.IDomeDriver-class.html#__config__,Variable chimera.interfaces.filterwheel.IFilterWheel.__config__=chimera.interfaces.filterwheel.IFilterWheel-class.html#__config__,Variable chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__=chimera.interfaces.filterwheeldriver.IFilterWheelDriver-class.html#__config__,Variable chimera.interfaces.focuser.IFocuser.__config__=chimera.interfaces.focuser.IFocuser-class.html#__config__,Variable chimera.interfaces.focuserdriver.IFocuserDriver.__config__=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#__config__,Variable chimera.interfaces.telescope.ITelescope.__config__=chimera.interfaces.telescope.ITelescope-class.html#__config__,Variable chimera.interfaces.telescope.ITelescopePark.__config__=chimera.interfaces.telescope.ITelescopePark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriver.__config__=chimera.interfaces.telescopedriver.ITelescopeDriver-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverPark-class.html#__config__,Variable chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#__config__,Variable chimera.interfaces.weatherstation.IWeatherStation.__config__=chimera.interfaces.weatherstation.IWeatherStation-class.html#__config__"><a title="chimera.controllers.imageserver.imageserver.ImageServer.__config__
+chimera.controllers.pointverify.PointVerify.__config__
+chimera.controllers.reduction.chimera_pipe.Reduction.__config__
+chimera.controllers.scheduler.controller.Controller.__config__
+chimera.controllers.xephem.XEphem.__config__
+chimera.controllers.xmlrpc.XMLRPC.__config__
+chimera.core.site.Site.__config__
+chimera.drivers.fakecamera.FakeCamera.__config__
+chimera.drivers.faketelescope.FakeTelescope.__config__
+chimera.drivers.meade.Meade.__config__
+chimera.drivers.theskytelescope.TheSkyTelescope.__config__
+chimera.interfaces.autofocus.IAutofocus.__config__
+chimera.interfaces.camera.ICamera.__config__
+chimera.interfaces.cameradriver.ICameraDriver.__config__
+chimera.interfaces.dome.IDome.__config__
+chimera.interfaces.domedriver.IDomeDriver.__config__
+chimera.interfaces.filterwheel.IFilterWheel.__config__
+chimera.interfaces.filterwheeldriver.IFilterWheelDriver.__config__
+chimera.interfaces.focuser.IFocuser.__config__
+chimera.interfaces.focuserdriver.IFocuserDriver.__config__
+chimera.interfaces.telescope.ITelescope.__config__
+chimera.interfaces.telescope.ITelescopePark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriver.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverPark.__config__
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.__config__
+chimera.interfaces.weatherstation.IWeatherStation.__config__" class="py-name" href="#" onclick="return doclink('link-15', '__config__', 'link-15');">__config__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"driver"</tt>  <tt class="py-op">:</tt> <tt class="py-string">"/FakeFilterWheel/0"</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">                  <tt class="py-string">"model"</tt>   <tt class="py-op">:</tt> <tt class="py-string">"Fake Filters Inc."</tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                  <tt class="py-string">"filters"</tt> <tt class="py-op">:</tt> <tt class="py-string">"R G B LUNAR CLEAR"</tt> <tt class="py-comment"># space or comma separated</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">                                                  <tt class="py-comment"># filter names (in position order)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">                  <tt class="py-op">}</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">     </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
+<a name="IFilterWheel.setFilter"></a><div id="IFilterWheel.setFilter-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="IFilterWheel.setFilter-toggle" onclick="return toggle('IFilterWheel.setFilter');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.IFilterWheel-class.html#setFilter">setFilter</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">filter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IFilterWheel.setFilter-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IFilterWheel.setFilter-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-docstring">"""Set the current filter.</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-docstring">        @param filter: The filter to use.</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">        @type  filter: L{Filter} or str</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="IFilterWheel.getFilter"></a><div id="IFilterWheel.getFilter-def"><a name="L67"></a><tt class="py-lineno">67</tt> <a class="py-toggle" href="#" id="IFilterWheel.getFilter-toggle" onclick="return toggle('IFilterWheel.getFilter');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.IFilterWheel-class.html#getFilter">getFilter</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IFilterWheel.getFilter-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IFilterWheel.getFilter-expanded"><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-docstring">"""Return the current filter.</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Current filter.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: L{Filter}</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="IFilterWheel.getFilters"></a><div id="IFilterWheel.getFilters-def"><a name="L75"></a><tt class="py-lineno">75</tt> <a class="py-toggle" href="#" id="IFilterWheel.getFilters-toggle" onclick="return toggle('IFilterWheel.getFilters');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.IFilterWheel-class.html#getFilters">getFilters</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IFilterWheel.getFilters-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IFilterWheel.getFilters-expanded"><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-docstring">"""Return a tuple with the available filter on this wheel.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Tuple of all filters available.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: tuple</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">event</tt> </tt>
+<a name="IFilterWheel.filterChange"></a><div id="IFilterWheel.filterChange-def"><a name="L83"></a><tt class="py-lineno">83</tt> <a class="py-toggle" href="#" id="IFilterWheel.filterChange-toggle" onclick="return toggle('IFilterWheel.filterChange');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.interfaces.filterwheel.IFilterWheel-class.html#filterChange">filterChange</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">newFilter</tt><tt class="py-op">,</tt> <tt class="py-param">oldFilter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IFilterWheel.filterChange-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="IFilterWheel.filterChange-expanded"><a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">        <tt class="py-docstring">"""Fired when the wheel changes the current filter.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"><tt class="py-docstring">        @param newFilter: The new current filter.</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line"><tt class="py-docstring">        @type  newFilter: L{Filter}</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line"><tt class="py-docstring">        @param oldFilter: The last filter.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line"><tt class="py-docstring">        @type  oldFilter: L{Filter}</tt> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+</div></div><a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:57 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.instruments.tests.test_focuser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.instruments-module.html">Package&nbsp;instruments</a> ::
+        <a href="chimera.instruments.tests-module.html">Package&nbsp;tests</a> ::
+        Module&nbsp;test_focuser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.instruments.tests.test_focuser-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.instruments.tests.test_focuser-module.html">Module chimera.instruments.tests.test_focuser</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#! /usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"># chimera - observatory automation system</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2006-2007  P. Henrique Silva &lt;henrique@astro.ufsc.br&gt;</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU General Public License</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># as published by the Free Software Foundation; either version 2</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># of the License, or (at your option) any later version.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-comment"># This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># GNU General Public License for more details.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-comment"># You should have received a copy of the GNU General Public License</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># along with this program; if not, write to the Free Software</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">random</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package chimera=chimera-module.html"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-0', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package chimera.core=chimera.core-module.html"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module chimera.core.manager=chimera.core.manager-module.html"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-2', 'manager', 'link-2');">manager</a></tt>  <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class chimera.core.manager.Manager=chimera.core.manager.Manager-class.html"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-3', 'Manager', 'link-3');">Manager</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-4', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-5', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module chimera.core.callback=chimera.core.callback-module.html,Function chimera.core.callback.callback()=chimera.core.callback-module.html#callback"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-6', 'callback', 'link-6');">callback</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name"><a title="chimera.core.callback
+chimera.core.callback.callback" class="py-name" href="#" onclick="return doclink('link-7', 'callback', 'link-6');">callback</a></tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-8', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-9', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module chimera.controllers.console.commands.site=chimera.controllers.console.commands.site-module.html,Package chimera.controllers.site=chimera.controllers.site-module.html,Module chimera.core.site=chimera.core.site-module.html"><a title="chimera.controllers.console.commands.site
+chimera.controllers.site
+chimera.core.site" class="py-name" href="#" onclick="return doclink('link-10', 'site', 'link-10');">site</a></tt>     <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class chimera.core.site.Site=chimera.core.site.Site-class.html"><a title="chimera.core.site.Site" class="py-name" href="#" onclick="return doclink('link-11', 'Site', 'link-11');">Site</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-12" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-12', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Static Method chimera.core.path.ChimeraPath.instruments()=chimera.core.path.ChimeraPath-class.html#instruments,Package chimera.instruments=chimera.instruments-module.html"><a title="chimera.core.path.ChimeraPath.instruments
+chimera.instruments" class="py-name" href="#" onclick="return doclink('link-13', 'instruments', 'link-13');">instruments</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Module chimera.instruments.focuser=chimera.instruments.focuser-module.html,Module chimera.interfaces.focuser=chimera.interfaces.focuser-module.html"><a title="chimera.instruments.focuser
+chimera.interfaces.focuser" class="py-name" href="#" onclick="return doclink('link-14', 'focuser', 'link-14');">focuser</a></tt>  <tt class="py-keyword">import</tt> <tt id="link-15" class="py-name" targets="Class chimera.instruments.focuser.Focuser=chimera.instruments.focuser.Focuser-class.html"><a title="chimera.instruments.focuser.Focuser" class="py-name" href="#" onclick="return doclink('link-15', 'Focuser', 'link-15');">Focuser</a></tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-16" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-16', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Package chimera.interfaces=chimera.interfaces-module.html"><a title="chimera.interfaces" class="py-name" href="#" onclick="return doclink('link-17', 'interfaces', 'link-17');">interfaces</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="chimera.instruments.focuser
+chimera.interfaces.focuser" class="py-name" href="#" onclick="return doclink('link-18', 'focuser', 'link-14');">focuser</a></tt>   <tt class="py-keyword">import</tt> <tt id="link-19" class="py-name" targets="Class chimera.interfaces.focuser.InvalidFocusPositionException=chimera.interfaces.focuser.InvalidFocusPositionException-class.html"><a title="chimera.interfaces.focuser.InvalidFocusPositionException" class="py-name" href="#" onclick="return doclink('link-19', 'InvalidFocusPositionException', 'link-19');">InvalidFocusPositionException</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-20" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-20', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Static Method chimera.core.path.ChimeraPath.drivers()=chimera.core.path.ChimeraPath-class.html#drivers,Package chimera.drivers=chimera.drivers-module.html"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-21', 'drivers', 'link-21');">drivers</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Module chimera.drivers.fakefocuser=chimera.drivers.fakefocuser-module.html"><a title="chimera.drivers.fakefocuser" class="py-name" href="#" onclick="return doclink('link-22', 'fakefocuser', 'link-22');">fakefocuser</a></tt>  <tt class="py-keyword">import</tt> <tt id="link-23" class="py-name" targets="Class chimera.drivers.fakefocuser.FakeFocuser=chimera.drivers.fakefocuser.FakeFocuser-class.html"><a title="chimera.drivers.fakefocuser.FakeFocuser" class="py-name" href="#" onclick="return doclink('link-23', 'FakeFocuser', 'link-23');">FakeFocuser</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-24" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-24', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="chimera.core.path.ChimeraPath.drivers
+chimera.drivers" class="py-name" href="#" onclick="return doclink('link-25', 'drivers', 'link-21');">drivers</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Module chimera.drivers.optectcfs=chimera.drivers.optectcfs-module.html"><a title="chimera.drivers.optectcfs" class="py-name" href="#" onclick="return doclink('link-26', 'optectcfs', 'link-26');">optectcfs</a></tt>    <tt class="py-keyword">import</tt> <tt id="link-27" class="py-name" targets="Class chimera.drivers.optectcfs.OptecTCFS=chimera.drivers.optectcfs.OptecTCFS-class.html"><a title="chimera.drivers.optectcfs.OptecTCFS" class="py-name" href="#" onclick="return doclink('link-27', 'OptecTCFS', 'link-27');">OptecTCFS</a></tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-28" class="py-name"><a title="chimera" class="py-name" href="#" onclick="return doclink('link-28', 'chimera', 'link-0');">chimera</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="chimera.core" class="py-name" href="#" onclick="return doclink('link-29', 'core', 'link-1');">core</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method chimera.controllers.autofocus.FocusFit.log()=chimera.controllers.autofocus.FocusFit-class.html#log,Variable chimera.controllers.imageserver.imagerequest.log=chimera.controllers.imageserver.imagerequest-module.html#log,Variable chimera.controllers.scheduler.machine.log=chimera.controllers.scheduler.machine-module.html#log,Variable chimera.controllers.scheduler.sequential.log=chimera.controllers.scheduler.sequential-module.html#log,Variable chimera.controllers.site.main.log=chimera.controllers.site.main-module.html#log,Variable chimera.core.config.log=chimera.core.config-module.html#log,Variable chimera.core.eventsproxy.log=chimera.core.eventsproxy-module.html#log,Variable chimera.core.location.log=chimera.core.location-module.html#log,Variable chimera.core.lockwrapper.log=chimera.core.lockwrapper-module.html#log,Module chimera.core.log=chimera.core.log-module.html,Variable chimera.core.manager.log=chimera.core.manager-module.html#log,Variable chimera.core.methodwrapper.log=chimera.core.methodwrapper-module.html#log,Variable chimera.core.proxy.log=chimera.core.proxy-module.html#log,Variable chimera.core.systemconfig.log=chimera.core.systemconfig-module.html#log,Variable chimera.core.tests.test_log.log=chimera.core.tests.test_log-module.html#log,Variable chimera.core.threads.log=chimera.core.threads-module.html#log,Variable chimera.drivers.sbig.sbigdrv.log=chimera.drivers.sbig.sbigdrv-module.html#log,Variable chimera.drivers.tests.test_meade.log=chimera.drivers.tests.test_meade-module.html#log,Variable chimera.drivers.theskytelescope.log=chimera.drivers.theskytelescope-module.html#log,Variable chimera.instruments.tests.test_camera.log=chimera.instruments.tests.test_camera-module.html#log,Variable chimera.util.astrometrynet.log=chimera.util.astrometrynet-module.html#log,Variable chimera.util.image.log=chimera.util.image-module.html#log"><a title="chimera.controllers.autofocus.FocusFit.log
+chimera.controllers.imageserver.imagerequest.log
+chimera.controllers.scheduler.machine.log
+chimera.controllers.scheduler.sequential.log
+chimera.controllers.site.main.log
+chimera.core.config.log
+chimera.core.eventsproxy.log
+chimera.core.location.log
+chimera.core.lockwrapper.log
+chimera.core.log
+chimera.core.manager.log
+chimera.core.methodwrapper.log
+chimera.core.proxy.log
+chimera.core.systemconfig.log
+chimera.core.tests.test_log.log
+chimera.core.threads.log
+chimera.drivers.sbig.sbigdrv.log
+chimera.drivers.tests.test_meade.log
+chimera.drivers.theskytelescope.log
+chimera.instruments.tests.test_camera.log
+chimera.util.astrometrynet.log
+chimera.util.image.log" class="py-name" href="#" onclick="return doclink('link-30', 'log', 'link-30');">log</a></tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-comment">#chimera.core.log.setConsoleLevel(logging.DEBUG)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">nose</tt><tt class="py-op">.</tt><tt class="py-name">tools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">assert_raises</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="TestFocuser"></a><div id="TestFocuser-def"><a name="L42"></a><tt class="py-lineno">42</tt> <a class="py-toggle" href="#" id="TestFocuser-toggle" onclick="return toggle('TestFocuser');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.instruments.tests.test_focuser.TestFocuser-class.html">TestFocuser</a> <tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestFocuser-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="TestFocuser-expanded"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="TestFocuser.setup"></a><div id="TestFocuser.setup-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="TestFocuser.setup-toggle" onclick="return toggle('TestFocuser.setup');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.tests.test_focuser.TestFocuser-class.html#setup">setup</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestFocuser.setup-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestFocuser.setup-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-31', 'manager', 'link-2');">manager</a></tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="chimera.core.manager.Manager" class="py-name" href="#" onclick="return doclink('link-32', 'Manager', 'link-3');">Manager</a></tt><tt class="py-op">(</tt><tt id="link-33" class="py-name" targets="Variable chimera.core.location.Location.port=chimera.core.location.Location-class.html#port"><a title="chimera.core.location.Location.port" class="py-name" href="#" onclick="return doclink('link-33', 'port', 'link-33');">port</a></tt><tt class="py-op">=</tt><tt class="py-number">8000</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-34', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method chimera.core.manager.Manager.addClass()=chimera.core.manager.Manager-class.html#addClass"><a title="chimera.core.manager.Manager.addClass" class="py-name" href="#" onclick="return doclink('link-35', 'addClass', 'link-35');">addClass</a></tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="chimera.core.site.Site" class="py-name" href="#" onclick="return doclink('link-36', 'Site', 'link-11');">Site</a></tt><tt class="py-op">,</tt> <tt class="py-string">"lna"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">"name"</tt><tt class="py-op">:</tt> <tt class="py-string">"LNA"</tt><tt class="py-op">,</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">                                            <tt class="py-string">"latitude"</tt><tt class="py-op">:</tt> <tt class="py-string">"-22 32 03"</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">                                            <tt class="py-string">"longitude"</tt><tt class="py-op">:</tt> <tt class="py-string">"-45 34 57"</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">                                            <tt class="py-string">"altitude"</tt><tt class="py-op">:</tt> <tt class="py-string">"1896"</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">                                            <tt class="py-string">"utc_offset"</tt><tt class="py-op">:</tt> <tt class="py-string">"-3"</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-37', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="chimera.core.manager.Manager.addClass" class="py-name" href="#" onclick="return doclink('link-38', 'addClass', 'link-35');">addClass</a></tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser" class="py-name" href="#" onclick="return doclink('link-39', 'FakeFocuser', 'link-23');">FakeFocuser</a></tt><tt class="py-op">,</tt> <tt class="py-string">"fake"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">"device"</tt><tt class="py-op">:</tt> <tt class="py-string">"/dev/ttyS0"</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-40', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.core.manager.Manager.addClass" class="py-name" href="#" onclick="return doclink('link-41', 'addClass', 'link-35');">addClass</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="chimera.instruments.focuser.Focuser" class="py-name" href="#" onclick="return doclink('link-42', 'Focuser', 'link-15');">Focuser</a></tt><tt class="py-op">,</tt> <tt class="py-string">"focus"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">"driver"</tt><tt class="py-op">:</tt> <tt class="py-string">"/FakeFocuser/0"</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-comment">#self.manager.addClass(OptecTCFS, "optec", {"device": "/dev/ttyS0"})</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#self.manager.addClass(Focuser, "focus", {"driver": "/OptecTCFS/0"})</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="TestFocuser.teardown"></a><div id="TestFocuser.teardown-def"><a name="L60"></a><tt class="py-lineno">60</tt> <a class="py-toggle" href="#" id="TestFocuser.teardown-toggle" onclick="return toggle('TestFocuser.teardown');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.tests.test_focuser.TestFocuser-class.html#teardown">teardown</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestFocuser.teardown-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestFocuser.teardown-expanded"><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-43', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method chimera.controllers.site.main.SiteController.shutdown()=chimera.controllers.site.main.SiteController-class.html#shutdown,Method chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown()=chimera.controllers.xmlrpc.ThreadingXMLRPCServer-class.html#shutdown,Method chimera.controllers.xmlrpc.serverThread.shutdown()=chimera.controllers.xmlrpc.serverThread-class.html#shutdown,Method chimera.core.manager.Manager.shutdown()=chimera.core.manager.Manager-class.html#shutdown,Method chimera.core.managerbeacon.ManagerBeacon.shutdown()=chimera.core.managerbeacon.ManagerBeacon-class.html#shutdown"><a title="chimera.controllers.site.main.SiteController.shutdown
+chimera.controllers.xmlrpc.ThreadingXMLRPCServer.shutdown
+chimera.controllers.xmlrpc.serverThread.shutdown
+chimera.core.manager.Manager.shutdown
+chimera.core.managerbeacon.ManagerBeacon.shutdown" class="py-name" href="#" onclick="return doclink('link-44', 'shutdown', 'link-44');">shutdown</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"> </tt>
+<a name="TestFocuser.test_get_position"></a><div id="TestFocuser.test_get_position-def"><a name="L63"></a><tt class="py-lineno">63</tt> <a class="py-toggle" href="#" id="TestFocuser.test_get_position-toggle" onclick="return toggle('TestFocuser.test_get_position');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.tests.test_focuser.TestFocuser-class.html#test_get_position">test_get_position</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestFocuser.test_get_position-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestFocuser.test_get_position-expanded"><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt id="link-45" class="py-name" targets="Method chimera.controllers.autofocus.Autofocus.focus()=chimera.controllers.autofocus.Autofocus-class.html#focus,Method chimera.interfaces.autofocus.IAutofocus.focus()=chimera.interfaces.autofocus.IAutofocus-class.html#focus"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-45', 'focus', 'link-45');">focus</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-46', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method chimera.core.chimeraobject.ChimeraObject.getProxy()=chimera.core.chimeraobject.ChimeraObject-class.html#getProxy,Method chimera.core.manager.Manager.getProxy()=chimera.core.manager.Manager-class.html#getProxy,Method chimera.core.remoteobject.RemoteObject.getProxy()=chimera.core.remoteobject.RemoteObject-class.html#getProxy,Method chimera.interfaces.lifecycle.ILifeCycle.getProxy()=chimera.interfaces.lifecycle.ILifeCycle-class.html#getProxy"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-47', 'getProxy', 'link-47');">getProxy</a></tt><tt class="py-op">(</tt><tt id="link-48" class="py-name"><a title="chimera.instruments.focuser.Focuser" class="py-name" href="#" onclick="return doclink('link-48', 'Focuser', 'link-15');">Focuser</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-49" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-49', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method chimera.drivers.fakefocuser.FakeFocuser.getPosition()=chimera.drivers.fakefocuser.FakeFocuser-class.html#getPosition,Method chimera.drivers.optectcfs.OptecTCFS.getPosition()=chimera.drivers.optectcfs.OptecTCFS-class.html#getPosition,Method chimera.drivers.theskytelescope.TheSkyTelescope.getPosition()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#getPosition,Method chimera.instruments.focuser.Focuser.getPosition()=chimera.instruments.focuser.Focuser-class.html#getPosition,Method chimera.interfaces.focuser.IFocuser.getPosition()=chimera.interfaces.focuser.IFocuser-class.html#getPosition,Method chimera.interfaces.focuserdriver.IFocuserDriver.getPosition()=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#getPosition"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-50', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
+<a name="TestFocuser.test_move"></a><div id="TestFocuser.test_move-def"><a name="L69"></a><tt class="py-lineno">69</tt> <a class="py-toggle" href="#" id="TestFocuser.test_move-toggle" onclick="return toggle('TestFocuser.test_move');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.instruments.tests.test_focuser.TestFocuser-class.html#test_move">test_move</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TestFocuser.test_move-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="TestFocuser.test_move-expanded"><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">        <tt id="link-51" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-51', 'focus', 'link-45');">focus</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="chimera.core.manager" class="py-name" href="#" onclick="return doclink('link-52', 'manager', 'link-2');">manager</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="chimera.core.chimeraobject.ChimeraObject.getProxy
+chimera.core.manager.Manager.getProxy
+chimera.core.remoteobject.RemoteObject.getProxy
+chimera.interfaces.lifecycle.ILifeCycle.getProxy" class="py-name" href="#" onclick="return doclink('link-53', 'getProxy', 'link-47');">getProxy</a></tt><tt class="py-op">(</tt><tt id="link-54" class="py-name"><a title="chimera.instruments.focuser.Focuser" class="py-name" href="#" onclick="return doclink('link-54', 'Focuser', 'link-15');">Focuser</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt id="link-55" class="py-name" targets="Method chimera.core.manager.Manager.start()=chimera.core.manager.Manager-class.html#start,Method chimera.util.etree.ElementTree.TreeBuilder.start()=chimera.util.etree.ElementTree.TreeBuilder-class.html#start"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-55', 'start', 'link-55');">start</a></tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-56', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-57', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">        <tt class="py-name">delta</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">random</tt><tt class="py-op">.</tt><tt class="py-name">Random</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">random</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-comment"># assumes IN moving to lower values        </tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-58" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-58', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method chimera.drivers.fakefocuser.FakeFocuser.moveIn()=chimera.drivers.fakefocuser.FakeFocuser-class.html#moveIn,Method chimera.drivers.optectcfs.OptecTCFS.moveIn()=chimera.drivers.optectcfs.OptecTCFS-class.html#moveIn,Method chimera.drivers.theskytelescope.TheSkyTelescope.moveIn()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#moveIn,Method chimera.instruments.focuser.Focuser.moveIn()=chimera.instruments.focuser.Focuser-class.html#moveIn,Method chimera.interfaces.focuser.IFocuser.moveIn()=chimera.interfaces.focuser.IFocuser-class.html#moveIn,Method chimera.interfaces.focuserdriver.IFocuserDriver.moveIn()=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#moveIn"><a title="chimera.drivers.fakefocuser.FakeFocuser.moveIn
+chimera.drivers.optectcfs.OptecTCFS.moveIn
+chimera.drivers.theskytelescope.TheSkyTelescope.moveIn
+chimera.instruments.focuser.Focuser.moveIn
+chimera.interfaces.focuser.IFocuser.moveIn
+chimera.interfaces.focuserdriver.IFocuserDriver.moveIn" class="py-name" href="#" onclick="return doclink('link-59', 'moveIn', 'link-59');">moveIn</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-60" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-60', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-61', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt id="link-62" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-62', 'start', 'link-55');">start</a></tt><tt class="py-op">-</tt><tt class="py-name">delta</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-comment"># assumes OUT moving to larger values</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-63" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-63', 'start', 'link-55');">start</a></tt> <tt class="py-op">=</tt> <tt id="link-64" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-64', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-65', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">        <tt id="link-66" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-66', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Method chimera.drivers.fakefocuser.FakeFocuser.moveOut()=chimera.drivers.fakefocuser.FakeFocuser-class.html#moveOut,Method chimera.drivers.optectcfs.OptecTCFS.moveOut()=chimera.drivers.optectcfs.OptecTCFS-class.html#moveOut,Method chimera.drivers.theskytelescope.TheSkyTelescope.moveOut()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#moveOut,Method chimera.instruments.focuser.Focuser.moveOut()=chimera.instruments.focuser.Focuser-class.html#moveOut,Method chimera.interfaces.focuser.IFocuser.moveOut()=chimera.interfaces.focuser.IFocuser-class.html#moveOut,Method chimera.interfaces.focuserdriver.IFocuserDriver.moveOut()=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#moveOut"><a title="chimera.drivers.fakefocuser.FakeFocuser.moveOut
+chimera.drivers.optectcfs.OptecTCFS.moveOut
+chimera.drivers.theskytelescope.TheSkyTelescope.moveOut
+chimera.instruments.focuser.Focuser.moveOut
+chimera.interfaces.focuser.IFocuser.moveOut
+chimera.interfaces.focuserdriver.IFocuserDriver.moveOut" class="py-name" href="#" onclick="return doclink('link-67', 'moveOut', 'link-67');">moveOut</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-68" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-68', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-69', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt id="link-70" class="py-name"><a title="chimera.core.manager.Manager.start
+chimera.util.etree.ElementTree.TreeBuilder.start" class="py-name" href="#" onclick="return doclink('link-70', 'start', 'link-55');">start</a></tt><tt class="py-op">+</tt><tt class="py-name">delta</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-comment"># TO</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-71" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-71', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Method chimera.drivers.fakefocuser.FakeFocuser.moveTo()=chimera.drivers.fakefocuser.FakeFocuser-class.html#moveTo,Method chimera.drivers.optectcfs.OptecTCFS.moveTo()=chimera.drivers.optectcfs.OptecTCFS-class.html#moveTo,Method chimera.drivers.theskytelescope.TheSkyTelescope.moveTo()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#moveTo,Method chimera.instruments.focuser.Focuser.moveTo()=chimera.instruments.focuser.Focuser-class.html#moveTo,Method chimera.interfaces.focuser.IFocuser.moveTo()=chimera.interfaces.focuser.IFocuser-class.html#moveTo,Method chimera.interfaces.focuserdriver.IFocuserDriver.moveTo()=chimera.interfaces.focuserdriver.IFocuserDriver-class.html#moveTo"><a title="chimera.drivers.fakefocuser.FakeFocuser.moveTo
+chimera.drivers.optectcfs.OptecTCFS.moveTo
+chimera.drivers.theskytelescope.TheSkyTelescope.moveTo
+chimera.instruments.focuser.Focuser.moveTo
+chimera.interfaces.focuser.IFocuser.moveTo
+chimera.interfaces.focuserdriver.IFocuserDriver.moveTo" class="py-name" href="#" onclick="return doclink('link-72', 'moveTo', 'link-72');">moveTo</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt id="link-73" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-73', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.getPosition
+chimera.drivers.optectcfs.OptecTCFS.getPosition
+chimera.drivers.theskytelescope.TheSkyTelescope.getPosition
+chimera.instruments.focuser.Focuser.getPosition
+chimera.interfaces.focuser.IFocuser.getPosition
+chimera.interfaces.focuserdriver.IFocuserDriver.getPosition" class="py-name" href="#" onclick="return doclink('link-74', 'getPosition', 'link-50');">getPosition</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1000</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">        <tt class="py-comment"># TO where?</tt> </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">assert_raises</tt><tt class="py-op">(</tt><tt id="link-75" class="py-name"><a title="chimera.interfaces.focuser.InvalidFocusPositionException" class="py-name" href="#" onclick="return doclink('link-75', 'InvalidFocusPositionException', 'link-19');">InvalidFocusPositionException</a></tt><tt class="py-op">,</tt> <tt id="link-76" class="py-name"><a title="chimera.controllers.autofocus.Autofocus.focus
+chimera.interfaces.autofocus.IAutofocus.focus" class="py-name" href="#" onclick="return doclink('link-76', 'focus', 'link-45');">focus</a></tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="chimera.drivers.fakefocuser.FakeFocuser.moveTo
+chimera.drivers.optectcfs.OptecTCFS.moveTo
+chimera.drivers.theskytelescope.TheSkyTelescope.moveTo
+chimera.instruments.focuser.Focuser.moveTo
+chimera.interfaces.focuser.IFocuser.moveTo
+chimera.interfaces.focuserdriver.IFocuserDriver.moveTo" class="py-name" href="#" onclick="return doclink('link-77', 'moveTo', 'link-72');">moveTo</a></tt><tt class="py-op">,</tt> <tt class="py-number">1e9</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:00 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

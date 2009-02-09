@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.controllers.reduction.reduction_tools</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.controllers-module.html">Package&nbsp;controllers</a> ::
+        <a href="chimera.controllers.reduction-module.html">Package&nbsp;reduction</a> ::
+        Module&nbsp;reduction_tools
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.controllers.reduction.reduction_tools-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.controllers.reduction.reduction_tools-module.html">Module chimera.controllers.reduction.reduction_tools</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">shutil</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">glob</tt> <tt class="py-keyword">import</tt> <tt class="py-name">glob</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pyraf</tt> <tt class="py-keyword">import</tt> <tt class="py-name">iraf</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-name">iraf</tt><tt class="py-op">.</tt><tt class="py-name">images</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-name">iraf</tt><tt class="py-op">.</tt><tt class="py-name">noao</tt><tt class="py-op">.</tt><tt class="py-name">imred</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-name">iraf</tt><tt class="py-op">.</tt><tt class="py-name">noao</tt><tt class="py-op">.</tt><tt class="py-name">imred</tt><tt class="py-op">.</tt><tt class="py-name">ccdred</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="rmExistingDir"></a><div id="rmExistingDir-def"><a name="L14"></a><tt class="py-lineno">14</tt> <a class="py-toggle" href="#" id="rmExistingDir-toggle" onclick="return toggle('rmExistingDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.reduction.reduction_tools-module.html#rmExistingDir">rmExistingDir</a><tt class="py-op">(</tt><tt class="py-param">directory</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rmExistingDir-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="rmExistingDir-expanded"><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-docstring">"""Removes a directory</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    @param directory:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    @type directory: str</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt id="link-0" class="py-name" targets="Method chimera.core.config.BoolChecker.check()=chimera.core.config.BoolChecker-class.html#check,Method chimera.core.config.Checker.check()=chimera.core.config.Checker-class.html#check,Method chimera.core.config.CoordChecker.check()=chimera.core.config.CoordChecker-class.html#check,Method chimera.core.config.EnumChecker.check()=chimera.core.config.EnumChecker-class.html#check,Method chimera.core.config.FloatChecker.check()=chimera.core.config.FloatChecker-class.html#check,Method chimera.core.config.IgnoreChecker.check()=chimera.core.config.IgnoreChecker-class.html#check,Method chimera.core.config.IntChecker.check()=chimera.core.config.IntChecker-class.html#check,Method chimera.core.config.OptionsChecker.check()=chimera.core.config.OptionsChecker-class.html#check,Method chimera.core.config.RangeChecker.check()=chimera.core.config.RangeChecker-class.html#check,Method chimera.core.config.StringChecker.check()=chimera.core.config.StringChecker-class.html#check"><a title="chimera.core.config.BoolChecker.check
+chimera.core.config.Checker.check
+chimera.core.config.CoordChecker.check
+chimera.core.config.EnumChecker.check
+chimera.core.config.FloatChecker.check
+chimera.core.config.IgnoreChecker.check
+chimera.core.config.IntChecker.check
+chimera.core.config.OptionsChecker.check
+chimera.core.config.RangeChecker.check
+chimera.core.config.StringChecker.check" class="py-name" href="#" onclick="return doclink('link-0', 'check', 'link-0');">check</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module chimera.core.path=chimera.core.path-module.html"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-1', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-2" class="py-name"><a title="chimera.core.config.BoolChecker.check
+chimera.core.config.Checker.check
+chimera.core.config.CoordChecker.check
+chimera.core.config.EnumChecker.check
+chimera.core.config.FloatChecker.check
+chimera.core.config.IgnoreChecker.check
+chimera.core.config.IntChecker.check
+chimera.core.config.OptionsChecker.check
+chimera.core.config.RangeChecker.check
+chimera.core.config.StringChecker.check" class="py-name" href="#" onclick="return doclink('link-2', 'check', 'link-0');">check</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">rmtree</tt><tt class="py-op">(</tt><tt class="py-name">directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Directory '%s' removed"</tt> <tt class="py-op">%</tt> <tt class="py-name">directory</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Directory '%s' does not exist; '%s' not removed"</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">         </tt>
+<a name="rmFile"></a><div id="rmFile-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="rmFile-toggle" onclick="return toggle('rmFile');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.reduction.reduction_tools-module.html#rmFile">rmFile</a><tt class="py-op">(</tt><tt class="py-param">fileroot</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rmFile-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="rmFile-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-docstring">"""Removes file(s) based on root name of the file</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    @param fileroot: &lt;root&gt;*</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">    @type fileroot: str </tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">del_list</tt> <tt class="py-op">=</tt> <tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-name">fileroot</tt><tt class="py-op">+</tt><tt class="py-string">'*'</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">file</tt> <tt class="py-keyword">in</tt> <tt class="py-name">del_list</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method chimera.core.manager.Manager.remove()=chimera.core.manager.Manager-class.html#remove,Method chimera.core.resources.ResourcesManager.remove()=chimera.core.resources.ResourcesManager-class.html#remove,Method chimera.util.etree.ElementTree._ElementInterface.remove()=chimera.util.etree.ElementTree._ElementInterface-class.html#remove"><a title="chimera.core.manager.Manager.remove
+chimera.core.resources.ResourcesManager.remove
+chimera.util.etree.ElementTree._ElementInterface.remove" class="py-name" href="#" onclick="return doclink('link-3', 'remove', 'link-3');">remove</a></tt><tt class="py-op">(</tt><tt class="py-name">file</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"File %s removed"</tt> <tt class="py-op">%</tt> <tt class="py-name">file</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
+<a name="makeDir"></a><div id="makeDir-def"><a name="L36"></a><tt class="py-lineno">36</tt> <a class="py-toggle" href="#" id="makeDir-toggle" onclick="return toggle('makeDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.reduction.reduction_tools-module.html#makeDir">makeDir</a><tt class="py-op">(</tt><tt class="py-param">newdir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="makeDir-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="makeDir-expanded"><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-4', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">newdir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">"Directory %s already exists"</tt> <tt class="py-op">%</tt> <tt class="py-name">newdir</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">newdir</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">            <tt class="py-keyword">break</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">mkdir</tt><tt class="py-op">(</tt><tt class="py-name">newdir</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">"New Directory '%s' created"</tt> <tt class="py-op">%</tt> <tt class="py-name">newdir</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">newdir</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-keyword">break</tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="copyNewFits"></a><div id="copyNewFits-def"><a name="L48"></a><tt class="py-lineno">48</tt> <a class="py-toggle" href="#" id="copyNewFits-toggle" onclick="return toggle('copyNewFits');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.controllers.reduction.reduction_tools-module.html#copyNewFits">copyNewFits</a><tt class="py-op">(</tt><tt class="py-param">imlist</tt><tt class="py-op">,</tt> <tt class="py-param">destdir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="copyNewFits-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="copyNewFits-expanded"><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-docstring">"""Copies all files in a python list to certain destination directory</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">    @param imlist: images to be copied</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">    @type imlist: list</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">    @param destdir: destination directory</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">    @type destdir: str</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">copiedlist</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">     </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-5', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">destdir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">mkdir</tt><tt class="py-op">(</tt><tt class="py-name">destdir</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">im</tt> <tt class="py-keyword">in</tt> <tt class="py-name">imlist</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-6', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-7', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">destdir</tt><tt class="py-op">+</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-8', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">                <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">copy</tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">,</tt> <tt class="py-name">destdir</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                <tt class="py-name">newloc</tt> <tt class="py-op">=</tt> <tt class="py-name">destdir</tt><tt class="py-op">+</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-9', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"Copied %s to %s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">,</tt> <tt class="py-name">destdir</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">                <tt class="py-name">copiedlist</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method chimera.util.etree.ElementTree._ElementInterface.append()=chimera.util.etree.ElementTree._ElementInterface-class.html#append,Method chimera.util.votable.VOTable.append()=chimera.util.votable.VOTable-class.html#append"><a title="chimera.util.etree.ElementTree._ElementInterface.append
+chimera.util.votable.VOTable.append" class="py-name" href="#" onclick="return doclink('link-10', 'append', 'link-10');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">newloc</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">     </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">copiedlist</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:36:56 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>chimera.util.sextractor</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="chimera-module.html">Package&nbsp;chimera</a> ::
+        <a href="chimera.util-module.html">Package&nbsp;util</a> ::
+        Module&nbsp;sextractor
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="chimera.util.sextractor-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="chimera.util.sextractor-module.html">Module chimera.util.sextractor</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Cosmograil: cosmograil.tools.sextractor</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># sextractor module.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Author: Laurent Le Guillou &lt;laurentl@ster.kuleuven.ac.be&gt;</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># $Id: sextractor.py,v 1.2 2005/07/06 21:40:43 hack Exp $</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># "sextractor": wrapper around SExtractor.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># $Log: sextractor.py,v $</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.2  2005/07/06 21:40:43  hack</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Tweakshifts version 0.5.0 (WJH):</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#   - added support for SExtractor PSET and user-supplied SExtractor config file</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#   - added 'nbright' parameter for selecting only 'nbright' objects for matching</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#   - redefined 'ascend' to 'fluxunits' of 'counts/cps/mag'</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#   - fixed bug in countSExtractorObjects()reported by Andy</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#   - turned off overwriting of output WCS file</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.15  2005/06/29 13:07:41  hack</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Added Python interface to SExtractor to STSDAS$Python for use with 'tweakshifts'. WJH</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Added 3 more parameters to config</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.14  2005/02/14 19:27:31  laurentl</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Added write facilities to rdb module.</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.13  2005/02/14 17:47:02  laurentl</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Added iterator interface</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.12  2005/02/14 17:16:30  laurentl</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># clean now removes the NNW config file too.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.2  2005/02/14 17:13:49  laurentl</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># *** empty log message ***</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.1  2005/02/14 11:34:10  laurentl</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># quality monitor now uses SExtractor wrapper.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.10  2005/02/11 14:40:35  laurentl</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># minor changes</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.9  2005/02/11 14:32:44  laurentl</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Fixed bugs in setup()</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.8  2005/02/11 13:50:08  laurentl</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Fixed bugs in setup()</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.7  2005/02/10 20:15:14  laurentl</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Improved SExtractor wrapper.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.6  2005/02/10 17:46:35  laurentl</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Greatly improved the SExtractor wrapper.</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.5  2005/02/09 23:32:50  laurentl</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Implemented SExtractor wrapper</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.4  2005/02/04 05:00:09  laurentl</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># *** empty log message ***</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Revision 1.3  2005/01/06 13:37:11  laurentl</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># *** empty log message ***</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># </tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">A wrapper for SExtractor</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">A wrapper for SExtractor, the Source Extractor.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">by Laurent Le Guillou</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">version: 1.15 - last modified: 2005-07-06</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">This wrapper allows you to configure SExtractor, run it and get</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">back its outputs without the need of editing SExtractor</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">configuration files. by default, configuration files are created</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">on-the-fly, and SExtractor is run silently via python.</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">Tested on SExtractor versions 2.2.1 and 2.3.2.</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">Example of use:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">-----------------------------------------------------------------</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    import sextractor</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    # Create a SExtractor instance</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">    sex = sextractor.SExtractor()</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">    # Modify the SExtractor configuration</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">    sex.config['GAIN'] = 0.938</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">    sex.config['PIXEL_SCALE'] = .19</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">    sex.config['VERBOSE_TYPE'] = "FULL"</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    sex.config['CHECKIMAGE_TYPE'] = "BACKGROUND"</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">    # Add a parameter to the parameter list</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">    sex.config['PARAMETERS_LIST'].append('FLUX_BEST')</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">    # Lauch SExtractor on a FITS file</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    sex.run("nf260002.fits")</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    # Read the resulting catalog [first method, whole catalog at once]</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    catalog = sex.catalog()</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">    for star in catalog:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">        print star['FLUX_BEST'], star['FLAGS']</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">        if (star['FLAGS'] &amp; sextractor.BLENDED):</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">            print "This star is BLENDED"</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">    # Read the resulting catalog [second method, whole catalog at once]</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_name = sex.config['CATALOG_NAME']</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_f = sextractor.open(catalog_name)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">    catalog = catalog_f.readlines()</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    for star in catalog:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        print star['FLUX_BEST'], star['FLAGS']</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        if (star['FLAGS'] &amp; sextractor.BLENDED):</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">            print "This star is BLENDED"</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_f.close()</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    # Read the resulting catalog [third method, star by star]</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_name = sex.config['CATALOG_NAME']</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_f = sextractor.open(catalog_name)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    star = catalog_f.readline()</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">    while star:</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">        print star['FLUX_BEST'], star['FLAGS']</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">        if (star['FLAGS'] &amp; sextractor.BLENDED):</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">            print "This star is BLENDED"</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">        star = catalog_f.readline()</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">    catalog_f.close()</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">    # Removing the configuration files, the catalog and</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">    # the check image</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    sex.clean(config=True, catalog=True, check=True)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">-----------------------------------------------------------------</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">__builtin__</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">popen2</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module chimera.core.exceptions=chimera.core.exceptions-module.html"><a title="chimera.core.exceptions" class="py-name" href="#" onclick="return doclink('link-0', 'exceptions', 'link-0');">exceptions</a></tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">copy</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module chimera.util.sexcatalog=chimera.util.sexcatalog-module.html"><a title="chimera.util.sexcatalog" class="py-name" href="#" onclick="return doclink('link-1', 'sexcatalog', 'link-1');">sexcatalog</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable chimera.util.sexcatalog.__version__=chimera.util.sexcatalog-module.html#__version__"><a title="chimera.util.sexcatalog.__version__" class="py-name" href="#" onclick="return doclink('link-2', '__version__', 'link-2');">__version__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"1.15.0 (2005-07-06)"</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="SExtractorException"></a><div id="SExtractorException-def"><a name="L166"></a><tt class="py-lineno">166</tt> <a class="py-toggle" href="#" id="SExtractorException-toggle" onclick="return toggle('SExtractorException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractorException-class.html">SExtractorException</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractorException-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SExtractorException-expanded"><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable chimera.util.sextractor.nnw_config=chimera.util.sextractor-module.html#nnw_config"><a title="chimera.util.sextractor.nnw_config" class="py-name" href="#" onclick="return doclink('link-3', 'nnw_config', 'link-3');">nnw_config</a></tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-string">"""NNW</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-string"># Neural Network Weights for the SExtractor star/galaxy classifier (V1.3)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-string"># inputs:       9 for profile parameters + 1 for seeing.</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-string"># outputs:      ``Stellarity index'' (0.0 to 1.0)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-string"># Seeing FWHM range: from 0.025 to 5.5'' (images must have 1.5 &lt; FWHM &lt; 5 pixels)</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-string"># Optimized for Moffat profiles with 2&lt;= beta &lt;= 4.</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-string"> 3 10 10  1</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-string">-1.56604e+00 -2.48265e+00 -1.44564e+00 -1.24675e+00 -9.44913e-01 -5.22453e-01  4.61342e-02  8.31957e-01  2.15505e+00  2.64769e-01</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-string"> 3.03477e+00  2.69561e+00  3.16188e+00  3.34497e+00  3.51885e+00  3.65570e+00  3.74856e+00  3.84541e+00  4.22811e+00  3.27734e+00</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-string">-3.22480e-01 -2.12804e+00  6.50750e-01 -1.11242e+00 -1.40683e+00 -1.55944e+00 -1.84558e+00 -1.18946e-01  5.52395e-01 -4.36564e-01 -5.30052e+00</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-string"> 4.62594e-01 -3.29127e+00  1.10950e+00 -6.01857e-01  1.29492e-01  1.42290e+00  2.90741e+00  2.44058e+00 -9.19118e-01  8.42851e-01 -4.69824e+00</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-string">-2.57424e+00  8.96469e-01  8.34775e-01  2.18845e+00  2.46526e+00  8.60878e-02 -6.88080e-01 -1.33623e-02  9.30403e-02  1.64942e+00 -1.01231e+00</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-string"> 4.81041e+00  1.53747e+00 -1.12216e+00 -3.16008e+00 -1.67404e+00 -1.75767e+00 -1.29310e+00  5.59549e-01  8.08468e-01 -1.01592e-02 -7.54052e+00</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-string"> 1.01933e+01 -2.09484e+01 -1.07426e+00  9.87912e-01  6.05210e-01 -6.04535e-02 -5.87826e-01 -7.94117e-01 -4.89190e-01 -8.12710e-02 -2.07067e+01</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-string">-5.31793e+00  7.94240e+00 -4.64165e+00 -4.37436e+00 -1.55417e+00  7.54368e-01  1.09608e+00  1.45967e+00  1.62946e+00 -1.01301e+00  1.13514e-01</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-string"> 2.20336e-01  1.70056e+00 -5.20105e-01 -4.28330e-01  1.57258e-03 -3.36502e-01 -8.18568e-02 -7.16163e+00  8.23195e+00 -1.71561e-02 -1.13749e+01</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-string"> 3.75075e+00  7.25399e+00 -1.75325e+00 -2.68814e+00 -3.71128e+00 -4.62933e+00 -2.13747e+00 -1.89186e-01  1.29122e+00 -7.49380e-01  6.71712e-01</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-string">-8.41923e-01  4.64997e+00  5.65808e-01 -3.08277e-01 -1.01687e+00  1.73127e-01 -8.92130e-01  1.89044e+00 -2.75543e-01 -7.72828e-01  5.36745e-01</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-string">-3.65598e+00  7.56997e+00 -3.76373e+00 -1.74542e+00 -1.37540e-01 -5.55400e-01 -1.59195e-01  1.27910e-01  1.91906e+00  1.42119e+00 -4.35502e+00</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-string">-1.70059e+00 -3.65695e+00  1.22367e+00 -5.74367e-01 -3.29571e+00  2.46316e+00  5.22353e+00  2.42038e+00  1.22919e+00 -9.22250e-01 -2.32028e+00</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-string"> 0.00000e+00 </tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-string"> 1.00000e+00 </tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="SExtractor"></a><div id="SExtractor-def"><a name="L204"></a><tt class="py-lineno">204</tt> <a class="py-toggle" href="#" id="SExtractor-toggle" onclick="return toggle('SExtractor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html">SExtractor</a><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SExtractor-expanded"><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">    A wrapper class to transparently use SExtractor.</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable chimera.util.sextractor.SExtractor._SE_config=chimera.util.sextractor.SExtractor-class.html#_SE_config"><a title="chimera.util.sextractor.SExtractor._SE_config" class="py-name" href="#" onclick="return doclink('link-4', '_SE_config', 'link-4');">_SE_config</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt>  </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-string">"CATALOG_NAME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"name of the output catalog"</tt><tt class="py-op">,</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"py-sextractor.cat"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">         </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-string">"CATALOG_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">         <tt class="py-string">'"NONE","ASCII_HEAD","ASCII","FITS_1.0" or "FITS_LDAC"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"ASCII_HEAD"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">         </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-string">"PARAMETERS_NAME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"name of the file containing catalog contents"</tt><tt class="py-op">,</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"py-sextractor.param"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">         </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-string">"DETECT_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'"CCD" or "PHOTO"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"CCD"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">         </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-string">"FLAG_IMAGE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"filename for an input FLAG-image"</tt><tt class="py-op">,</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"flag.fits"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">         </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-string">"DETECT_MINAREA"</tt><tt class="py-op">:</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"minimum number of pixels above threshold"</tt><tt class="py-op">,</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">5</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">         </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-string">"DETECT_THRESH"</tt><tt class="py-op">:</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"&lt;sigmas&gt; or &lt;threshold&gt;,&lt;ZP&gt; in mag.arcsec-2"</tt><tt class="py-op">,</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1.5</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">         </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-string">"ANALYSIS_THRESH"</tt><tt class="py-op">:</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"&lt;sigmas&gt; or &lt;threshold&gt;,&lt;ZP&gt; in mag.arcsec-2"</tt><tt class="py-op">,</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1.5</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">         </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-string">"FILTER"</tt><tt class="py-op">:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'apply filter for detection ("Y" or "N")'</tt><tt class="py-op">,</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">'Y'</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">         </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-string">"FILTER_NAME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"name of the file containing the filter"</tt><tt class="py-op">,</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"py-sextractor.conv"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">         </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">        <tt class="py-string">"DEBLEND_NTHRESH"</tt><tt class="py-op">:</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Number of deblending sub-thresholds"</tt><tt class="py-op">,</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">32</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">         </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-string">"DEBLEND_MINCONT"</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Minimum contrast parameter for deblending"</tt><tt class="py-op">,</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">0.005</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">         </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-string">"CLEAN"</tt><tt class="py-op">:</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Clean spurious detections (Y or N)"</tt><tt class="py-op">,</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">'Y'</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">         </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">        <tt class="py-string">"CLEAN_PARAM"</tt><tt class="py-op">:</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Cleaning efficiency"</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">         </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">        <tt class="py-string">"MASK_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'type of detection MASKing: can be one of "NONE", "BLANK" or "CORRECT"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"CORRECT"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">         </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-string">"PHOT_APERTURES"</tt><tt class="py-op">:</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"MAG_APER aperture diameter(s) in pixels"</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">5</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">         </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">        <tt class="py-string">"PHOT_AUTOPARAMS"</tt><tt class="py-op">:</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'MAG_AUTO parameters: &lt;Kron_fact&gt;,&lt;min_radius&gt;'</tt><tt class="py-op">,</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">2.5</tt><tt class="py-op">,</tt> <tt class="py-number">3.5</tt><tt class="py-op">]</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">         </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt class="py-string">"SATUR_LEVEL"</tt><tt class="py-op">:</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"level (in ADUs) at which arises saturation"</tt><tt class="py-op">,</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">50000.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">         </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">        <tt class="py-string">"MAG_ZEROPOINT"</tt><tt class="py-op">:</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"magnitude zero-point"</tt><tt class="py-op">,</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">0.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">         </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-string">"MAG_GAMMA"</tt><tt class="py-op">:</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"gamma of emulsion (for photographic scans)"</tt><tt class="py-op">,</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">4.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">         </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">        <tt class="py-string">"GAIN"</tt><tt class="py-op">:</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"detector gain in e-/ADU"</tt><tt class="py-op">,</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">0.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">         </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-string">"PIXEL_SCALE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"size of pixel in arcsec (0=use FITS WCS info)"</tt><tt class="py-op">,</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1.0</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">         </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">        <tt class="py-string">"SEEING_FWHM"</tt><tt class="py-op">:</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"stellar FWHM in arcsec"</tt><tt class="py-op">,</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1.2</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">         </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-string">"STARNNW_NAME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Neural-Network_Weight table filename"</tt><tt class="py-op">,</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"py-sextractor.nnw"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">         </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">        <tt class="py-string">"BACK_SIZE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Background mesh: &lt;size&gt; or &lt;width&gt;,&lt;height&gt;"</tt><tt class="py-op">,</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">64</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line">        <tt class="py-string">"BACK_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Type of background to subtract: MANUAL or AUTO generated"</tt><tt class="py-op">,</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">'MANUAL'</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">        <tt class="py-string">"BACK_VALUE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"User-supplied constant value to be subtracted as sky"</tt><tt class="py-op">,</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"0.0,0.0"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">         </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">        <tt class="py-string">"BACK_FILTERSIZE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Background filter: &lt;size&gt; or &lt;width&gt;,&lt;height&gt;"</tt><tt class="py-op">,</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">3</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">         </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">        <tt class="py-string">"BACKPHOTO_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'can be "GLOBAL" or "LOCAL"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"GLOBAL"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">        <tt class="py-string">"BACKPHOTO_THICK"</tt><tt class="py-op">:</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Thickness in pixels of the background local annulus"</tt><tt class="py-op">,</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">24</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">         </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">        <tt class="py-string">"CHECKIMAGE_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'can be one of "NONE", "BACKGROUND", "MINIBACKGROUND", "-BACKGROUND", "OBJECTS", "-OBJECTS", "SEGMENTATION", "APERTURES", or "FILTERED"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"NONE"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">         </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">        <tt class="py-string">"CHECKIMAGE_NAME"</tt><tt class="py-op">:</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"Filename for the check-image"</tt><tt class="py-op">,</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"check.fits"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line">         </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">        <tt class="py-string">"MEMORY_OBJSTACK"</tt><tt class="py-op">:</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"number of objects in stack"</tt><tt class="py-op">,</tt> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">3000</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">         </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">        <tt class="py-string">"MEMORY_PIXSTACK"</tt><tt class="py-op">:</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"number of pixels in stack"</tt><tt class="py-op">,</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">300000</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line">         </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line">        <tt class="py-string">"MEMORY_BUFSIZE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">"number of lines in buffer"</tt><tt class="py-op">,</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-number">1024</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line">         </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line">        <tt class="py-string">"VERBOSE_TYPE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'can be "QUIET", "NORMAL" or "FULL"'</tt><tt class="py-op">,</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"QUIET"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line">        <tt class="py-comment"># -- Extra-keys (will not be saved in the main configuration file</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line">        <tt class="py-string">"PARAMETERS_LIST"</tt><tt class="py-op">:</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'[Extra key] catalog contents (to put in PARAMETERS_NAME)'</tt><tt class="py-op">,</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-string">"NUMBER"</tt><tt class="py-op">,</tt> <tt class="py-string">"FLUX_BEST"</tt><tt class="py-op">,</tt> <tt class="py-string">"FLUXERR_BEST"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line">                   <tt class="py-string">"X_IMAGE"</tt><tt class="py-op">,</tt> <tt class="py-string">"Y_IMAGE"</tt><tt class="py-op">,</tt> <tt class="py-string">"FLAGS"</tt><tt class="py-op">,</tt> <tt class="py-string">"FWHM_IMAGE"</tt><tt class="py-op">]</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line">        <tt class="py-string">"CONFIG_FILE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'[Extra key] name of the main configuration file'</tt><tt class="py-op">,</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-string">"py-sextractor.sex"</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line"> </tt>
+<a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line">        <tt class="py-string">"FILTER_MASK"</tt><tt class="py-op">:</tt> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"comment"</tt><tt class="py-op">:</tt> <tt class="py-string">'Array to put in the FILTER_MASK file'</tt><tt class="py-op">,</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line">         <tt class="py-string">"value"</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line">                   <tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line">                   <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">]</tt><tt class="py-op">}</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line">        <tt class="py-op">}</tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line">     </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line">    <tt class="py-comment"># -- Special config. keys that should not go into the config. file.</tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable chimera.util.sextractor.SExtractor._SE_config_special_keys=chimera.util.sextractor.SExtractor-class.html#_SE_config_special_keys"><a title="chimera.util.sextractor.SExtractor._SE_config_special_keys" class="py-name" href="#" onclick="return doclink('link-5', '_SE_config_special_keys', 'link-5');">_SE_config_special_keys</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"PARAMETERS_LIST"</tt><tt class="py-op">,</tt> <tt class="py-string">"CONFIG_FILE"</tt><tt class="py-op">,</tt> <tt class="py-string">"FILTER_MASK"</tt><tt class="py-op">]</tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line"> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line"> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line">    <tt class="py-comment"># -- Dictionary of all possible parameters (from sexcatalog.py module)</tt> </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable chimera.util.sextractor.SExtractor._SE_parameters=chimera.util.sextractor.SExtractor-class.html#_SE_parameters"><a title="chimera.util.sextractor.SExtractor._SE_parameters" class="py-name" href="#" onclick="return doclink('link-6', '_SE_parameters', 'link-6');">_SE_parameters</a></tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name" targets="Class chimera.util.sexcatalog.SExtractorfile=chimera.util.sexcatalog.SExtractorfile-class.html"><a title="chimera.util.sexcatalog.SExtractorfile" class="py-name" href="#" onclick="return doclink('link-7', 'SExtractorfile', 'link-7');">SExtractorfile</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Variable chimera.util.sexcatalog.SExtractorfile._SE_keys=chimera.util.sexcatalog.SExtractorfile-class.html#_SE_keys"><a title="chimera.util.sexcatalog.SExtractorfile._SE_keys" class="py-name" href="#" onclick="return doclink('link-8', '_SE_keys', 'link-8');">_SE_keys</a></tt> </tt>
+<a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line"> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line"> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.__init__"></a><div id="SExtractor.__init__-def"><a name="L386"></a><tt class="py-lineno">386</tt> <a class="py-toggle" href="#" id="SExtractor.__init__-toggle" onclick="return toggle('SExtractor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.__init__-expanded"><a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L388"></a><tt class="py-lineno">388</tt>  <tt class="py-line"><tt class="py-docstring">        SExtractor class constructor.</tt> </tt>
+<a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line"> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module chimera.core.config=chimera.core.config-module.html,Variable chimera.core.location.Location.config=chimera.core.location.Location-class.html#config"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-9', 'config', 'link-9');">config</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line">            <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name" targets="Class chimera.util.sextractor.SExtractor=chimera.util.sextractor.SExtractor-class.html"><a title="chimera.util.sextractor.SExtractor" class="py-name" href="#" onclick="return doclink('link-10', 'SExtractor', 'link-10');">SExtractor</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="chimera.util.sextractor.SExtractor._SE_config" class="py-name" href="#" onclick="return doclink('link-11', '_SE_config', 'link-4');">_SE_config</a></tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-string">"value"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>\ </tt>
+<a name="L393"></a><tt class="py-lineno">393</tt>  <tt class="py-line">                  <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt id="link-12" class="py-name"><a title="chimera.util.sextractor.SExtractor" class="py-name" href="#" onclick="return doclink('link-12', 'SExtractor', 'link-10');">SExtractor</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="chimera.util.sextractor.SExtractor._SE_config" class="py-name" href="#" onclick="return doclink('link-13', '_SE_config', 'link-4');">_SE_config</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method chimera.core.config.Config.keys()=chimera.core.config.Config-class.html#keys,Variable chimera.core.resources.ResourcesManager.keys=chimera.core.resources.ResourcesManager-class.html#keys,Method chimera.util.etree.ElementTree._ElementInterface.keys()=chimera.util.etree.ElementTree._ElementInterface-class.html#keys,Method chimera.util.image.Image.keys()=chimera.util.image.Image-class.html#keys,Method chimera.util.sexcatalog.SExtractorfile.keys()=chimera.util.sexcatalog.SExtractorfile-class.html#keys"><a title="chimera.core.config.Config.keys
+chimera.core.resources.ResourcesManager.keys
+chimera.util.etree.ElementTree._ElementInterface.keys
+chimera.util.image.Image.keys
+chimera.util.sexcatalog.SExtractorfile.keys" class="py-name" href="#" onclick="return doclink('link-14', 'keys', 'link-14');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line"> </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line">        <tt class="py-comment"># print self.config</tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Variable chimera.controllers.scheduler.model.Constraint.program=chimera.controllers.scheduler.model.Constraint-class.html#program,Variable chimera.controllers.scheduler.model.Observation.program=chimera.controllers.scheduler.model.Observation-class.html#program"><a title="chimera.controllers.scheduler.model.Constraint.program
+chimera.controllers.scheduler.model.Observation.program" class="py-name" href="#" onclick="return doclink('link-15', 'program', 'link-15');">program</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Module chimera.core.version=chimera.core.version-module.html"><a title="chimera.core.version" class="py-name" href="#" onclick="return doclink('link-16', 'version', 'link-16');">version</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"> </tt>
+<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.setup"></a><div id="SExtractor.setup-def"><a name="L401"></a><tt class="py-lineno">401</tt> <a class="py-toggle" href="#" id="SExtractor.setup-toggle" onclick="return toggle('SExtractor.setup');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#setup">setup</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.setup-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.setup-expanded"><a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L403"></a><tt class="py-lineno">403</tt>  <tt class="py-line"><tt class="py-docstring">        Look for SExtractor program ('sextractor', or 'sex').</tt> </tt>
+<a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line"><tt class="py-docstring">        If a full path is provided, only this path is checked.</tt> </tt>
+<a name="L405"></a><tt class="py-lineno">405</tt>  <tt class="py-line"><tt class="py-docstring">        Raise a SExtractorException if it failed.</tt> </tt>
+<a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line"><tt class="py-docstring">        Return program and version if it succeed.</tt> </tt>
+<a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line"> </tt>
+<a name="L409"></a><tt class="py-lineno">409</tt>  <tt class="py-line">        <tt class="py-comment"># -- Finding sextractor program and its version</tt> </tt>
+<a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># first look for 'sextractor', then 'sex'</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L412"></a><tt class="py-lineno">412</tt>  <tt class="py-line">        <tt class="py-name">candidates</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'sextractor'</tt><tt class="py-op">,</tt> <tt class="py-string">'sex'</tt><tt class="py-op">]</tt> </tt>
+<a name="L413"></a><tt class="py-lineno">413</tt>  <tt class="py-line"> </tt>
+<a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt id="link-17" class="py-name" targets="Module chimera.core.path=chimera.core.path-module.html"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-17', 'path', 'link-17');">path</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line">            <tt class="py-name">candidates</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-18" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-18', 'path', 'link-17');">path</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line">         </tt>
+<a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line">        <tt class="py-name">selected</tt><tt class="py-op">=</tt><tt class="py-name">None</tt> </tt>
+<a name="L418"></a><tt class="py-lineno">418</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">candidate</tt> <tt class="py-keyword">in</tt> <tt class="py-name">candidates</tt><tt class="py-op">:</tt> </tt>
+<a name="L419"></a><tt class="py-lineno">419</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L420"></a><tt class="py-lineno">420</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-name">_out_err</tt><tt class="py-op">,</tt> <tt class="py-name">_in</tt><tt class="py-op">)</tt> <tt class="py-op">=</tt> <tt class="py-name">popen2</tt><tt class="py-op">.</tt><tt class="py-name">popen4</tt><tt class="py-op">(</tt><tt class="py-name">candidate</tt><tt class="py-op">)</tt> </tt>
+<a name="L421"></a><tt class="py-lineno">421</tt>  <tt class="py-line">                <tt class="py-name">versionline</tt> <tt class="py-op">=</tt> <tt class="py-name">_out_err</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method chimera.util.sexcatalog.SExtractorfile.read()=chimera.util.sexcatalog.SExtractorfile-class.html#read"><a title="chimera.util.sexcatalog.SExtractorfile.read" class="py-name" href="#" onclick="return doclink('link-19', 'read', 'link-19');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L422"></a><tt class="py-lineno">422</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">versionline</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method chimera.util.catalog.Catalog.find()=chimera.util.catalog.Catalog-class.html#find,Method chimera.util.catalogs.landolt.Landolt.find()=chimera.util.catalogs.landolt.Landolt-class.html#find,Method chimera.util.catalogs.ppm.PPM.find()=chimera.util.catalogs.ppm.PPM-class.html#find,Method chimera.util.catalogs.ucac2.UCAC2.find()=chimera.util.catalogs.ucac2.UCAC2-class.html#find,Method chimera.util.etree.ElementPath.Path.find()=chimera.util.etree.ElementPath.Path-class.html#find,Function chimera.util.etree.ElementPath.find()=chimera.util.etree.ElementPath-module.html#find,Method chimera.util.etree.ElementTree.ElementTree.find()=chimera.util.etree.ElementTree.ElementTree-class.html#find,Method chimera.util.etree.ElementTree._ElementInterface.find()=chimera.util.etree.ElementTree._ElementInterface-class.html#find,Method chimera.util.etree.ElementTree._SimpleElementPath.find()=chimera.util.etree.ElementTree._SimpleElementPath-class.html#find,Method chimera.util.vizquery.VizQuery.find()=chimera.util.vizquery.VizQuery-class.html#find"><a title="chimera.util.catalog.Catalog.find
+chimera.util.catalogs.landolt.Landolt.find
+chimera.util.catalogs.ppm.PPM.find
+chimera.util.catalogs.ucac2.UCAC2.find
+chimera.util.etree.ElementPath.Path.find
+chimera.util.etree.ElementPath.find
+chimera.util.etree.ElementTree.ElementTree.find
+chimera.util.etree.ElementTree._ElementInterface.find
+chimera.util.etree.ElementTree._SimpleElementPath.find
+chimera.util.vizquery.VizQuery.find" class="py-name" href="#" onclick="return doclink('link-20', 'find', 'link-20');">find</a></tt><tt class="py-op">(</tt><tt class="py-string">"SExtractor"</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L423"></a><tt class="py-lineno">423</tt>  <tt class="py-line">                    <tt class="py-name">selected</tt><tt class="py-op">=</tt><tt class="py-name">candidate</tt> </tt>
+<a name="L424"></a><tt class="py-lineno">424</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L425"></a><tt class="py-lineno">425</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L426"></a><tt class="py-lineno">426</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L427"></a><tt class="py-lineno">427</tt>  <tt class="py-line">                 </tt>
+<a name="L428"></a><tt class="py-lineno">428</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">selected</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L429"></a><tt class="py-lineno">429</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-21" class="py-name" targets="Class chimera.util.sextractor.SExtractorException=chimera.util.sextractor.SExtractorException-class.html"><a title="chimera.util.sextractor.SExtractorException" class="py-name" href="#" onclick="return doclink('link-21', 'SExtractorException', 'link-21');">SExtractorException</a></tt><tt class="py-op">,</tt> \ </tt>
+<a name="L430"></a><tt class="py-lineno">430</tt>  <tt class="py-line">                  <tt class="py-string">"""</tt> </tt>
+<a name="L431"></a><tt class="py-lineno">431</tt>  <tt class="py-line"><tt class="py-string">                  Cannot find SExtractor program. Check your PATH,</tt> </tt>
+<a name="L432"></a><tt class="py-lineno">432</tt>  <tt class="py-line"><tt class="py-string">                  or provide the SExtractor program path in the constructor.</tt> </tt>
+<a name="L433"></a><tt class="py-lineno">433</tt>  <tt class="py-line"><tt class="py-string">                  """</tt> </tt>
+<a name="L434"></a><tt class="py-lineno">434</tt>  <tt class="py-line"> </tt>
+<a name="L435"></a><tt class="py-lineno">435</tt>  <tt class="py-line">        <tt class="py-name">_program</tt> <tt class="py-op">=</tt> <tt class="py-name">selected</tt> </tt>
+<a name="L436"></a><tt class="py-lineno">436</tt>  <tt class="py-line"> </tt>
+<a name="L437"></a><tt class="py-lineno">437</tt>  <tt class="py-line">        <tt class="py-comment"># print versionline</tt> </tt>
+<a name="L438"></a><tt class="py-lineno">438</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">_version_match</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">search</tt><tt class="py-op">(</tt><tt class="py-string">"[Vv]ersion ([0-9\.])+"</tt><tt class="py-op">,</tt> <tt class="py-name">versionline</tt><tt class="py-op">)</tt> </tt>
+<a name="L439"></a><tt class="py-lineno">439</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_version_match</tt><tt class="py-op">:</tt> </tt>
+<a name="L440"></a><tt class="py-lineno">440</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-22" class="py-name"><a title="chimera.util.sextractor.SExtractorException" class="py-name" href="#" onclick="return doclink('link-22', 'SExtractorException', 'link-21');">SExtractorException</a></tt><tt class="py-op">,</tt> \ </tt>
+<a name="L441"></a><tt class="py-lineno">441</tt>  <tt class="py-line">                  <tt class="py-string">"Cannot determine SExtractor version."</tt> </tt>
+<a name="L442"></a><tt class="py-lineno">442</tt>  <tt class="py-line"> </tt>
+<a name="L443"></a><tt class="py-lineno">443</tt>  <tt class="py-line">        <tt class="py-name">_version</tt> <tt class="py-op">=</tt> <tt class="py-name">_version_match</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">8</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L444"></a><tt class="py-lineno">444</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_version</tt><tt class="py-op">:</tt> </tt>
+<a name="L445"></a><tt class="py-lineno">445</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-23" class="py-name"><a title="chimera.util.sextractor.SExtractorException" class="py-name" href="#" onclick="return doclink('link-23', 'SExtractorException', 'link-21');">SExtractorException</a></tt><tt class="py-op">,</tt> \ </tt>
+<a name="L446"></a><tt class="py-lineno">446</tt>  <tt class="py-line">                  <tt class="py-string">"Cannot determine SExtractor version."</tt> </tt>
+<a name="L447"></a><tt class="py-lineno">447</tt>  <tt class="py-line"> </tt>
+<a name="L448"></a><tt class="py-lineno">448</tt>  <tt class="py-line">        <tt class="py-comment"># print "Use " + self.program + " [" + self.version + "]"</tt> </tt>
+<a name="L449"></a><tt class="py-lineno">449</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L450"></a><tt class="py-lineno">450</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">_program</tt><tt class="py-op">,</tt> <tt class="py-name">_version</tt> </tt>
+</div><a name="L451"></a><tt class="py-lineno">451</tt>  <tt class="py-line"> </tt>
+<a name="L452"></a><tt class="py-lineno">452</tt>  <tt class="py-line"> </tt>
+<a name="L453"></a><tt class="py-lineno">453</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.update_config"></a><div id="SExtractor.update_config-def"><a name="L454"></a><tt class="py-lineno">454</tt> <a class="py-toggle" href="#" id="SExtractor.update_config-toggle" onclick="return toggle('SExtractor.update_config');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#update_config">update_config</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.update_config-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.update_config-expanded"><a name="L455"></a><tt class="py-lineno">455</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L456"></a><tt class="py-lineno">456</tt>  <tt class="py-line"><tt class="py-docstring">        Update the configuration files according to the current</tt> </tt>
+<a name="L457"></a><tt class="py-lineno">457</tt>  <tt class="py-line"><tt class="py-docstring">        in-memory SExtractor configuration.</tt> </tt>
+<a name="L458"></a><tt class="py-lineno">458</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L459"></a><tt class="py-lineno">459</tt>  <tt class="py-line"> </tt>
+<a name="L460"></a><tt class="py-lineno">460</tt>  <tt class="py-line">        <tt class="py-comment"># -- Write filter configuration file</tt> </tt>
+<a name="L461"></a><tt class="py-lineno">461</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L462"></a><tt class="py-lineno">462</tt>  <tt class="py-line">        <tt class="py-comment"># First check the filter itself</tt> </tt>
+<a name="L463"></a><tt class="py-lineno">463</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L464"></a><tt class="py-lineno">464</tt>  <tt class="py-line">        <tt id="link-24" class="py-name" targets="Variable chimera.controllers.scheduler.model.Exposure.filter=chimera.controllers.scheduler.model.Exposure-class.html#filter"><a title="chimera.controllers.scheduler.model.Exposure.filter" class="py-name" href="#" onclick="return doclink('link-24', 'filter', 'link-24');">filter</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-25', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'FILTER_MASK'</tt><tt class="py-op">]</tt> </tt>
+<a name="L465"></a><tt class="py-lineno">465</tt>  <tt class="py-line">        <tt class="py-name">rows</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.filter" class="py-name" href="#" onclick="return doclink('link-26', 'filter', 'link-24');">filter</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L466"></a><tt class="py-lineno">466</tt>  <tt class="py-line">        <tt class="py-name">cols</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.filter" class="py-name" href="#" onclick="return doclink('link-27', 'filter', 'link-24');">filter</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>   <tt class="py-comment"># May raise ValueError, OK</tt> </tt>
+<a name="L467"></a><tt class="py-lineno">467</tt>  <tt class="py-line"> </tt>
+<a name="L468"></a><tt class="py-lineno">468</tt>  <tt class="py-line">        <tt class="py-name">filter_f</tt> <tt class="py-op">=</tt> <tt class="py-name">__builtin__</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.open()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#open,Method chimera.drivers.fakecamera.FakeCamera.open()=chimera.drivers.fakecamera.FakeCamera-class.html#open,Method chimera.drivers.faketelescope.FakeTelescope.open()=chimera.drivers.faketelescope.FakeTelescope-class.html#open,Method chimera.drivers.meade.Meade.open()=chimera.drivers.meade.Meade-class.html#open,Method chimera.drivers.optectcfs.OptecTCFS.open()=chimera.drivers.optectcfs.OptecTCFS-class.html#open,Method chimera.drivers.sbig.sbig.SBIG.open()=chimera.drivers.sbig.sbig.SBIG-class.html#open,Method chimera.drivers.theskytelescope.TheSkyTelescope.open()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#open,Method chimera.interfaces.cameradriver.ICameraDriver.open()=chimera.interfaces.cameradriver.ICameraDriver-class.html#open,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#open,Method chimera.util.ds9.DS9.open()=chimera.util.ds9.DS9-class.html#open,Function chimera.util.sexcatalog.open()=chimera.util.sexcatalog-module.html#open"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-28', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-29', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'FILTER_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L469"></a><tt class="py-lineno">469</tt>  <tt class="py-line">        <tt class="py-name">filter_f</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method chimera.util.etree.ElementTree.ElementTree.write()=chimera.util.etree.ElementTree.ElementTree-class.html#write"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-30', 'write', 'link-30');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"CONV NORM\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L470"></a><tt class="py-lineno">470</tt>  <tt class="py-line">        <tt class="py-name">filter_f</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-31', 'write', 'link-30');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"# %dx%d Generated from sextractor.py module.\n"</tt> <tt class="py-op">%</tt> </tt>
+<a name="L471"></a><tt class="py-lineno">471</tt>  <tt class="py-line">                       <tt class="py-op">(</tt><tt class="py-name">rows</tt><tt class="py-op">,</tt> <tt class="py-name">cols</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L472"></a><tt class="py-lineno">472</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">row</tt> <tt class="py-keyword">in</tt> <tt id="link-32" class="py-name"><a title="chimera.controllers.scheduler.model.Exposure.filter" class="py-name" href="#" onclick="return doclink('link-32', 'filter', 'link-24');">filter</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L473"></a><tt class="py-lineno">473</tt>  <tt class="py-line">            <tt class="py-name">filter_f</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-33', 'write', 'link-30');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">" "</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">repr</tt><tt class="py-op">,</tt> <tt class="py-name">row</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L474"></a><tt class="py-lineno">474</tt>  <tt class="py-line">            <tt class="py-name">filter_f</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-34', 'write', 'link-30');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L475"></a><tt class="py-lineno">475</tt>  <tt class="py-line">             </tt>
+<a name="L476"></a><tt class="py-lineno">476</tt>  <tt class="py-line">        <tt class="py-name">filter_f</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method chimera.drivers.domelna40cm.DomeLNA40cm.close()=chimera.drivers.domelna40cm.DomeLNA40cm-class.html#close,Method chimera.drivers.fakecamera.FakeCamera.close()=chimera.drivers.fakecamera.FakeCamera-class.html#close,Method chimera.drivers.faketelescope.FakeTelescope.close()=chimera.drivers.faketelescope.FakeTelescope-class.html#close,Method chimera.drivers.meade.Meade.close()=chimera.drivers.meade.Meade-class.html#close,Method chimera.drivers.optectcfs.OptecTCFS.close()=chimera.drivers.optectcfs.OptecTCFS-class.html#close,Method chimera.drivers.sbig.sbig.SBIG.close()=chimera.drivers.sbig.sbig.SBIG-class.html#close,Method chimera.drivers.theskytelescope.TheSkyTelescope.close()=chimera.drivers.theskytelescope.TheSkyTelescope-class.html#close,Method chimera.interfaces.cameradriver.ICameraDriver.close()=chimera.interfaces.cameradriver.ICameraDriver-class.html#close,Method chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close()=chimera.interfaces.telescopedriver.ITelescopeDriverSlew-class.html#close,Method chimera.util.etree.ElementTree.TreeBuilder.close()=chimera.util.etree.ElementTree.TreeBuilder-class.html#close,Method chimera.util.etree.ElementTree.XMLTreeBuilder.close()=chimera.util.etree.ElementTree.XMLTreeBuilder-class.html#close,Method chimera.util.sexcatalog.SExtractorfile.close()=chimera.util.sexcatalog.SExtractorfile-class.html#close"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-35', 'close', 'link-35');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L477"></a><tt class="py-lineno">477</tt>  <tt class="py-line"> </tt>
+<a name="L478"></a><tt class="py-lineno">478</tt>  <tt class="py-line">        <tt class="py-comment"># -- Write parameter list file</tt> </tt>
+<a name="L479"></a><tt class="py-lineno">479</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L480"></a><tt class="py-lineno">480</tt>  <tt class="py-line">        <tt class="py-name">parameters_f</tt> <tt class="py-op">=</tt> <tt class="py-name">__builtin__</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-36', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-37', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'PARAMETERS_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L481"></a><tt class="py-lineno">481</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-38" class="py-name" targets="Function chimera.core.cli.parameter()=chimera.core.cli-module.html#parameter"><a title="chimera.core.cli.parameter" class="py-name" href="#" onclick="return doclink('link-38', 'parameter', 'link-38');">parameter</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-39', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'PARAMETERS_LIST'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L482"></a><tt class="py-lineno">482</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-op">&gt;&gt;</tt><tt class="py-name">parameters_f</tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="chimera.core.cli.parameter" class="py-name" href="#" onclick="return doclink('link-40', 'parameter', 'link-38');">parameter</a></tt> </tt>
+<a name="L483"></a><tt class="py-lineno">483</tt>  <tt class="py-line"> </tt>
+<a name="L484"></a><tt class="py-lineno">484</tt>  <tt class="py-line">        <tt class="py-name">parameters_f</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-41', 'close', 'link-35');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L485"></a><tt class="py-lineno">485</tt>  <tt class="py-line"> </tt>
+<a name="L486"></a><tt class="py-lineno">486</tt>  <tt class="py-line">        <tt class="py-comment"># -- Write NNW configuration file</tt> </tt>
+<a name="L487"></a><tt class="py-lineno">487</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L488"></a><tt class="py-lineno">488</tt>  <tt class="py-line">        <tt class="py-name">nnw_f</tt> <tt class="py-op">=</tt> <tt class="py-name">__builtin__</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-42', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-43', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'STARNNW_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L489"></a><tt class="py-lineno">489</tt>  <tt class="py-line">        <tt class="py-name">nnw_f</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="chimera.util.etree.ElementTree.ElementTree.write" class="py-name" href="#" onclick="return doclink('link-44', 'write', 'link-30');">write</a></tt><tt class="py-op">(</tt><tt id="link-45" class="py-name"><a title="chimera.util.sextractor.nnw_config" class="py-name" href="#" onclick="return doclink('link-45', 'nnw_config', 'link-3');">nnw_config</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L490"></a><tt class="py-lineno">490</tt>  <tt class="py-line">        <tt class="py-name">nnw_f</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-46', 'close', 'link-35');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L491"></a><tt class="py-lineno">491</tt>  <tt class="py-line"> </tt>
+<a name="L492"></a><tt class="py-lineno">492</tt>  <tt class="py-line"> </tt>
+<a name="L493"></a><tt class="py-lineno">493</tt>  <tt class="py-line">        <tt class="py-comment"># -- Write main configuration file</tt> </tt>
+<a name="L494"></a><tt class="py-lineno">494</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L495"></a><tt class="py-lineno">495</tt>  <tt class="py-line">        <tt class="py-name">main_f</tt> <tt class="py-op">=</tt> <tt class="py-name">__builtin__</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.open
+chimera.drivers.fakecamera.FakeCamera.open
+chimera.drivers.faketelescope.FakeTelescope.open
+chimera.drivers.meade.Meade.open
+chimera.drivers.optectcfs.OptecTCFS.open
+chimera.drivers.sbig.sbig.SBIG.open
+chimera.drivers.theskytelescope.TheSkyTelescope.open
+chimera.interfaces.cameradriver.ICameraDriver.open
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.open
+chimera.util.ds9.DS9.open
+chimera.util.sexcatalog.open" class="py-name" href="#" onclick="return doclink('link-47', 'open', 'link-28');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-48', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CONFIG_FILE'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L496"></a><tt class="py-lineno">496</tt>  <tt class="py-line"> </tt>
+<a name="L497"></a><tt class="py-lineno">497</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-49', 'config', 'link-9');">config</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="chimera.core.config.Config.keys
+chimera.core.resources.ResourcesManager.keys
+chimera.util.etree.ElementTree._ElementInterface.keys
+chimera.util.image.Image.keys
+chimera.util.sexcatalog.SExtractorfile.keys" class="py-name" href="#" onclick="return doclink('link-50', 'keys', 'link-14');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L498"></a><tt class="py-lineno">498</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">key</tt> <tt class="py-keyword">in</tt> <tt id="link-51" class="py-name"><a title="chimera.util.sextractor.SExtractor" class="py-name" href="#" onclick="return doclink('link-51', 'SExtractor', 'link-10');">SExtractor</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="chimera.util.sextractor.SExtractor._SE_config_special_keys" class="py-name" href="#" onclick="return doclink('link-52', '_SE_config_special_keys', 'link-5');">_SE_config_special_keys</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L499"></a><tt class="py-lineno">499</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L500"></a><tt class="py-lineno">500</tt>  <tt class="py-line"> </tt>
+<a name="L501"></a><tt class="py-lineno">501</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt class="py-string">"PHOT_AUTOPARAMS"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment"># tuple instead of a single value</tt> </tt>
+<a name="L502"></a><tt class="py-lineno">502</tt>  <tt class="py-line">                <tt class="py-name">value</tt> <tt class="py-op">=</tt> <tt class="py-string">" "</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-53', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L503"></a><tt class="py-lineno">503</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L504"></a><tt class="py-lineno">504</tt>  <tt class="py-line">                <tt class="py-name">value</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-54', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L505"></a><tt class="py-lineno">505</tt>  <tt class="py-line">             </tt>
+<a name="L506"></a><tt class="py-lineno">506</tt>  <tt class="py-line">             </tt>
+<a name="L507"></a><tt class="py-lineno">507</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-op">&gt;&gt;</tt><tt class="py-name">main_f</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-string">"%-16s       %-16s # %s"</tt> <tt class="py-op">%</tt> </tt>
+<a name="L508"></a><tt class="py-lineno">508</tt>  <tt class="py-line">                             <tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">,</tt> <tt id="link-55" class="py-name"><a title="chimera.util.sextractor.SExtractor" class="py-name" href="#" onclick="return doclink('link-55', 'SExtractor', 'link-10');">SExtractor</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="chimera.util.sextractor.SExtractor._SE_config" class="py-name" href="#" onclick="return doclink('link-56', '_SE_config', 'link-4');">_SE_config</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-string">'comment'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L509"></a><tt class="py-lineno">509</tt>  <tt class="py-line"> </tt>
+<a name="L510"></a><tt class="py-lineno">510</tt>  <tt class="py-line">        <tt class="py-name">main_f</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-57', 'close', 'link-35');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L511"></a><tt class="py-lineno">511</tt>  <tt class="py-line"> </tt>
+<a name="L512"></a><tt class="py-lineno">512</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.run"></a><div id="SExtractor.run-def"><a name="L513"></a><tt class="py-lineno">513</tt> <a class="py-toggle" href="#" id="SExtractor.run-toggle" onclick="return toggle('SExtractor.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">file</tt><tt class="py-op">,</tt> <tt class="py-param">updateconfig</tt><tt class="py-op">=</tt><tt id="link-58" class="py-name" targets="Variable chimera.core.threads.True=chimera.core.threads-module.html#True"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-58', 'True', 'link-58');">True</a></tt><tt class="py-op">,</tt> <tt class="py-param">clean</tt><tt class="py-op">=</tt><tt id="link-59" class="py-name" targets="Variable chimera.core.threads.False=chimera.core.threads-module.html#False"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-59', 'False', 'link-59');">False</a></tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.run-expanded"><a name="L514"></a><tt class="py-lineno">514</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L515"></a><tt class="py-lineno">515</tt>  <tt class="py-line"><tt class="py-docstring">        Run SExtractor.</tt> </tt>
+<a name="L516"></a><tt class="py-lineno">516</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L517"></a><tt class="py-lineno">517</tt>  <tt class="py-line"><tt class="py-docstring">        If updateconfig is True (default), the configuration</tt> </tt>
+<a name="L518"></a><tt class="py-lineno">518</tt>  <tt class="py-line"><tt class="py-docstring">        files will be updated before running SExtractor.</tt> </tt>
+<a name="L519"></a><tt class="py-lineno">519</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L520"></a><tt class="py-lineno">520</tt>  <tt class="py-line"><tt class="py-docstring">        If clean is True (default: False), configuration files </tt> </tt>
+<a name="L521"></a><tt class="py-lineno">521</tt>  <tt class="py-line"><tt class="py-docstring">        (if any) will be deleted after SExtractor terminates.</tt> </tt>
+<a name="L522"></a><tt class="py-lineno">522</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L523"></a><tt class="py-lineno">523</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L524"></a><tt class="py-lineno">524</tt>  <tt class="py-line"> </tt>
+<a name="L525"></a><tt class="py-lineno">525</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">updateconfig</tt><tt class="py-op">:</tt> </tt>
+<a name="L526"></a><tt class="py-lineno">526</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method chimera.util.sextractor.SExtractor.update_config()=chimera.util.sextractor.SExtractor-class.html#update_config"><a title="chimera.util.sextractor.SExtractor.update_config" class="py-name" href="#" onclick="return doclink('link-60', 'update_config', 'link-60');">update_config</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L527"></a><tt class="py-lineno">527</tt>  <tt class="py-line"> </tt>
+<a name="L528"></a><tt class="py-lineno">528</tt>  <tt class="py-line">        <tt class="py-comment"># Try to find SExtractor program</tt> </tt>
+<a name="L529"></a><tt class="py-lineno">529</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># This will raise an exception if it failed</tt> </tt>
+<a name="L530"></a><tt class="py-lineno">530</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L531"></a><tt class="py-lineno">531</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.program
+chimera.controllers.scheduler.model.Observation.program" class="py-name" href="#" onclick="return doclink('link-61', 'program', 'link-15');">program</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="chimera.core.version" class="py-name" href="#" onclick="return doclink('link-62', 'version', 'link-16');">version</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method chimera.controllers.tests.test_auto_focus.TestAutofocus.setup()=chimera.controllers.tests.test_auto_focus.TestAutofocus-class.html#setup,Method chimera.controllers.tests.test_auto_map.TestAutoMap.setup()=chimera.controllers.tests.test_auto_map.TestAutoMap-class.html#setup,Method chimera.controllers.tests.test_pointverify.TestAutofocus.setup()=chimera.controllers.tests.test_pointverify.TestAutofocus-class.html#setup,Method chimera.core.tests.test_events.TestEvents.setup()=chimera.core.tests.test_events.TestEvents-class.html#setup,Method chimera.core.tests.test_manager.TestManager.setup()=chimera.core.tests.test_manager.TestManager-class.html#setup,Method chimera.core.tests.test_site.TestSite.setup()=chimera.core.tests.test_site.TestSite-class.html#setup,Method chimera.drivers.tests.test_meade.TestMeade.setup()=chimera.drivers.tests.test_meade.TestMeade-class.html#setup,Method chimera.instruments.tests.test_camera.TestCamera.setup()=chimera.instruments.tests.test_camera.TestCamera-class.html#setup,Method chimera.instruments.tests.test_dome.TestDome.setup()=chimera.instruments.tests.test_dome.TestDome-class.html#setup,Method chimera.instruments.tests.test_filterwheel.TestFilterWheel.setup()=chimera.instruments.tests.test_filterwheel.TestFilterWheel-class.html#setup,Method chimera.instruments.tests.test_focuser.TestFocuser.setup()=chimera.instruments.tests.test_focuser.TestFocuser-class.html#setup,Method chimera.instruments.tests.test_telescope.TestTelescope.setup()=chimera.instruments.tests.test_telescope.TestTelescope-class.html#setup,Method chimera.util.sextractor.SExtractor.setup()=chimera.util.sextractor.SExtractor-class.html#setup"><a title="chimera.controllers.tests.test_auto_focus.TestAutofocus.setup
+chimera.controllers.tests.test_auto_map.TestAutoMap.setup
+chimera.controllers.tests.test_pointverify.TestAutofocus.setup
+chimera.core.tests.test_events.TestEvents.setup
+chimera.core.tests.test_manager.TestManager.setup
+chimera.core.tests.test_site.TestSite.setup
+chimera.drivers.tests.test_meade.TestMeade.setup
+chimera.instruments.tests.test_camera.TestCamera.setup
+chimera.instruments.tests.test_dome.TestDome.setup
+chimera.instruments.tests.test_filterwheel.TestFilterWheel.setup
+chimera.instruments.tests.test_focuser.TestFocuser.setup
+chimera.instruments.tests.test_telescope.TestTelescope.setup
+chimera.util.sextractor.SExtractor.setup" class="py-name" href="#" onclick="return doclink('link-63', 'setup', 'link-63');">setup</a></tt><tt class="py-op">(</tt><tt id="link-64" class="py-name"><a title="chimera.core.path" class="py-name" href="#" onclick="return doclink('link-64', 'path', 'link-17');">path</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L532"></a><tt class="py-lineno">532</tt>  <tt class="py-line"> </tt>
+<a name="L533"></a><tt class="py-lineno">533</tt>  <tt class="py-line">        <tt class="py-name">commandline</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L534"></a><tt class="py-lineno">534</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="chimera.controllers.scheduler.model.Constraint.program
+chimera.controllers.scheduler.model.Observation.program" class="py-name" href="#" onclick="return doclink('link-65', 'program', 'link-15');">program</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" -c "</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-66', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CONFIG_FILE'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">file</tt><tt class="py-op">)</tt> </tt>
+<a name="L535"></a><tt class="py-lineno">535</tt>  <tt class="py-line">        <tt class="py-comment"># print commandline</tt> </tt>
+<a name="L536"></a><tt class="py-lineno">536</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L537"></a><tt class="py-lineno">537</tt>  <tt class="py-line">        <tt class="py-name">rcode</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-name">commandline</tt><tt class="py-op">)</tt> </tt>
+<a name="L538"></a><tt class="py-lineno">538</tt>  <tt class="py-line"> </tt>
+<a name="L539"></a><tt class="py-lineno">539</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">rcode</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L540"></a><tt class="py-lineno">540</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-67" class="py-name"><a title="chimera.util.sextractor.SExtractorException" class="py-name" href="#" onclick="return doclink('link-67', 'SExtractorException', 'link-21');">SExtractorException</a></tt><tt class="py-op">,</tt> \ </tt>
+<a name="L541"></a><tt class="py-lineno">541</tt>  <tt class="py-line">                  <tt class="py-string">"SExtractor command [%s] failed."</tt> <tt class="py-op">%</tt> <tt class="py-name">commandline</tt> </tt>
+<a name="L542"></a><tt class="py-lineno">542</tt>  <tt class="py-line">             </tt>
+<a name="L543"></a><tt class="py-lineno">543</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-68" class="py-name" targets="Method chimera.util.sextractor.SExtractor.clean()=chimera.util.sextractor.SExtractor-class.html#clean"><a title="chimera.util.sextractor.SExtractor.clean" class="py-name" href="#" onclick="return doclink('link-68', 'clean', 'link-68');">clean</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L544"></a><tt class="py-lineno">544</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="chimera.util.sextractor.SExtractor.clean" class="py-name" href="#" onclick="return doclink('link-69', 'clean', 'link-68');">clean</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L545"></a><tt class="py-lineno">545</tt>  <tt class="py-line"> </tt>
+<a name="L546"></a><tt class="py-lineno">546</tt>  <tt class="py-line"> </tt>
+<a name="L547"></a><tt class="py-lineno">547</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.catalog"></a><div id="SExtractor.catalog-def"><a name="L548"></a><tt class="py-lineno">548</tt> <a class="py-toggle" href="#" id="SExtractor.catalog-toggle" onclick="return toggle('SExtractor.catalog');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#catalog">catalog</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.catalog-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.catalog-expanded"><a name="L549"></a><tt class="py-lineno">549</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L550"></a><tt class="py-lineno">550</tt>  <tt class="py-line"><tt class="py-docstring">        Read the output catalog produced by the last SExtractor run.</tt> </tt>
+<a name="L551"></a><tt class="py-lineno">551</tt>  <tt class="py-line"><tt class="py-docstring">        Output is a list of dictionaries, with a dictionary for</tt> </tt>
+<a name="L552"></a><tt class="py-lineno">552</tt>  <tt class="py-line"><tt class="py-docstring">        each star: {'param1': value, 'param2': value, ...}.</tt> </tt>
+<a name="L553"></a><tt class="py-lineno">553</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L554"></a><tt class="py-lineno">554</tt>  <tt class="py-line"> </tt>
+<a name="L555"></a><tt class="py-lineno">555</tt>  <tt class="py-line">        <tt class="py-name">output_f</tt> <tt class="py-op">=</tt> <tt id="link-70" class="py-name"><a title="chimera.util.sexcatalog.SExtractorfile" class="py-name" href="#" onclick="return doclink('link-70', 'SExtractorfile', 'link-7');">SExtractorfile</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-71', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CATALOG_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L556"></a><tt class="py-lineno">556</tt>  <tt class="py-line">        <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt class="py-name">output_f</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="chimera.util.sexcatalog.SExtractorfile.read" class="py-name" href="#" onclick="return doclink('link-72', 'read', 'link-19');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L557"></a><tt class="py-lineno">557</tt>  <tt class="py-line">        <tt class="py-name">output_f</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="chimera.drivers.domelna40cm.DomeLNA40cm.close
+chimera.drivers.fakecamera.FakeCamera.close
+chimera.drivers.faketelescope.FakeTelescope.close
+chimera.drivers.meade.Meade.close
+chimera.drivers.optectcfs.OptecTCFS.close
+chimera.drivers.sbig.sbig.SBIG.close
+chimera.drivers.theskytelescope.TheSkyTelescope.close
+chimera.interfaces.cameradriver.ICameraDriver.close
+chimera.interfaces.telescopedriver.ITelescopeDriverSlew.close
+chimera.util.etree.ElementTree.TreeBuilder.close
+chimera.util.etree.ElementTree.XMLTreeBuilder.close
+chimera.util.sexcatalog.SExtractorfile.close" class="py-name" href="#" onclick="return doclink('link-73', 'close', 'link-35');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L558"></a><tt class="py-lineno">558</tt>  <tt class="py-line"> </tt>
+<a name="L559"></a><tt class="py-lineno">559</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">c</tt> </tt>
+</div><a name="L560"></a><tt class="py-lineno">560</tt>  <tt class="py-line"> </tt>
+<a name="L561"></a><tt class="py-lineno">561</tt>  <tt class="py-line"> </tt>
+<a name="SExtractor.clean"></a><div id="SExtractor.clean-def"><a name="L562"></a><tt class="py-lineno">562</tt> <a class="py-toggle" href="#" id="SExtractor.clean-toggle" onclick="return toggle('SExtractor.clean');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="chimera.util.sextractor.SExtractor-class.html#clean">clean</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">config</tt><tt class="py-op">=</tt><tt id="link-74" class="py-name"><a title="chimera.core.threads.True" class="py-name" href="#" onclick="return doclink('link-74', 'True', 'link-58');">True</a></tt><tt class="py-op">,</tt> <tt class="py-param">catalog</tt><tt class="py-op">=</tt><tt id="link-75" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-75', 'False', 'link-59');">False</a></tt><tt class="py-op">,</tt> <tt class="py-param">check</tt><tt class="py-op">=</tt><tt id="link-76" class="py-name"><a title="chimera.core.threads.False" class="py-name" href="#" onclick="return doclink('link-76', 'False', 'link-59');">False</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SExtractor.clean-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SExtractor.clean-expanded"><a name="L563"></a><tt class="py-lineno">563</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L564"></a><tt class="py-lineno">564</tt>  <tt class="py-line"><tt class="py-docstring">        Remove the generated SExtractor files (if any).</tt> </tt>
+<a name="L565"></a><tt class="py-lineno">565</tt>  <tt class="py-line"><tt class="py-docstring">        If config is True, remove generated configuration files.</tt> </tt>
+<a name="L566"></a><tt class="py-lineno">566</tt>  <tt class="py-line"><tt class="py-docstring">        If catalog is True, remove the output catalog.</tt> </tt>
+<a name="L567"></a><tt class="py-lineno">567</tt>  <tt class="py-line"><tt class="py-docstring">        If check is True, remove output check image.</tt> </tt>
+<a name="L568"></a><tt class="py-lineno">568</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L569"></a><tt class="py-lineno">569</tt>  <tt class="py-line"> </tt>
+<a name="L570"></a><tt class="py-lineno">570</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L571"></a><tt class="py-lineno">571</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt id="link-77" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-77', 'config', 'link-9');">config</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L572"></a><tt class="py-lineno">572</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-78', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'FILTER_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L573"></a><tt class="py-lineno">573</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-79', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'PARAMETERS_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L574"></a><tt class="py-lineno">574</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-80', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'STARNNW_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L575"></a><tt class="py-lineno">575</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-81', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CONFIG_FILE'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L576"></a><tt class="py-lineno">576</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt id="link-82" class="py-name" targets="Module chimera.util.catalog=chimera.util.catalog-module.html,Method chimera.util.sextractor.SExtractor.catalog()=chimera.util.sextractor.SExtractor-class.html#catalog"><a title="chimera.util.catalog
+chimera.util.sextractor.SExtractor.catalog" class="py-name" href="#" onclick="return doclink('link-82', 'catalog', 'link-82');">catalog</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L577"></a><tt class="py-lineno">577</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-83', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CATALOG_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L578"></a><tt class="py-lineno">578</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt id="link-84" class="py-name" targets="Method chimera.core.config.BoolChecker.check()=chimera.core.config.BoolChecker-class.html#check,Method chimera.core.config.Checker.check()=chimera.core.config.Checker-class.html#check,Method chimera.core.config.CoordChecker.check()=chimera.core.config.CoordChecker-class.html#check,Method chimera.core.config.EnumChecker.check()=chimera.core.config.EnumChecker-class.html#check,Method chimera.core.config.FloatChecker.check()=chimera.core.config.FloatChecker-class.html#check,Method chimera.core.config.IgnoreChecker.check()=chimera.core.config.IgnoreChecker-class.html#check,Method chimera.core.config.IntChecker.check()=chimera.core.config.IntChecker-class.html#check,Method chimera.core.config.OptionsChecker.check()=chimera.core.config.OptionsChecker-class.html#check,Method chimera.core.config.RangeChecker.check()=chimera.core.config.RangeChecker-class.html#check,Method chimera.core.config.StringChecker.check()=chimera.core.config.StringChecker-class.html#check"><a title="chimera.core.config.BoolChecker.check
+chimera.core.config.Checker.check
+chimera.core.config.CoordChecker.check
+chimera.core.config.EnumChecker.check
+chimera.core.config.FloatChecker.check
+chimera.core.config.IgnoreChecker.check
+chimera.core.config.IntChecker.check
+chimera.core.config.OptionsChecker.check
+chimera.core.config.RangeChecker.check
+chimera.core.config.StringChecker.check" class="py-name" href="#" onclick="return doclink('link-84', 'check', 'link-84');">check</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L579"></a><tt class="py-lineno">579</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">unlink</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="chimera.core.config
+chimera.core.location.Location.config" class="py-name" href="#" onclick="return doclink('link-85', 'config', 'link-9');">config</a></tt><tt class="py-op">[</tt><tt class="py-string">'CHECKIMAGE_NAME'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L580"></a><tt class="py-lineno">580</tt>  <tt class="py-line">                 </tt>
+<a name="L581"></a><tt class="py-lineno">581</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">OSError</tt><tt class="py-op">:</tt> </tt>
+<a name="L582"></a><tt class="py-lineno">582</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L583"></a><tt class="py-lineno">583</tt>  <tt class="py-line"> </tt>
+<a name="L584"></a><tt class="py-lineno">584</tt>  <tt class="py-line"> </tt>
+<a name="L585"></a><tt class="py-lineno">585</tt>  <tt class="py-line"> </tt>
+<a name="L586"></a><tt class="py-lineno">586</tt>  <tt class="py-line"><tt class="py-comment"># ======================================================================</tt> </tt>
+<a name="L587"></a><tt class="py-lineno">587</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="chimera-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://chimera.ufsc.br/">Chimera - Observatoty Automation System</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0beta1 on Sat Feb  7 18:37:00 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>
