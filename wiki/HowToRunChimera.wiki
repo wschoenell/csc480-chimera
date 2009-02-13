@@ -11,10 +11,10 @@ You must be online for the program to take a picture
 
 == HOW TO START AND RUN THE SERVER ==
 
-  # open a terminal, and cd into the directory that you have downloaded from the google.code site (note, it must be the class version)
-  # at the command line type:  sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core	
-  # now type:  chimera -vv
-  # this has started the server, you should see "Running /FakeTelescope/faketelescopedriver. __main___." and things like that
+  # Open a terminal, and cd into the directory that you have downloaded from the google.code site (note, it must be the class version)
+  # At the command line type:  sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core	
+  # Now type:  chimera -vv
+  # This has started the server, you should see "Running /FakeTelescope/faketelescopedriver" and things like that
   # The last line should contain "System up and running."		
 	Congratulations you have started the chimera server !
 
@@ -22,7 +22,7 @@ You must be online for the program to take a picture
 == HOW TO START AND RUN THE CLIENT ==
 
 
-  # now open another terminal
+  # Now open another terminal
   # In that terminal type:  	
 || `chimera-dome --help` || *-will get you the help menu and commands*|| 
 || `sudo chimera-dome --open`||  *-will open the fake dome slit*|| 
