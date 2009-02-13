@@ -9,31 +9,30 @@ You must be online for the program to take a picture
 
 
 
-======================= HOW TO START AND RUN THE SERVER ====================
+== HOW TO START AND RUN THE SERVER ==
 
-0.) OPEN A TERMINAL, AND CD INTO THE DIRECTORY THAT YOU HAVE DOWNLOADED FROM THE GOOGLE.CODE SITE (NOTE, IT MUST BE THE CLASS VERSION)
+  # OPEN A TERMINAL, AND CD INTO THE DIRECTORY THAT YOU HAVE DOWNLOADED FROM THE GOOGLE.CODE SITE (NOTE, IT MUST BE THE CLASS VERSION)
 
-1.) AT THE COMMAND LINE TYPE:  sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core
+  # AT THE COMMAND LINE TYPE:  sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core
 	
-2.) NOW TYPE:  chimera -vv
+  # NOW TYPE:  chimera -vv
 
-3.) THIS HAS STARTED THE SERVER, YOU SHOULD SEE "Running /FakeTelescope/faketelescopedriver. __main___." and things like that
+  # THIS HAS STARTED THE SERVER, YOU SHOULD SEE "Running /FakeTelescope/faketelescopedriver. __main___." and things like that
 
-4.) THE LAST LINE SHOULD CONTAIN "System up and running."
+  # THE LAST LINE SHOULD CONTAIN "System up and running."
 		
 	CONGRATULATIONS YOU HAVE STARTED THE CHIMERA SERVER !
 
 
-======================= HOW TO START AND RUN THE CLIENT ====================
+== HOW TO START AND RUN THE CLIENT ==
 
 
-5.) NOW OPEN ANOTHER TERMINAL
+  # NOW OPEN ANOTHER TERMINAL
 
-6.) IN THAT TERMINAL TYPE:  	
+  # IN THAT TERMINAL TYPE:  	
 || `chimera-dome --help` || *-will get you the help menu and commands*|| 
 || `sudo chimera-dome --open`||  *-will open the fake dome slit*|| 
 || `sudo chimera-cam --shutter=OPEN`  || *-will open the camera shutter and start the cooler*|| 
 || `sudo chimera-cam --filters` || *-will list available filters for you*|| 
 || `sudo chimera-cam --expose -n 1 filter=R` || *-will take a picture through the R filter*|| 
 || `ls`  || *-you should now see some `*.fits` images which you can view with GIMP*|| 
-
