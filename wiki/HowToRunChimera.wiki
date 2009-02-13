@@ -30,9 +30,9 @@ You must be online for the program to take a picture
 5.) NOW OPEN ANOTHER TERMINAL
 
 6.) IN THAT TERMINAL TYPE:  	
-  * chimera-dome --help                            *will get you the help menu and commands
-  * sudo chimera-dome --open		       *will open the fake dome slit
-  * sudo chimera-cam --shutter=OPEN                *will open the camera shutter and start the cooler
-  * sudo chimera-cam --filters                     *will list available filters for you
-  * sudo chimera-cam --expose -n 1 filter=R        *will take a picture through the R filter
-  * ls                                             *you should now see some *.fits images which you can view with GIMP
+  * chimera-dome --help -will get you the help menu and commands
+  * sudo chimera-dome --open -will open the fake dome slit
+  * sudo chimera-cam --shutter=OPEN  -will open the camera shutter and start the cooler
+  * sudo chimera-cam --filters -will list available filters for you
+  * sudo chimera-cam --expose -n 1 filter=R -will take a picture through the R filter
+  * ls  -you should now see some *.fits images which you can view with GIMP
