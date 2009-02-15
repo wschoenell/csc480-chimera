@@ -1,0 +1,42 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+I wasn't aware of anyone else doing this, so I took the initiative and compiled a list of the Chimera files that have fixMe comments.
+
+
+= Details =
+
+src/chimera/controllers/console/commands/object.py  (2 areas to fix)<br>
+src/chimera/controllers/console/commander.py  (2 areas to fix)<br>
+src/chimera/controllers/imageserver/imagerequest.py  (1 area to fix)<br>
+src/chimera/controllers/scheduler/controller.py  (1 area to fix)<br>
+src/chimera/controllers/scheduler/machine.py  (1 area to fix)<br>
+src/chimera/controllers/autofocus.py  (2 areas to fix)<br>
+
+src/chimera/core/tests/test_chimera_object.py  (1 area to fix)<br>
+src/chimera/core/chimeraobject.py  (1 area to fix)<br>
+src/chimera/core/cli.py  (2 areas to fix)<br>
+src/chimera/core/config.py  (1 area to fix)<br>
+src/chimera/core/eventsproxy.py  (1 area to fix)<br>
+src/chimera/core/location.py  (1 area to fix)<br>
+src/chimera/core/manager.py  (1 area to fix)<br>
+src/chimera/core/site.py  (1 area to fix)<br>
+src/chimera/core/systemconfig.py  (1 area to fix)<br>
+
+src/chimera/drivers/sbig/sbig.py  (1 area to fix)<br>
+src/chimera/drivers/sbig/sbigdrv.py  (2 areas to fix)<br>
+src/chimera/drivers/domelna.py  (5 areas to fix)<br>
+src/chimera/drivers/meade.py  (7 areas to fix)<br>
+src/chimera/drivers/potectcfs.py  (1 area to fix)<br>
+src/chimera/drivers/theskytelescope.py  (2 area to fix)<br>
+
+src/chimera/instruments/tests/test_telescope.py  (1 area to fix)<br>
+src/chimera/instruments/telescope.py  (4 areas to fix)<br>
+
+src/chimera/util/etree/ElementTree.py  (2 areas to fix)<br>
+src/chimera/util/tests/test_coord.py  (1 area to fix)<br>
+src/chimera/util/coord.py  (1 area to fix)<br>
+src/chimera/util/seat.py  (1 area to fix)<br>
+
+src/scripts/chimera-cam.py  (1 area to fix)<br>
