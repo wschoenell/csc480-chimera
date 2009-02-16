@@ -1,0 +1,85 @@
+#summary The call stack of chimera - order of startup
+
+= Introduction =
+This is a basic description of what is run in order to get chimera started
+
+
+= Details =
+
+
+*******************************
+**                           **
+** /usr/bin/chimera contains **
+**                           **
+*******************************
+
+#!/usr/bin/python
+# EASY-INSTALL-SCRIPT: 'chimera-python==0.2.dev-r415','chimera'
+__requires__ = 'chimera-python==0.2.dev-r415'
+import pkg_resources
+pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
+
+
+
+*******************************
+**                           **
+** calling it produces       **
+**                           **
+*******************************
+
+sdoherty@linux-laptop:/usr/bin$ chimera
+15-02-2009 19:24:33.370 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
+[Errno 13] Permission denied: '/usr/bin/_pyro_vjBV-h.tmp'
+Traceback (most recent call last):
+  File "/usr/bin/chimera", line 5, in <module>
+    pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
+
+  File "/usr/lib/python2.5/site-packages/pkg_resources.py", line 448, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+
+  File "/usr/lib/python2.5/site-packages/pkg_resources.py", line 1166, in run_script
+    execfile(script_filename, namespace, namespace)
+
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera", line 31, in <module>
+    main()
+
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera", line 27, in main
+    SiteController(sys.argv).startup()
+
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py", line 197, in startup
+    self.manager = Manager(**self.config.chimera)
+
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py", line 152, in __init__
+    self.adapter = ManagerAdapter (self, host, port)
+
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py", line 75, in __init__
+    Pyro.core.initServer(banner=False)
+
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/core.py", line 875, in initServer
+    Pyro.config.finalizeConfig_Server(storageCheck=storageCheck)
+
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/configuration.py", line 128, in finalizeConfig_Server
+    raise IOError('no write access to PYRO_STORAGE ['+self.PYRO_STORAGE+']')
+
+IOError: no write access to PYRO_STORAGE [/usr/bin]
+Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute 'NameServer'" in <bound method ManagerAdapter.__del__ of <chimera.core.manager.ManagerAdapter instance at 0x9c608ac>> ignored
+sdoherty@linux-laptop:/usr/bin$ 
+
+*******************************
+**                           **
+** from this may be deduced  **
+**                           **
+*******************************
+
+1.) the permissions of /home/sdoherty/.chimera/chimera.log need to be changed OR chimera needs to be run as root
+2.) /usr/lib/python2.5/site-packages/pkg_resources.py is being used to find the package 
+3.) chimera_python-0.2.dev_r415-py2.5.egg is being called by the startup script
+4.) the egg contains a EGG-INFO/scripts folder that contains the startup scripts
+
+/usr/bin/chimera ;calls
+pkg_resources.py ;which looks into the egg and into its EGG-INFO/scripts folder and runs the chimera script
+/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera ;which contains its main method and calls that main method
+												;this main method calls chimera.controllers.site.main which defines the class SiteController, it imports that class and calls SiteController(sys.argv).startup() on that class
+/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera
+
+
