@@ -12,13 +12,13 @@ This is a basic description of what is run in order to get chimera started
 ** /usr/bin/chimera contains **
 **                           **
 *******************************
-
+{{{
 #!/usr/bin/python
 # EASY-INSTALL-SCRIPT: 'chimera-python==0.2.dev-r415','chimera'
 __requires__ = 'chimera-python==0.2.dev-r415'
 import pkg_resources
 pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
-
+}}}
 
 
 *******************************
@@ -76,10 +76,9 @@ sdoherty@linux-laptop:/usr/bin$
 3.) chimera_python-0.2.dev_r415-py2.5.egg is being called by the startup script
 4.) the egg contains a EGG-INFO/scripts folder that contains the startup scripts
 
-/usr/bin/chimera ;calls
-pkg_resources.py ;which looks into the egg and into its EGG-INFO/scripts folder and runs the chimera script
-/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera ;which contains its main method and calls that main method
-												;this main method calls chimera.controllers.site.main which defines the class SiteController, it imports that class and calls SiteController(sys.argv).startup() on that class
-/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera
 
-
+=== call stack ===
+|| /usr/bin/chimera ||;calls||
+||pkg_resources.py|| ;which looks into the egg and into its EGG-INFO/scripts folder and runs the chimera script||
+||/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera|| ;which contains its main method and calls that main method. 											this main method calls chimera.controllers.site.main which defines the class SiteController, it imports that class and calls SiteController(sys.argv).startup() on that class||
+||/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera||
