@@ -83,6 +83,7 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
 
 
 
+
 === call stack ===
 <table border="1" style="border-collapse:collapse"><tbody>
 <tr><th> *Call* </th><th> *Snippit* </th><th> *Result* </th></tr>
@@ -109,7 +110,7 @@ pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 
 
 <tr>
-	<td>/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera </td>
+	<td>`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera` </td>
 	<td>
 {{{
 #!/usr/bin/python
@@ -129,7 +130,7 @@ if __name__ == '__main__':
 	<td> which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class </td>
 </tr>
 <tr>
-<td>/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site</td>
+<td>`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py`</td>
 <td>
 {{{
 def startup(self):
