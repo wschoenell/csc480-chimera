@@ -13,4 +13,4 @@ http://norvig.com/21-days.html
 
 === Python Tidbits ===
 
-  * def __init__(self.....): is the constructor in any python class
+  * `def __init__(self.....):` is the constructor in any python class
