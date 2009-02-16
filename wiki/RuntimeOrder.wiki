@@ -26,7 +26,7 @@ pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 ** calling it produces       **
 **                           **
 *******************************
-
+{{{
 sdoherty@linux-laptop:/usr/bin$ chimera
 15-02-2009 19:24:33.370 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
 [Errno 13] Permission denied: '/usr/bin/_pyro_vjBV-h.tmp'
@@ -63,7 +63,8 @@ Traceback (most recent call last):
 
 IOError: no write access to PYRO_STORAGE [/usr/bin]
 Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute 'NameServer'" in <bound method ManagerAdapter.__del__ of <chimera.core.manager.ManagerAdapter instance at 0x9c608ac>> ignored
-sdoherty@linux-laptop:/usr/bin$ 
+}}}
+
 
 *******************************
 **                           **
