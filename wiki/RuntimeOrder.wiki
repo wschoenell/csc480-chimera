@@ -72,10 +72,10 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute '
 **                           **
 *******************************
 
-1.) the permissions of /home/sdoherty/.chimera/chimera.log need to be changed OR chimera needs to be run as root
-2.) /usr/lib/python2.5/site-packages/pkg_resources.py is being used to find the package 
-3.) chimera_python-0.2.dev_r415-py2.5.egg is being called by the startup script
-4.) the egg contains a EGG-INFO/scripts folder that contains the startup scripts
+  # .) the permissions of /home/sdoherty/.chimera/chimera.log need to be changed OR chimera needs to be run as root
+  # .) /usr/lib/python2.5/site-packages/pkg_resources.py is being used to find the package 
+  # .) chimera_python-0.2.dev_r415-py2.5.egg is being called by the startup script
+  # .) the egg contains a EGG-INFO/scripts folder that contains the startup scripts
 
 
 === call stack ===
