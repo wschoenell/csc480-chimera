@@ -220,11 +220,15 @@ self.manager.wait()
 
 }}}
 </td>
+
 <td valign="top">
 This is the startup method which calls `Manager(**self.config.chimera)`
-
+Note: you can see the log.info method is the stuff printed when starting chimera
 </td>
 </tr>
+
+
+
 
 <tr>
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
