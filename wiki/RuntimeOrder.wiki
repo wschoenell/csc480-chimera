@@ -1,4 +1,5 @@
 #summary The call stack of chimera - order of startup
+#labels Phase-Deploy,Featured
 
 = Introduction =
 This is a basic description of what is run in order to get chimera started
