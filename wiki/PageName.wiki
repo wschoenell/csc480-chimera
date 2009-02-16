@@ -1,0 +1,47 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Meeting with Dr. Kanbur.
+
+
+= Details =
+
+We met with Dr. Kanbur on 2/11 and these were the answers we got for our questions.
+
+What is the package structure?
+    * Controllers– things that use everything else.
+    * Instruments
+    * Interface– contract between the drivers and the instruments. User doesn’t have to worry about the interface – all that needs to change is the driver.
+    * Drivers
+    * Hardware
+
+Can we test on hardware
+    * Maybe later. (end of semester) Just work on fake telescope - Fakecamera.py in source chimera drivers shows how the virtual observatory is done.
+
+Getting feedback for modules and command line interface?
+    * With the file, we will be able to get feedback
+
+What are security issues w/ raw input?
+    * There will be issues but we are not going to deal with it right now. If you have ideas about how to make it secure without limiting functionality.
+
+Stand alone vs. web interface?
+    * He does not have a preference wither way. The jar file should be in with the program. Under source there is a GUI subdirectory.
+
+What parts are correct/not working:
+    * Most things work. If you gave the program 10 objects, it should run through all 10. He wants it to be more robust and debug.
+
+Data pre-collected or real time?
+    * Data will be pre-collected for the beginning.
+
+Install script re-write?
+    * We want to make it better. Make it as easy as possible. Easy install does not seem to work. Just have it work with Linux for right now but eventually wants to work with windows.
+
+What has and hasn't worked?
+    * Design should be as modular as possible.
+
+Details about Database?
+    * Want to save the images and create a database – needs to be free. Currently the images are stored in different directories named by the date.
+
+Formulas?
+    * The majority of the formulas are done already - they are in the program.
