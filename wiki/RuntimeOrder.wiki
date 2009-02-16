@@ -83,7 +83,7 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
 
 
 === call stack ===
-<table><tbody>
+<table border="1" style="border-collapse:collapse"><tbody>
 <tr><th> *Call* </th><th> *Snippit* </th><th> *Result* </th></tr>
 <tr>
 	<td> `/usr/bin/chimera` </td><td> `pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera') </td>
