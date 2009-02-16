@@ -1,4 +1,4 @@
-#summary How to setup and run chimera
+#summary Session script of How to setup and run chimera with Sashi - see HowToRunChimera
 
 
 
