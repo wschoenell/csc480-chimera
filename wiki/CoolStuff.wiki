@@ -10,3 +10,7 @@ Feel free to post any programming related links that you think may be useful to 
 http://norvig.com/21-days.html
 
 = Other Cool Things =
+
+=== Python Tidbits ===
+
+  * def __init__(self.....): is the constructor in any python class
