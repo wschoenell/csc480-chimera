@@ -62,7 +62,9 @@ Traceback (most recent call last):
     raise IOError('no write access to PYRO_STORAGE ['+self.PYRO_STORAGE+']')
 
 IOError: no write access to PYRO_STORAGE [/usr/bin]
-Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute 'NameServer'" in <bound method ManagerAdapter.__del__ of <chimera.core.manager.ManagerAdapter instance at 0x9c608ac>> ignored
+Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute 
+'NameServer'" in <bound method ManagerAdapter.__del__ of 
+<chimera.core.manager.ManagerAdapter instance at 0x9c608ac>> ignored
 }}}
 
 
