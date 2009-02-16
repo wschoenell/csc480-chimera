@@ -84,6 +84,10 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
 
 === call stack ===
 || *Call* || *Snippit* || *Result* ||
-|| `/usr/bin/chimera` || `pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera') || This is the "binary" package which calls *`/usr/lib/python2.5/site-packages/pkg_resources.py`* which looks into the *`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/`* and into its *`EGG-INFO/scripts`* folder and runs the *`chimera`* script ||
+|| `/usr/bin/chimera` || `pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera') || This is the "binary" package which calls 
+  * *`/usr/lib/python2.5/site-packages/pkg_resources.py`* which looks into the 
+  * *`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/`* and into its 
+  * *`EGG-INFO/scripts`* folder and runs the 
+  * *`chimera`* script ||
 ||/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera || which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class || 
 ||/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera||
