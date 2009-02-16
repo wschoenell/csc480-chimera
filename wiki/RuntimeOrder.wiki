@@ -86,134 +86,213 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
   # /usr/lib/python2.5/site-packages/pkg_resources.py
   # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera
   # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py
+  # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py
 
 
-
-=== call stack ===
-<table border="1" style="border-collapse:collapse; vertical-align:top;"><tbody>
+=== Explanation ===
+<table border="1" style="border-collapse:collapse;">
+<tbody>
 <tr><th> *Call* </th><th> *Snippit* </th><th> *Result* </th></tr>
+
 <tr style="vertical-align: top;">
-	<td style="vertical-align: top;"> `/usr/bin/chimera` </td>
-	<td style="vertical-align: top;">
+<td style="vertical-align: top;"> `/usr/bin/chimera` </td>
+<td style="vertical-align: top;">
 {{{
 #!/usr/bin/python
 # EASY-INSTALL-SCRIPT: 'chimera-python==0.2.dev-r415','chimera'
 __requires__ = 'chimera-python==0.2.dev-r415'
 import pkg_resources
-pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera') 
+pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 }}}
 </td>
-	<td style="vertical-align: top;"> This is the "binary" package which calls 
-		<ul>
-			<li> *`/usr/lib/python2.5/site-packages/pkg_resources.py`* which looks into the </li>
-			<li> *`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/`* and into its </li>
-			<li> *`EGG-INFO/scripts`* folder and runs the </li>
-			<li> *`chimera`* script </li>
-		</ul>
-	</td>
+<td style="vertical-align: top;"> This is the "binary" package which calls
+<ul>
+<li> *`/usr/lib/python2.5/site-packages/pkg_resources.py`* which looks into the </li>
+<li> *`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/`* and into its </li>
+<li> *`EGG-INFO/scripts`* folder and runs the </li>
+<li> *`chimera`* script </li>
+</ul>
+</td>
 </tr>
 
 
 <tr>
-	<td style="vertical-align: top;">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera` </td>
-	<td style="vertical-align: top;">
+<td style="vertical-align: top;">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera` </td>
+<td style="vertical-align: top;">
 {{{
 #!/usr/bin/python
 def main ():
 
-    import sys
+import sys
 
-    from chimera.controllers.site.main import SiteController
+from chimera.controllers.site.main import SiteController
 
-    SiteController(sys.argv).startup()
+SiteController(sys.argv).startup()
 
 
 if __name__ == '__main__':
-    main()
+main()
 }}}
 </td>
-	<td style="vertical-align: top;"> which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class </td>
+<td style="vertical-align: top;"> which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class </td>
 </tr>
+
+
 <tr>
 <td style="vertical-align: top;">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py`</td>
 <td style="vertical-align: top;">
 {{{
 def startup(self):
 
-        if self.options.daemon:
-            # detach
-            log.info("FIXME: Daemon...")
-            
-        # system config
-        self.config = SystemConfig.fromFile(self.options.config_file, self.options.use_global)
-        
-        # manager
-        if not self.options.dry:
-            log.info("Starting system.")
-            log.info("Chimera version: %s" % find_dev_version() or _chimera_version_)
-            log.info("Chimera prefix: %s" % ChimeraPath.root())
-                
-            try:
-                self.manager = Manager(**self.config.chimera)
-            except ChimeraException, e:
-                log.error("Chimera is already running on this machine. Use chimera-admin to manage it.")
-                sys.exit(1)
+if self.options.daemon:
+# detach
+log.info("FIXME: Daemon...")
 
-            log.info("Chimera: running on "+ self.manager.getHostname() + ":" + str(self.manager.getPort()))
-            if self.options.use_global:
-                log.info("Chimera: reading configuration from %s" % SYSTEM_CONFIG_DEFAULT_GLOBAL)            
-            log.info("Chimera: reading configuration from %s" % os.path.realpath(self.options.config_file))
+# system config
+self.config = SystemConfig.fromFile(self.options.config_file, self.options.use_global)
 
-        # add site object
-        if not self.options.dry:
-            
-            for site in self.config.sites:
-                self.manager.addClass(Site, site.name, site.config, True)
-            
-        # search paths
-        log.info("Setting objects include path from command line parameters...")
-        for _dir in self.options.inst_dir:
-            self.paths["instruments"].append(_dir)
-    
-        for _dir in self.options.ctrl_dir:
-            self.paths["controllers"].append(_dir)
-        
-        for _dir in self.options.drv_dir:
-            self.paths["drivers"].append(_dir)
+# manager
+if not self.options.dry:
+log.info("Starting system.")
+log.info("Chimera version: %s" % find_dev_version() or _chimera_version_)
+log.info("Chimera prefix: %s" % ChimeraPath.root())
 
-        # init from config
-        log.info("Trying to start drivers...")
-        for drv in self.config.drivers + self.options.drivers:
+try:
+self.manager = Manager(**self.config.chimera)
+except ChimeraException, e:
+log.error("Chimera is already running on this machine. Use chimera-admin to manage it.")
+sys.exit(1)
 
-            if self.options.dry:
-                print drv
-            else:
-                self._add(drv, path=self.paths["drivers"], start=True)
+log.info("Chimera: running on "+ self.manager.getHostname() + ":" + str(self.manager.getPort()))
+if self.options.use_global:
+log.info("Chimera: reading configuration from %s" % SYSTEM_CONFIG_DEFAULT_GLOBAL)
+log.info("Chimera: reading configuration from %s" % os.path.realpath(self.options.config_file))
 
-        log.info("Trying to start instruments...")
-        for inst in self.config.instruments + self.options.instruments:
-            
-            if self.options.dry:
-                print inst
-            else:
-                self._add(inst, path=self.paths["instruments"], start=True)
+# add site object
+if not self.options.dry:
 
-        log.info("Trying to start controllers...")                
-        for ctrl in self.config.controllers + self.options.controllers:
-            
-            if self.options.dry:
-                print ctrl
-            else:
-                self._add(ctrl, path=self.paths["controllers"], start=True)
+for site in self.config.sites:
+self.manager.addClass(Site, site.name, site.config, True)
 
-        log.info("System up and running.")
+# search paths
+log.info("Setting objects include path from command line parameters...")
+for _dir in self.options.inst_dir:
+self.paths["instruments"].append(_dir)
 
-        # ok, let's wait manager work
-        if self.wait and not self.options.dry:
-            self.manager.wait()
+for _dir in self.options.ctrl_dir:
+self.paths["controllers"].append(_dir)
+
+for _dir in self.options.drv_dir:
+self.paths["drivers"].append(_dir)
+
+# init from config
+log.info("Trying to start drivers...")
+for drv in self.config.drivers + self.options.drivers:
+
+if self.options.dry:
+print drv
+else:
+self._add(drv, path=self.paths["drivers"], start=True)
+
+log.info("Trying to start instruments...")
+for inst in self.config.instruments + self.options.instruments:
+
+if self.options.dry:
+print inst
+else:
+self._add(inst, path=self.paths["instruments"], start=True)
+
+log.info("Trying to start controllers...")
+for ctrl in self.config.controllers + self.options.controllers:
+
+if self.options.dry:
+print ctrl
+else:
+self._add(ctrl, path=self.paths["controllers"], start=True)
+
+log.info("System up and running.")
+
+# ok, let's wait manager work
+if self.wait and not self.options.dry:
+self.manager.wait()
 
 }}}
 </td>
-<td></td>
+<td style="vertical-align: top;">
+This is the startup method which calls `Manager(**self.config.chimera)`
+
+</td>
 </tr>
-</tbody></table>
+
+<tr>
+<td>`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
+<td>
+{{{
+class Manager (RemoteObject):
+
+    """
+    This is the main class of Chimera.
+
+    Use this class to get Proxies, add objects to the system, and so on.
+
+    This class handles objects life-cycle as described in ILifecycle.
+
+    @group Add/Remove: add*, remove
+    @group Start/Stop: start, stop
+    @group Proxy: getProxy
+    @group Shutdown: wait, shutdown
+
+    """
+    
+    def __init__(self, host = None, port = None, local=False):
+        RemoteObject.__init__ (self)
+        
+        log.info("Starting manager.")
+
+        self.resources = ResourcesManager()
+        self.classLoader = ClassLoader()
+
+        # identity
+        self.setGUID(MANAGER_LOCATION)
+
+        # shutdown event
+        self.died = threading.Event()
+
+        if not local:
+            try:
+                ManagerLocator.locate()
+                raise ChimeraException("Chimera is already running"
+                                       " on this system. Use chimera-admin"
+                                       " to manage it.")
+            except ManagerNotFoundException:
+                # ok, we are alone.
+                pass
+
+        # our daemon server
+        self.adapter = ManagerAdapter (self, host, port)
+        self.adapterThread = threading.Thread(target=self.adapter.requestLoop)
+        self.adapterThread.setDaemon(True)
+        self.adapterThread.start()
+
+        # finder beacon
+        if not local:
+            self.beacon = ManagerBeacon(self)
+            self.beaconThread = threading.Thread(target=self.beacon.run)
+            self.beaconThread.setDaemon(True)
+            self.beaconThread.start()
+        else:
+            self.beacon = None
+
+        # register ourself
+        self.resources.add(MANAGER_LOCATION, self, getManagerURI(self.getHostname(), self.getPort()))
+
+        # signals
+        signal.signal(signal.SIGTERM, self._sighandler)
+        signal.signal(signal.SIGINT, self._sighandler)
+        atexit.register (self._sighandler)
+}}}
+</td>
+<td>Here is where the constructor for the class Manager is called</td>
+</tr>
+</tbody>
+</table>
