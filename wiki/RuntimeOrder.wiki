@@ -87,7 +87,8 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
   # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera
   # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py
   # /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py
-
+  # /usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/core.py
+  # /usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/configuration.py
 
 === Explanation ===
 <table border="1" style="border-collapse:collapse;">
@@ -228,71 +229,139 @@ This is the startup method which calls `Manager(**self.config.chimera)`
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
 <td valign="top">
 {{{
+
+
 class Manager (RemoteObject):
 
-    """
-    This is the main class of Chimera.
+"""
+This is the main class of Chimera.
 
-    Use this class to get Proxies, add objects to the system, and so on.
+Use this class to get Proxies, add objects to the system, and so on.
 
-    This class handles objects life-cycle as described in ILifecycle.
+This class handles objects life-cycle as described in ILifecycle.
 
-    @group Add/Remove: add*, remove
-    @group Start/Stop: start, stop
-    @group Proxy: getProxy
-    @group Shutdown: wait, shutdown
+@group Add/Remove: add*, remove
+@group Start/Stop: start, stop
+@group Proxy: getProxy
+@group Shutdown: wait, shutdown
 
-    """
-    
-    def __init__(self, host = None, port = None, local=False):
-        RemoteObject.__init__ (self)
-        
-        log.info("Starting manager.")
+"""
 
-        self.resources = ResourcesManager()
-        self.classLoader = ClassLoader()
+def __init__(self, host = None, port = None, local=False):
+RemoteObject.__init__ (self)
 
-        # identity
-        self.setGUID(MANAGER_LOCATION)
+log.info("Starting manager.")
 
-        # shutdown event
-        self.died = threading.Event()
+self.resources = ResourcesManager()
+self.classLoader = ClassLoader()
 
-        if not local:
-            try:
-                ManagerLocator.locate()
-                raise ChimeraException("Chimera is already running"
-                                       " on this system. Use chimera-admin"
-                                       " to manage it.")
-            except ManagerNotFoundException:
-                # ok, we are alone.
-                pass
+# identity
+self.setGUID(MANAGER_LOCATION)
 
-        # our daemon server
-        self.adapter = ManagerAdapter (self, host, port)
-        self.adapterThread = threading.Thread(target=self.adapter.requestLoop)
-        self.adapterThread.setDaemon(True)
-        self.adapterThread.start()
+# shutdown event
+self.died = threading.Event()
 
-        # finder beacon
-        if not local:
-            self.beacon = ManagerBeacon(self)
-            self.beaconThread = threading.Thread(target=self.beacon.run)
-            self.beaconThread.setDaemon(True)
-            self.beaconThread.start()
-        else:
-            self.beacon = None
+if not local:
+    try:
+        ManagerLocator.locate()
+        raise ChimeraException("Chimera is already running"
+                               " on this system. Use chimera-admin"
+                               " to manage it.")
+    except ManagerNotFoundException:
+        # ok, we are alone.
+        pass
 
-        # register ourself
-        self.resources.add(MANAGER_LOCATION, self, getManagerURI(self.getHostname(), self.getPort()))
+# our daemon server
+self.adapter = ManagerAdapter (self, host, port)
+self.adapterThread = threading.Thread(target=self.adapter.requestLoop)
+self.adapterThread.setDaemon(True)
+self.adapterThread.start()
 
-        # signals
-        signal.signal(signal.SIGTERM, self._sighandler)
-        signal.signal(signal.SIGINT, self._sighandler)
-        atexit.register (self._sighandler)
+# finder beacon
+if not local:
+    self.beacon = ManagerBeacon(self)
+    self.beaconThread = threading.Thread(target=self.beacon.run)
+    self.beaconThread.setDaemon(True)
+    self.beaconThread.start()
+else:
+    self.beacon = None
+
+# register ourself
+self.resources.add(MANAGER_LOCATION, self, getManagerURI(self.getHostname(), self.getPort()))
+
+# signals
+signal.signal(signal.SIGTERM, self._sighandler)
+signal.signal(signal.SIGINT, self._sighandler)
+atexit.register (self._sighandler)
+
+
 }}}
 </td>
-<td valign="top">Here is where the constructor for the class Manager is called</td>
+<td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is where the constructor for the class Manager is called which creates a MangerAdapter after the comment  # our daemon server. Note the comment
+{{{
+ """
+This is the main class of Chimera.
+Use this class to get Proxies, 
+add objects to the system, and so on.
+This class handles objects life-cycle
+ as described in ILifecycle.
+"""
+}}}
+</td>
 </tr>
+
+
+<tr>
+<td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
+<td valign="top">
+{{{
+class ManagerAdapter (Pyro.core.Daemon):
+
+    def __init__ (self, manager, host = None, port = None):
+
+        Pyro.core.initServer(banner=False)
+        
+        Pyro.core.Daemon.__init__ (self,
+                                   host=host or MANAGER_DEFAULT_HOST,
+                                   port=port or MANAGER_DEFAULT_PORT,
+                                   norange=0)
+
+        self.useNameServer(None)
+        self.connect (manager)
+
+        # saved here to give objects a manager when they ask
+        self.manager = manager
+
+        self.getAdapter().setTimeout(None)
+
+    def getManager (self):
+        return self.manager
+
+    def getProxyForObj(self, obj):
+        return Proxy(uri=Pyro.core.PyroURI(self.hostname,
+                                           obj.GUID(), prtcol=self.protocol, port=self.port))
+
+    def connect(self, obj, name=None, index=None):
+
+        URI = Pyro.core.PyroURI(self.hostname, obj.GUID(), prtcol=self.protocol, port=self.port)
+
+        self.implementations[obj.GUID()] = (obj, name)            
+        
+        if index:
+            self.implementations[index] = (obj, name)
+
+        obj.setPyroDaemon(self)
+
+        return URI
+
+
+}}}
+</td>
+<td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is the class definition for ManagerAdapter is called which calls on the Pyro package to initialize a server. This seems to act like a singleton class which returns the server if it is already created.  
+This pyro package is dependent upon /usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/configuration.py
+</td>
+</tr>
+
+
 </tbody>
 </table>
