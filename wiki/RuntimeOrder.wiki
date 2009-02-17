@@ -98,7 +98,7 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
 
 
 
-<wiki:comment> ************************* table row ******************************</wiki:comment>
+<wiki:comment> ************************* table row ************************</wiki:comment>
 <tr>
 
 <wiki:comment>============ call ============</wiki:comment>
@@ -133,7 +133,7 @@ pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 
 
 
-<wiki:comment> ************************* table row ******************************</wiki:comment>
+<wiki:comment> ************************* table row ************************</wiki:comment>
 <tr>
 
 <wiki:comment>============ call ============</wiki:comment>
@@ -161,13 +161,16 @@ main()
 
 <wiki:comment>============ explanation ============</wiki:comment>
 
-<td valign="top"> which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class </td>
+<td valign="top"> The 'chimera' script defines a *`main`* method and calls that main method. <br />
+This main method calls *`chimera.controllers.site.main`* which is the file main.py.<br />
+This file defines the class *`SiteController`*.<br />
+It imports the *`SiteController`* class and calls *`SiteController(sys.argv).startup()`* on that class. </td>
 </tr>
 
 
 
 
-<wiki:comment> ************************* table row ******************************</wiki:comment>
+<wiki:comment> ************************* table row ************************</wiki:comment>
 <tr>
 
 <wiki:comment>============ call ============</wiki:comment>
@@ -258,14 +261,16 @@ self.manager.wait()
 <wiki:comment>============ explanation ============</wiki:comment>
 
 <td valign="top">
-This is the startup method which calls `Manager(**self.config.chimera)`
-Note: you can see the log.info method is the stuff printed when starting chimera
+This is the method startup() which is inside the SiteController class.<br />
+This method calls `Manager(**self.config.chimera)` which instantiates a Manger object.<br />
+The manager object is then used to obtain all the resources for the chimera program.<br />
+Note: you can see the `log.info()` method is the stuff printed when starting chimera. For example, you will see that `log.info("Starting system.")` is what is printed to the server's terminal window upon startup.
 </td>
 </tr>
 
 
 
-<wiki:comment> ************************* table row ******************************</wiki:comment>
+<wiki:comment> ************************* table row ************************</wiki:comment>
 <tr>
 
 <wiki:comment>============ call ============</wiki:comment>
@@ -347,7 +352,10 @@ atexit.register (self._sighandler)
 
 <wiki:comment>============ explanation ============</wiki:comment>
 
-<td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is where the constructor for the class Manager is called which creates a MangerAdapter after the comment  # our daemon server. Note the comment
+<td valign="top">The file *`manager.py`* contains multiple classes.<br />
+It contains `Manager` and `ManagerAdapter`.<br />
+This snippet is where the constructor for the class `Manager` is called which in turn creates a `MangerAdapter` (see after the comment  `# our daemon server`).<br />
+Also note the comment,
 {{{
  """
 This is the main class of Chimera.
@@ -357,13 +365,14 @@ This class handles objects life-cycle
  as described in ILifecycle.
 """
 }}}
+*Eurika!!!*
 </td>
 </tr>
 
 
 
 
-<wiki:comment> ************************* table row ******************************</wiki:comment>
+<wiki:comment> ************************* table row ************************</wiki:comment>
 
 
 <tr>
@@ -421,7 +430,10 @@ class ManagerAdapter (Pyro.core.Daemon):
 
 <wiki:comment>============ explanation ============</wiki:comment>
 
-<td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is the class definition for ManagerAdapter is called which calls on the Pyro package to initialize a server. This seems to act like a singleton class which returns the server if it is already created.  
+<td valign="top">The file *`manager.py`* contains multiple classes.<br />
+It contains `Manager` and `ManagerAdapter`.<br />
+Here is the class definition for `ManagerAdapter`, which calls on the Pyro package to initialize a server.<br />
+Note: This seems to act like a singleton class which returns the server if it is already created.  
 This pyro package is dependent upon /usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/configuration.py
 </td>
 </tr>
