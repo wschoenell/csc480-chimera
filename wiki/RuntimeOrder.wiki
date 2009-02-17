@@ -96,8 +96,17 @@ Exception exceptions.AttributeError: "ManagerAdapter instance has no attribute
 <tbody>
 <tr><th> *Call* </th><th> *Snippit* </th><th> *Result* </th></tr>
 
-<tr valign="top">
+
+
+<!-- ************************* table row ******************************-->
+<tr>
+
+<!--============ call ============-->
+
 <td valign="top"> `/usr/bin/chimera` </td>
+
+<!--============ snippit ============-->
+
 <td valign="top">
 {{{
 #!/usr/bin/python
@@ -107,6 +116,9 @@ import pkg_resources
 pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 }}}
 </td>
+
+<!--============ explanation ============-->
+
 <td valign="top"> This is the "binary" package which calls
 <ul>
 <li> *`/usr/lib/python2.5/site-packages/pkg_resources.py`* which looks into the </li>
@@ -118,8 +130,18 @@ pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
 </tr>
 
 
+
+
+
+<!-- ************************* table row ******************************-->
 <tr>
+
+<!--============ call ============-->
+
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera` </td>
+
+<!--============ snippit ============-->
+
 <td valign="top">
 {{{
 #!/usr/bin/python
@@ -136,12 +158,24 @@ if __name__ == '__main__':
 main()
 }}}
 </td>
+
+<!--============ explanation ============-->
+
 <td valign="top"> which defines a *`main`* method and calls that main method. this main method calls *`chimera.controllers.site.main`* which defines the class *`SiteController`*, it imports that class and calls *`SiteController(sys.argv).startup()`* on that class </td>
 </tr>
 
 
+
+
+<!-- ************************* table row ******************************-->
 <tr>
+
+<!--============ call ============-->
+
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py`</td>
+
+<!--============ snippit ============-->
+
 <td valign="top">
 {{{
 def startup(self):
@@ -221,6 +255,8 @@ self.manager.wait()
 }}}
 </td>
 
+<!--============ explanation ============-->
+
 <td valign="top">
 This is the startup method which calls `Manager(**self.config.chimera)`
 Note: you can see the log.info method is the stuff printed when starting chimera
@@ -229,9 +265,15 @@ Note: you can see the log.info method is the stuff printed when starting chimera
 
 
 
-
+<!-- ************************* table row ******************************-->
 <tr>
+
+<!--============ call ============-->
+
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
+
+<!--============ snippit ============-->
+
 <td valign="top">
 {{{
 
@@ -302,6 +344,9 @@ atexit.register (self._sighandler)
 
 }}}
 </td>
+
+<!--============ explanation ============-->
+
 <td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is where the constructor for the class Manager is called which creates a MangerAdapter after the comment  # our daemon server. Note the comment
 {{{
  """
@@ -316,8 +361,19 @@ This class handles objects life-cycle
 </tr>
 
 
+
+
+<!-- ************************* table row ******************************-->
+
+
 <tr>
+
+<!--============ call ============-->
+
 <td valign="top">`/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/manager.py`</td>
+
+<!--============ snippit ============-->
+
 <td valign="top">
 {{{
 class ManagerAdapter (Pyro.core.Daemon):
@@ -362,6 +418,9 @@ class ManagerAdapter (Pyro.core.Daemon):
 
 }}}
 </td>
+
+<!--============ explanation ============-->
+
 <td valign="top">The file manager.py contains multiple classes.  It contains Manager and ManagerAdapter.  Here is the class definition for ManagerAdapter is called which calls on the Pyro package to initialize a server. This seems to act like a singleton class which returns the server if it is already created.  
 This pyro package is dependent upon /usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/configuration.py
 </td>
