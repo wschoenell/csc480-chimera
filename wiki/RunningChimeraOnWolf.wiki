@@ -16,3 +16,5 @@ For Wolf, substitude "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r4
       * If you're not, log into moxie: `ssh {username}@moxie.oswego.edu` and then log into wolf.
     # Create the config file: `touch ~/.chimera/chimera.config`
     # Run Chimera: `chimera -vv`
+
+  * This is definitely a quick fix. If the config information is already loaded, then it does not need to look in `~/.chimera/chimera.config`. Feel free to add any information about this. (If you're too scared to modify code, post what needs to be done.)
