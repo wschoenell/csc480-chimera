@@ -9,7 +9,7 @@ The script uses apt-get, so it wont work on the Sun Rays.
 = Update. It Works! =
 All that is needed to get it to work is:
   * download the install script
-  * type `sudo python chimera_install.py`
+  * type `sudo python chimera-install.py`
   * say yes to everything
   * navigate to the folder where you have the downloaded source code from subversion
   * open a terminal and cd to that folder, then cd to `src/chimera/core`
