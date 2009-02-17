@@ -1,4 +1,4 @@
-This page is used for any cool links about programming in general!
+#summary This page is used for any cool links about programming in general!
 
 = Introduction =
 
