@@ -4,6 +4,22 @@
 
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
+=2/15 Extinction and Seeing notes=
+
+  regarding extinction and seeing a good resource is
+  http://spiff.rit.edu/classes/phys445/lectures/atmos/atmos.html
+  
+  So for the extinction project, we observe given standard stars at different times during the night. Reduce the data, do aperature photometry and get instrumental magnitudes for them at different times during the night. Call z = angle between the star and the zenith (the point directly overhead). The airmass, X = sec(z).
+ 
+  Then the instrumental magnitude m(X) = m_0 + k*X 
+  where k is the extinction coefficient. In the notes the abbreviation AM stands for AirMass.
+ 
+  So the position of the star at different times during the night gives X, and observing the star and doing photometry gives m(X) and doing a fit as above gives the extinction coefficient k.
+ 
+  As an initial routine they could write a python routine to do a least squares fit between any two sets of numbers. This could be the basis of the seeing routine.
+ 
+  Shashi
+
 =2/13 config file=
 
   * Here is the configuration file for the virtual observatory. Shashi
