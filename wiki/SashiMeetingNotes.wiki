@@ -5,6 +5,11 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=2/20 Extinction (polynomical fit)=
+
+  The file autofocuser.py has a method to do a polynomical fit. You may want to look at that for the extinction. Shashi
+
+----
 =2/20 Chimera poster and flow chart=
 
   A nice poster and flow chart describing chimera is at
