@@ -7,168 +7,100 @@ Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails
 ----
 =2/11 How to use UFSC Observatory=
 
-To use Chimera at the UFSC observatory:
+==To use Chimera at the UFSC observatory:==
 
-•	Start up Chimera on the windows machine. This machine controls the
-telescope through the mount.
+  * Start up Chimera on the windows machine. This machine controls the telescope through the mount.
 
-chimera -f windows.xml
+*chimera -f windows.xml*
 
-Note this is only for the UFSC Observatory because the telescope
-mount is proprietary software and can only run on the windows ma-
-chine.
+  Note this is only for the UFSC Observatory because the telescope
+  mount is proprietary software and can only run on the windows ma-
+  chine.
 
-•	Then on the linux machine, login and type chimera -f linux.xml
-If all goes well, some messages giving information about the status of
-the system should appear on the screen. Typing
+  * Then on the linux machine, login and type *chimera -f linux.xml*  If all goes well, some messages giving information about the status of the system should appear on the screen. Typing
 
-chimera -f linux.xml –vv
+*chimera -f linux.xml –vv*
 
-will give you more information about whats going on.
+  will give you more information about whats going on.
 
-•	Then to point the telescope, type on the Linux machine
+  *Then to point the telescope, type on the Linux machine
 
-chimera-tel –tel localhost:10000/Telescope/0 –slew –ra=¡coords¿
-–dec=¡coords¿
+*chimera-tel –tel localhost:10000/Telescope/0 –slew –ra=¡coords¿
+–dec=¡coords¿*
 
-•	To take an image with the camera, on the Linux machine type
+  * To take an image with the camera, on the Linux machine type
 
-chimera-cam –camera localhost:10000/Camera/0 -n¡number
-of exposures¿ -t¡exposure time in seconds¿ -o¡basename of fits
-file¿
+*chimera-cam –camera localhost:10000/Camera/0 -n¡number of exposures¿ -t¡exposure time in seconds¿ -o¡basename of fits file¿*
 
-The option -s can be used with OPEN and/or CLOSE to open or close
-the camera shutter.
+  The option -s can be used with OPEN and/or CLOSE to open or close the camera shutter.
 
-•	To take a bias, close the shutter and set the exposure time to t=0.
+  * To take a bias, close the shutter and set the exposure time to t=0.
 
-•	To take a dark, close the shutter and set the exposure time to be similar
-to the exposure time for the science image.
+  * To take a dark, close the shutter and set the exposure time to be similar to the exposure time for the science image.
 
-•	To change the filter and take an exposure with a new filter type
+  * To change the filter and take an exposure with a new filter type
 
-chimera-cam –camera localhost:10000/Camera/0 –wheel lo-
+*chimera-cam –camera localhost:10000/Camera/0 –wheel lo-
 calhost:10000/FilterWheel/0 -f ¡filteroption¿ -n ¡number of
 exposures¿ -t ¡exposure time in seconds¿ -o ¡basename of FITS
-image files¿ -s ¡OPEN/CLOSE¿
+image files¿ -s ¡OPEN/CLOSE¿*
 
 
-•	The available filter options at UFSC are CLEAR (no filter), RED,
-BLUE, GREEN, VIOLET and U (Extreme Violet).
+  * The available filter options at UFSC are CLEAR (no filter), RED, BLUE, GREEN, VIOLET and U (Extreme Violet).
 
-•	chimera-tel –help gives you all the options available with this. Similarly
-•	for chimera-cam –help. Other instruments accessible in this way are
-•	chimera-dome and chimera-focus.
+  * chimera-tel –help gives you all the options available with this. Similarly for chimera-cam –help. Other instruments accessible in this way are chimera-dome and chimera-focus.
 
-Structure
+==Structure==
 
-•	At the lowest level you have the actual piece of hardware that you are
-trying to control robotically: lets take as an example, the camera.
+  * At the lowest level you have the actual piece of hardware that you are trying to control robotically: lets take as an example, the camera.
 
-•	This is connected by a wire to some PC (which usually is local) which
-contains the hardware driver for the camera. This hardware driver may
-be supplied by the manufacturer or is some code which talks to code
-supplied by the manufacturer.
+  * This is connected by a wire to some PC (which usually is local) which contains the hardware driver for the camera. This hardware driver may be supplied by the manufacturer or is some code which talks to code supplied by the manufacturer.
 
-•	Items 1 and 2 are hardware specific.
+  * Items 1 and 2 are hardware specific.
 
-•	The ICamera code sets out the methods by which the Camera Driver
-communicates with other objects.
+  * The ICamera code sets out the methods by which the Camera Driver communicates with other objects.
 
-•	The ICamera code is hardware independent.
+  * The ICamera code is hardware independent.
 
-•	Above these you have the ”software instrument” for the camera. This
-contains code which any camera should be able to do and code to get
-the driver for that camera to do exactly that. The ”ICamera” bit
-sets out the methods by which the software instrument Camera can
-communicate with other objects.
+  * Above these you have the ”software instrument” for the camera. This contains code which any camera should be able to do and code to get the driver for that camera to do exactly that. The ”ICamera” bit sets out the methods by which the software instrument Camera can communicate with other objects.
 
-•	Generalizing this, for any Chimera object, we have the hardware, the
-driver, the interface and the software for that particular object.
+  * Generalizing this, for any Chimera object, we have the hardware, the driver, the interface and the software for that particular object.
 
-•	In addition, there can be a finer division of ”things” into (driver, interface, instrument). For example, there can also be an ICameradriver
-interface which sets out the ways in which the Camera driver communicates 
-with other objects. Another example is that the interface for the
-Camera software instrument is actually made up of the interfaces for a
-Basic Camera, a Basic Camera which can take and abort exposures and
-another interface which consists of a Basic Camera which also supports
-temperature monitoring and control.
+  * In addition, there can be a finer division of ”things” into (driver, interface, instrument). For example, there can also be an ICameradriver interface which sets out the ways in which the Camera driver communicates  with other objects. Another example is that the interface for the Camera software instrument is actually made up of the interfaces for a Basic Camera, a Basic Camera which can take and abort exposures and another interface which consists of a Basic Camera which also supports temperature monitoring and control.
 
-•	Above the software instrument is the interface to the user. Currently
-its chimera-cam or chimera-tel or chimera-dome but hopefully these
-will be replaced by some GUI.
+  * Above the software instrument is the interface to the user. Currently its chimera-cam or chimera-tel or chimera-dome but hopefully these will be replaced by some GUI.
 
-•	An analogy is a PC running some operating system. The manual is
-the I**** code, the set of allowed commands and the way anybody can
-communicate with the PC and vice versa. The operating system is the
-”software instrument”. You, the user and the operating system have
-agreed that each can only talk to the other through what is layed out in
-the manual. Similarly the IDriver is the manual that describes how the
-operating system and CPU can talk to each other. The combination of
-driver and actual instrument are the guts of the PC. I look up in the
-manual what ”ls” means” (I**** code), type in ls (”software instru-
-ment”) and get back a list of files (driver plus actual instrument). In
-theory, if I get a new PC running linux, I should be able to just plug in
-my existing keyboard, read the manual and get the same result when
-I type in ”ls”.
+  * An analogy is a PC running some operating system. The manual is the I**** code, the set of allowed commands and the way anybody can communicate with the PC and vice versa. The operating system is the ”software instrument”. You, the user and the operating system have agreed that each can only talk to the other through what is layed out in the manual. Similarly the IDriver is the manual that describes how the operating system and CPU can talk to each other. The combination of driver and actual instrument are the guts of the PC. I look up in the manual what ”ls” means” (I**** code), type in ls (”software instrument”) and get back a list of files (driver plus actual instrument). In
+theory, if I get a new PC running linux, I should be able to just plug in my existing keyboard, read the manual and get the same result when I type in ”ls”.
 
-•	Controllers are roughly at the level of chimera-cam or chimera-tel and
-are used when more than one system, say the camera and telescope
-and focuser are in use. For example, the autofocuser. The Telescope
-moves to an object, the camera takes a picture and the autofocuser
-determines if the object is in focus - if not, the autofocuser adjusts the
-focus, tells the camera to take another picture etc. So the autofocuser
-needs to talk to more than one system. Another example of a controller
-is the scheduler.
+  * Controllers are roughly at the level of chimera-cam or chimera-tel and are used when more than one system, say the camera and telescope and focuser are in use. For example, the autofocuser. The Telescope moves to an object, the camera takes a picture and the autofocuser determines if the object is in focus - if not, the autofocuser adjusts the focus, tells the camera to take another picture etc. So the autofocuser needs to talk to more than one system. Another example of a controller is the scheduler.
 
-•	This explains the splitting up of the source code into instruments,
-drivers and interfaces. In addition the source code contains sections
-on core, utilities and controllers.
+  * This explains the splitting up of the source code into instruments, drivers and interfaces. In addition the source code contains sections on core, utilities and controllers.
 
-•	At the moment the software instruments in chimera consist of a camera,
-dome, filterwheel, focuser and telescope.
+  * At the moment the software instruments in chimera consist of a camera, dome, filterwheel, focuser and telescope.
 
-•	In principle many of the chimera components can be on separate computers connected only by the internet. Pyro takes care of the network
-communication details.
+  * In principle many of the chimera components can be on separate computers connected only by the internet. Pyro takes care of the network communication details.
 
-•	Thus, it is possible to have an instrument connected by wire to one
-PC, but the driver for that instrument on another PC, the software
-instrument on a third PC and any controllers etc on a fourth PC.
-Options such as
+  * Thus, it is possible to have an instrument connected by wire to one PC, but the driver for that instrument on another PC, the software instrument on a third PC and any controllers etc on a fourth PC. Options such as
 
-chimera-tel –tel localhost:10000/Telescope/0
+*chimera-tel –tel localhost:10000/Telescope/0*
 
-•	can be changed to chimera-tel –tel ¡IP number¿:10000/Telescope/0
-which will tell chimera the IP number of the machine where the software
-instrument for Telescope is located.
+  can be changed to chimera-tel –tel ¡IP number¿:10000/Telescope/0 which will tell chimera the IP number of the machine where the software instrument for Telescope is located.
 
-•	As an example, if the software instrument for the camera is on 128.119.52.1,
-the driver for that camera is on 128.138.63.28, then type
+  * As an example, if the software instrument for the camera is on 128.119.52.1, the driver for that camera is on 128.138.63.28, then type
 
-chimera-cam –camera 128.119.52.1:10000/Camera/0 –driver
-128.138.63.28:10000/Driver/0
+*chimera-cam –camera 128.119.52.1:10000/Camera/0 –driver
+128.138.63.28:10000/Driver/0*
 
-•	On each PC where there is a chimera component running, a chimera
-manager, initiated by chimera -f ¡***.xml¿ must be running. As be-
-fore this component could be an instrument or a driver or an Interface.
+  * On each PC where there is a chimera component running, a chimera manager, initiated by chimera -f ¡***.xml¿ must be running. As before this component could be an instrument or a driver or an Interface.
 
-•	In most cases, all the hardware instruments are connected by some type
-of wire to one PC at one site.
+  * In most cases, all the hardware instruments are connected by some type of wire to one PC at one site.
 
-•	The ***.xml file contains details about what resources are available on
-the machine on which it is started.
+  * The ***.xml file contains details about what resources are available on the machine on which it is started.
 
-•	So in the UFSC observatory case, the telescope is physically connected
-to the windows machine but the camera is physically connected to the
-nearby Linux machine. Thus initially, chimera -f windows.xml starts up
-chimera on the windows machine, informing it of the fact that it has a
-hardware instrument, the telescope, and its associated driver attached
-to it. chinera 0f linux.xml starts up the chimera on the linux machine
-infomring it of resources that are available to it. Note the software
-instrument for the telescope, the telescope interface, camera, camera
-driver, camera interface reside on the linux machine.
+  * So in the UFSC observatory case, the telescope is physically connected to the windows machine but the camera is physically connected to the nearby Linux machine. Thus initially, chimera -f windows.xml starts up chimera on the windows machine, informing it of the fact that it has a hardware instrument, the telescope, and its associated driver attached to it. chimera 0f linux.xml starts up the chimera on the linux machine informing it of resources that are available to it. Note the software instrument for the telescope, the telescope interface, camera, camera driver, camera interface reside on the linux machine.
 
-Flow
+==Flow==
 
 •	To start up chimera, you need to use chimera -f ¡some file¿ on all the
 PC’s involved in the system. This file, currently in xml contains details
