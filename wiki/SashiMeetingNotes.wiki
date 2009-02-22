@@ -4,6 +4,33 @@
 
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
+----
+ 
+=2/15 How to use fakecamera.py=
+
+  Heres where I am at the moment:
+  In src/chimera/drivers/fakecamera.py change use_dss to be True (in the __config__ at the top). You may need to remake things (setup.py install)
+
+  To start chimera, in one terminal type src/scripts/chimera -vv
+
+  In another terminal type
+
+*src/scripts/chimera-dome --open
+src/scripts/chimera-dome --track
+src/scripts/chimera-tel --unpark
+src/scripts/chimera-tel --init
+src/scripts/chimera-tel --start-tracking
+src/scripts/chimera-tel --slew --ra=22:00:00 -dec=30:00:00
+src/scripts/chimera-cam --expose -t=2*
+ 
+  This takes an exposre pointed at the ra and dec above. But it goes to the SDDS survey online and retrieves the image from that position - in drivers/fakecamera.py look for url="http://stdatu......
+ 
+  The log shows that it doesnt quite work: saying the file retrieved isnt a gzipped file. See if you can fix this bug.
+ 
+  Shashi
+
+----
+
 =2/15 Extinction and Seeing notes=
 
   regarding extinction and seeing a good resource is
@@ -19,6 +46,8 @@ Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails
   As an initial routine they could write a python routine to do a least squares fit between any two sets of numbers. This could be the basis of the seeing routine.
  
   Shashi
+
+----
 
 =2/13 config file=
 
