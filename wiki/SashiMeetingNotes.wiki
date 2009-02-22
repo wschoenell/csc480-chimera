@@ -70,8 +70,7 @@ image files¿ -s ¡OPEN/CLOSE¿*
 
   * Above the software instrument is the interface to the user. Currently its chimera-cam or chimera-tel or chimera-dome but hopefully these will be replaced by some GUI.
 
-  * An analogy is a PC running some operating system. The manual is the I**** code, the set of allowed commands and the way anybody can communicate with the PC and vice versa. The operating system is the ”software instrument”. You, the user and the operating system have agreed that each can only talk to the other through what is layed out in the manual. Similarly the IDriver is the manual that describes how the operating system and CPU can talk to each other. The combination of driver and actual instrument are the guts of the PC. I look up in the manual what ”ls” means” (I**** code), type in ls (”software instrument”) and get back a list of files (driver plus actual instrument). In
-theory, if I get a new PC running linux, I should be able to just plug in my existing keyboard, read the manual and get the same result when I type in ”ls”.
+  * An analogy is a PC running some operating system. The manual is the I**** code, the set of allowed commands and the way anybody can communicate with the PC and vice versa. The operating system is the ”software instrument”. You, the user and the operating system have agreed that each can only talk to the other through what is layed out in the manual. Similarly the IDriver is the manual that describes how the operating system and CPU can talk to each other. The combination of driver and actual instrument are the guts of the PC. I look up in the manual what ”ls” means” (I**** code), type in ls (”software instrument”) and get back a list of files (driver plus actual instrument). In theory, if I get a new PC running linux, I should be able to just plug in my existing keyboard, read the manual and get the same result when I type in ”ls”.
 
   * Controllers are roughly at the level of chimera-cam or chimera-tel and are used when more than one system, say the camera and telescope and focuser are in use. For example, the autofocuser. The Telescope moves to an object, the camera takes a picture and the autofocuser determines if the object is in focus - if not, the autofocuser adjusts the focus, tells the camera to take another picture etc. So the autofocuser needs to talk to more than one system. Another example of a controller is the scheduler.
 
@@ -102,22 +101,9 @@ theory, if I get a new PC running linux, I should be able to just plug in my exi
 
 ==Flow==
 
-•	To start up chimera, you need to use chimera -f ¡some file¿ on all the
-PC’s involved in the system. This file, currently in xml contains details
-about the location of that PC, location of other PC’s in the system,
-what instruments/drivers etc. to load and where they are located. It
-also starts up managers on all these machines.
+  * To start up chimera, you need to use chimera -f ¡some file¿ on all the PC’s involved in the system. This file, currently in xml contains details about the location of that PC, location of other PC’s in the system, what instruments/drivers etc. to load and where they are located. It also starts up managers on all these machines.
 
-•	If you start up chimera-cam as in 4), this sends a request to the manager
-running on that machine which forwards that request to the machine
-where the camera’s stuff is located. The machine on this manager receives 
-the request, wakes up the ”camera software instrument” which
-sends the request to the location where the camera driver is. The man-
-ager on this machine receives the request, wakes up the camera driver
-which sends the request down some line which is physically connected
-to the camera. Information about what happened is sent back through
-this chain and results in information displayed on the terminal where 
-the original camera request was issued.
+  * If you start up chimera-cam as in 4), this sends a request to the manager running on that machine which forwards that request to the machine where the camera’s stuff is located. The machine on this manager receives the request, wakes up the ”camera software instrument” which sends the request to the location where the camera driver is. The manager on this machine receives the request, wakes up the camera driver which sends the request down some line which is physically connected to the camera. Information about what happened is sent back through this chain and results in information displayed on the terminal where the original camera request was issued.
 
 
 
