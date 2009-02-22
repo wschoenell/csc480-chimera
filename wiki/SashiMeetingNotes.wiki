@@ -95,32 +95,25 @@ Shashi
  Can you send me the config files you mention here?
  Shashi
 
- On Tue, Feb 10, 2009 at 4:24 PM, Isaac Richter wrote:
+  On Tue, Feb 10, 2009 at 4:24 PM, Isaac Richter wrote: http://code.google.com/p/chimera/source/....s/fakecamera.py
 
-http://code.google.com/p/chimera/source/....s/fakecamera.py
+  See __config__ starting on line 55. Note the use_dss option (if this is false, it won't use real star fields). Also note configuration of the telescope instrument and dome instrument to which to link.
 
-See __config__ starting on line 55. Note the use_dss option (if this is false, it won't use real star fields). Also note configuration of the telescope instrument and dome instrument to which to link.
+  Next interesting stuff is found in _readout. Line 210-212 covers making darks, Next, starting on line 221, if use_dss is true and the dome slit is aligned with the telescope (and the dome slit is open)the driver will attempt to download a dss image of the requisite location. (If this fails, it makes a flat instead.) In all cases, fakecamera will simulate the detector issues (dark current and pixel variations) on the output data.
 
-Next interesting stuff is found in _readout. Line 210-212 covers making darks, Next, starting on line 221, if use_dss is true and the dome slit is aligned with the telescope (and the dome slit is open)the driver will attempt to download a dss image of the requisite location. (If this fails, it makes a flat instead.) In all cases, fakecamera will simulate the detector issues (dark current and pixel variations) on the output data.
-
-Probably, the easiest way to do all this is to use a site config file that sets up your fake dome, telescope, and camera with all of the correct parameters. I don't have access to the site files that I used for the fake equipment right now since I am booted into windows, but I will get them to you when I have a chance.
-
+  Probably, the easiest way to do all this is to use a site config file that sets up your fake dome, telescope, and camera with all of the correct parameters. I don't have access to the site files that I used for the fake equipment right now since I am booted into windows, but I will get them to you when I have a chance.
 --Isaac
 
-On Tue, Feb 10, 2009 at 3:17 PM, Shashi Kanbur wrote:
-So its in fakecamera.py? Can you give me some more details?
-Shashi
+  On Tue, Feb 10, 2009 at 3:17 PM, Shashi Kanbur wrote: So its in fakecamera.py? Can you give me some more details? Shashi
 
-On Tue, Feb 10, 2009 at 2:01 PM, Isaac Richter wrote:
-Shashi,
-That code is, as far as I know, still in SVN. It is done by modifying configuration parameters for the FakeCamera camera driver. The code requires that the dome be open and tracking the telescope (and you have to specify a dome and telescope for the FakeCamera driver to talk to). Otherwise, it just gives you either a fake dark or a fake flat. It is possible that the URL used to download the DSS data used to make the observations is no longer working. In that case, it probably substitutes a fake dark.
+  On Tue, Feb 10, 2009 at 2:01 PM, Isaac Richter wrote:
+  Shashi,
+  That code is, as far as I know, still in SVN. It is done by modifying configuration parameters for the FakeCamera camera driver. The code requires that the dome be open and tracking the telescope (and you have to specify a dome and telescope for the FakeCamera driver to talk to). Otherwise, it just gives you either a fake dark or a fake flat. It is possible that the URL used to download the DSS data used to make the observations is no longer working. In that case, it probably substitutes a fake dark.
 --Isaac
 
 
-On Tue, Feb 10, 2009 at 11:15 AM, Shashi Kanbur wrote:
-
-Isaac, would you be willing to share the code you wrote last summer which permitted fake observations to be made to test chimera?
- Shashi
+  On Tue, Feb 10, 2009 at 11:15 AM, Shashi Kanbur wrote:
+  Isaac, would you be willing to share the code you wrote last summer which permitted fake observations to be made to test chimera? Shashi
 
 ----
 =2/11 Chimera Explained=
