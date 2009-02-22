@@ -5,6 +5,145 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=2/11 Chimera Explained=
+
+Chimera is an all-inclusive software package for those wishing to automate their telescope/CCD system. It can be run from the command line, or from an interactive GUI interface. Chimera is written in Python, a powerful, user-friendly, object-oriented language growing in popularity among the scientific community with Python modules available for many applications, for example matplotlib for plotting or pyraf for astronomical data reduction, or her own modules to add to Chimera, and customize Chimera for specific research tasks. Modularity is the main theme of Chimera. Because of this it is easy for a user to add his or her own modules to Chimera and customize it for specific research tasks. It is also easy to add new instruments and drivers since modularity separates hardware independent and hardware dependent code. The user only sees the hardware independent part of Chimera. For example, the command to take a CCD image is and always will be the same regardless of the user location, location and type of telescope/camera. Chimera will smoothly interface new drivers and equipment with familiar commands. Not only is Chimera modular in terms of its inherent structure, but it is also possible to distribute tasks between locations. What this means is that although the telescope and camera are physically located at Itajuba, MInas Gerais, Brazil, a PC at UFSC, Florianopolis, Brasil could be controlling the telescope, whilst a PC located at Oswego, NY, USA controls the CCD camera but a scientist located at Mount Stromlo Obervatory, Australia, is issuing commands to slew the telescope to a given position and take a number of CCD frames. Moreover, the observing program of this scientist at Mount Stromlo can be entirely automated so that he/she need have no further contact with the system after submitting their observing program. More realistically, two or more computers could be operating at an observatory control room, each one controlling a different element of the same telescope, all running Chimera. However, this distributivity will work between computers anywhere in the world.
+
+Details will follow later, but to get an idea of how Chimera actually operates, here is a typical command for the ’chimera-tel,’ or the part of chimera that controls the telescope.
+
+*chimera-tel -tel localhost:10000/Telescope/0 -slew –ra 10:00:00
+–dec 10:00:00*
+
+This tells Chimera both the computer location of the software to control the telescope, and where to slew. Other options include commanding the telescope to track the selected point in the sky or instead of using RA and Dec, use local azimuth and altitude to slew to a desired object.
+
+
+At the UFSC observatory, the telescope is controlled by a windows machine but the CCD camera is plugged into a linux machine. To use Chimera at the UFSC observatory:
+
+  * Start up Chimera on the windows machine. This machine controls the telescope through the mount.
+
+*chimera -f windows.xml*
+
+  Note this is only for the UFSC Observatory because the telescope mount is proprietary software and can only run on the windows machine. The file windows.xml is a file which contains details about where the telescope driver is located: more about this later.
+
+  * Then on the linux machine, login and type *chimera -f linux.xml*
+
+  The file linux.xml contains information about where the camera driver etc. is located (again more about this later). If all goes well, some messages giving information about the status of the system should appear on the screen. Typing
+
+*chimera -f linux.xml –vv*
+
+  will give you more information about whats going on.
+
+  * Then to point the telescope, type on the Linux machine
+
+*chimera-tel –tel localhost:10000/Telescope/0 –slew –ra=< coords >
+–dec=< coords >*
+
+  * To take an image with the camera, on the Linux machine type
+
+*chimera-cam –camera localhost:10000/Camera/0 -n*< numberofexposures >
+*-t*< exposuretimeinseconds >* -o*< basenameoffitsfile >
+
+  The option -s can be used with OPEN and/or CLOSE to open or close the camera shutter.
+
+  * To take a bias, close the shutter and set the exposure time to t=0.
+
+  * To take a dark, close the shutter and set the exposure time to be similar to the exposure time for the science image.
+
+  * To change the filter and take an exposure with a new filter type
+
+*chimera-cam –camera localhost:10000/Camera/0
+–wheel localhost:10000/FilterWheel/0 -f* < filteroption >
+*-n* < numberofexposures > *-t* < exposuretimeinseconds >
+*-o* < basenameofFITSimagefiles >*-s* < OPEN/CLOSE >
+
+  * The available filter options at UFSC are CLEAR (no filter), RED, BLUE, GREEN, VIOLET and LUNAR.
+
+  * *chimera-tel –help* gives you all the options available with this. Similarly for *chimera-cam –help*. Other instruments accessible in this way are chimera-dome and chimera-focus.
+
+  * The components of the system consist of a hardware instrument (say the camera) connected to some PC and on this PC resides a piece of software called the hardware driver. This hardware driver is code which talks and controls the camera directly. In order to manipulate the camera, users don’t use the hardware driver directly but interact with it through the program chimera-cam. As above chimera-cam can tell the camera to open/close its shutter, take a filter of specified exposure time, take more than one exposure and change the filter in front of the camera. In fact chimera-cam talks to the camera through the ”software instrument” camera which in turn talks to the driver. The software instrument camera is hardware independent. This structure is true for all the ”instruments” currently available: a dome, focuser, camera, telescope and filterwheel.
+
+  * The command chimera-cam –help gives details of all of these options.
+
+  * As an example, the following command tells the camera to open the shutter, chimera-cam –camera localhost:10000/Camera/0 -s OPEN
+
+  * We will discuss the *localhost:10000....* shortly.
+
+  * To take an exposure of 10 seconds duration, type *chimera-cam –camera localhost:10000/Camera/0 -s OPEN -n 1 -t 10*
+
+  * To take an exposure of 10 seconds with the RED filter, type *chimera- cam –camera localhost:10000/Camera/0 –wheel localhost:10000/FilterWheel/0 -f RED -n 1 -t 10*
+
+
+  * A bias frame can be taken with an exposure of 0 seconds and the shutter closed as in *chimera-cam –camera localhost:10000/Camera/0 -n 1 -t 0 -s CLOSE*
+
+  * A dark fram can be taken with an exposure of, say 10 seconds, and the shutter closed as in *chimera-cam –camera localhost:10000/Camera/0 -n 1 -t 10 -s CLOSE*
+
+  * The images are stored as fits files. They can be given special names using the -o option which specifies a base name. So chimera-cam – camera localhost:10000/Camera/0 -n 3 - t 10 -o shashi will give the 3 FITS files created by this command a base name of shashi. All images taken with this base name are numbered sequentially according to the order they were taken in.
+
+ * The chimera system consists of a dome, a camera, a telescope, and a focuser. Each instrument is controlled by the programs *chimera-dome*, *chimera-cam*, *chimera-tel*, *chimera-focus*. Typing chimera-dome *–help* etc. gives help on all the available options with these commands.
+
+  * A basic option with these commands specifies where software to control that particular instrument resides. The following are not complete commands but presented merely to show the nature of the option to specify the location of the software for that particular instrument.
+
+*chimera-dome –dome localhost:10000/Dome/0 ..... chimera- cam –camera localhost:10000/Camera/0 .... chimera-tel –tel localhost:10000/Telescope/0 ..... chimera-focus –focuser local-host:10000/Focuser/0 .....*
+
+  * In principle, this software could be on a different computer. Hence the full nature of this option is *[host:port]/Class/name*. In the case where the software is on the same computer from which the above command is being issued, the host part becomes localhost. The 10000 is the port number. The Class part deals with the way the chimera code is written, but each of the instruments dome, camera, telescope and focuser is thought of as a class with the name Dome, Camera, Telescope, and Focuser. The name corresponds to the number 0 in the above examples. Chimera can control more than one telescope or dome or focuser. Thus to control two telescopes, chimera-tel would refer to them as
+
+*chimera-tel –tel localhost:10000/Telescope/0.... and chimera-
+tel –tel localhost:10000/Telescope/1....*
+
+  * To understand this more, assume the telescope and camera are all physically connected to PC B with IP number 150.162.110.2 but the commands are to be issued from PC A with IP number 129.3.17.53. Then we first install chimera on BOTH machines and start up chimera on
+machine B with
+
+*chimera -vv -f linux.xml*
+
+  * Now on PC A, we issue the command
+
+*chimera-tel –telescope 150.162.110.2:10000/Telescope/0 –info.*
+
+  * This gives information on the telescope connected to PC B.
+
+  * Thus the following is an example of a chimera command issued on PC A with IP number 129.3.17.53 talking to PC B with IP number 150.162.110.2
+
+*chimera-tel –telescope 150.162.110.2:10000/Telescope/0 –info*
+
+  * This command asks chimera on PC A to contact chimera on PC B and get information for the telescope - called 0. The ”software instrument” for the telescope is located in ..../src/instruments.... and chimera knows its location and hence can find where the code describing ”Telescope” resides.
+
+  * The most ”distributed” case is if a telescope is physically connected to machine X, the software instrument resides on machine Y and you are issuing commands from machine Z. Machines X, Y and Z are all connected to the internet and all have chimera installed. Machines X and Y have chimera started through a command similar to chimera -f linux.xml. In the case of machine X, the **.xml file contains details of the telescope driver since the telescope is physically connected to machine X.
+
+  * Thus an example of the most general command is
+
+*chimera-tel –telescope 150.162.110.2:10000/Telescope/0*
+
+  issued from machine Z and 150.162.110.2 is the IP number of machine Y. chimera on machine Y is started with information telling it that the driver and hardware instrument is located on machine X.
+
+  * The scripts chimera-dome, chimera-tel, chimera-cam, chimera-focuser are controlled by the user and talk to the ”software instrument”. This piece of code in turn talks to the driver - code which talks directly to the hardware. The driver is usually supplied by the hardware manufacturer. Its also possible to specify an alternative location for this driver other than the default location.
+
+  * Now we describe some options specific to some commands.
+
+  * chimera-dome
+–	chimera-dome –track –tel localhost:10000/Telescope/0
+ tells the dome to track the specified telescope.
+
+–	chimera-dome –dome localhost:10000/Dome/0 –close 
+closes the dome connected to the local machine.
+
+–	chimera-dome –dome 128.119.34.20:20000/Dome/1 –open
+opens dome number 1 which is connected to the machine with IP
+	number 128.119.34.20 - communication is through port 20000.
+
+–	chimera-dome –stand tells the dome to stay stationary.
+
+==Installation==
+–	Requirements
+–	To install, just install the package Flow
+		* To start up chimera, you need to use chimera -f ¡some file¿
+		on all the PC’s involved in the system. This file, currently in
+		xml contains details about the location of that PC, location
+		of other PC’s in the system, what instruments/drivers etc. to
+		load and where they are located. It also starts up managers
+		on all these machines.
+
+
+----
 =2/11 How to use UFSC Observatory=
 
 ==To use Chimera at the UFSC observatory:==
