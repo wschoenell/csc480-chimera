@@ -133,8 +133,7 @@ machine B with
     tells the dome to stay stationary.
 
 ==Installation==
-  - Requirements 
-  - To install, just install the package Flow
+  - Requirements to install, just install the package *Flow*
 	* To start up chimera, you need to use chimera -f ¡some file¿ on all the PC’s involved in the system. This file, currently in	xml contains details about the location of that PC, location of other PC’s in the system, what instruments/drivers etc. to load and where they are located. It also starts up managers on all these machines.
 
 
