@@ -4,6 +4,124 @@
 
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
+=2/13 config file=
+
+  * Here is the configuration file for the virtual observatory. Shashi
+
+---------- Forwarded message ----------
+From: Isaac Richter
+Date: Thu, Feb 12, 2009 at 11:11 AM
+Subject: Re: virtual observatory
+To: Shashi Kanbur
+
+
+Sorry -- took a bit more time to track it down than I thought it
+would. Just save the following in a file, and then tell chimera to use
+that file as the configuration file (see "scripts/chimera --help").
+
+--Isaac
+
+<chimera host="localhost" port="7666">
+
+<instruments>
+<instrument name="tel" class="Telescope">
+<option name="driver" value="/FakeTelescope/0"/>
+</instrument>
+<instrument name="dome" class="Dome">
+<option name="driver" value="/FakeDome/0"></option>
+</instrument>
+<instrument name="cam" class="Camera">
+<option name="driver" value="/FakeCamera/0"/>
+</instrument>
+<instrument name="wheel" class="FilterWheel">
+<option name="driver" value="/FakeFilterWheel/0"></option>
+</instrument>
+<instrument name="focuser" class="Focuser">
+<option name="driver" value="/FakeFocuser/0"></option>
+</instrument>
+</instruments>
+
+<drivers>
+<driver name="ft" class="FakeTelescope" />
+<driver name="fc" class="FakeCamera">
+<option name="ccd_width" value="50" />
+<option name="ccd_height" value="50" />
+<option name="use_dss" value="true" />
+</driver>
+<driver name="fw" class="FakeFilterWheel" />
+<driver name="ff" class="FakeFocuser" />
+<driver name="fd" class="FakeDome" />
+</drivers>
+
+<controllers>
+<controller name="imageserver" class="ImageServer" />
+<controller name="xmlrpc" class="XMLRPC" />
+</controllers>
+
+<site>
+<name>UFSC</name>
+<latitude>-27:36:12.286</latitude>
+<longitude>-48:31:20.535</longitude>
+<altitude>20</altitude>
+<utc_offset>-3</utc_offset>
+<dst>False</dst>
+</site>
+<site>
+<name>LNA</name>
+<latitude>-22:32:08.066</latitude>
+<longitude>-45:34:58.480</longitude>
+<altitude>20</altitude>
+<utc_offset>-3</utc_offset>
+<dst>False</dst>
+</site>
+
+</chimera>
+
+
+On 2/12/09, Shashi Kanbur wrote:
+Hi, can you get me those config files?
+Thanks,
+Shashi
+
+ On Wed, Feb 11, 2009 at 1:06 PM, Isaac Richter
+ wrote:
+
+ I can get them to you tonight -- I will have to pull them out of
+ archives on an external hard drive once I get back to my room.
+
+ --Isaac
+
+ On Wed, Feb 11, 2009 at 9:44 AM, Shashi Kanbur wrote:
+ Can you send me the config files you mention here?
+ Shashi
+
+ On Tue, Feb 10, 2009 at 4:24 PM, Isaac Richter wrote:
+
+http://code.google.com/p/chimera/source/....s/fakecamera.py
+
+See __config__ starting on line 55. Note the use_dss option (if this is false, it won't use real star fields). Also note configuration of the telescope instrument and dome instrument to which to link.
+
+Next interesting stuff is found in _readout. Line 210-212 covers making darks, Next, starting on line 221, if use_dss is true and the dome slit is aligned with the telescope (and the dome slit is open)the driver will attempt to download a dss image of the requisite location. (If this fails, it makes a flat instead.) In all cases, fakecamera will simulate the detector issues (dark current and pixel variations) on the output data.
+
+Probably, the easiest way to do all this is to use a site config file that sets up your fake dome, telescope, and camera with all of the correct parameters. I don't have access to the site files that I used for the fake equipment right now since I am booted into windows, but I will get them to you when I have a chance.
+
+--Isaac
+
+On Tue, Feb 10, 2009 at 3:17 PM, Shashi Kanbur wrote:
+So its in fakecamera.py? Can you give me some more details?
+Shashi
+
+On Tue, Feb 10, 2009 at 2:01 PM, Isaac Richter wrote:
+Shashi,
+That code is, as far as I know, still in SVN. It is done by modifying configuration parameters for the FakeCamera camera driver. The code requires that the dome be open and tracking the telescope (and you have to specify a dome and telescope for the FakeCamera driver to talk to). Otherwise, it just gives you either a fake dark or a fake flat. It is possible that the URL used to download the DSS data used to make the observations is no longer working. In that case, it probably substitutes a fake dark.
+--Isaac
+
+
+On Tue, Feb 10, 2009 at 11:15 AM, Shashi Kanbur wrote:
+
+Isaac, would you be willing to share the code you wrote last summer which permitted fake observations to be made to test chimera?
+ Shashi
+
 ----
 =2/11 Chimera Explained=
 
