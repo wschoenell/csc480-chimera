@@ -5,6 +5,26 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=2/20 sample abstracts for QUEST opportunities=
+==Photometry==
+
+  * Aperture photometry in the Chimera Robotic Telescope Control System
+  * Student’s names James P. Early, Shashi Kanbur
+  * The Chimera Robotic Telescope Control System is a exible software program to automate a professional astronomical observatory. Here we describe one of its components: aperature photometry. We describe aperture photometry and its general implementation in Chimera and display some preliminary results from early versions of the module.
+
+==Seeing==
+
+  * A seeing module for the Chimera Robotic Telescope System
+  * Student Names James P. Early, Shashi M. Kanbur
+  * Chimera is exible software system for controlling professional astronomical observatories. The Astronomical seeing is a measure of the ”blurriness” of the atmosphere and is an important quantity to know. Here we describe a preliminary version of a Chimera module to automatically compute astronomical seeing.
+
+==Extinction==
+
+  * An Extinction Module for the Chimera Robotic Telescope System
+  * Students Names James P. Early, Shashi M. Kanbur
+  * Chimera is a exible program for automating a professional astronomical observatory. Here we describe a module for obtaining nightly extinction coefficients. We describe what the extinction is, the general form of implementation in Chimera and present some preliminary results.
+
+----
 =2/16 fakecamera.py bug fix=
 
   The routine fakecamera.py, if the variable dss is set to TRUE makes a call to the web site I showed you and downloads the available picture at the RA and dec of the telescope. This year, its seems the site doesnt gzip the pictures and the code is trying to ungzip a file which has already been gzipped. If I remove the gzip (right after the call to the st web site), then the system doesnt take a proper picture and crashes. This is a specific bug which you guys could work on. It would be great to get the virtual observatory working.
