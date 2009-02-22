@@ -15,13 +15,13 @@ Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails
 
   In another terminal type
 
-*src/scripts/chimera-dome --open
-src/scripts/chimera-dome --track
-src/scripts/chimera-tel --unpark
-src/scripts/chimera-tel --init
-src/scripts/chimera-tel --start-tracking
-src/scripts/chimera-tel --slew --ra=22:00:00 -dec=30:00:00
-src/scripts/chimera-cam --expose -t=2*
+*  src/scripts/chimera-dome --open
+  src/scripts/chimera-dome --track
+  src/scripts/chimera-tel --unpark
+  src/scripts/chimera-tel --init
+  src/scripts/chimera-tel --start-tracking
+  src/scripts/chimera-tel --slew --ra=22:00:00 -dec=30:00:00
+  src/scripts/chimera-cam --expose -t=2*
  
   This takes an exposre pointed at the ra and dec above. But it goes to the SDDS survey online and retrieves the image from that position - in drivers/fakecamera.py look for url="http://stdatu......
  
