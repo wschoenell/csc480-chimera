@@ -120,27 +120,22 @@ machine B with
   * Now we describe some options specific to some commands.
 
   * chimera-dome
-–	chimera-dome –track –tel localhost:10000/Telescope/0
- tells the dome to track the specified telescope.
+  – *chimera-dome –track –tel localhost:10000/Telescope/0*
+    tells the dome to track the specified telescope.
 
-–	chimera-dome –dome localhost:10000/Dome/0 –close 
-closes the dome connected to the local machine.
+  - *chimera-dome –dome localhost:10000/Dome/0 –close*
+    closes the dome connected to the local machine.
 
-–	chimera-dome –dome 128.119.34.20:20000/Dome/1 –open
-opens dome number 1 which is connected to the machine with IP
-	number 128.119.34.20 - communication is through port 20000.
+  – *chimera-dome –dome 128.119.34.20:20000/Dome/1 –open*
+    opens dome number 1 which is connected to the machine with IP number 128.119.34.20 - communication is through port 20000.
 
-–	chimera-dome –stand tells the dome to stay stationary.
+  - *chimera-dome –stand*
+    tells the dome to stay stationary.
 
 ==Installation==
-–	Requirements
-–	To install, just install the package Flow
-		* To start up chimera, you need to use chimera -f ¡some file¿
-		on all the PC’s involved in the system. This file, currently in
-		xml contains details about the location of that PC, location
-		of other PC’s in the system, what instruments/drivers etc. to
-		load and where they are located. It also starts up managers
-		on all these machines.
+  - Requirements 
+  - To install, just install the package Flow
+	* To start up chimera, you need to use chimera -f ¡some file¿ on all the PC’s involved in the system. This file, currently in	xml contains details about the location of that PC, location of other PC’s in the system, what instruments/drivers etc. to load and where they are located. It also starts up managers on all these machines.
 
 
 ----
