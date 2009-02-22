@@ -5,6 +5,17 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=2/20 Chimera poster and flow chart=
+
+  A nice poster and flow chart describing chimera is at
+  
+  http://www.oswego.edu/~kanbur/IRES2008/isaac.pdf
+
+  Take a look, particularly at the flow chart.
+
+  For those in the photometry project, take a look at autofocus.py in the controllers section - it may show you how to do photometry. Shashi
+
+----
 =2/20 sample abstracts for QUEST opportunities=
 ==Photometry==
 
