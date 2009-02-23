@@ -289,8 +289,7 @@ At the UFSC observatory, the telescope is controlled by a windows machine but th
 *chimera-tel –tel localhost:10000/Telescope/0.... and chimera-
 tel –tel localhost:10000/Telescope/1....*
 
-  * To understand this more, assume the telescope and camera are all physically connected to PC B with IP number 150.162.110.2 but the commands are to be issued from PC A with IP number 129.3.17.53. Then we first install chimera on BOTH machines and start up chimera on
-machine B with
+  * To understand this more, assume the telescope and camera are all physically connected to PC B with IP number 150.162.110.2 but the commands are to be issued from PC A with IP number 129.3.17.53. Then we first install chimera on BOTH machines and start up chimera on machine B with
 
 *chimera -vv -f linux.xml*
 
