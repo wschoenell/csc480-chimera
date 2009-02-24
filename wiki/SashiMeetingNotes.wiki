@@ -7,6 +7,51 @@ Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails
 ----
 =2/18 Meeting with Sashi=
 
+==Photometry==
+
+Software to be downloaded and tested:
+  * DS9 - http://hea-www.harvard.edu/RD/ds9/
+  * SExtractor - http://sextractor.sourceforge.net/
+  * Astrometry.net - http://astrometry.net/use.html
+  * IRAF - http://iraf.noao.edu/ 
+  * WCSTools - http://tdc-www.harvard.edu/software/wcstools/
+  * Sky2XY - http://tdc-www.harvard.edu/wcstools/sky2xy.html
+
+This uses the RA and DEC coordinates and converts them to the X and Y coordinates on the CCD
+  * PyRaf (IRAF for Python) - http://www.stsci.edu/resources/software_hardware/pyraf
+ 
+  * Explore site and download images from http://stdatu.stsci.edu/
+    - Use RA and Dec and take picture
+
+  * Compare images and location to make sure they are the same at Astrometry.net (upload images to Astrometry.net)
+  * Run data reduction on image using IRAF
+  * Open images using DS9 
+  * Look into FITS images, and understand the tags in the header of the files (Flexible Image Transport System)
+*Look at and understand pointverify.py
+  - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/controllers/pointverify.py
+  * Look at and understand autofocus.py
+  - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/interfaces/autofocus.py
+  - This will show you how photometry is done.
+  - WSC is a translation between sky position and CCD
+  * Look at, understand, and debug fakecamera.py
+  - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/drivers/fakecamera.py
+  - The fake observatory (download the pictures) works the same way as the real thing. You can use sequential downloading and then run all the photometry processes on the files sequentially
+
+  * The final outcome of our project will be a database the following information:
+  - Object name, RA and DEC, object flux (i)
+  - Object names will come from the ascii list the user supplies
+
+  *  *Big things (From Dr. Kanbur):*
+  # Still trying to understand more of the photometry. Source extractor (Sextractor) should be able to do all of it! Autofocus will help!
+  # Download WCSTools, DS9, Astrometry.net, and IRAF
+  # In utils there is astrometrynet.py… look at it!
+    * http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/util/astrometrynet.py
+  # Somebody really needs to fix fakecamera.py
+  # Be careful with IRAF as it might mess with the Python version
+  # DS9 is the VIEWER but IRAF manipulates the files
+    a) Need IRAF for data reduction
+    b) Astrometry.net will write into the FITS file
+
 ==Seeing==
 
   * *Order of Operations for Chimera*
