@@ -5,6 +5,30 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=2/18 Meeting with Sashi=
+
+==Seeing==
+
+  * *Order of Operations for Chimera*
+    # move telescope
+    # take pic
+    # confirm location with astrometry.net
+    # take desired picture of star
+    # photometry (write to database)
+    # extinction (compute AM and extinction)
+    # seeing (run sextractor, get info from fits files)
+
+  * sextractor will compute the seeing
+
+  * *requirements*
+    # be able to use sextractor wrapper (in util) with fits file
+    # extract info from file after wrapper completes
+    # take user inputs for database request
+    # give back database matches
+
+  * look at extinction.py (fairly close operations as seeing)
+
+----
 =2/20 Extinction (polynomical fit)=
 
   The file autofocuser.py has a method to do a polynomical fit. You may want to look at that for the extinction. Shashi
