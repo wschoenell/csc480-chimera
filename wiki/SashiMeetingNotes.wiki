@@ -27,7 +27,7 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
   * Run data reduction on image using IRAF
   * Open images using DS9 
   * Look into FITS images, and understand the tags in the header of the files (Flexible Image Transport System)
-*Look at and understand pointverify.py
+  * Look at and understand pointverify.py
   - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/controllers/pointverify.py
   * Look at and understand autofocus.py
   - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/interfaces/autofocus.py
@@ -49,8 +49,8 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
   # Somebody really needs to fix fakecamera.py
   # Be careful with IRAF as it might mess with the Python version
   # DS9 is the VIEWER but IRAF manipulates the files
-    a) Need IRAF for data reduction
-    b) Astrometry.net will write into the FITS file
+    * Need IRAF for data reduction
+    * Astrometry.net will write into the FITS file
 
 ==Seeing==
 
