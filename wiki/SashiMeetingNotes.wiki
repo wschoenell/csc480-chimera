@@ -18,7 +18,7 @@ Software to be downloaded and tested:
   * Sky2XY - http://tdc-www.harvard.edu/wcstools/sky2xy.html
 
 This uses the RA and DEC coordinates and converts them to the X and Y coordinates on the CCD
-  * Pyraf [IRAF for Python] - http://www.stsci.edu/resources/software_hardware/pyraf
+  * Pyraf (IRAF for Python) - http://www.stsci.edu/resources/software_hardware/pyraf
  
   * Explore site and download images from http://stdatu.stsci.edu/
     - Use RA and Dec and take picture
