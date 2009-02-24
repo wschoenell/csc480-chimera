@@ -49,8 +49,8 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
   # Somebody really needs to fix fakecamera.py
   # Be careful with IRAF as it might mess with the Python version
   # DS9 is the VIEWER but IRAF manipulates the files
-    a) Need IRAF for data reduction
-    b) Astrometry.net will write into the FITS file
+    * Need IRAF for data reduction
+    * Astrometry.net will write into the FITS file
 
 ==Seeing==
 
