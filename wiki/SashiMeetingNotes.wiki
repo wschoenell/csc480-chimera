@@ -27,7 +27,7 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
   * Run data reduction on image using IRAF
   * Open images using DS9 
   * Look into FITS images, and understand the tags in the header of the files (Flexible Image Transport System)
-  * Look at and understand pointverify.py
+*Look at and understand pointverify.py
   - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/controllers/pointverify.py
   * Look at and understand autofocus.py
   - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/interfaces/autofocus.py
@@ -49,8 +49,8 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
   # Somebody really needs to fix fakecamera.py
   # Be careful with IRAF as it might mess with the Python version
   # DS9 is the VIEWER but IRAF manipulates the files
-    * Need IRAF for data reduction
-    * Astrometry.net will write into the FITS file
+    a) Need IRAF for data reduction
+    b) Astrometry.net will write into the FITS file
 
 ==Seeing==
 
@@ -72,6 +72,36 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
     # give back database matches
 
   * look at extinction.py (fairly close operations as seeing)
+
+=Extinction Coefficient=
+
+Info about the picture will be given as input from a user in the form of a text file to the scheduler.
+The telescope will take a picture.
+The picture will be reduced and photometry will be applied.
+All data will be put in a database:
+
+    * Object Name
+    * Airmass (Also known as "x" or "hour angle" which is the angle between the known star and zenith. To find the airmass is already created in the project. Shashi thinks it is in the Utils.)
+    * RA
+    * DEC
+    * Flux (I)
+
+Example: An image of a star is taken 5 times throughout the night
+
+M (Magnitude)
+"I" (Flux)
+X (Hour Angle)
+
+M1 = 2.5*log(I1)        X1
+M2 = 2.5*log(I2)        X2
+M3 = 2.5*log(I3)	X3
+M4 = 2.5*log(I4)	X4
+M5 = 2.5*log(I5)	
+
+Plot M and X - Find Least Fits
+The extinction coefficient is the slope of the line.
+
+Shashi wants to see a graph of the plot M and X and slope.
 
 ----
 =2/20 Extinction (polynomical fit)=
