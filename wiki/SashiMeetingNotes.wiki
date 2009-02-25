@@ -73,7 +73,7 @@ This uses the RA and DEC coordinates and converts them to the X and Y coordinate
 
   * look at extinction.py (fairly close operations as seeing)
 
-=Extinction Coefficient=
+==Extinction Coefficient==
 
 Info about the picture will be given as input from a user in the form of a text file to the scheduler.
 The telescope will take a picture.
