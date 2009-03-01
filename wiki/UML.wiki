@@ -21,4 +21,4 @@ Chimera Files that have been UML'd.
   * chimera/util/dumper.py (util(1).jpg) (Jeremy L & Chintan)
   * chimera/util/sextractor.py (util(1).jpg) (Jeremy L & Kendall)
   * chimera/util/sexcatalog.py (util(1).jpg) (Jeremy L & Kendall)
-  * chimera/util/ds9.py (util(1).jpg) (Jeremy L & ) 
+  * chimera/util/ds9.py (util(1).jpg) (Jeremy L & Chintan) 
