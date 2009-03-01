@@ -7,7 +7,7 @@ Chimera Files that have been UML'd.
 
 = Details =
 
-chimera/controllers/imageserver/imagerequest.py [image_server.png] (Jeremy H)
-chimera/controllers/imageserver/imageservethttp.py [image_server.png] (Jeremy H)
-chimera/controllers/imageserver/imageserver.py [image_server.png] (Jeremy H)
-chimera/controllers/imageserver/util.py [image_server.png] (Jeremy H)
+  * chimera/controllers/imageserver/imagerequest.py [image_server.png] (Jeremy H)
+  * chimera/controllers/imageserver/imageservethttp.py [image_server.png] (Jeremy H)
+  * chimera/controllers/imageserver/imageserver.py [image_server.png] (Jeremy H)
+  * chimera/controllers/imageserver/util.py [image_server.png] (Jeremy H)
