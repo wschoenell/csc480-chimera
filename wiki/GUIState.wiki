@@ -7,7 +7,7 @@ The Chimera package has a GUI which has been developed along with it. Presently 
 The GUI connection system uses the Apache XMLRPC protocol to connect to the part of Chimera written in Python. The GUI starts up properly and attempts to create this XMLRPC connection when it fails. 
 
 The issue here is that Chimera itself does not seem to open the proper ports. After starting Chimera an nmap on my machine only shows:
-
+{{{
 chimera@dan-laptop:~/ChimeraGUI/dist$ sudo nmap -sS 127.0.0.1
 
 Starting Nmap 4.62 ( http://nmap.org ) at 2009-03-01 22:42 EST
@@ -16,7 +16,7 @@ Not shown: 1713 closed ports
 PORT     STATE SERVICE
 631/tcp  open  ipp
 3306/tcp open  mysql
-
+}}}
 It appears the GUI is expecting port 7667 to be open to connect to. 
 
 I am currently unsure how much of this RPC handling is implemented in the Chimera code itself, so hopefully this spot will remain updated with anything anyone finds.
