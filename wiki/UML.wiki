@@ -19,6 +19,6 @@ Chimera Files that have been UML'd.
   * chimera/controllers/xephem.py (controllers.jpg) (Jeremy L)
   * chimera/util/astrometrynet.py (Astrometrynet-py.jpg) (Jeremy L)
   * chimera/util/dumper.py (util(1).jpg) (Jeremy L & Chintan)
-  * chimera/util/sextractor.py (util(1).jpg) (Jeremy L & Kendall)
-  * chimera/util/sexcatalog.py (util(1).jpg) (Jeremy L & Kendall)
+  * chimera/util/sextractor.py (util(1).jpg) (Kendall, entered into Omngraffle by Jeremy L)
+  * chimera/util/sexcatalog.py (util(1).jpg) (Kendall, entered into Omngraffle by Jeremy L)
   * chimera/util/ds9.py (util(1).jpg) (Jeremy L & Chintan) 
