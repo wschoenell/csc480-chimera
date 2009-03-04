@@ -11,6 +11,7 @@
   * [http://books.google.com/books?id=ftA0yk1Z92wC&printsec=frontcover&dq=underscoring+variable+names+python Learning Python] (PDF) from O'Reilly
 
 == General ==
+ * [http://diveintopython.org/ Dive Into Python] _*THIS IS MORE THAN MUST HAVE, IT IS EXCELLENT, IF YOU WANT TO LEARN PYTHON TODAY, START READING THIS*_
   * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
 
 
