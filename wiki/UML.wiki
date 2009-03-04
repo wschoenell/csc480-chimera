@@ -29,3 +29,4 @@ Chimera Files that have been UML'd.
   * chimera/drivers/sbig/sbigdrv.py (Chris G)
   * chimera/util/position.py  (Lisette A)
   * chimera/util/image.py  (Lisette A)
+  * chimera/drivers/remoteclient.py  (Lisette A)
