@@ -22,3 +22,8 @@ Chimera Files that have been UML'd.
   * chimera/util/sextractor.py (util(1).jpg) (Kendall, entered into Omngraffle by Jeremy L)
   * chimera/util/sexcatalog.py (util(1).jpg) (Kendall, entered into Omngraffle by Jeremy L)
   * chimera/util/ds9.py (util(1).jpg) (Chintan, entered into Omngraffle by Jeremy L) 
+  * chimera/util/votable.py (util2.jpg) (Chris G)
+  * chimera/util/vizquery.py (util.jpg) (Chris G)
+  * chimera/util/simbad.py (util.jpg) (Chris G)
+  * chimera/drivers/sbig/sbig.py (Chris G)
+  * chimera/drivers/sbig/sbigdrv.py (Chris G)
