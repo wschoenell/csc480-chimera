@@ -36,3 +36,5 @@ Chimera Files that have been UML'd.
   * chimera/util/scat.py (Dan S, Dawn O, Kendall M)
   * chimera/util/telescopelimits.py (Dan S, Dawn O, Kendall M)
   * chimera/util/filenamesequence.py (Dan S, Dawn O, Kendall M)
+
+  * chimera/gui (Entire package) (Dan S, Dawn O, Kendall M)
