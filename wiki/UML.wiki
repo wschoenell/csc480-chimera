@@ -37,4 +37,4 @@ Chimera Files that have been UML'd.
   * chimera/util/telescopelimits.py (Dan S, Dawn O, Kendall M)
   * chimera/util/filenamesequence.py (Dan S, Dawn O, Kendall M)
 
-  * chimera/gui (Entire package) (Dan S, Dawn O, Kendall M)
+  * gui/ (Entire package) (Dan S, Dawn O, Kendall M)
