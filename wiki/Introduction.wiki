@@ -10,6 +10,7 @@ This will be our starting place for posting helpful links etc... for the student
 
   * [http://code.google.com/p/chimera/ Original chimera site on Google code] 
   * [http://chimera.sourceforge.net/ Chimera on sourceforge]
+  * [http://www.oswego.edu/~kanbur/IRES2008/IRES2008.html Product of the summer work in Brazil last year]
 
 == Astronomy/Astrometry related ==
   * [http://calgary.rasc.ca/radecl.htm RA & DEC]
