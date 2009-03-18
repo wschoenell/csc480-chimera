@@ -4,6 +4,8 @@
 
 The Chimera package has a GUI which has been developed along with it. Presently this GUI does not work, and this article attempts to explain why.
 
+Note: There is a presentation on how the GUI works available at http://www.oswego.edu/~kanbur/IRES2008/GUI.pdf . There is more "documentation" available at http://www.oswego.edu/~kanbur/IRES2008/ChimeraGUI.doc .
+
 The GUI connection system uses the Apache XMLRPC protocol to connect to the part of Chimera written in Python. The GUI starts up properly and attempts to create this XMLRPC connection when it fails. 
 
 The issue here is that Chimera itself does not seem to open the proper ports. After starting Chimera an nmap on my machine only shows:
