@@ -11,6 +11,12 @@ After a little effort, I got Chimera running on my Windows laptop. Here is an ov
   * Go to http://www.python.org/download/releases/2.5.4/
   * Download python-2.5.4.msi (Use the x86 version - it works on x64, and it's the only one that the packages will recognize.)
 
+===Install Missing .dll's===
+
+It seems that there is a .dll (mfc71) that is not installed during the Python installation - but is critical for pywin. From what I read, it seems that the appropriate mfc would install for Python2.3, but not for Python2.4. It appears that this holds true for Python2.5 as well. The .dll may be downloaded at http://starship.python.net/crew/mhammond/downloads/mfc71.dll 
+
+Information at: http://starship.python.net/crew/mhammond/win32/
+
 ===Install pywin32 210===
   * Go to http://sourceforge.net/project/showfiles.php?group_id=78018&package_id=79063&release_id=449591
   * Download pywin32-210.win32-py2.5.exe
@@ -37,3 +43,22 @@ After a little effort, I got Chimera running on my Windows laptop. Here is an ov
 
 ===General notes===
   * To run any Python script in Windows, enter the path to the Python executable followed by the script name and the parameters to the script. For example, "chimera -vv" could become "C:\Python25\python chimera -vv" (depending on where you installed Python).
+
+===Copy Chimera's Global Configuration file===
+
+  * Copy the file "chimera.global.config" from the csc480chimera directory
+
+  * Paste this file to "C:\Python25\Lib\site-packages\chimera_python-0.2.dev_r62-py2.5.egg\chimera\core" (provided you installed Python2.5 to C:\)
+
+===Starting Chimera Server===
+
+  * Navigate the command shell to the python\scripts directory (cd C:\Python25\Scripts by default) 
+
+  * Type: C:\Python25\python.exe chimera -vv
+
+  * You should see the drivers and managers starting. The last line should read:
+
+ ''INFO chimera.controllers.site.main main.py:249 
+ System up and running.''
+
+  * Note: If you're running a firewall, it may interfere. If you're using the default Windows Firewall there should be an Allow/Block prompt.
