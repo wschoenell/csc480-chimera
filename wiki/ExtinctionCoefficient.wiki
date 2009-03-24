@@ -17,3 +17,5 @@ Steps to compute extinction coefficient:
    # return airmass and magnitude.
 
 Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do.
+
+Also, the data in computeExtinctionCoefficient can be used for a graph.
