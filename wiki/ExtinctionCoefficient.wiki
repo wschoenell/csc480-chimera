@@ -4,7 +4,7 @@
 
 Steps to compute extinction coefficient:
 
- * public computeExtinctionCoefficient(raDec[], latitude[], flux[]) called by EXTERNAL code.
+ * public computeExtinctionCoefficient(raDec*[*], latitude[], flux[]) called by EXTERNAL code.
    # For each element in raDec, latitude, flux call computeEC. This returns magnititude, airmass. Store in magnitude[], airmass[].
    # Run a least squares fit on magnitude, airmass.
    # Return the numeric value here (the extinction coefficient).
