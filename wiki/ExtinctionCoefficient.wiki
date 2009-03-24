@@ -4,12 +4,12 @@
 
 Steps to compute extinction coefficient:
 
- * public computeExtinctionCoefficient(raDec*[*], latitude[], flux[]) called by EXTERNAL code.
-   # For each element in raDec, latitude, flux call computeEC. This returns magnititude, airmass. Store in magnitude[], airmass[].
+ * `public computeExtinctionCoefficient(raDec[], latitude[], flux[])` called by EXTERNAL code.
+   # For each element in raDec, latitude, flux call computeEC. This returns magnititude, airmass. Store in `magnitude[], airmass[]`.
    # Run a least squares fit on magnitude, airmass.
    # Return the numeric value here (the extinction coefficient).
 
- * private computeEC(raDec, latitude, flux) called by computeExtinctionCoefficient. Returns Magnitude.
+ * `private computeEC(raDec, latitude, flux)` called by computeExtinctionCoefficient. Returns Magnitude.
    # Compute Local Sidereal Time (lst) (see: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm)
    # Call function raDectoAltAz(raDec, latitude, lst) in position.py. This returns altitude and azimuth.
    # Compute airmass = 1/cos(altitude).
