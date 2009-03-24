@@ -21,6 +21,6 @@ PORT     STATE SERVICE
 }}}
 It appears the GUI is expecting port 7667 to be open to connect to. 
 
-I am currently unsure how much of this RPC handling is implemented in the Chimera code itself, so hopefully this spot will remain updated with anything anyone finds.
+The RPC handling appears to be done in xmlrpc.py in the controllers package. I don't know if this is activated though on startup and have sent e-mails to find out.
 
 = Details =
