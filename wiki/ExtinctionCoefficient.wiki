@@ -10,7 +10,7 @@ Steps to compute extinction coefficient:
    # Return the numeric value here (the extinction coefficient).
 
  * `private computeEC(raDec, latitude, flux)` called by computeExtinctionCoefficient. Returns Airmass and Magnitude.
-   # Compute Local Sidereal Time (lst) (see: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm)
+   # Compute Local Sidereal Time (lst) (call LST(self) in core/site.py)
    # Call function raDectoAltAz(raDec, latitude, lst) in position.py. This returns altitude and azimuth.
    # Compute airmass = 1/cos(altitude).
    # Compute magnitude = 2.5*log(flux)
@@ -19,3 +19,5 @@ Steps to compute extinction coefficient:
 Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do.
 
 Also, the data in computeExtinctionCoefficient can be used for a graph.
+
+Note - in case LST doesn't work, Shashi gave me this site: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm
