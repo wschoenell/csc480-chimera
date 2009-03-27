@@ -58,3 +58,5 @@ def computeEC(raDec, latitude, flux)
     magnitude = 2.5*math.log(flux)
     return array([magnitude,airmass])
 }}}
+
+Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
