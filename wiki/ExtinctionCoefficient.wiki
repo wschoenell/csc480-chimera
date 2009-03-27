@@ -16,7 +16,7 @@ Steps to compute extinction coefficient:
    # Compute magnitude = 2.5*log(flux)
    # return airmass and magnitude.
 
-Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do.
+Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do. My thought is that we use this one: http://www.aps.anl.gov/bcda/dataVis/fit.py.html
 
 Also, the data in computeExtinctionCoefficient can be used for a graph.
 
