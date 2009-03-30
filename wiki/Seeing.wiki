@@ -1,0 +1,7 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+A pretty good description of the daofind - talk to DL about getting the password for the iraf acct on altair, then you can test this. I managed to install iraf there a couple of years ago.
+
+http://stsdas.stsci.edu/cgi-bin/gethelp.cgi?daofind
