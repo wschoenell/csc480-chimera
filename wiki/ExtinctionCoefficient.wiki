@@ -2,6 +2,8 @@
 
 = Introduction =
 
+Our requirements document is found here: http://csc480-chimera.googlecode.com/files/ExtinctionCoefficient_Requirements_Doc.pdf
+
 Steps to compute extinction coefficient:
 
  * `public computeExtinctionCoefficient(raDec[], latitude[], flux[])` called by EXTERNAL code.
