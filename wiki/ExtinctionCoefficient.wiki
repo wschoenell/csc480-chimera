@@ -60,3 +60,14 @@ def computeEC(raDec, latitude, flux)
 }}}
 
 Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
+
+*Chimera Extinction Coefficient Module Test Plan*
+
+The test plan we have developed for the Extinction Coefficient module of the Chimera robotic telescope application is rooted firmly in the use of PyUnit tests. We will test the known bounds of the inputs to ensure they are within the acceptable ranges, and we will test on specific data to ensure that we are presented with a value equal to what is expected.
+
+Known Input Bounds:
+
+ *Ra: Ranges from 0-180 degrees
+ *Dec: Ranges from 0-180 degrees
+ *Latitude: Ranges from 0-180 degrees
+ *Flux: Greater than 0
