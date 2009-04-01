@@ -2,6 +2,6 @@
 
 = Introduction =
 
-A pretty good description of the daofind - talk to DL about getting the password for the iraf acct on altair, then you can test this. I managed to install iraf there a couple of years ago.
+A pretty good description of the daofind - Dan got the password from DL so talk to him about using this! :)
 
 http://stsdas.stsci.edu/cgi-bin/gethelp.cgi?daofind
