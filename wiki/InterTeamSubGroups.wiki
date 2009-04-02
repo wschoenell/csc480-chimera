@@ -15,6 +15,7 @@ Photometry/Astrometry.net
   * Jeremy H
 
 Extinction
+  * Dawn
   * Dan
   * Lisette
 
