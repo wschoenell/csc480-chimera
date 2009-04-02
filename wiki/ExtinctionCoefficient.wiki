@@ -71,7 +71,7 @@ The test plan we have developed for the Extinction Coefficient module of the Chi
 
 Known Input Bounds:
 
- *Ra: Ranges from 0-180 degrees
- *Dec: Ranges from 0-180 degrees
- *Latitude: Ranges from 0-180 degrees
- *Flux: Greater than 0
+ * Ra: Ranges from 0-180 degrees
+ * Dec: Ranges from 0-180 degrees
+ * Latitude: Ranges from 0-180 degrees
+ * Flux: Greater than 0
