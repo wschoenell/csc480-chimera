@@ -1,0 +1,35 @@
+= Inter-Team Sub Groups =
+
+I hope this is everyone. Let me (Jeremy H) know if somethings changed or you're not sure what you're working on.
+
+Quest
+  * Dawn
+  * Dan
+
+Manual
+  * Ray
+  * Andrew
+
+Photometry/Astrometry.net
+  * Scott
+  * Jeremy H
+
+Extinction
+  * Dan
+  * Lisette
+
+Seeing/Source Extractor
+  * Joe
+  * Daron
+  * John
+
+Database
+  * Chintan
+  * Brandon G
+  * Chris
+
+Testing
+  * Kendall
+  * Josh
+  * Jeremy H
+  * Brandon F
