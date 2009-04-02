@@ -41,7 +41,9 @@ def computeExtinctionCoefficient(raDec, latitude, flux)
         magnitude[i] = temparr[0]
         arimass[i] = temparr[1]
 
-    #TODO: Now run a least squares fit and return the coefficient.
+    #Now run a least squares fit and return the slope of the line.
+    m,b = numpy.polyfit(x,y,1)
+    return m
 
 
 #Compute the magnitude and airmass from specific raDec, latitude, flux values.
