@@ -5,6 +5,22 @@
 Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
 
 ----
+=4/7 Test Images from Sashi=
+A preliminary set of test images is in the file moxie:/tmp/test1.tar.gz
+ 
+These were images of one Landolt field, taken at different times during the night using chimera in robotic mode from the telescope in Brazil last summer. You should run them through Astrometry.net and try and find the WCS plus the coords of the stars in the image. You can then look up the Landolt Stars catalogues on the web and find which of the stars in a particular image are Landolt standards  and try to identify that star in all the images. I believe it will be Landolt standard SA112223. Its RA should be close to 20:42:14 and its dec should be close to 00: 09:01.
+ 
+So I would suggest:
+ * Do photometry on all the images.
+    So run one image through astrometry.net and write the WCS.
+    Identify the point sources get the photometry and seeing from sextractor and write these results to the database
+ 
+ * Identify the point source with RA and dec close to those given above and then identify this object in all the images. Then find the hour angle of the time of observation, get the air mass and regress this on the instrumental magnitude and get the extinction coefficient.
+ 
+ * I dont have numbers for what these should be at this stage. I wouldnt worry about that too much. The images should also show you what its like in the "real world" The images arent as good as those you have been using from the web site I showed you.
+ 
+
+----
 =2/18 Meeting with Sashi=
 
 ==Photometry==
