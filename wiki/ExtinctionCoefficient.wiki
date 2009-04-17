@@ -82,6 +82,50 @@ print computeExtinctionCoefficient([radec,radec2], [10,15], [site.LST(),site.LST
 
 Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
 
+*Plotting the graph*
+
+This code will generate an image plot using gnuplot. It currently takes as parameters a file name, labels for the x and y axes, arrays of x and y coordinates, and m and b for the best-fit line. The graphical output still needs some refinement, but it should work for now.
+{{{
+import os
+
+# Generates a data file (fileName.dat), a gnuplot batch file (fileName.gnu)
+#  and a PNG image of the plot (fileName.png)
+def plotViaGnuplot(fileName, x_label, x_list, y_label, y_list, m, b):
+    # Set path to the gnuplot binary
+    gpPath = "gnuplot"
+
+    # Set output type and file extension
+    terminalType = "png"    # Alternatives: jpeg, gif, postscript, pdf, etc.
+    extension = ".png"      # Alternatives: jpg, gif, ps, pdf, etc.
+
+    # Create space-delimited data file
+    file = open(fileName + ".dat", "w")
+    for i in range(len(x_list)):
+        print >> file, str(x_list[i]) + ' ' + str(y_list[i])
+    file.flush()
+    file.close()
+
+    # Create gnuplot batch file
+    file = open(fileName + ".gnu", "w")
+    print >> file, "set terminal " + terminalType
+    print >> file, "set output \"" + fileName + extension + "\""
+    print >> file, "set xlabel \"" + x_label + "\""
+    print >> file, "set ylabel \"" + y_label + "\""
+    print >> file, "set xrange [ " + str(min(x_list) - 1) + " : " + str(max(x_list) + 1) + " ]"
+    print >> file, "set yrange [ " + str(min(y_list) - 1) + " : " + str(max(y_list) + 1) + " ]"
+    print >> file, "set mxtics 5"
+    print >> file, "set mytics 5"
+    print >> file, "set xtics " + str((max(x_list) - min(x_list)) / 5)
+    print >> file, "set ytics " + str((max(y_list) - min(y_list)) / 5)
+    print >> file, "f(x) = " + str(m) + " * x + " + str(b)
+    print >> file, "plot f(x) notitle with lines, \"" + fileName + ".dat\" using 1:2 notitle"
+    file.flush()
+    file.close()
+
+    # Run gnuplot, passing in the batch file
+    os.system(gpPath + " " + fileName + ".gnu")
+}}}
+
 *Chimera Extinction Coefficient Module Test Plan*
 
 The test plan we have developed for the Extinction Coefficient module of the Chimera robotic telescope application is rooted firmly in the use of PyUnit tests. We will test the known bounds of the inputs to ensure they are within the acceptable ranges, and we will test on specific data to ensure that we are presented with a value equal to what is expected.
