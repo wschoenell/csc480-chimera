@@ -28,39 +28,56 @@ Here is some code which needs refinement, but should be almost working:
 {{{
 from chimera.core.site import Site
 from chimera.util.position import Position
+from chimera.util.coord import Coord
+import numpy as np
+#import numpy.lib.polynomial
+import math
+
+#This sets latitude, we need to pull this from somewhere eventually
+latitude = 40
+site = Site()
+
+#Heres a sample test
+aTuple = Coord.fromD(10),Coord.fromD(20)
+radec = Position(aTuple)
+aTuple2 = Coord.fromD(10),Coord.fromD(22)
+radec2 = Position(aTuple2)
 
 #Computes the coefficient. takes arrays: raDec, latitude, flux.
-def computeExtinctionCoefficient(raDec, latitude, flux)
-    #These will be needed for our output.
-    magnitude = zeros([len(raDec)], Float)
-    airmass = zeros([len(raDec), Float)
+def computeExtinctionCoefficient(raDec, flux, lst):
+        #These will be needed for our output.
+        magnitude = []
+        airmass = []
 
-    #Iterate over each of the arrays to call computeEC
-    for i in range(len(raDec)):
-        temparr = computeEC(raDec[i], latitude[i], flux[i])
-        magnitude[i] = temparr[0]
-        arimass[i] = temparr[1]
+        #Iterate over each of the arrays to call computeEC
+        for i in range(len(raDec)):
+                temparr = computeEC(raDec[i], flux[i], lst[i])
+                magnitude.append(temparr[0])
+                airmass.append(temparr[1])
 
-    #Now run a least squares fit and return the slope of the line.
-    m,b = numpy.polyfit(magnitude,airmass,1)
-    return m
+        #Now run a least squares fit and return the slope of the line.
+        #We arent sure which order these come back in!
+        m,b = np.polyfit(magnitude,airmass,1)
+        return m
 
+#Compute the magnitude and airmass from specific raDec (of type Position), latitude, flux values.
+def computeEC(raDec, flux, lst):
+        #this returns the altitude and azimuth
+        altAz = radec.raDecToAltAz(raDec, latitude, lst)
+        #Get the altitude
+        altitude = altAz.alt
+        #airmass calculation
+        airmass = 1/math.cos(altitude)
+        #magnitude calculation
+        magnitude = 2.5*math.log(flux)
+        return [magnitude,airmass]
 
-#Compute the magnitude and airmass from specific raDec, latitude, flux values.
-def computeEC(raDec, latitude, flux)
-    #A site object so we can compute LST
-    site = Site()
-    #Local Sidereal Time
-    lst = site.LST()
-    #this returns the altitude and azimuth
-    altAz = raDecToAltAz(raDec, latitude, lst)
-    #This line may or may not work:
-    altitude = altAz.alt
-    #airmass calculation
-    airmass = 1/math.cos(altitude)
-    #magnitude calculation
-    magnitude = 2.5*math.log(flux)
-    return array([magnitude,airmass])
+print "Testing computeEC"
+print computeEC(radec, 10, site.LST())
+
+print "Testing computeExtinctionCoefficient"
+print computeExtinctionCoefficient([radec,radec2], [10,15], [site.LST(),site.LST()])
+
 }}}
 
 Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
@@ -71,7 +88,7 @@ The test plan we have developed for the Extinction Coefficient module of the Chi
 
 Known Input Bounds:
 
- * Ra: Ranges from 0-360 degrees
+ * Ra: Ranges from 0-180 degrees
  * Dec: Ranges from 0-360 degrees
  * Latitude: Ranges from 0-180 degrees
  * Flux: Greater than 0
