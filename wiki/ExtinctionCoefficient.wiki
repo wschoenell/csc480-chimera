@@ -26,58 +26,105 @@ Note - in case LST doesn't work, Shashi gave me this site: http://www.pietro.org
 
 Here is some code which needs refinement, but should be almost working:
 {{{
+from seeing import Seeing 
 from chimera.core.site import Site
 from chimera.util.position import Position
 from chimera.util.coord import Coord
 import numpy as np
-#import numpy.lib.polynomial
 import math
 
 #This sets latitude, we need to pull this from somewhere eventually
-latitude = 40
+latitude = Coord.fromHMS('-22:32:04.000')
+
+seeing = Seeing()
+
+#TEMP:
 site = Site()
 
-#Heres a sample test
-aTuple = Coord.fromD(10),Coord.fromD(20)
-radec = Position(aTuple)
-aTuple2 = Coord.fromD(10),Coord.fromD(22)
-radec2 = Position(aTuple2)
+# This is the sample RA and DEC from shashi for Landolt star
+ra = Coord.fromHMS('20:42:14')
+dec = Coord.fromHMS('00:09:01')
 
-#Computes the coefficient. takes arrays: raDec, latitude, flux.
-def computeExtinctionCoefficient(raDec, flux, lst):
-        #These will be needed for our output.
-        magnitude = []
-        airmass = []
+# Make a tuple for the RA and DEC to pass to compute methods
+aTuple = ra, dec
 
-        #Iterate over each of the arrays to call computeEC
-        for i in range(len(raDec)):
-                temparr = computeEC(raDec[i], flux[i], lst[i])
-                magnitude.append(temparr[0])
-                airmass.append(temparr[1])
+# Make a position object from that tuple
+radec = [Position(aTuple)]
 
-        #Now run a least squares fit and return the slope of the line.
-        #We arent sure which order these come back in!
-        m,b = np.polyfit(magnitude,airmass,1)
-        return m
+#Computes the coefficient. takes arrays: flux, altitude
+def computeExtinctionCoefficient(flux, altitudeArr):
+	#These will be needed for our output.
+	magnitude = []
+	airmass = []
+
+	#Make radec a global var
+	global radec
+
+	#Iterate over each of the arrays to call computeEC
+	for i in range(len(flux)):
+		temparr = computeEC(flux[i], altitudeArr[i])
+		magnitude.append(temparr[0])
+		airmass.append(temparr[1])
+
+	#Print out magnitudes
+	print "Magnitudes:"
+	print magnitude
+
+	#Print out airmasses
+	print "Airmasses:"
+	print airmass
+
+	#Now run a least squares fit and return the slope of the line.
+	#We arent sure which order these come back in!
+	m,b = np.polyfit(airmass,magnitude,1)
+
+	#Print out m,b
+	print "M value:", m
+	print "B value:", b
+
+	return m
 
 #Compute the magnitude and airmass from specific raDec (of type Position), latitude, flux values.
-def computeEC(raDec, flux, lst):
-        #this returns the altitude and azimuth
-        altAz = radec.raDecToAltAz(raDec, latitude, lst)
-        #Get the altitude
-        altitude = altAz.alt
-        #airmass calculation
-        airmass = 1/math.cos(altitude)
-        #magnitude calculation
-        magnitude = 2.5*math.log(flux)
-        return [magnitude,airmass]
+def computeEC(flux, altitude):
+	#airmass calculation
+	airmass = 1/math.cos(altitude)
+	#magnitude calculation
+	magnitude = 2.5*math.log(flux)
+	return [magnitude,airmass]
 
-print "Testing computeEC"
-print computeEC(radec, 10, site.LST())
+# Array of the 5 images being used to test our module
+images = ["images/landolt-SA112223-0001.fits", "images/landolt-SA112223-0002.fits", "images/landolt-SA112223-0003.fits", "images/landolt-SA112223-0004.fits", "images/landolt-SA112223-0005.fits"]
+
+# Array of all the altitudes for our 5 images being tested
+altitudeArr = ['67:18:43.000', '67:18:09.000', '67:08:16.000', '66:46:22.000', '66:28:48.000']
+
+# Create an empty array for the altitudes which will be stored in Radians instead of Degrees
+altRadiansArr = []
+
+# Create array of fluxes that will be populated each time seeing is run on an image
+fluxArr = []
+
+for i in range(len(images)):
+	#Runs seeing on each image
+	seeing.run(images[i])
+
+	#Gets whichever star is closest to known RA and DEC
+	star = seeing.getStarClosestTo(ra, dec)
+
+	#Get the flux of the star for each image given to seeing
+	flux = seeing.getFlux(star)
+
+	#Add flux values to the array
+	fluxArr.append(flux)
+
+	#Turns altitude into a degree before turning them into radians (Note: This was done because we could only convert to degree from HMS)
+	tmpAltitude = Coord.fromHMS(altitudeArr[i])
+	
+	#Add altitude in radians to array (Note: the long decimal is Pi/180 because we couldn't get the radians conversion to work)
+	altRadiansArr.append(tmpAltitude*0.0174532925)
 
 print "Testing computeExtinctionCoefficient"
-print computeExtinctionCoefficient([radec,radec2], [10,15], [site.LST(),site.LST()])
-
+print  computeExtinctionCoefficient(fluxArr, altRadiansArr)
 }}}
 
 Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
