@@ -183,3 +183,65 @@ Known Input Bounds:
  * Dec: Ranges from 0-360 degrees
  * Latitude: Ranges from 0-180 degrees
  * Flux: Greater than 0
+
+*Database Stub Class*
+
+class DatabaseStub:
+    """
+    Preliminary interface to database that simply returns hard-coded data
+    """
+    def queryStar(self, RA, dec):
+        """
+        TODO - code to communicate with databse interface
+        Will search database to return all stars at a certain RA/Dec
+        """
+        return 587
+
+    def queryMagnitude(self, starID)
+        """
+        TODO - code to communicate with databse interface
+        Retrieves the magnitude of the designated star (starID)
+        """
+        return 2
+
+    def queryAirMass(self, starID):
+        """
+        TODO - code to communicate with databse interface
+        Retrieves the air mass of the designated star (starID)
+        """
+        return 1
+
+    def queryFlux(self, starID):
+        """
+        TODO - code to communicate with databse interface
+        Retrieves the flux of the designated star (starID)
+        """
+        return 3
+
+    def writeEC(self, extID, EC):
+        """        
+        TODO - code to communicate with databse interface
+        Writes extinction coefficient (EC) to the designated EC. table (extID)
+        """
+        return EC
+
+    def writeTimeStart(self, extID, time):
+        """        
+        TODO - code to communicate with databse interface
+        Writes LST start time (time) to the designated EC. table (extID)
+        """
+        return time
+
+    def writeTimeEnd(self, extID, time):
+        """
+        TODO - code to communicate with databse interface
+        Writes LST end time (time) to the designated EC. table (extID)
+        """
+        return time
+
+    def createTable(self, extID):
+        """
+        TODO - code to communicate with databse interface
+        Writes LST start (time) to the designated EC. table (extID)
+        """    
+        return extID
