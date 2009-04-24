@@ -204,10 +204,17 @@ class DatabaseStub:
         """
         return 2
 
-    def queryAirMass(self, starID):
+    def queryExposures(self, starID):
+        """
+        TODO - returns an array of all of the exposures related to
+        the starID
+        """
+        return 0
+
+    def queryLST(self, exposureID):
         """
         TODO - code to communicate with databse interface
-        Retrieves the air mass of the designated star (starID)
+        Retrieves the local sidereal time of the designated exposure (starID)
         """
         return 1
 
