@@ -24,7 +24,7 @@ Also, the data in computeExtinctionCoefficient can be used for a graph.
 
 Note - in case LST doesn't work, Shashi gave me this site: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm
 
-Here is some code which needs refinement, but should be almost working:
+Here is our current code, this is working for file based calculation! This integrates our code for generating graphs as well - it is an automated process.
 {{{
 from seeing import Seeing 
 from chimera.core.site import Site
@@ -32,24 +32,35 @@ from chimera.util.position import Position
 from chimera.util.coord import Coord
 import numpy as np
 import math
+import os, glob, sys
+import pyfits
 
-#This sets latitude, we need to pull this from somewhere eventually
+#USING THE EXTINCTION COEFFICIENT MODULE:
+#python extinction.py [-f:<path to images> | ra=<RA> dec=<DEC> s=<Start Time> e=<End Time>]
+#Using the path to images will read the fits file headers for RA, DEC and altitude. 
+#Using the DB will read the LST from the DB and calculate ext. coeff from there.
+
+#This sets latitude, we need to pull this from the fits or DB, default is the brazil telescope.
 latitude = Coord.fromHMS('-22:32:04.000')
 
+#Default to DB mode
+filemode=0
+
+#Command processing
+for arg in sys.argv:
+  if arg.startswith("-f:"): #find if this is folder search.
+    path=arg.lstrip("-f:")
+    filemode=1
+  elif arg.startswith("ra"):
+    ra=Coord.fromHMS(arg.lstrip("ra"))
+  elif arg.startswith("dec"):
+    dec=Coord.fromHMS(arg.lstrip("dec"))
+  elif arg.startswith("s"):
+    starttime=arg.lstrip("s")
+  elif arg.startswith("e"):
+    endtime=arg.lstrip("e")
+
 seeing = Seeing()
-
-#TEMP:
-site = Site()
-
-# This is the sample RA and DEC from shashi for Landolt star
-ra = Coord.fromHMS('20:42:14')
-dec = Coord.fromHMS('00:09:01')
-
-# Make a tuple for the RA and DEC to pass to compute methods
-aTuple = ra, dec
-
-# Make a position object from that tuple
-radec = [Position(aTuple)]
 
 #Computes the coefficient. takes arrays: flux, altitude
 def computeExtinctionCoefficient(flux, altitudeArr):
@@ -82,58 +93,30 @@ def computeExtinctionCoefficient(flux, altitudeArr):
 	print "M value:", m
 	print "B value:", b
 
+	#Test plot
+	plotViaGnuplot("name","x",airmass,"y",magnitude,m,b)
+
 	return m
 
-#Compute the magnitude and airmass from specific raDec (of type Position), latitude, flux values.
+#Compute from the array of fluxes and array of local sidereal times the extinction coefficient.
+def computeExtinctionWithLST(flux, lstArr):
+	altArr = []
+	aTuple = ra, dec
+	raDec = Position(aTuple)
+	for lst in lstArr:
+		#this returns the altitude and azimuth
+		altAz = radec.raDecToAltAz(raDec, latitude, lst)
+		#Get the altitude
+		altArr.append(altAz.alt)
+	computeExtinctionCoefficient(flux, altArr)
+
+#Compute the magnitude and airmass from specific raDec (of type Position), flux values.
 def computeEC(flux, altitude):
 	#airmass calculation
 	airmass = 1/math.cos(altitude)
 	#magnitude calculation
 	magnitude = 2.5*math.log(flux)
 	return [magnitude,airmass]
-
-# Array of the 5 images being used to test our module
-images = ["images/landolt-SA112223-0001.fits", "images/landolt-SA112223-0002.fits", "images/landolt-SA112223-0003.fits", "images/landolt-SA112223-0004.fits", "images/landolt-SA112223-0005.fits"]
-
-# Array of all the altitudes for our 5 images being tested
-altitudeArr = ['67:18:43.000', '67:18:09.000', '67:08:16.000', '66:46:22.000', '66:28:48.000']
-
-# Create an empty array for the altitudes which will be stored in Radians instead of Degrees
-altRadiansArr = []
-
-# Create array of fluxes that will be populated each time seeing is run on an image
-fluxArr = []
-
-for i in range(len(images)):
-	#Runs seeing on each image
-	seeing.run(images[i])
-
-	#Gets whichever star is closest to known RA and DEC
-	star = seeing.getStarClosestTo(ra, dec)
-
-	#Get the flux of the star for each image given to seeing
-	flux = seeing.getFlux(star)
-
-	#Add flux values to the array
-	fluxArr.append(flux)
-
-	#Turns altitude into a degree before turning them into radians (Note: This was done because we could only convert to degree from HMS)
-	tmpAltitude = Coord.fromHMS(altitudeArr[i])
-	
-	#Add altitude in radians to array (Note: the long decimal is Pi/180 because we couldn't get the radians conversion to work)
-	altRadiansArr.append(tmpAltitude*0.0174532925)
-
-print "Testing computeExtinctionCoefficient"
-print  computeExtinctionCoefficient(fluxArr, altRadiansArr)
-}}}
-
-Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
-
-*Plotting the graph*
-
-This code will generate an image plot using gnuplot. It currently takes as parameters a file name, labels for the x and y axes, arrays of x and y coordinates, and m and b for the best-fit line. The graphical output still needs some refinement, but it should work for now.
-{{{
-import os
 
 # Generates a data file (fileName.dat), a gnuplot batch file (fileName.gnu)
 #  and a PNG image of the plot (fileName.png)
@@ -171,7 +154,44 @@ def plotViaGnuplot(fileName, x_label, x_list, y_label, y_list, m, b):
 
     # Run gnuplot, passing in the batch file
     os.system(gpPath + " " + fileName + ".gnu")
+
+
+def doFileModeEC():
+  #Initial setup variables, these will be passed to CalculateExtinctionCoefficient
+  fluxArr = []
+  altArr = []
+  for infile in glob.glob( os.path.join(path, '*.fits') ):
+    print "current file is: " + infile
+    #Read the Altitude from the FITS file
+    hdulist = pyfits.open(infile)
+    altCoord = Coord.fromHMS(hdulist[0].header['ALT'])
+    altArr.append(altCoord.toR())
+    #Get the RA and DEC for this star
+    ra = Coord.fromHMS(hdulist[0].header['RA'])
+    dec = Coord.fromHMS(hdulist[0].header['DEC'])
+    #Run the file through seeing
+    seeing.run(infile)
+    star = seeing.getStarClosestTo(ra, dec)
+    fluxArr.append(seeing.getFlux(star))
+  print fluxArr
+  print altArr
+  print  computeExtinctionCoefficient(fluxArr, altArr)
+##END doFileModeEC()
+
+
+def doDatabaseModeEC():
+  print "Not implemented yet"
+  #When implemented, this will call computeExtinctionWithLST(flux, lstArr)
+##END doDatabaseModeEC()
+
+if filemode:
+  doFileModeEC()
+else:
+  doDatabaseModeEC()
 }}}
+
+Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
+
 
 *Chimera Extinction Coefficient Module Test Plan*
 
