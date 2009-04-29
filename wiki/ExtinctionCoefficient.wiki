@@ -6,17 +6,18 @@ Our requirements document is found here: http://csc480-chimera.googlecode.com/fi
 
 Steps to compute extinction coefficient:
 
- * `public computeExtinctionCoefficient(raDec[], latitude[], flux[])` called by EXTERNAL code.
-   # For each element in raDec, latitude, flux call computeEC. This returns magnititude, airmass. Store in `magnitude[], airmass[]`.
-   # Run a least squares fit on magnitude, airmass.
+ * `public computeExtinctionCoefficient(raDec, latitude, flux[], lst[])` called by EXTERNAL code.
+   # raDec and latitude are supplied by the image or database. Flux and LST are specific  to each image. This function returns the slope of a fitted line to the points. 
+   # This function calls computeEC for each image, which gives us `magnitude[]`, `airmass[]`.
+   # Run a least squares fit on `magnitude[]`, `airmass[]`.
    # Return the numeric value here (the extinction coefficient).
 
- * `private computeEC(raDec, latitude, flux)` called by computeExtinctionCoefficient. Returns Airmass and Magnitude.
-   # Compute Local Sidereal Time (lst) (call LST(self) in core/site.py)
+ * `private computeEC(raDec, latitude, flux, lst)` called by computeExtinctionCoefficient. Returns Airmass and Magnitude.
+   # Local Sidereal Time (lst) is given to us.
    # Call function raDectoAltAz(raDec, latitude, lst) in position.py. This returns altitude and azimuth.
    # Compute airmass = 1/cos(altitude).
-   # Compute magnitude = 2.5*log(flux)
-   # return airmass and magnitude.
+   # Compute magnitude = -2.5*log(flux)
+   # return airmass and magnitude for the given star.
 
 Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do. My thought is that we use this one: http://www.aps.anl.gov/bcda/dataVis/fit.py.html
 
