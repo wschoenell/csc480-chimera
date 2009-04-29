@@ -243,10 +243,11 @@ class DatabaseStub:
         """
         return 3
 
-    def writeEC(self, extID, EC):
+    def writeEC(self, EC, starIDs):
         """        
         TODO - code to communicate with databse interface
         Writes extinction coefficient (EC) to the designated EC. table (extID)
+        Sends list of starIDs. We will send [EC [StarIDs]] to the DB code.
         """
         return EC
 }}}
