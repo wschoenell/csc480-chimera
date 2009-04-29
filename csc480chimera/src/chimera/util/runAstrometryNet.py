@@ -1,11 +1,12 @@
-import subprocess
 import os.path
-#! /usr/bin/python
+
 from chimera.core.exceptions import ChimeraException
 from chimera.util.image import Image
+from chimera.util.database import DatabaseInterface
 import logging
 import os
 import shutil
+import subprocess
 from subprocess import Popen
 log = logging.getLogger(__name__)
 
@@ -50,6 +51,7 @@ class AstrometryNet():
         """Processes each fits image in the image queue through Astrometry.net"""
         for img in AstrometryNet.image_queue:
             AstrometryNet.solve_field_by_file(img)
+            
     @staticmethod
     def get_referencepixel_ra(fullfilename):
         """Processes each fits image in the image queue through Astrometry.net"""
@@ -97,6 +99,10 @@ class AstrometryNet():
         print "	width    : %f" % (width)
         print "	radius   : %f" % (radius)
 
+    @staticmethod
+    def save_to_databse(G_RA, G_DEC, fullfilename):
+        """Saves global RA and DEC and image path to database"""
+        database.insertINTOExposure(G_RA, G_DEC, fullfilename)
 
     @staticmethod
     def solve_field_by_path(fullfilename):
@@ -125,8 +131,8 @@ class AstrometryNet():
         pathname, filename = os.path.split(fullfilename)
         name         = os.path.basename(pathname)
         is_solved    = pathname + "/.solved"
-        wcs_imgname  = pathname +"/"+name +".new"
-        wcs_solution = pathname +"/"+name +".wcs"
+        wcs_imgname  = pathname + "/" + name + ".new"
+        wcs_solution = pathname + "/" + name + ".wcs"
 
 
         # if it is already there, make sure to delete it
@@ -180,8 +186,8 @@ class AstrometryNet():
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
         name         = os.path.basename(pathname)
-        is_solved    = pathname +"/"+name +".solved"
-        wcs_solution = pathname +"/"+name +".wcs"
+        is_solved    = pathname + "/" + name + ".solved"
+        wcs_solution = pathname + "/" + name + ".wcs"
         wcs_image = AstrometryNet.path_2_image(wcs_solution)
         
         
@@ -199,13 +205,14 @@ class AstrometryNet():
         print "-------ASTROMETRY.NET SAYS IT IS  -------"
         print "	ra       : %f" % (wcs_ra)
         print "	dec      : %f" % (wcs_dec)
+        
     @staticmethod
     def get_center_ra(image):
         """Documentation"""
         fullfilename = image.filename()
         line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
-        solve = Popen( line.split(),stdout=subprocess.PIPE)#pipe the output to alternate stdout
-        stdout,stdin = solve.communicate(None)#grab the piped output into the variable str
+        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
+        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
         solve.wait()
         result_array = stdout.split("\n")
         for et in result_array:
@@ -213,20 +220,21 @@ class AstrometryNet():
             if(et.startswith("ra_center ")):
                 txt, ra_center = et.split()
         return ra_center
+    
     @staticmethod
     def get_center_dec(image):
         """Documentation"""
         fullfilename = image.filename()
         line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
 
-        solve = Popen( line.split(),stdout=subprocess.PIPE)#pipe the output to alternate stdout
-        stdout,stdin = solve.communicate(None)#grab the piped output into the variable str
+        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
+        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
         solve.wait()
         result_array = stdout.split("\n")
         for et in result_array:
             # @type et str
             if(et.startswith("dec_center ")):
-                txt,dec_center = et.split()
+                txt, dec_center = et.split()
         return dec_center
         
     @staticmethod
@@ -235,14 +243,14 @@ class AstrometryNet():
             tolerance of the header created by astrometry.net
             USE WCSINFO
         """
-        if(AstrometryNet.is_fits(image)==False):
+        if(AstrometryNet.is_fits(image) == False):
             print "Image was not a .fits file"
             return
         # if solution failed, there will be no file .solved
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
         name         = os.path.basename(pathname)
-        wcs_solution = pathname +"/"+name +".wcs"
+        wcs_solution = pathname + "/" + name + ".wcs"
         
         # if solution failed, there will be no file .wcs
         if (os.path.exists(wcs_solution) == False):
@@ -259,8 +267,8 @@ class AstrometryNet():
         print "ra_center       : %s" % (ra_center)
         print "dec_center      : %s" % (dec_center)
         print ""
-        wcs_ra = AstrometryNet.get_center_ra( wcs_image)
-        wcs_dec = AstrometryNet.get_center_dec( wcs_image)
+        wcs_ra = AstrometryNet.get_center_ra(wcs_image)
+        wcs_dec = AstrometryNet.get_center_dec(wcs_image)
         print "-------ASTROMETRY.NET SAYS IT IS  -------"
         print "ra_center       : %s" % (wcs_ra)
         print "dec_center      : %s" % (wcs_dec)
