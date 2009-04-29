@@ -6,11 +6,12 @@ Our requirements document is found here: http://csc480-chimera.googlecode.com/fi
 
 Steps to compute extinction coefficient:
 
- * `public computeExtinctionCoefficient(raDec, latitude, flux[], lst[])` called by EXTERNAL code.
+ * `public computeExtinctionCoefficient(raDec, latitude, flux[], lst[])` 
    # raDec and latitude are supplied by the image or database. Flux and LST are specific  to each image. This function returns the slope of a fitted line to the points. 
    # This function calls computeEC for each image, which gives us `magnitude[]`, `airmass[]`.
-   # Run a least squares fit on `magnitude[]`, `airmass[]`.
+   # Run a least squares fit on `magnitude[]`, `airmass[]`. Use NumPy for this.
    # Return the numeric value here (the extinction coefficient).
+   # Call the automated graphing system (GNUPlot).
 
  * `private computeEC(raDec, latitude, flux, lst)` called by computeExtinctionCoefficient. Returns Airmass and Magnitude.
    # Local Sidereal Time (lst) is given to us.
@@ -19,13 +20,9 @@ Steps to compute extinction coefficient:
    # Compute magnitude = -2.5*log(flux)
    # return airmass and magnitude for the given star.
 
-Note there will also be a least squares package we will include with this, but this is the main outline of what we have to do. My thought is that we use this one: http://www.aps.anl.gov/bcda/dataVis/fit.py.html
+Note - in case we for some reason in the future might need to calculate the Local Sidereal Time, Shashi gave me this site: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm
 
-Also, the data in computeExtinctionCoefficient can be used for a graph.
-
-Note - in case LST doesn't work, Shashi gave me this site: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm
-
-Here is our current code, this is working for file based calculation! This integrates our code for generating graphs as well - it is an automated process.
+Here is our current code, this is working for passing a directory and computing the extinction coefficient from FITS files! We are currently waiting on the interface to the database then we will be able to complete that section. This integrates our code for generating graphs as well - it is an automated process.
 {{{
 from seeing import Seeing 
 from chimera.core.site import Site
@@ -37,7 +34,7 @@ import os, glob, sys
 import pyfits
 
 #USING THE EXTINCTION COEFFICIENT MODULE:
-#python extinction.py [-f:<path to images> | ra=<RA> dec=<DEC> s=<Start Time> e=<End Time>]
+#python extinction.py [-f:<path to images> | ra=<RA> dec=<DEC> s=<Start Time> e=<End Time>] -o:<Output image filename>
 #Using the path to images will read the fits file headers for RA, DEC and altitude. 
 #Using the DB will read the LST from the DB and calculate ext. coeff from there.
 
@@ -191,7 +188,7 @@ else:
   doDatabaseModeEC()
 }}}
 
-Further description of the process is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
+Further description of the process for calculating the extinction coefficient is available at: http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html
 
 
 *Chimera Extinction Coefficient Module Test Plan*
