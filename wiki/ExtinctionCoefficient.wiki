@@ -249,25 +249,4 @@ class DatabaseStub:
         Writes extinction coefficient (EC) to the designated EC. table (extID)
         """
         return EC
-
-    def writeTimeStart(self, extID, time):
-        """        
-        TODO - code to communicate with databse interface
-        Writes LST start time (time) to the designated EC. table (extID)
-        """
-        return time
-
-    def writeTimeEnd(self, extID, time):
-        """
-        TODO - code to communicate with databse interface
-        Writes LST end time (time) to the designated EC. table (extID)
-        """
-        return time
-
-    def createTable(self, extID):
-        """
-        TODO - code to communicate with databse interface
-        Writes LST start (time) to the designated EC. table (extID)
-        """    
-        return extID
 }}}
