@@ -2,7 +2,7 @@ import os.path
 
 from chimera.core.exceptions import ChimeraException
 from chimera.util.image import Image
-from chimera.util.database import DatabaseInterface
+#from chimera.util.database import chimeradb
 import logging
 import os
 import shutil
@@ -100,9 +100,9 @@ class AstrometryNet():
         print "	radius   : %f" % (radius)
 
     @staticmethod
-    def save_to_databse(G_RA, G_DEC, fullfilename):
+    def save_to_databse(fullfilename,G_RA, G_DEC):
         """Saves global RA and DEC and image path to database"""
-        database.insertINTOExposure(G_RA, G_DEC, fullfilename)
+        database.insertINTOExposure(fullfilename,G_RA, G_DEC)
 
     @staticmethod
     def solve_field_by_path(fullfilename):
@@ -205,6 +205,26 @@ class AstrometryNet():
         print "-------ASTROMETRY.NET SAYS IT IS  -------"
         print "	ra       : %f" % (wcs_ra)
         print "	dec      : %f" % (wcs_dec)
+        ra_center  = float(ra_center)
+        dec_center = float(dec_center)
+        wcs_ra     = float(wcs_ra)
+        wcs_dec    = float(wcs_dec)
+        raflag = False
+        decflag = False
+        tolerance = 0.5
+        tol = tolerance /2
+        if(ra_center >= wcs_ra - tol and ra_center <= wcs_ra + tol):
+            raflag = True
+            print "ra within range"
+        if(dec_center >= wcs_dec -tol and dec_center <= wcs_dec + tol):
+            decflag =  True
+            print "dec within range"
+        if(raflag and decflag):
+            print "image within tolerance"
+            return  True
+        else:
+            return False
+
         
     @staticmethod
     def get_center_ra(image):
@@ -272,8 +292,25 @@ class AstrometryNet():
         print "-------ASTROMETRY.NET SAYS IT IS  -------"
         print "ra_center       : %s" % (wcs_ra)
         print "dec_center      : %s" % (wcs_dec)
-
-
+        ra_center  = float(ra_center)
+        dec_center = float(dec_center)
+        wcs_ra     = float(wcs_ra)
+        wcs_dec    = float(wcs_dec)
+        raflag = False
+        decflag = False
+        tolerance = 0.5
+        tol = tolerance /2
+        if(ra_center >= wcs_ra - tol and ra_center <= wcs_ra + tol):
+            raflag = True
+            print "ra within range"
+        if(dec_center >= wcs_dec -tol and dec_center <= wcs_dec + tol):
+            decflag =  True
+            print "dec within range"
+        if(raflag and decflag):
+            print "image within tolerance"
+            return  True
+        else:
+            return False
 
 class AstrometryNetException(ChimeraException):
     pass
