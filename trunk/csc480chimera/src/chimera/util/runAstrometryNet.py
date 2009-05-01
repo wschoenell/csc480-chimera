@@ -169,11 +169,44 @@ class AstrometryNet():
             return True
         
 
+
+        
+    @staticmethod
+    def get_center_ra(image):
+        """Documentation"""
+        fullfilename = image.filename()
+        line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
+        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
+        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
+        solve.wait()
+        result_array = stdout.split("\n")
+        for et in result_array:
+            # @type et str
+            if(et.startswith("ra_center ")):
+                txt, ra_center = et.split()
+        return ra_center
+    
+    @staticmethod
+    def get_center_dec(image):
+        """Documentation"""
+        fullfilename = image.filename()
+        line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
+
+        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
+        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
+        solve.wait()
+        result_array = stdout.split("\n")
+        for et in result_array:
+            # @type et str
+            if(et.startswith("dec_center ")):
+                txt, dec_center = et.split()
+        return dec_center
+
     @staticmethod
     def confirm_ra_dec_by_reference_pixel(image):
         """takes a fits image and returns true if image header matches within some
             tolerance of the header created by astrometry.net
-        """   
+        """
         try:
             source_image_ra = image["CRVAL1"]    # expects to see this in image
         except:
@@ -189,8 +222,8 @@ class AstrometryNet():
         is_solved    = pathname + "/" + name + ".solved"
         wcs_solution = pathname + "/" + name + ".wcs"
         wcs_image = AstrometryNet.path_2_image(wcs_solution)
-        
-        
+
+
         # if solution failed, there will be no file .solved
         if (os.path.exists(is_solved) == False):
             print "Astrometry.net not solved yet starting to solve"
@@ -224,39 +257,6 @@ class AstrometryNet():
             return  True
         else:
             return False
-
-        
-    @staticmethod
-    def get_center_ra(image):
-        """Documentation"""
-        fullfilename = image.filename()
-        line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
-        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
-        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
-        solve.wait()
-        result_array = stdout.split("\n")
-        for et in result_array:
-            # @type et str
-            if(et.startswith("ra_center ")):
-                txt, ra_center = et.split()
-        return ra_center
-    
-    @staticmethod
-    def get_center_dec(image):
-        """Documentation"""
-        fullfilename = image.filename()
-        line = "/usr/local/astrometry/bin/wcsinfo %s"  % fullfilename
-
-        solve = Popen(line.split(), stdout=subprocess.PIPE)#pipe the output to alternate stdout
-        stdout, stdin = solve.communicate(None)#grab the piped output into the variable str
-        solve.wait()
-        result_array = stdout.split("\n")
-        for et in result_array:
-            # @type et str
-            if(et.startswith("dec_center ")):
-                txt, dec_center = et.split()
-        return dec_center
-        
     @staticmethod
     def confirm_ra_dec_by_image_center(image):
         """takes a fits image and returns true if image header matches within some
