@@ -1,7 +1,9 @@
 #!/usr/bin/python
 import sys
 import MySQLdb
-class database :
+
+
+class database:
     conn = None
     cursor = None
     def __init__(self):
@@ -240,8 +242,19 @@ class database :
           self.conn.close()
 
 
-
-
-
-
+#test = database()
+#print ("Flux for Starid 201015: %s") % test.get_Flux("201015")
+#print ("FWHM for Starid 201015: %s") % test.get_FWHM("201015")
+#print ("Magnitude for Starid 201015: %s") % test.get_Magnitude("201015")
+#print ("AirMass for Starid 201015: %s") % test.get_AirMass ("201015")
+#print ("Inseting data into Exposure Table : %s")% test.add_Exposure("usr/data/pic90","89.01","668.99")
+#print ("Inserting data into Star Table : %s")% test.add_Star("122.34","122.44","99.10","0.005","-98.11","101090")
+#print ("Inserting AirMass for Starid 201050 : %s")% test.add_AM("201050","0.7111")
+#print ("List of Starid for ra = 122.34 &  dec = 122.44   : %s")% test.get_StarID("122.34","122.44")
+#print ("List of Exposureid for ra = 122.34 &  dec = 122.44   : %s")% test.get_Exposures("122.34","122.44")
+#print ("ImagePath for Exposure_id 101013 : %s")% test.get_ImagePath("101013")
+#print ("Exposure-id  for ImagePath /usr/data/ : %s")% test.get_ExposureID("usr/data/pic100")
+#print ("Flux for ra = 122.34, dec = 122.44, start-time = 2009-05-03 18:58:40, endtime = 2009-05-04 07:47:18 %s")% test.get_FluxRange("122.34","122.44","2009-05-03 18:58:40","2009-05-04 07:47:18")
+#print ("Magnitude for ra = 122.34, dec = 122.44, start-time = 2009-05-03 18:58:40, endtime = 2009-05-04 07:47:18 %s")% test.get_MagRange("122.34","122.44","2009-05-03 18:58:40","2009-05-04 07:47:18")
+#print ("List of All ImagePath & Exposure-ID's are :%s")%  test.getAllImagePath_AND_ExposureID()
 
