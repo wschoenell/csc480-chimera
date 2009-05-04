@@ -6,20 +6,15 @@ import os.path
 import shutil
 import subprocess
 from subprocess import Popen
+
 from database.chimeradb import database
 
 log = logging.getLogger(__name__)
 
 class AstrometryNet():
-    image_queue = [];#array of images to solve
-
-    @staticmethod
-    def save_to_databse(fullfilename,G_RA, G_DEC):
-        """Saves global RA and DEC and image path to database"""
-        mydb = database()
-        mydb.add_Exposure(fullfilename, G_RA, G_DEC)
+    image_queue = [];#array of images to solve 
         
-  
+  #============================== QUEUE METHODS ==============================
     @staticmethod
     def print_queue():
         """Prints the contents of the image_queue: mainly for debug purposes"""
@@ -32,7 +27,6 @@ class AstrometryNet():
         Does not start processing function"""
         for f in os.listdir(directorypath):
             AstrometryNet.add_image_to_queue(directorypath + f)
-
 
     @staticmethod
     def add_image_to_queue(imagepath):
@@ -55,30 +49,34 @@ class AstrometryNet():
     @staticmethod
     def solve_queue():
         """Processes each fits image in the image queue through Astrometry.net"""
+        index = 0
+        count = len(AstrometryNet.image_queue)
         for img in AstrometryNet.image_queue:
+            index = index + 1
+            print "\n\n=============================>Solving image %d of %d" % (index, count)
             AstrometryNet.solve_field_by_file(img)
             
-    @staticmethod
-    def get_referencepixel_ra(fullfilename):
-        """Processes each fits image in the image queue through Astrometry.net"""
-        image = AstrometryNet.path_2_image(fullfilename)
-        ra = image["CRVAL1"]
-        return ra
 
-
-    @staticmethod
-    def get_referencepixel_dec(fullfilename):
-        """Processes each fits image in the image queue through Astrometry.net"""
-        image = AstrometryNet.path_2_image(fullfilename)
-        dec = image["CRVAL2"]
-        return dec
-
+#==============================UTILITIES ==============================
     @staticmethod
     def path_2_image(fullfilename):
         """Create a Chimera image object from a path name"""
-        print "creating image from file name"
+        print "     creating image from file name"
         image = Image.fromFile(fullfilename)
         return image
+    
+    @staticmethod
+    def is_fits(image):
+        fullfilename = image.filename()
+        pathname, filename = os.path.split(fullfilename)
+        pathname = pathname + "/"
+        basefilename, file_xtn = os.path.splitext(filename)
+
+        # *** enforce .fits extension
+        if (file_xtn != ".fits"):
+            return False
+        else:
+            return True
 
     @staticmethod
     def print_image_info(image):
@@ -97,16 +95,18 @@ class AstrometryNet():
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
             # SHOW USER WHAT CURRENT FILE RA AND DEC ARE
-        print "-------THE IMAGE YOU TOOK CONTAINS-------"
-        print "	path name: " + pathname
-        print "	file name: " + fullfilename
-        print "	ra       : %f" % (ra)
-        print "	dec      : %f" % (dec)
-        print "	height   : %f" % (height)
-        print "	width    : %f" % (width)
-        print "	radius   : %f" % (radius)
+        print "\n+------THE IMAGE YOU TOOK CONTAINS--------------"
+        print "|	path name: " + pathname
+        print "|	file name: " + fullfilename
+        print "|	ra       : %f" % (ra)
+        print "|	dec      : %f" % (dec)
+        print "|	height   : %f" % (height)
+        print "|	width    : %f" % (width)
+        print "|	radius   : %f" % (radius)
+        print "+-----------------------------------------------"
 
 
+#============================== SOLVE METHODS ==============================
     @staticmethod
     def solve_field_by_path(fullfilename):
         """
@@ -128,57 +128,61 @@ class AstrometryNet():
         Uses astrometry.net as its star finder
 
         """
-        print "Solving image : %s" % image
+        print "     Solving image : %s" % image
         AstrometryNet.print_image_info(image)        
 
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
         name         = os.path.basename(filename)
-        
-        is_solved    = pathname + "/" + name + ".solved"
-        wcs_imgname  = pathname + "/" + name + ".new"
-        wcs_solution = pathname + "/" + name + ".wcs"
-        print "base image name: %s" %  name
+        # @type name str
+        root_name = name.replace(".fits", "", 1)
+        is_solved    = pathname + "/" + root_name + ".solved"
+        wcs_imgname  = pathname + "/" + root_name + ".new"
+        wcs_solution = pathname + "/" + root_name + ".wcs"
+        #print "base image name: %s" % name
 
-        # if it is already there, make sure to delete it
-        if (os.path.exists(is_solved)):
-            print "solved indicator exists: deleting it now..."
-            os.remove(is_solved)
-        print "-------SENDING TO ASTROMETRY.NET-------"
+        print "\n\n+------SENDING TO ASTROMETRY.NET----------------"
         line = "/usr/local/astrometry/bin/solve-field --guess-scale --overwrite %s"  % fullfilename
-        print "commandline = %s" % line
+        print "|     commandline = %s" % line
+        print "|     Starting solving"
         solve = Popen(line.split())
         solve.wait()
 
-
-
-        print "%s" % is_solved
+        #print "%s" % is_solved
         # if solution failed, there will be no file .solved
         if (os.path.exists(is_solved) == False):
-            print "Astrometry.net could not find a solution for image: %s " % (image)
+            print "|     Astrometry.net could not find a solution for image: %s " % (image)
 
         # *.new will be the old fits file with the new header
         shutil.copyfile(wcs_solution, wcs_solution + ".fits")
         if (os.path.exists(wcs_imgname) == True):
-            print "astrometry.net has produced a new fits file " + wcs_imgname
+            print "|     astrometry.net has produced a new fits file " + wcs_imgname
+            print "|     which contains the wcs header added to the original fits image "
+        print "|\n+------ASTROMETRY.NET FINISHED------------------\n\n"
         return(wcs_imgname)
 
+    #============================== DATABASE METHODS ==============================
+
     @staticmethod
-    def is_fits(image):
+    def save_to_database(fullfilename):
+        """Saves global RA and DEC and image path to database"""
+        print "     Saving to database"
+
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
-        pathname = pathname + "/"
-        basefilename, file_xtn = os.path.splitext(filename)
+        name = os.path.basename(filename)
+        root_name = name.replace(".fits", "", 1)
+        wcs_new = pathname + "/" + root_name + ".new"
 
-        # *** enforce .fits extension
-        if (file_xtn != ".fits"):
-            return False
-        else:
-            return True
-        
+        wcs_image = AstrometryNet.path_2_image(wcs_new)
+        G_RA = AstrometryNet.get_center_ra(wcs_image)
+        G_DEC = AstrometryNet.get_center_dec(wcs_image)
+        new_file_name = wcs_image.filename()
+        mydb = database()
+        mydb.add_Exposure(new_file_name, G_RA, G_DEC)
 
 
-        
+#==============================CALCULATING FROM CENTER OF IMAGE ==============================
     @staticmethod
     def get_center_ra(image):
         """Documentation"""
@@ -193,7 +197,7 @@ class AstrometryNet():
             if(et.startswith("ra_center ")):
                 txt, ra_center = et.split()
         return ra_center
-    
+
     @staticmethod
     def get_center_dec(image):
         """Documentation"""
@@ -211,12 +215,110 @@ class AstrometryNet():
         return dec_center
 
     @staticmethod
-    def confirm_ra_dec_by_reference_pixel(image):
-        """takes a fits image and returns true if image header matches within some
-            tolerance of the header created by astrometry.net
+    def confirm_ra_dec_by_image_center(image):
+        """Takes a fits image as input.
+        Based on the center of the image, this method compares the ra
+        and dec of the input image with the ra and dec of the world coordinate
+        system header produced by Astrometry.net and returns true if image header
+        matches within some tolerance and false otherwise.
         """
+        if(AstrometryNet.is_fits(image) == False):
+            print "     Image was not a .fits file cannot process"
+            return
+
+
+        fullfilename = image.filename()
+        pathname, filename = os.path.split(fullfilename)        
+        name = os.path.basename(filename)
+        root_name = name.replace(".fits", "", 1)
+        wcs_new = pathname + "/" + root_name + ".new"
+        wcs_solution = pathname + "/" + root_name + ".solved"
+
+        # if solution failed, there will be no file .wcs
+        if (os.path.exists(wcs_solution) == False):
+            print "     Astrometry.net not solved yet starting to solve"
+            AstrometryNet.solve_field_by_file(image)
+        else:
+            print "     File already solved."
+        print "     File solved starting confirmation."
+
+            
+        #print "     SOLUTION %s" % wcs_solution
+        if (os.path.exists(wcs_new) == True):
+            wcs_image = AstrometryNet.path_2_image(wcs_new)
+        else:
+            print "     Astrometry.net could not find a solution exiting ra and dec check"
+            return
+
+        ra_center = AstrometryNet.get_center_ra(image)
+        dec_center = AstrometryNet.get_center_dec(image)
+        print "\n+------YOUR IMAGE HEADER SAYS-----------+"
+        print "|    ra_center       : %s" % (ra_center)
+        print "|    dec_center      : %s" % (dec_center)
+        print "|"
+        wcs_ra = AstrometryNet.get_center_ra(wcs_image)
+        wcs_dec = AstrometryNet.get_center_dec(wcs_image)
+        print "+------ASTROMETRY.NET SAYS IT IS--------+"
+        print "|    ra_center       : %s" % (wcs_ra)
+        print "|    dec_center      : %s" % (wcs_dec)
+        print "+---------------------------------------+"
+        ra_center  = float(ra_center)
+        dec_center = float(dec_center)
+        wcs_ra     = float(wcs_ra)
+        wcs_dec    = float(wcs_dec)
+        raflag = False
+        decflag = False
+        tolerance = 0.5
+        tol = tolerance / 2
+        if(ra_center >= wcs_ra - tol and ra_center <= wcs_ra + tol):
+            raflag = True
+            print "|    ra within range = True"
+        else:
+            print "|    ra within range = True"
+        if(dec_center >= wcs_dec -tol and dec_center <= wcs_dec + tol):
+            decflag = True
+            print "|    dec within range = True"
+        else:
+            print "|    dec within range = True"
+        if(raflag and decflag):
+            print "|    image within tolerance = True"
+            print "+---------------------------------------+"
+            return  True
+        else:
+            print "|    image within tolerance = False"
+            print "+---------------------------------------+"
+            return False
+
+
+#==============================CALCULATING FROM REFERENCE PIXEL ==============================
+    @staticmethod
+    def get_referencepixel_ra(fullfilename):
+        """Processes each fits image in the image queue through Astrometry.net"""
+        image = AstrometryNet.path_2_image(fullfilename)
+        ra = image["CRVAL1"]
+        return ra
+
+    @staticmethod
+    def get_referencepixel_dec(fullfilename):
+        """Processes each fits image in the image queue through Astrometry.net"""
+        image = AstrometryNet.path_2_image(fullfilename)
+        dec = image["CRVAL2"]
+        return dec
+    
+    @staticmethod
+    def confirm_ra_dec_by_reference_pixel(image):
+        """Takes a fits image as input.
+        Based on the reference pixel CRVAL1, CRVAL2 this method compares the ra
+        and dec of the input image with the ra and dec of the world coordinate 
+        system header produced by Astrometry.net and returns true if image header
+        matches within some tolerance and false otherwise.
+        """
+        #TODO:  WARNING: 
+        #TODO:  This method is not reliable, because it is not certain that the reference pixel of the input img header
+        #TODO:  corresponds to the same location in space as the reference pixel in the Astrometry.net wcs header
+        #TODO:  therefore, whatever transformations are necessary, need to be done to make this work
         try:
-            source_image_ra = image["CRVAL1"]    # expects to see this in image
+            source_image_ra = image["CRVAL1"]    
         except:
             raise AstrometryNetException("Need CRVAL1 and CRVAL2 and CD1_1 on header")
         try:
@@ -226,80 +328,44 @@ class AstrometryNet():
 
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
-        name         = os.path.basename(pathname)
-        is_solved    = pathname + "/" + name + ".solved"
-        wcs_solution = pathname + "/" + name + ".wcs"
-        wcs_image = AstrometryNet.path_2_image(wcs_solution)
+        name = os.path.basename(filename)
+        root_name = name.replace(".fits", "", 1)
+        wcs_new = pathname + "/" + root_name + ".new"
+        wcs_solution = pathname + "/" + root_name + ".solved"
 
-
-        # if solution failed, there will be no file .solved
-        if (os.path.exists(is_solved) == False):
-            print "Astrometry.net not solved yet starting to solve"
-            print is_solved
-            AstrometryNet.solve_field_by_file(image)
-
-        print "-------YOUR IMAGE HEADER SAYS     -------"
-        print "	ra       : %f" % (source_image_ra)
-        print "	dec      : %f" % (source_image_dec)
-        wcs_ra = AstrometryNet.get_ra(wcs_image)
-        wcs_dec = AstrometryNet.get_dec(wcs_image)
-        print "-------ASTROMETRY.NET SAYS IT IS  -------"
-        print "	ra       : %f" % (wcs_ra)
-        print "	dec      : %f" % (wcs_dec)
-        ra_center  = float(ra_center)
-        dec_center = float(dec_center)
-        wcs_ra     = float(wcs_ra)
-        wcs_dec    = float(wcs_dec)
-        raflag = False
-        decflag = False
-        tolerance = 0.5
-        tol = tolerance /2
-        if(ra_center >= wcs_ra - tol and ra_center <= wcs_ra + tol):
-            raflag = True
-            print "ra within range"
-        if(dec_center >= wcs_dec -tol and dec_center <= wcs_dec + tol):
-            decflag =  True
-            print "dec within range"
-        if(raflag and decflag):
-            print "image within tolerance"
-            return  True
-        else:
-            return False
-    @staticmethod
-    def confirm_ra_dec_by_image_center(image):
-        """takes a fits image and returns true if image header matches within some
-            tolerance of the header created by astrometry.net
-            USE WCSINFO
-        """
-        if(AstrometryNet.is_fits(image) == False):
-            print "Image was not a .fits file"
-            return
-        # if solution failed, there will be no file .solved
-        fullfilename = image.filename()
-        pathname, filename = os.path.split(fullfilename)
-        name         = os.path.basename(pathname)
-        wcs_solution = pathname + "/" + name + ".wcs"
-        
-        # if solution failed, there will be no file .wcs
+       # if solution failed, there will be no file .wcs
         if (os.path.exists(wcs_solution) == False):
-            print "Astrometry.net not solved yet starting to solve"
+            print "     Astrometry.net not solved yet starting to solve"
             AstrometryNet.solve_field_by_file(image)
-        if (os.path.exists(wcs_solution) == True):
-            wcs_image = AstrometryNet.path_2_image(wcs_solution)
         else:
-            print "Astrometry.net could not find a solution exiting ra and dec check"
+            print "     File already solved."
+        print "     File solved starting confirmation."
+
+        #print "     SOLUTION %s" % wcs_solution
+        if (os.path.exists(wcs_new) == True):
+            wcs_image = AstrometryNet.path_2_image(wcs_new)
+        else:
+            print "     Astrometry.net could not find a solution exiting ra and dec check"
             return
-        ra_center = AstrometryNet.get_center_ra(image)
-        dec_center = AstrometryNet.get_center_dec(image)
-        print "-------YOUR IMAGE HEADER SAYS     -------"
-        print "ra_center       : %s" % (ra_center)
-        print "dec_center      : %s" % (dec_center)
-        print ""
-        wcs_ra = AstrometryNet.get_center_ra(wcs_image)
-        wcs_dec = AstrometryNet.get_center_dec(wcs_image)
-        print "-------ASTROMETRY.NET SAYS IT IS  -------"
-        print "ra_center       : %s" % (wcs_ra)
-        print "dec_center      : %s" % (wcs_dec)
+        
+        print "\n+------YOUR IMAGE HEADER SAYS-----------+"
+        print "|    ra_center       : %s" % (source_image_ra)
+        print "|    dec_center      : %s" % (source_image_dec)
+        print "|"
+
+        try:
+            wcs_ra  = wcs_image["CRVAL1"]
+        except:
+            raise AstrometryNetException("Need CRVAL1 and CRVAL2 and CD1_1 on header")
+        try:
+            wcs_dec = wcs_image["CRVAL2"]
+        except:
+            raise AstrometryNetException("Need CRVAL1 and CRVAL2 and CD1_1 on header")
+
+        print "+------ASTROMETRY.NET SAYS IT IS--------+"
+        print "|    ra_center       : %s" % (wcs_ra)
+        print "|    dec_center      : %s" % (wcs_dec)
+        print "+---------------------------------------+"
         ra_center  = float(ra_center)
         dec_center = float(dec_center)
         wcs_ra     = float(wcs_ra)
@@ -307,19 +373,26 @@ class AstrometryNet():
         raflag = False
         decflag = False
         tolerance = 0.5
-        tol = tolerance /2
+        tol = tolerance / 2
         if(ra_center >= wcs_ra - tol and ra_center <= wcs_ra + tol):
             raflag = True
-            print "ra within range"
+            print "|    ra within range = True"
+        else:
+            print "|    ra within range = True"
         if(dec_center >= wcs_dec -tol and dec_center <= wcs_dec + tol):
-            decflag =  True
-            print "dec within range"
+            decflag = True
+            print "|    dec within range = True"
+        else:
+            print "|    dec within range = True"
         if(raflag and decflag):
-            print "image within tolerance"
+            print "|    image within tolerance = True"
+            print "+---------------------------------------+"
             return  True
         else:
+            print "|    image within tolerance = False"
+            print "+---------------------------------------+"
             return False
-
+        
 class AstrometryNetException(ChimeraException):
     pass
 
@@ -329,23 +402,24 @@ class NoSolutionAstrometryNetException(ChimeraException):
 
 if __name__ == "__main__":  
     try:
-        print "Test run of Astrometry.net script"
-        img_path = "tests/480/image/image.fits"
+        print "Test run of Astrometry.net script\n"
+        img_path = "tests/480/image/0image.fits"
+        
         #print "Testing image queue."
         #AstrometryNet.add_image_directory_to_queue("tests/480/batch/")
         #AstrometryNet.add_image_to_queue("tests/480/test1/1/landolt-SA112223-0001.fits")
         #AstrometryNet.print_queue()
-
-        print "starting photometry processing."
         #AstrometryNet.solve_queue()
+
+        print "1. starting photometry processing."
         image = AstrometryNet.path_2_image(img_path)
         
-        print "testing ra and dec check."
-        AstrometryNet.confirm_ra_dec_by_image_center(image)
+        print "2. testing ra and dec check."
+        print "     withing tolerance = %s " % AstrometryNet.confirm_ra_dec_by_image_center(image)
 
-        print "testing database"
-        AstrometryNet.save_to_databse(img_path,100.249833406,  9.88308749209)
-        #x = AstrometryNet.solveField("tests/480/test1/1/landolt-SA112223-0001.fits",findstarmethod="astrometry.net")
+        print "3. testing database"
+        AstrometryNet.save_to_database(img_path)
+       
         print "finished processing."
     except Exception, e:
         print e
