@@ -1,0 +1,104 @@
+To use the interface you would have to import chimeradb.py 
+
+---> To import chimeradb.py you would have to write
+   " from chimera.util.database import chimeradb " and also "import MySQLdb"
+
+---> After successfully importing you can create object by calling constructor 
+      mydb = database()[constructor]
+
+---> After successfully creating a database object you can use different methods to accomplish different tasks.
+
+METHOD -1 add_Exposure(path,G_RA,G_DEC): [USED BY ASTROMETRY TEAM]
+ # THE ABOVE METHOD WILL BE USED BY ASTROMETRY TEAM 
+ # PARAMETERS ARE ImagePath, global ra and global dec
+ # RETURNS NEWLY CREATED EXPOSURE-ID FOR GIVEN IMAGEPATH 
+ # RETRURNS -1 IF IMAGEPATH ALREADY EXISTS
+ 
+METHOD -2 add_Star(_RA,_DEC,flux,seeing,magnitude,exposureid): [USED BY SEEING TEAM]    
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM 
+ # PARAMETERS ARE ra,dec,flux,seeing,magnitude,exposureid 
+ # RETRURNS -1 IF exposureid doesnot exists in exposure table.
+
+METHOD -3 get_Flux (Starid) :[USED BY EXTINCTION TEAM]   
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM 
+ # PARAMETERS ARE starid 
+ # RETURNS Flux for given starid.
+ # RETURNS NONE if starid doesnot exists.
+
+METHOD -4 get_FWHM (Starid) :[USED BY EXTINCTION TEAM]   
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM 
+ # PARAMETERS ARE starid 
+ # RETURNS seeing a.k.a FWHM for given starid.
+ # RETURNS NONE if starid doesnot exists.
+
+METHOD -5 get_Magnitude (Starid) :[USED BY EXTINCTION TEAM]   
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM 
+ # PARAMETERS ARE starid 
+ # RETURNS Magnitude for given starid.
+ # RETURNS NONE if starid doesnot exists.
+
+METHOD -6 get_AirMass (Starid) :[USED BY EXTINCTION TEAM]   
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM 
+ # PARAMETERS ARE starid 
+ # RETURNS AirMass for given starid.
+ # RETURNS NONE if starid doesnot exists.
+
+METHOD -7  get_ExposureID(ImagePath): [USED BY SEEING TEAM]
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM
+ # PARAMETERS ARE ImagePath
+ # Returns ExposureId for given ImagePath
+ # Returns NONE if ImagePath doesnot exists.
+
+METHOD -8  get_ImagePath(ExposureID): [USED BY SEEING TEAM]
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM
+ # PARAMETERS ARE ExposureID
+ # Returns ImagePath for given ExposureID
+ # Returns NONE if ExposureID doesnot exists.
+
+METHOD -9  getAllImagePath_AND_ExposureID(): [USED BY SEEING TEAM]
+ # THE ABOVE METHOD WILL BE USED BY SEEING TEAM
+ # Returns List [[Exposure_id],[ImagePath]]
+
+METHOD -10 get_Starid(_ra,_dec) : [USED BY EXTINCTION TEAM]
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM 
+ # PARAMETERS ARE ra,dec
+ # returns List [Star_id] for given ra and dec
+
+METHOD -11 get_FluxRange(_ra,_dec,s_time,e_time):[USED BY EXTINCTION TEAM]
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM 
+ # PARAMETERS ARE ra,dec,START-TIME,END-TIME [start time and end time refers to timestamp example ('2009-04-30 21:19:00')]
+ # returns List [Flux] for given ra dec and time range
+
+METHOD -11 get_MagRange(_ra,_dec,s_time,e_time):[USED BY EXTINCTION TEAM]
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM 
+ # PARAMETERS ARE ra,dec,START-TIME,END-TIME [start time and end time refers to timestamp example ('2009-04-30 21:19:00')]
+ # returns List [Magnitude] for given ra dec and time range
+
+METHOD -12 getExposures(_ra,_dec) :[USED BY EXTINCTION TEAM]
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM 
+ # PARAMETERS ARE ra,dec
+ # returns List [Exposure-id] for given ra and dec.
+
+METHOD -13 WriteEC_INTO_Extinction([DATA]): [USED BY EXTINCTION TEAM]
+ # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM  
+ # PARAMETERS ARE [Extinction Coefficient, [Star-id]]
+ # WRITS Extinction coefficent into Extinction table 
+ # GETS NEWLY CREATED Extinction_id for give coefficient.
+ # WRITES STARID AND EXTINCTION-ID INTO STAR_EXTINCTION TABLE.
+
+METHOD -14 add_AM(Starid,AM) : [USED BY EXTINCTION TEAM]
+  # THE ABOVE METHOD WILL BE USED BY EXTINCTION TEAM  
+  # PARAMETERS ARE Starid,AirMass
+  # returns 0 if successfully inserted
+  # returns -1 if starid doesnot exists.
+
+METHOD -15 CloseConnection() : [USED BY EXTINCTION ,ASTROMETRY,SEEING]
+  # IT CLOSES THE CONNECTION 
+
+
+-END
+
+ 
+
+ 
+     

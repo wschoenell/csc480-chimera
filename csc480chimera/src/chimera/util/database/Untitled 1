@@ -1,0 +1,13 @@
+#problems
+
+def getTime (self):
+	  try:
+              self.cursor.execute("""  select _ETIME from (select _RA as _ra,_DEC as _dec,ExposureTime as _ETIME 
+                                       from(Star,Exposure)where Exposure.Exposure_id = Star.EXPOSURE_ID) as tmp 
+                                       where _ra = 122.34 AND _dec = 122.44 """)  
+          except MySQLdb.Error, e:
+               print "Error %d: %s" % (e.args[0],e.args[1])
+               sys.exit(1) 
+
+#########################3
+

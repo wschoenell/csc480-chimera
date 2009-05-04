@@ -1,0 +1,169 @@
+(MYSQL)delimiter |
+
+###################-OK-OPTION-1-AST
+CREATE FUNCTION Insert_Exposure(path LongText)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+DECLARE id INT;
+INSERT INTO Exposure(ImagePath,ExposureTime) VALUES (path,(SELECT NOW()));
+SELECT Exposure_id INTO id from Exposure Where ImagePath = path;
+RETURN id;
+END
+###################-OK-OPTION-1-SEXTR
+CREATE FUNCTION Insert_Star(_ra Varchar(20),_dec Varchar(20),_flux Double,_seeing Double,_mag Double,_AM Double,_id INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+DECLARE count INT;
+INSERT INTO Star(_RA,_DEC,Flux,FWHM,AirMass,InstrMag,Exposure_ID) VALUES (_ra,_dec,_flux,_seeing,_AM,_mag,_id);
+SELECT count(Star_id) INTO count from Star Where _RA = _ra AND _DEC = d1;
+RETURN count;
+END
+###################-OK-OPTION-2-SEXTR
+CREATE FUNCTION getExposureID(path LongText)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+DECLARE id INT;
+SELECT Exposure_id INTO id from Exposure Where ImagePath = path;
+RETURN id;
+END
+#####################-OK-OPTION-3-SEXTR
+CREATE FUNCTION getImagePath(id INT)
+RETURNS LongText
+DETERMINISTIC
+BEGIN
+DECLARE path LongText;
+SELECT ImagePath INTO path from Exposure Where Exposure_id = id;
+RETURN path;
+END
+####################-OK-EXT-1
+CREATE FUNCTION getFlux(id INT)
+RETURNS Double
+DETERMINISTIC
+BEGIN
+DECLARE Flux Double;
+SELECT Flux INTO path from Star Where Star_id = id;
+RETURN Flux;
+END
+####################-OK-EXT-2
+CREATE FUNCTION getAM(id INT)
+RETURNS Double
+DETERMINISTIC
+BEGIN
+DECLARE am Double;
+SELECT AirMass INTO am from Star Where Star_id = id;
+RETURN Flux;
+END
+####################-OK-EXT-3
+CREATE FUNCTION getFWHM(id INT)
+RETURNS Double
+DETERMINISTIC
+BEGIN
+DECLARE fwhm Double;
+SELECT  FWHM INTO fwhm from Star Where Star_id = id;
+RETURN Flux;
+END
+#################
+CREATE FUNCTION CheckRA_DEC(r1 Varchar(20),d1 Varchar(20))
+    -> RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    -> DECLARE Count INT;
+    -> SELECT count(*) INTO Count from Star Where _RA = r1 AND _DEC = d1;
+    -> RETURN Count;
+    -> END|
+###################
+CREATE FUNCTION CheckStar_id(id INT)
+    -> RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    -> DECLARE Count INT;
+    -> SELECT count(*) INTO Count from Star Where Star_id = id;
+    -> RETURN Count;
+    -> END|
+###################
+CREATE FUNCTION CheckExposure_id(id INT)
+    -> RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    -> DECLARE Count INT;
+    -> SELECT count(*) INTO Count from Exposure Where Exposure_id = id;
+    -> RETURN Count;
+    -> END|
+##################
+ CREATE FUNCTION test(r1 Varchar(20),d1 Varchar(20))
+    -> RETURNS INT
+    -> BEGIN
+    -> DECLARE Count INT;
+    -> SELECT '0' INTO Count;
+    -> IF(SELECT CheckRA_DEC(r1,d1)) > (0) THEN
+    -> SELECT '1' INTO Count;
+    -> END IF;
+    -> RETURN Count;
+    -> END|
+##################
+ CREATE FUNCTION getPath(id INT)
+    -> RETURNS TEXT
+    -> BEGIN
+    -> DECLARE Path TEXT;
+    -> SELECT '0' INTO Path;
+    -> IF(SELECT CheckExposure_id(id)) > (0) THEN
+    -> SELECT ImagePath INTO Path FROM Exposure WHERE Exposure_id = id;
+    -> END IF;
+    -> RETURN Path;
+    -> END|
+##################
+CREATE FUNCTION getTime(id INT)
+    -> RETURNS varchar(20)
+    -> BEGIN
+    -> DECLARE _Time varchar(20);
+    -> SELECT '0' INTO _Time;
+    -> IF(SELECT CheckExposure_id(id)) > (0) THEN
+    -> SELECT ExposureTime INTO _Time FROM Exposure WHERE Exposure_id = id;
+    -> END IF;
+    -> RETURN _Time;
+    -> END|
+#################
+CREATE FUNCTION InsertINRelation(e_id INT,s_id INT)
+    -> RETURNS INT
+    -> BEGIN
+    -> DECLARE tmp INT;
+    -> SELECT '0' tmp;
+    -> IF(SELECT CheckExposure_id(e_id)) > (0) AND (SELECT CheckStar_id(s_id)) > (0) THEN
+    -> INSERT INTO Relation(STAR_ID,EXPOSURE_ID) VALUES (s_id,e_id);
+    -> SELECT '1' tmp;
+    -> END IF;
+    -> RETURN tmp;
+    -> END|
+#################
+
+!!!!!!!!!!!!!!!!!!!!-OPTION -1- EXT
+####Input<-----(_ra,_dec,startTime,endTime) 
+####Output----->([_ra,_dec] or list(Star_id),list(Flux),list(LST))
+
+SELECT temp.Flux AS _Flux, temp.LST AS _LST 
+FROM( SELECT *  FROM (Star,Exposure) as tmp WHERE tmp.EXPOSURE_ID = tmp.Exposure_id) AS temp
+WHERE temp._RA = '###-RA' AND temp._DEC = 'VALUE FROM ###-DEC';
+
+!!!!!!!
+OR
+!!!!!!!
+
+SELECT temp.Flux AS _Flux, temp.LST AS _LST, temp.Star_id  as ID
+FROM( SELECT *  FROM (Star,Exposure) as tmp WHERE tmp.EXPOSURE_ID = tmp.Exposure_id) AS temp
+WHERE temp._RA = '###-RA' AND temp._DEC = 'VALUE FROM ###-DEC';
+
+!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!
+####Input<-----(_ra,_dec,Extinction_COE) OR ####Input<-----(Star_id,Extinction_COE) 
+
+INSERT INTO Extinction_CO (Extinction_COE) VALUES ('Extinction_coe')
+
+
+
+
+
+
