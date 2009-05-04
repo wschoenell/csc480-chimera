@@ -1,17 +1,16 @@
 
-import chimera.core.log
-
-from chimera.core.remoteobject import RemoteObject
 from chimera.core.exceptions import ChimeraException
-from chimera.core.version import _chimera_name_, _chimera_long_description_
-
+import chimera.core.log
+from chimera.core.remoteobject import RemoteObject
+from chimera.core.version import _chimera_long_description_
+from chimera.core.version import _chimera_name_
 from chimera.util.coord import Coord
-from chimera.util.position import Position
 from chimera.util.filenamesequence import FilenameSequence
+from chimera.util.position import Position
 from chimera.util.sextractor import SExtractor
+import numpy as N
 
 import pyfits
-import numpy as N
 
 try:
     have_pywcs = True
@@ -19,7 +18,7 @@ try:
 except ImportError:
     have_pywcs = False
 
-import sys
+#import sys
 import time
 import os
 import string
@@ -137,11 +136,9 @@ class Image (DictMixin, RemoteObject):
 
     @staticmethod
     def fromFile(filename, fix=True):
-
         fd = pyfits.open(filename, mode="update")
-
         img = Image(filename, fd)
-
+        print "fix"
         if fix:
             img.fix()
 

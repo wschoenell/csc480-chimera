@@ -1,19 +1,25 @@
-import os.path
-
 from chimera.core.exceptions import ChimeraException
 from chimera.util.image import Image
-#from chimera.util.database import chimeradb
 import logging
 import os
+import os.path
 import shutil
 import subprocess
 from subprocess import Popen
+from database.chimeradb import database
+
 log = logging.getLogger(__name__)
 
 class AstrometryNet():
     image_queue = [];#array of images to solve
 
+    @staticmethod
+    def save_to_databse(fullfilename,G_RA, G_DEC):
+        """Saves global RA and DEC and image path to database"""
+        mydb = database()
+        mydb.add_Exposure(fullfilename, G_RA, G_DEC)
         
+  
     @staticmethod
     def print_queue():
         """Prints the contents of the image_queue: mainly for debug purposes"""
@@ -69,7 +75,8 @@ class AstrometryNet():
 
     @staticmethod
     def path_2_image(fullfilename):
-        """Documentation"""
+        """Create a Chimera image object from a path name"""
+        print "creating image from file name"
         image = Image.fromFile(fullfilename)
         return image
 
@@ -99,10 +106,6 @@ class AstrometryNet():
         print "	width    : %f" % (width)
         print "	radius   : %f" % (radius)
 
-    @staticmethod
-    def save_to_databse(fullfilename,G_RA, G_DEC):
-        """Saves global RA and DEC and image path to database"""
-        database.insertINTOExposure(fullfilename,G_RA, G_DEC)
 
     @staticmethod
     def solve_field_by_path(fullfilename):
@@ -125,15 +128,17 @@ class AstrometryNet():
         Uses astrometry.net as its star finder
 
         """
+        print "Solving image : %s" % image
         AstrometryNet.print_image_info(image)        
 
         fullfilename = image.filename()
         pathname, filename = os.path.split(fullfilename)
-        name         = os.path.basename(pathname)
-        is_solved    = pathname + "/.solved"
+        name         = os.path.basename(filename)
+        
+        is_solved    = pathname + "/" + name + ".solved"
         wcs_imgname  = pathname + "/" + name + ".new"
         wcs_solution = pathname + "/" + name + ".wcs"
-
+        print "base image name: %s" %  name
 
         # if it is already there, make sure to delete it
         if (os.path.exists(is_solved)):
@@ -145,9 +150,12 @@ class AstrometryNet():
         solve = Popen(line.split())
         solve.wait()
 
+
+
+        print "%s" % is_solved
         # if solution failed, there will be no file .solved
         if (os.path.exists(is_solved) == False):
-            print "Astrometry.net could not find a solution for image: %s %s" % (image, is_solved)
+            print "Astrometry.net could not find a solution for image: %s " % (image)
 
         # *.new will be the old fits file with the new header
         shutil.copyfile(wcs_solution, wcs_solution + ".fits")
@@ -321,18 +329,22 @@ class NoSolutionAstrometryNetException(ChimeraException):
 
 if __name__ == "__main__":  
     try:
+        print "Test run of Astrometry.net script"
         img_path = "tests/480/image/image.fits"
         #print "Testing image queue."
         #AstrometryNet.add_image_directory_to_queue("tests/480/batch/")
         #AstrometryNet.add_image_to_queue("tests/480/test1/1/landolt-SA112223-0001.fits")
         #AstrometryNet.print_queue()
 
-        #print "starting photometry processing."
+        print "starting photometry processing."
         #AstrometryNet.solve_queue()
         image = AstrometryNet.path_2_image(img_path)
+        
         print "testing ra and dec check."
         AstrometryNet.confirm_ra_dec_by_image_center(image)
 
+        print "testing database"
+        AstrometryNet.save_to_databse(img_path,100.249833406,  9.88308749209)
         #x = AstrometryNet.solveField("tests/480/test1/1/landolt-SA112223-0001.fits",findstarmethod="astrometry.net")
         print "finished processing."
     except Exception, e:
