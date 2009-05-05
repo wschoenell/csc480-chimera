@@ -22,21 +22,41 @@ Steps to compute extinction coefficient:
 
 Note - in case we for some reason in the future might need to calculate the Local Sidereal Time, Shashi gave me this site: http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm
 
-Here is our current code, this is working for passing a directory and computing the extinction coefficient from FITS files! We are currently waiting on the interface to the database then we will be able to complete that section. This integrates our code for generating graphs as well - it is an automated process.
+Here is our final code, this is working for passing a directory and computing the extinction coefficient from FITS files or from the database. There is also a function to have input come from the scheduler at some point. This automates calculating the extinction coefficient and creating the graphs to go with it.
 {{{
+####################################################################
+###########Extinction Coefficient Module for Chimera################
+######Written by Lisette Antigua, Brandon Fink, Brandon Gilfus######
+####Chris Guida, Kendall Moore, Dawn Orlandella, and Dan Schlegel###
+####################################################################
+
+#USING THE EXTINCTION COEFFICIENT MODULE FROM THE COMMAND LINE:
+#python extinction.py [-f:<path to images> | ra=<RA> dec=<DEC> s=<Start Time> e=<End Time> l=<Latitude>] -o:<Image output filename>
+#Times should be in this format: 2009-05-03 18:58:30
+#Latitude is in HMS, RA and DEC are in Degrees
+#Using the path to images will read the fits file headers for RA, DEC and altitude. 
+#Using the DB will read the LST from the DB and calculate ext. coeff from there.
+
+#CALLING THE EXTINCTION COEFFICIENT MODULE FROM THE SCHEDULER:
+#Use the extinctionCoefficient(ra,dec,start,end,latitude) function!
+
 from seeing import Seeing 
 from chimera.core.site import Site
 from chimera.util.position import Position
 from chimera.util.coord import Coord
+from chimeradb import database
 import numpy as np
 import math
 import os, glob, sys
+import ephem
+
+#PyFITS provides us the ability to use FITS file header data
 import pyfits
 
-#USING THE EXTINCTION COEFFICIENT MODULE:
-#python extinction.py [-f:<path to images> | ra=<RA> dec=<DEC> s=<Start Time> e=<End Time>] -o:<Output image filename>
-#Using the path to images will read the fits file headers for RA, DEC and altitude. 
-#Using the DB will read the LST from the DB and calculate ext. coeff from there.
+
+
+#Debug mode
+debugmode=0
 
 #This sets latitude, we need to pull this from the fits or DB, default is the brazil telescope.
 latitude = Coord.fromHMS('-22:32:04.000')
@@ -44,21 +64,46 @@ latitude = Coord.fromHMS('-22:32:04.000')
 #Default to DB mode
 filemode=0
 
+#Default output filename
+outname="extinction"
+
 #Command processing
+last = ''
+
 for arg in sys.argv:
   if arg.startswith("-f:"): #find if this is folder search.
     path=arg.lstrip("-f:")
     filemode=1
   elif arg.startswith("ra"):
-    ra=Coord.fromHMS(arg.lstrip("ra"))
+    ra=Coord.fromD(arg.lstrip("ra="))
   elif arg.startswith("dec"):
-    dec=Coord.fromHMS(arg.lstrip("dec"))
+    dec=Coord.fromD(arg.lstrip("dec="))
   elif arg.startswith("s"):
-    starttime=arg.lstrip("s")
+    starttime=arg.lstrip("s=")
+    last='s'
   elif arg.startswith("e"):
-    endtime=arg.lstrip("e")
+    endtime=arg.lstrip("e=")
+    last='e'
+  elif arg.startswith("-o:"):
+    outname=arg.lstrip("-o:")
+  elif arg.startswith("l="):
+    latitude=Coord.fromHMS(arg.lstrip("l="))
+  else:
+    if last=='s':
+      starttime += ' ' + arg
+    elif last=='e':
+      endtime += ' ' + arg
 
 seeing = Seeing()
+
+#Returns local sidereal time from the regular time.
+def timeToLST(time):
+  sun = ephem.Sun()
+  obs = ephem.Observer()
+  obs.lat = latitude.toHMS()
+  obs.pressure = 0
+  obs.date = time
+  return obs.sidereal_time()
 
 #Computes the coefficient. takes arrays: flux, altitude
 def computeExtinctionCoefficient(flux, altitudeArr):
@@ -76,23 +121,26 @@ def computeExtinctionCoefficient(flux, altitudeArr):
 		airmass.append(temparr[1])
 
 	#Print out magnitudes
-	print "Magnitudes:"
-	print magnitude
+        if debugmode:
+	  print "Magnitudes:"
+	  print magnitude
 
 	#Print out airmasses
-	print "Airmasses:"
-	print airmass
+        if debugmode:
+	  print "Airmasses:"
+	  print airmass
 
 	#Now run a least squares fit and return the slope of the line.
 	#We arent sure which order these come back in!
 	m,b = np.polyfit(airmass,magnitude,1)
 
 	#Print out m,b
-	print "M value:", m
-	print "B value:", b
+        if debugmode:
+	  print "M value:", m
+	  print "B value:", b
 
 	#Test plot
-	plotViaGnuplot("name","x",airmass,"y",magnitude,m,b)
+	plotViaGnuplot(outname,"Airmass",airmass,"Instrumental Magnitude",magnitude,m,b)
 
 	return m
 
@@ -103,10 +151,12 @@ def computeExtinctionWithLST(flux, lstArr):
 	raDec = Position(aTuple)
 	for lst in lstArr:
 		#this returns the altitude and azimuth
-		altAz = radec.raDecToAltAz(raDec, latitude, lst)
+		altAz = raDec.raDecToAltAz(raDec, latitude, lst)
 		#Get the altitude
 		altArr.append(altAz.alt)
-	computeExtinctionCoefficient(flux, altArr)
+        print flux
+        print altArr
+	return computeExtinctionCoefficient(flux, altArr)
 
 #Compute the magnitude and airmass from specific raDec (of type Position), flux values.
 def computeEC(flux, altitude):
@@ -164,6 +214,8 @@ def doFileModeEC():
     hdulist = pyfits.open(infile)
     altCoord = Coord.fromHMS(hdulist[0].header['ALT'])
     altArr.append(altCoord.toR())
+    #Set the latitude. This really only needs to be done once though.
+    latitude = Coord.fromHMS(hdulist[0].header['LATITUDE'])
     #Get the RA and DEC for this star
     ra = Coord.fromHMS(hdulist[0].header['RA'])
     dec = Coord.fromHMS(hdulist[0].header['DEC'])
@@ -171,20 +223,44 @@ def doFileModeEC():
     seeing.run(infile)
     star = seeing.getStarClosestTo(ra, dec)
     fluxArr.append(seeing.getFlux(star))
-  print fluxArr
-  print altArr
-  print  computeExtinctionCoefficient(fluxArr, altArr)
+  if debugmode:
+    print fluxArr
+    print altArr
+  print "Extinction Coefficient: " + str(computeExtinctionCoefficient(fluxArr, altArr))
 ##END doFileModeEC()
 
 
 def doDatabaseModeEC():
-  print "Not implemented yet"
-  #When implemented, this will call computeExtinctionWithLST(flux, lstArr)
+  fluxArr = []
+  lstArr = []
+  #Pull the data from the database, make sure our ra and dec are in Degrees.
+  db = database()
+  data = db.getTimeAndFlux(Coord.toD(ra),Coord.toD(dec),starttime,endtime)
+  for time,flux in data:
+    #reformat the time to something ephem likes.
+    time = str(time.year) + '/' + str(time.month) + '/' + str(time.day) + " " + str(time.hour) + ':' + str(time.minute) + ':' + str(time.second)
+    lstArr.append(timeToLST(time))
+    fluxArr.append(flux)
+  coeff = computeExtinctionWithLST(fluxArr, lstArr)
+  #Insert into database
+  sid = db.get_StarID(ra.toD(),dec.toD())
+  db.WriteEC_INTO_Extinction([coeff,sid])
 ##END doDatabaseModeEC()
 
 if filemode:
   doFileModeEC()
 else:
+  doDatabaseModeEC()
+
+#This would be called from the scheduluer!
+#ra1 and dec1 are Coord objects (Be sure to convert to degrees)
+#Start and End time are in the format 2009-05-03 18:58:30 (standard python datetime format)
+def extinctionCoefficient(ra1,dec1,startTime1,endTime1,latitude1):
+  ra = ra1
+  dec = dec1
+  startTime = startTime1
+  endTime = endTime1
+  latitude1 = latitude1
   doDatabaseModeEC()
 }}}
 
@@ -201,53 +277,3 @@ Known Input Bounds:
  * Dec: Ranges from 0-360 degrees
  * Latitude: Ranges from 0-180 degrees
  * Flux: Greater than 0
-
-*Database Stub Class*
-{{{
-class DatabaseStub:
-    """
-    Preliminary interface to database that simply returns hard-coded data
-    """
-    def queryStar(self, RA, dec):
-        """
-        TODO - code to communicate with databse interface
-        Will search database to return all stars at a certain RA/Dec
-        """
-        return 0
-
-    def queryMagnitude(self, starID)
-        """
-        TODO - code to communicate with databse interface
-        Retrieves the magnitude of the designated star (starID)
-        """
-        return 2
-
-    def queryExposures(self, starID):
-        """
-        TODO - returns an array of all of the exposures related to
-        the starID
-        """
-        return 0
-
-    def queryLST(self, exposureID):
-        """
-        TODO - code to communicate with databse interface
-        Retrieves the local sidereal time of the designated exposure (starID)
-        """
-        return 1
-
-    def queryFlux(self, starID):
-        """
-        TODO - code to communicate with databse interface
-        Retrieves the flux of the designated star (starID)
-        """
-        return 3
-
-    def writeEC(self, EC, starIDs):
-        """        
-        TODO - code to communicate with databse interface
-        Writes extinction coefficient (EC) to the designated EC. table (extID)
-        Sends list of starIDs. We will send [EC [StarIDs]] to the DB code.
-        """
-        return EC
-}}}
