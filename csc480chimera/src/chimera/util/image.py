@@ -138,7 +138,6 @@ class Image (DictMixin, RemoteObject):
     def fromFile(filename, fix=True):
         fd = pyfits.open(filename, mode="update")
         img = Image(filename, fd)
-        print "fix"
         if fix:
             img.fix()
 
