@@ -1,9 +1,5 @@
 
-#from chimera.util import run_astrometry_net
-from chimera.util.run_astrometry_net import AstrometryNet
-
-__author__="sdoherty"
-__date__ ="$May 1, 2009 12:12:12 PM$"
+from chimera.util.astrometry_net import AstrometryNet
 
 if __name__ == "__main__":
     print "Starting Mock Scheduler";
