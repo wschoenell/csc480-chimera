@@ -59,8 +59,8 @@ class AstrometryNet():
         for img in AstrometryNet.image_queue:
             index = index + 1
             print "\n\n=============================>Solving image %d of %d" % (index, count)
-            AstrometryNet.solve_field_by_file(img)
-
+            new_img_path = AstrometryNet.solve_field_by_file(img)
+            AstrometryNet.save_to_database(new_img_path)
 
 #==============================UTILITIES ==============================
     @staticmethod
@@ -171,20 +171,18 @@ class AstrometryNet():
     @staticmethod
     def save_to_database(fullfilename):
         """Saves global RA and DEC and image path to database"""
-        print "     Saving to database"
+        abs_path = os.path.abspath(fullfilename)
+        print "     Saving to database %s" %abs_path
 
-        fullfilename = image.filename()
-        pathname, filename = os.path.split(fullfilename)
-        name = os.path.basename(filename)
-        root_name = name.replace(".fits", "", 1)
-        wcs_new = pathname + "/" + root_name + ".new"
-
-        wcs_image = AstrometryNet.path_2_image(wcs_new)
+        wcs_image = AstrometryNet.path_2_image(abs_path)
         G_RA = AstrometryNet.get_center_ra(wcs_image)
         G_DEC = AstrometryNet.get_center_dec(wcs_image)
         new_file_name = wcs_image.filename()
         mydb = database()
-        mydb.add_Exposure(new_file_name, G_RA, G_DEC)
+        result = mydb.add_Exposure(new_file_name, G_RA, G_DEC)
+        if (result > 0):
+            print "     Image path, global RA and global DEC saved to database "
+
 
 
 #==============================CALCULATING FROM CENTER OF IMAGE ==============================
