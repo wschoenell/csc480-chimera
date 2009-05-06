@@ -5,10 +5,10 @@ if __name__ == "__main__":
     print "Starting Mock Scheduler";
     print"========================\n"
     try:
-        print "* (1) Calling Astrometry.net script for directory of images."
+        print "* (1) Calling Astrometry.net script for photometry on a directory of images."
         
         #batch of image
-        directorypath = "tests/480/batch/"
+        directorypath = "../../util/tests/480/batch/"
         AstrometryNet.add_image_directory_to_queue(directorypath)
         AstrometryNet.print_queue()
         AstrometryNet.solve_queue()        
@@ -18,9 +18,9 @@ if __name__ == "__main__":
         print e
         
     try:
-        print "* (2) Calling Astrometry.net script for directory of images."
+        print "* (2) Calling Astrometry.net script for calibrating the positioning of the telescope"
         #single image
-        img_path = "tests/480/image/image.fits"
+        img_path = "../../util/tests/480/image/image.fits"
         image = AstrometryNet.path_2_image(img_path)
 
         print "testing ra and dec check."
