@@ -178,7 +178,7 @@ class AstrometryNet():
         G_RA = AstrometryNet.get_center_ra(wcs_image)
         G_DEC = AstrometryNet.get_center_dec(wcs_image)
         new_file_name = wcs_image.filename()
-        mydb = database()
+        mydb = database("localhost","root","thinking","chimera")
         result = mydb.add_Exposure(new_file_name, G_RA, G_DEC)
         if (result > 0):
             print "     Image path, global RA and global DEC saved to database "
