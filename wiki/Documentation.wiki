@@ -6,3 +6,30 @@
 = CHIMERA =
 
   * [http://oswego.edu/~sdoherty/api/ API for chimera] (this is the javadoc-like reference)  _*MUST HAVE!*_ 
+
+= 3 Teams =
+
+== Positioning (photometry) ==
+This project consisted of two goals:
+  * verify the position of the telescope for taking a picture
+  * get the world coordinate system data for an image or directory of images and store the global RA and DEC and the image path into a database
+
+Both of these goals were accomplished and are ready to be run by the final scheduler.  We created a mock scheduler in the chimera/controllers/scheduler package which will give a test run of the code we created.
+
+All of our code is located in chimera/util/astrometry_net.py
+
+In order to run our code, you need to do the following
+  * add the import {{{from chimera.util.astrometry_net import AstrometryNet}}}
+  * all of the methods that are available are static methods, because this class acts as a utility
+  * Photometry
+   * {{{AstrometryNet.add_image_directory_to_queue(directorypath)}}} will add all fits files in a directory to the image queue
+   * {{{AstrometryNet.solve_queue() }}} will solve all images and add their information to the databse
+  * Positioning
+   * {{{image = AstrometryNet.path_2_image(img_path)}}} give the file path
+   * {{{AstrometryNet.confirm_ra_dec_by_image_center(image)}}} this will return a boolean value if your telescope is within a certain tolerance of the desired location
+
+
+
+== Seeing ==
+
+== Extinction Coefficient ==
