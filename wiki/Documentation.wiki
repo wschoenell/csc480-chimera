@@ -6,6 +6,7 @@
 = CHIMERA =
 
   * [http://oswego.edu/~sdoherty/api/ API for chimera] (this is the javadoc-like reference)  _*MUST HAVE!*_ 
+  * [http://csc480-chimera.googlecode.com/files/ChimeraHandbook2.doc The Chimera Handbook]
 
 = 3 Teams =
 
