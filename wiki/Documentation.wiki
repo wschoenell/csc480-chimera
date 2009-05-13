@@ -14,9 +14,9 @@ This project consisted of two goals:
   * verify the position of the telescope for taking a picture
   * get the world coordinate system data for an image or directory of images and store the global RA and DEC and the image path into a database
 
-Both of these goals were accomplished and are ready to be run by the final scheduler.  We created a mock scheduler in the chimera/controllers/scheduler package which will give a test run of the code we created.
+Both of these goals were accomplished and are ready to be run by the final scheduler.  We created a mock scheduler in the {{{chimera/controllers/scheduler/mock_scheduler.py}}} package which will give a test run of the code we created.
 
-All of our code is located in chimera/util/astrometry_net.py
+All of our code is located in {{{chimera/util/astrometry_net.py}}}
 
 In order to run our code, you need to do the following
   * add the import {{{from chimera.util.astrometry_net import AstrometryNet}}}
