@@ -1,13 +1,22 @@
 #Links to documentation for the python programming language
 
-= Introduction =
+= PYTHON =
+== API ==
 
-Add your content here.
+  * [http://epydoc.sourceforge.net/stdlib/ Python Standard Library] Javadoc-like Python API   _*MUST HAVE!*_ 
+  * [http://pydoc.org/ Python Documentation Online]
+  * [http://docs.python.org/library/index.html The Python Standard Library] from python.org
+  * [http://docs.python.org/modindex.html Module Index] 
+  * [http://pyref.infogami.com/ Unofficial Python Reference]
+  * [http://books.google.com/books?id=ftA0yk1Z92wC&printsec=frontcover&dq=underscoring+variable+names+python Learning Python] (PDF) from O'Reilly
+
+== General ==
+  * [http://www.cs.oswego.edu/~sdoherty/SP2009/CSC480/diveintopython-5.4/html/ Dive Into Python] _*THIS IS MORE THAN MUST HAVE, IT IS EXCELLENT, IF YOU WANT TO LEARN PYTHON TODAY, START READING THIS*_
+  * [http://docs.python.org/reference/index.html#reference-index The Python Language Reference]
 
 
-= Details =
+== Documenting your code ==
+  * [http://epydoc.sourceforge.net/ Epydoc] (what to use)
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Small and Specific Tidbits ==
+  * [http://pyref.infogami.com/__all__ Purpose of the __all__ variable]
