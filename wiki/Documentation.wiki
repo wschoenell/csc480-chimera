@@ -1,4 +1,4 @@
-#summary Documentation for the Python programming language
+#summary Documentation for the CSC480 chimera project
 #labels Featured
 
 
