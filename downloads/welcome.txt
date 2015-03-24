@@ -1,0 +1,3 @@
+Hi, welcome to the student version of chimera.
+This is an alternate version to the google.code chimera project.
+

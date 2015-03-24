@@ -1,0 +1,4318 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="https://ssl.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"projectHomeUrl": "/p/csc480-chimera", "loggedInUserEmail": null, "token": null, "domainName": null, "profileUrl": null, "projectName": "csc480-chimera", "assetVersionPath": "https://ssl.gstatic.com/codesite/ph/4119706131923068122", "relativeBaseUrl": "", "assetHostPath": "https://ssl.gstatic.com/codesite/ph"};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script>
+ 
+ 
+ <title>Downloads - 
+ csc480-chimera -
+ 
+ 
+ The SUNY Oswego CSC480 class version of chimera project - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/ph_list.css" >
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="/feeds/p/csc480-chimera/downloads/basic">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ 
+ </style>
+</head>
+<body class="t2">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>&#9660;</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fdownloads%2Flist&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fdownloads%2Flist" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0"
+ itemscope itemtype="http://schema.org/CreativeWork">
+ <tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="/p/csc480-chimera">
+ <a href="/p/csc480-chimera/">
+ 
+ <img src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="/p/csc480-chimera/"><span itemprop="name">csc480-chimera</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link"
+ href="/p/csc480-chimera/"><span itemprop="description">The SUNY Oswego CSC480 class version of chimera project</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="/p/csc480-chimera/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/downloads/list" class="tab active">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/w/list" class="tab ">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/issues/list"
+ class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/source/checkout"
+ class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/export-to-github/export?project=csc480-chimera">
+ <button>Export to GitHub</button>
+ </a>
+ 
+ 
+ 
+ 
+ 
+ <div class=gtbc></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueList">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="list" method="GET" style="display:inline">
+ <select id="can" name="can" style="font-size:92%">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1" >&nbsp;All downloads</option>
+ <option value="3" >&nbsp;Featured downloads</option>
+ <option value="2" selected="selected">&nbsp;Current downloads</option>
+ 
+ 
+ <option value="4" >&nbsp;Deprecated downloads</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value=""
+ autocomplete="off" style="font-size:92%" ></span>
+ 
+ 
+ <span id="search_colspec"><input type="hidden" name="colspec" value="Filename Summary Uploaded ReleaseDate Size DownloadCount" ></span>
+ <input type="submit" value="Search" style="font-size:92%" >
+ </form>
+ </span>
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol"
+ 
+>
+
+ 
+
+
+
+
+
+<script type="text/javascript">
+function _showBelow(){}
+function _toggleStar(){}
+function _rowRolloverOn(){}
+function _rowRolloverOff(){}
+function _goIssue(){}
+function _goFile(){}
+</script>
+
+<script type="text/javascript">
+ function starClick(el, filename) {
+ _CS_toggleStar(
+ el,
+ {'scope': 'downloads',
+ 'user': '_CURRENT_USER',
+ 'item': 'csc480-chimera:' + filename
+ });
+ }
+</script>
+<div id="colcontrol">
+<div class="list">
+ 
+ 
+ <div class="pagination">
+ 
+ 1 - 35
+ 
+ of 35
+ 
+ 
+ </div>
+ 
+
+
+ 
+ &nbsp;&nbsp;
+ 
+ <form id="colspecform" action="list" method="GET" autocomplete="off" style="display:inline">
+ <input type="hidden" name="can" value=2 >
+ <input type="hidden" name="q" value="" >
+ <input type="hidden" name="sort" value="" >
+ <input type="hidden" id="groupbyspec" name="groupby" value="" >
+ <span id="columnspec" style="display:none;"><span style="font-size: 95%">Columns: </span><span id="colspec_field"><input type="text" size="60" style="font-size: 80%" name="colspec"
+ value="Filename Summary Uploaded ReleaseDate Size DownloadCount" /></span>&nbsp; <input type="submit" style="font-size: 80%" name="nobtn" value="Update" >&nbsp;
+ 
+ </span>
+ </form>
+ </div>
+ <table cellspacing="0" cellpadding="2" border="0" class="results" id="resultstable" width="100%">
+ <thead>
+ <tr id="headingrow">
+ 
+ <th style="border-left: 0"> &nbsp; </th>
+ 
+ 
+ <th class="col_0" nowrap="nowrap" onclick="return _showBelow('pop_0',this)"><a href="#" style="text-decoration: none">Filename <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ 
+ <th class="col_1" nowrap="nowrap" id="summaryheading" onclick="return _showBelow('pop_1',this)" width="100%"><a href="#" style="text-decoration: none">Summary + Labels <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ 
+ 
+ <th class="col_2" nowrap="nowrap" onclick="return _showBelow('pop_2',this)"><a href="#" style="text-decoration: none">Uploaded <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ 
+ 
+ <th class="col_3" nowrap="nowrap" onclick="return _showBelow('pop_3',this)"><a href="#" style="text-decoration: none">ReleaseDate <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ 
+ 
+ <th class="col_4" nowrap="nowrap" onclick="return _showBelow('pop_4',this)"><a href="#" style="text-decoration: none">Size <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ 
+ 
+ <th class="col_5" nowrap="nowrap" onclick="return _showBelow('pop_5',this)"><a href="#" style="text-decoration: none">DownloadCount <span class="indicator">&#9660;</span></a></th>
+ 
+ 
+ 
+ <th onclick="return _showBelow('pop__dot',this)" style="width:3ex"><a href="#columnprefs" class="dotdotdot">...</a></th>
+ </tr>
+ </thead>
+ 
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/Extinction%20Presentation.zip" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/Extinction%20Presentation.zip', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=">
+ 
+ Extinction Presentation.zip
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=">
+ 
+ Extinction Coefficient QUEST Presentation
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ May 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 1.4 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Extinction%20Presentation.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 23
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/src.tar.gz" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/src.tar.gz', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=src.tar.gz&amp;can=2&amp;q=">
+ 
+ src.tar.gz
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=src.tar.gz&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=src.tar.gz&amp;can=2&amp;q=">
+ 
+ final chimera  with all projects [position,extinction,seeing]
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=src.tar.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=src.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ May 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=src.tar.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=src.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=src.tar.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=src.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 42.7 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=src.tar.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=src.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 22
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/photometry.ppt" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/photometry.ppt', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=photometry.ppt&amp;can=2&amp;q=">
+ 
+ photometry.ppt
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=photometry.ppt&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=photometry.ppt&amp;can=2&amp;q=">
+ 
+ Photometry Quest Presentation
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=photometry.ppt&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=photometry.ppt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ May 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=photometry.ppt&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=photometry.ppt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=photometry.ppt&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=photometry.ppt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 3.0 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=photometry.ppt&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=photometry.ppt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 1532
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/ChimeraHandbook2.doc" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/ChimeraHandbook2.doc', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=">
+ 
+ ChimeraHandbook2.doc
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=">
+ 
+ Chimera Handbook
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ May 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 336 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=ChimeraHandbook2.doc&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 764
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/Chimera%20-%20Seeing.pptx" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/Chimera%20-%20Seeing.pptx', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=">
+ 
+ Chimera - Seeing.pptx
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=">
+ 
+ Seeing Presentation
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ May 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 1.2 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Chimera%20-%20Seeing.pptx&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 108
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/database.tar.gz" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/database.tar.gz', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=database.tar.gz&amp;can=2&amp;q=">
+ 
+ database.tar.gz
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=database.tar.gz&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=database.tar.gz&amp;can=2&amp;q=">
+ 
+ updated schema
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=database.tar.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=database.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=database.tar.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=database.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=database.tar.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=database.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 2.2 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=database.tar.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=database.tar.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 62
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/test_db.py" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/test_db.py', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=test_db.py&amp;can=2&amp;q=">
+ 
+ test_db.py
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=test_db.py&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=test_db.py&amp;can=2&amp;q=">
+ 
+ incomplete interface for database
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=test_db.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=test_db.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=test_db.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=test_db.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=test_db.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=test_db.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 2.1 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=test_db.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=test_db.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 106
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/create_tables.py" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/create_tables.py', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=create_tables.py&amp;can=2&amp;q=">
+ 
+ create_tables.py
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=create_tables.py&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=create_tables.py&amp;can=2&amp;q=">
+ 
+ creates tables for the database
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=create_tables.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=create_tables.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=create_tables.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=create_tables.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=create_tables.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=create_tables.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 2.5 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=create_tables.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=create_tables.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 115
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/chimeraflow.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/chimeraflow.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=">
+ 
+ chimeraflow.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=chimeraflow.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=">
+ 
+ Chimera Workflow
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=chimeraflow.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=chimeraflow.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=chimeraflow.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 235 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=chimeraflow.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimeraflow.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 77
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/IO%20For%20AstrometryNet.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/IO%20For%20AstrometryNet.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=">
+ 
+ IO For AstrometryNet.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=">
+ 
+ IO For Astrometry.net
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 296 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=IO%20For%20AstrometryNet.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 60
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/dao.py" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/dao.py', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=dao.py&amp;can=2&amp;q=">
+ 
+ dao.py
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=dao.py&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=dao.py&amp;can=2&amp;q=">
+ 
+ This is a better example of a script using daofind which also writes the output to a database
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=dao.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=dao.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Apr 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=dao.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=dao.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=dao.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=dao.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 7.3 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=dao.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=dao.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 174
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/ExtinctionCoefficient_Requirements_Doc.pdf" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/ExtinctionCoefficient_Requirements_Doc.pdf', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=">
+ 
+ ExtinctionCoefficient_Requirements_Doc.pdf
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=">
+ 
+ Requirements Document for the Extinction Coefficient
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 123 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=ExtinctionCoefficient_Requirements_Doc.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 542
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/SE_Handbook.4.pdf.gz" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/SE_Handbook.4.pdf.gz', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=">
+ 
+ SE_Handbook.4.pdf.gz
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=">
+ 
+ This is a nice guide for using Sextractor
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 575 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=SE_Handbook.4.pdf.gz&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 144
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/chimera_install_v6.py" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/chimera_install_v6.py', 'Featured, Type-Installer']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=">
+ 
+ chimera_install_v6.py
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=chimera_install_v6.py&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=">
+ 
+ Ben's install script v.6 Installs the head of our chimera code and not the original
+ 
+
+</a>
+  &nbsp;
+<a
+ onclick="cancelBubble=true;"
+ class="label" href="list?q=label:Featured"
+ >Featured</a>
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=chimera_install_v6.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=chimera_install_v6.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=chimera_install_v6.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 4.9 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=chimera_install_v6.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera_install_v6.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 389
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/daofind.py" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/daofind.py', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=daofind.py&amp;can=2&amp;q=">
+ 
+ daofind.py
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=daofind.py&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=daofind.py&amp;can=2&amp;q=">
+ 
+ This code claims to be able to run daofind on a file to get its values..
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=daofind.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=daofind.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=daofind.py&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=daofind.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=daofind.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=daofind.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 7.7 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=daofind.py&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=daofind.py&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 522
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=">
+ 
+ util_scat,util_telescopelimits,util_filenamesequence.JPG
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=">
+ 
+ UML - util/scat, util/telescopelimits, util/filenamesequence
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 44.8 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_scat%2Cutil_telescopelimits%2Cutil_filenamesequence.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 39
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/util_coord%2Cutil_catalog%2Cutil_enum.JPG" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/util_coord%2Cutil_catalog%2Cutil_enum.JPG', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=">
+ 
+ util_coord,util_catalog,util_enum.JPG
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=">
+ 
+ UML - util/coord.py, util/catalog.py, util/enum.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 141 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util_coord%2Cutil_catalog%2Cutil_enum.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 45
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/GUI%20UML.pdf" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/GUI%20UML.pdf', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=">
+ 
+ GUI UML.pdf
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=GUI%20UML.pdf&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=">
+ 
+ UML for the GUI
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=GUI%20UML.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=GUI%20UML.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=GUI%20UML.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 847 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=GUI%20UML.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=GUI%20UML.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 110
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/remoteclient.py.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/remoteclient.py.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=">
+ 
+ remoteclient.py.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=remoteclient.py.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=">
+ 
+ UML- remoteclient.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=remoteclient.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=remoteclient.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=remoteclient.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 17.3 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=remoteclient.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=remoteclient.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 37
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/image.py.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/image.py.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=image.py.jpg&amp;can=2&amp;q=">
+ 
+ image.py.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=image.py.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=image.py.jpg&amp;can=2&amp;q=">
+ 
+ UML- image.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=image.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=image.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=image.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=image.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=image.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=image.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 52.6 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=image.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=image.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 40
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/position.py.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/position.py.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=position.py.jpg&amp;can=2&amp;q=">
+ 
+ position.py.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=position.py.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=position.py.jpg&amp;can=2&amp;q=">
+ 
+ UML- position.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=position.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=position.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=position.py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=position.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=position.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=position.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 50.3 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=position.py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=position.py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 45
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/DriversSbig.JPG" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/DriversSbig.JPG', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=">
+ 
+ DriversSbig.JPG
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=DriversSbig.JPG&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=">
+ 
+ drivers/sbig/
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=DriversSbig.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=DriversSbig.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=DriversSbig.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 90.1 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=DriversSbig.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=DriversSbig.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 35
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/util.JPG" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/util.JPG', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=util.JPG&amp;can=2&amp;q=">
+ 
+ util.JPG
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=util.JPG&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=util.JPG&amp;can=2&amp;q=">
+ 
+ votable.py, simbad.py, vizquery.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=util.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=util.JPG&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=util.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 58.7 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=util.JPG&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util.JPG&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 41
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/Database.pdf" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/Database.pdf', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=Database.pdf&amp;can=2&amp;q=">
+ 
+ Database.pdf
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=Database.pdf&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=Database.pdf&amp;can=2&amp;q=">
+ 
+ Database schema
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=Database.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Database.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=Database.pdf&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Database.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=Database.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Database.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 13.1 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=Database.pdf&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Database.pdf&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 112
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/execution-flow.jpeg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/execution-flow.jpeg', 'Type-Docs']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=">
+ 
+ execution-flow.jpeg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=execution-flow.jpeg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=">
+ 
+ Image of runtime sequence for startup
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=execution-flow.jpeg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=execution-flow.jpeg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=execution-flow.jpeg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 70.2 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=execution-flow.jpeg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=execution-flow.jpeg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 48
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/chimera.xmi" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/chimera.xmi', 'Type-Docs']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=chimera.xmi&amp;can=2&amp;q=">
+ 
+ chimera.xmi
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=chimera.xmi&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera.xmi&amp;can=2&amp;q=">
+ 
+ The uml classes that umbrello created
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=chimera.xmi&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera.xmi&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=chimera.xmi&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera.xmi&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=chimera.xmi&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera.xmi&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 1.0 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=chimera.xmi&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera.xmi&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 58
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/Astrometrynet-py.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/Astrometrynet-py.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=">
+ 
+ Astrometrynet-py.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=">
+ 
+ astrometrynet.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 25.7 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Astrometrynet-py.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 48
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/controllers.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/controllers.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=controllers.jpg&amp;can=2&amp;q=">
+ 
+ controllers.jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=controllers.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=controllers.jpg&amp;can=2&amp;q=">
+ 
+ autofocus.py, extinction.py, photometry.py, xmlprc.py, pointverify.py, xephem.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=controllers.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=controllers.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=controllers.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=controllers.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=controllers.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=controllers.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 175 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=controllers.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=controllers.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 43
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/util%281%29.jpg" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/util%281%29.jpg', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=util%281%29.jpg&amp;can=2&amp;q=">
+ 
+ util(1).jpg
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=util%281%29.jpg&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=util%281%29.jpg&amp;can=2&amp;q=">
+ 
+ sexcatalog.py, ds9.py, sextractor.py, dumper.py
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=util%281%29.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util%281%29.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=util%281%29.jpg&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=util%281%29.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=util%281%29.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util%281%29.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 89.2 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=util%281%29.jpg&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=util%281%29.jpg&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 61
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/image_server.png" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/image_server.png', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=image_server.png&amp;can=2&amp;q=">
+ 
+ image_server.png
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=image_server.png&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=image_server.png&amp;can=2&amp;q=">
+ 
+ image sever uml
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=image_server.png&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=image_server.png&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Mar 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=image_server.png&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=image_server.png&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=image_server.png&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=image_server.png&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 22.9 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=image_server.png&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=image_server.png&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 44
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/timecard.jar" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/timecard.jar', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=timecard.jar&amp;can=2&amp;q=">
+ 
+ timecard.jar
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=timecard.jar&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=timecard.jar&amp;can=2&amp;q=">
+ 
+ timecard (keep track of what you have done)
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=timecard.jar&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=timecard.jar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Feb 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=timecard.jar&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=timecard.jar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=timecard.jar&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=timecard.jar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 16.6 KB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=timecard.jar&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=timecard.jar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 89
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/api.zip" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/api.zip', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=api.zip&amp;can=2&amp;q=">
+ 
+ api.zip
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=api.zip&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=api.zip&amp;can=2&amp;q=">
+ 
+ chimera documentation (for those windows users)
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=api.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=api.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Feb 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=api.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=api.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=api.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=api.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 2.5 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=api.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=api.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 26
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/chimera-api.tar" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/chimera-api.tar', '']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=chimera-api.tar&amp;can=2&amp;q=">
+ 
+ chimera-api.tar
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=chimera-api.tar&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera-api.tar&amp;can=2&amp;q=">
+ 
+ chimera documentation (for epydoc)
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=chimera-api.tar&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera-api.tar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Feb 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=chimera-api.tar&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera-api.tar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=chimera-api.tar&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera-api.tar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 18.3 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=chimera-api.tar&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=chimera-api.tar&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 17
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/Sashi_docs.zip" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/Sashi_docs.zip', 'Type-Docs']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=">
+ 
+ Sashi_docs.zip
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=Sashi_docs.zip&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=">
+ 
+ docs from Sashi
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=Sashi_docs.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Feb 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=Sashi_docs.zip&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=Sashi_docs.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 1.4 MB
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=Sashi_docs.zip&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=Sashi_docs.zip&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 24
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+
+
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this); cancelBubble=false" class="ifOpened">
+ 
+ 
+ 
+ <td class="vt" nowrap="nowrap">
+ 
+ 
+ <a href="//csc480-chimera.googlecode.com/files/welcome.txt" onclick="_gaq.push(['siteTracker._trackEvent', 'Download - Downloaded', '//csc480-chimera.googlecode.com/files/welcome.txt', 'Type-Docs']);"
+ title="Download">
+ <img alt="Download" src="https://ssl.gstatic.com/codesite/ph/images/dl_arrow.gif" />
+ </a>
+ </td>
+ 
+  
+ <td class="vt id col_0">
+ <a href="detail?name=welcome.txt&amp;can=2&amp;q=">
+ 
+ welcome.txt
+ 
+
+</a>
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_1" width="100%"
+ onclick="if (!cancelBubble) _go('detail?name=welcome.txt&amp;can=2&amp;q=')"
+ ><a onclick="cancelBubble=true;" href="detail?name=welcome.txt&amp;can=2&amp;q=">
+ 
+ Welcome
+ 
+
+</a>
+ 
+
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_2" onclick="if (!cancelBubble) _go('detail?name=welcome.txt&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=welcome.txt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ Feb 2009
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_3" onclick="if (!cancelBubble) _go('detail?name=welcome.txt&amp;can=2&amp;q=')"
+ 
+ ><a onclick="cancelBubble=true;" href="detail?name=welcome.txt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_4" onclick="if (!cancelBubble) _go('detail?name=welcome.txt&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=welcome.txt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 113 bytes
+ 
+
+</a></td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="vt col_5" onclick="if (!cancelBubble) _go('detail?name=welcome.txt&amp;can=2&amp;q=')"
+ align="right"
+ ><a onclick="cancelBubble=true;" href="detail?name=welcome.txt&amp;can=2&amp;q=" style="white-space:nowrap">
+ 
+ 83
+ 
+
+</a></td>
+ 
+ 
+ <td>&nbsp;</td>
+ </tr>
+ 
+ 
+ </table>
+ <div class="list-foot">
+ 
+ 
+ <div class="pagination">
+ 
+ 1 - 35
+ 
+ of 35
+ 
+ 
+ </div>
+ 
+
+
+ </div>
+ &nbsp;&nbsp;
+ <div style="margin-top: 1px; font-size: small">
+ 
+ 
+ </div>
+
+ 
+ <div id="pop_0" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('filename')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('filename')"><td>Sort Down</td></tr>
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_0')"><td>Hide Column</td></tr>
+ </table>
+ </div>
+ 
+
+ 
+ 
+ <div id="pop_1" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('summary')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('summary')"><td>Sort Down</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);" onmouseout="_rowRolloverOff(this)"><td onmouseover="_showRight('filter_1', this);"
+ >Show only <span class="indicator">&#9658;</span></td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_1')"><td>Hide Column</td></tr>
+ </table>
+ </div>
+ 
+ 
+
+ 
+ 
+ <div id="pop_2" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('uploaded')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('uploaded')"><td>Sort Down</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_2')"><td>Hide Column</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)"
+ onclick="_closeAllPopups(this);_addGroupBy(2)"
+ id="pop_groupby_2"
+ ><td>Group Rows</td></tr>
+ </table>
+ </div>
+ 
+ 
+
+ 
+ 
+ <div id="pop_3" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('releasedate')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('releasedate')"><td>Sort Down</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_3')"><td>Hide Column</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)"
+ onclick="_closeAllPopups(this);_addGroupBy(3)"
+ id="pop_groupby_3"
+ ><td>Group Rows</td></tr>
+ </table>
+ </div>
+ 
+ 
+
+ 
+ 
+ <div id="pop_4" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('size')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('size')"><td>Sort Down</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_4')"><td>Hide Column</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)"
+ onclick="_closeAllPopups(this);_addGroupBy(4)"
+ id="pop_groupby_4"
+ ><td>Group Rows</td></tr>
+ </table>
+ </div>
+ 
+ 
+
+ 
+ 
+ <div id="pop_5" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortUp('downloadcount')"><td>Sort Up</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_sortDown('downloadcount')"><td>Sort Down</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_5')"><td>Hide Column</td></tr>
+ <tr onmouseover="_rowRolloverOn(this);_closeSubmenus()" onmouseout="_rowRolloverOff(this)"
+ onclick="_closeAllPopups(this);_addGroupBy(5)"
+ id="pop_groupby_5"
+ ><td>Group Rows</td></tr>
+ </table>
+ </div>
+ 
+ 
+
+
+ <div id="filter_0" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ </table>
+ </div>
+
+ <div id="filter_1" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_filterTo('label','Featured');">
+ <td>Featured</td></tr>
+ 
+ </table>
+ </div>
+
+ <div id="filter_2" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ </table>
+ </div>
+
+ <div id="filter_3" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ </table>
+ </div>
+
+ <div id="filter_4" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ </table>
+ </div>
+
+ <div id="filter_5" class="popup subpopup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ 
+ </table>
+ </div>
+
+ <div id="pop__dot" class="popup">
+ <table cellspacing="0" cellpadding="0" border="0">
+ <tr><th>Show columns:</th></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_0')"><td>&nbsp;<span class="col_0">&diams;</span>&nbsp;Filename</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_1')"><td>&nbsp;<span class="col_1">&diams;</span>&nbsp;Summary</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_2')"><td>&nbsp;<span class="col_2">&diams;</span>&nbsp;Uploaded</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_3')"><td>&nbsp;<span class="col_3">&diams;</span>&nbsp;ReleaseDate</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_4')"><td>&nbsp;<span class="col_4">&diams;</span>&nbsp;Size</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_toggleColumn('hide_col_5')"><td>&nbsp;<span class="col_5">&diams;</span>&nbsp;DownloadCount</td></tr>
+ 
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_addcol('UploadedBy')"><td>&nbsp;&nbsp;&nbsp;&nbsp;UploadedBy</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_addcol('Stars')"><td>&nbsp;&nbsp;&nbsp;&nbsp;Stars</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_addcol('Project')"><td>&nbsp;&nbsp;&nbsp;&nbsp;Project</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this);_addcol('Type')"><td>&nbsp;&nbsp;&nbsp;&nbsp;Type</td></tr>
+ 
+ <tr onmouseover="_rowRolloverOn(this)" onmouseout="_rowRolloverOff(this)" onclick="_closeAllPopups(this); document.getElementById('columnspec').style.display=''; return true;"><td>&nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;column&nbsp;spec...</td></tr>
+ </table>
+</div>
+</div>
+<script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/dit_scripts.js"></script>
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ var _allColumnNames = [
+ 'filename', 'summary', 'uploaded', 'releasedate', 'size', 'downloadcount'
+ ];
+ 
+</script>
+ 
+ 
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_core.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ </body>
+</html>
+
