@@ -1,0 +1,23 @@
+#summary Starting point for developers on the chimera student project.
+
+This will be our starting place for posting helpful links etc... for the student version of chimera
+== Communication ==
+ * [http://csc480.proboards.com/ Class message board /chat]
+
+
+
+== Chimera ==
+
+  * [http://code.google.com/p/chimera/ Original chimera site on Google code] 
+  * [http://chimera.sourceforge.net/ Chimera on sourceforge]
+  * [http://www.oswego.edu/~kanbur/IRES2008/IRES2008.html Product of the summer work in Brazil last year]
+
+== Astronomy/Astrometry related ==
+  * [http://calgary.rasc.ca/radecl.htm RA & DEC]
+  * [http://astrometry.net/ Astrometry.net]
+
+== Educational Software ==
+  * [http://www.stellarium.org/ Stellarium]
+  * [http://www.google.com/sky/ Google sky]
+  * [http://www.worldwidetelescope.org/Home.aspx Worldwide telescope]
+  * [http://earth.google.com/ Google earth also has a "sky thing"]
