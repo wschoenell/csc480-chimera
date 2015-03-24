@@ -1,0 +1,408 @@
+
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="https://ssl.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="https://code.google.com/p/csc480-chimera/wiki/NetBeans_Project_Creation" />
+ 
+ <script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"projectHomeUrl": "/p/csc480-chimera", "loggedInUserEmail": null, "token": null, "domainName": null, "profileUrl": null, "projectName": "csc480-chimera", "assetVersionPath": "https://ssl.gstatic.com/codesite/ph/4119706131923068122", "relativeBaseUrl": "", "assetHostPath": "https://ssl.gstatic.com/codesite/ph"};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script>
+ 
+ 
+ <title>NetBeans_Project_Creation - 
+ csc480-chimera -
+ 
+ Directions on how to create a NetBeans Project using subversion and Google Code - 
+ The SUNY Oswego CSC480 class version of chimera project - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/ph_detail.css" >
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="/feeds/p/csc480-chimera/svnchanges/basic?path=/wiki/NetBeans_Project_Creation.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+</head>
+<body class="t6">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>&#9660;</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FNetBeans_Project_Creation&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FNetBeans_Project_Creation" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0"
+ itemscope itemtype="http://schema.org/CreativeWork">
+ <tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="/p/csc480-chimera">
+ <a href="/p/csc480-chimera/">
+ 
+ <img src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="/p/csc480-chimera/"><span itemprop="name">csc480-chimera</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link"
+ href="/p/csc480-chimera/"><span itemprop="description">The SUNY Oswego CSC480 class version of chimera project</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="/p/csc480-chimera/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/issues/list"
+ class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/source/checkout"
+ class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/export-to-github/export?project=csc480-chimera">
+ <button>Export to GitHub</button>
+ </a>
+ 
+ 
+ 
+ 
+ 
+ <div class=gtbc></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/csc480-chimera/w/list" method="GET" style="display:inline">
+ <select id="can" name="can" >
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1" >&nbsp;All wiki pages</option>
+ <option value="3" >&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4" >&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value=""
+ autocomplete="off" ></span>
+ 
+ 
+ 
+ <input type="submit" value="Search" >
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol"
+ 
+>
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size:120%;font-weight:bold">NetBeans_Project_Creation</span>
+ &nbsp;
+ <div> 
+ 
+ <i>Directions on how to create a NetBeans Project using subversion and Google Code</i>
+ 
+ 
+ <br/>
+ 
+ <a class="label" style="padding-top: 2px"
+ href="/p/csc480-chimera/w/list?q=label:Featured"
+ title="Listed on project home page"
+ >Featured</a>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Thu Feb  4 13:41:35 2010">
+ Feb 4, 2010</span>
+ 
+ by 
+
+ <a class="userlink"
+ href="/u/scott.doherty777@gmail.com/">scott.doherty777@gmail.com</a
+>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h1><a name="How_to_install_as_a_project_in_Netbeans"></a>How to install as a project in Netbeans<a href="#How_to_install_as_a_project_in_Netbeans" class="section_anchor"></a></h1><h2><a name="1.)_You_must_have_the_Python_plugin_for_netbeans."></a>1.) You must have the Python plugin for netbeans.<a href="#1.)_You_must_have_the_Python_plugin_for_netbeans." class="section_anchor"></a></h2><ul><li>Go to Tools &gt;&gt; Plugins </li><li>in the search bar at top right type python </li><li>select the python plugin (not the pythonedit if it is there !!) </li></ul><p>Click install and follow the instructions, then restart netbeans </p><h2><a name="2.)_Netbeans_comes_with_a_subversion_client_interface_preinstall"></a>2.) Netbeans comes with a subversion client interface preinstalled.<a href="#2.)_Netbeans_comes_with_a_subversion_client_interface_preinstall" class="section_anchor"></a></h2><p>But you will need to specify the svn client to use or download one to use </p><h3><a name="LINUX"></a>LINUX<a href="#LINUX" class="section_anchor"></a></h3><p>If you are running linux (which you are suppossed to be for this project ): <ul><li>If you don&#x27;t have svn - which you can determine by typing &quot;which svn&quot; in a terminal </li><li>Then type &quot;sudo apt-get install subversion&quot; type in your root password etc... </li></ul></p><p>When you&#x27;ve gotten the svn client <ul><li>Go to Tools &gt;&gt; Options  </li><li>Click on the Miscellaneous tab </li><li>Click on the Versioning tab </li><li>Select Subversion under Versioning Systems in left column </li><li>enter /usr/bin/ as the location for the svn executable </li></ul></p><h3><a name="WINDOWS"></a>WINDOWS<a href="#WINDOWS" class="section_anchor"></a></h3><p>If you are running Windows, then in order to get the subeversion client by  <ul><li>going to the main toolbar and click Versioning &gt;&gt; Subversion &gt;&gt; Checkout </li></ul>This will give you the option of downloading the svn client (&quot;Get bundled Subversion 1.5 binaries...&quot;) from the repostories (you will have to be online to do this) <ul><li>choose that option and click OK </li></ul></p><p>This will install the subversion client so click restart now after it downloads it. When it restarts it will take a minute for Netbeans to install the new updated plugin. </p><h2><a name="3.)_Now_You_will_need_to_add_the_account_for_chimera"></a>3.) Now You will need to add the account for chimera<a href="#3.)_Now_You_will_need_to_add_the_account_for_chimera" class="section_anchor"></a></h2><p>Now for both Windows and Linux;  <ul><li>go to the main toolbar Versioning &gt;&gt; Subversion &gt;&gt; Checkout </li><li>Enter into Repository URL: <a href="https://csc480-chimera.googlecode.com/svn/trunk/" rel="nofollow">https://csc480-chimera.googlecode.com/svn/trunk/</a> </li><li>Enter into User: The username given in class </li><li>Enter into Password: The password given in class </li><li>Check Save username and Password </li><li>Click Next -- this will connect you to the google code repository </li></ul></p><p>Now you will be in the &quot;Folders to Checkout&quot; Panel <ul><li>leave Repository Folder(s) as trunk </li><li>leave Repository Revision blank </li><li>check skip trunk and checkout only its contents (this just means you don&#x27;t want the extra directory called trunk you just want everything in it) </li><li>in Local Folder, browse to your <tt>NetBeansProjects</tt> folder </li><ul><li>in linux usually <tt>/home/&lt;user name&gt;/NetBeansProjects</tt> </li><li>in Windows Vista usually <tt>C:\&lt;path to user home dir&gt;\Documents\NetBeansProjects</tt> </li><li>in Windows XP usually <tt>C:\&lt;path to user home dir&gt;\My Documents\NetBeansProjects</tt> </li></ul><li>leave Scan for <tt>NetBeans</tt> Projects after Checkout checked </li><li>Click Finish </li></ul></p><h2><a name="4.)_This_will_start_the_download_which_will_take_a_while."></a>4.) This will start the download which will take a while.<a href="#4.)_This_will_start_the_download_which_will_take_a_while." class="section_anchor"></a></h2><p>Next it will ask if you want to open the project - say yes. Note. The only thing that you will see in the <tt>Netbeans</tt> project is the stuff that is in the <tt>src</tt> folder. The rest is still in the <tt>chimera480</tt> folder in your <tt>NetBeansProjects</tt> directory. </p>
+ </div>
+ </div>
+ </td><tr>
+</table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">&#9658;</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FNetBeans_Project_Creation&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FNetBeans_Project_Creation"
+ >Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input type="hidden" name="sequence_num" value="" >
+ <input type="hidden" name="create_time" value="" >
+ <input type="hidden" name="mode" value="" >
+ <input type="hidden" name="pagename" value="NetBeans_Project_Creation" >
+ <input type="hidden" name="token" value="" >
+ </form>
+
+
+ <script src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/prettify/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/dit_scripts.js"></script>
+
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ </body>
+</html>
+
+

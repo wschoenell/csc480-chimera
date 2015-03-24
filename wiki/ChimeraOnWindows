@@ -1,0 +1,402 @@
+
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="https://ssl.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="https://code.google.com/p/csc480-chimera/wiki/ChimeraOnWindows" />
+ 
+ <script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"projectName": "csc480-chimera", "domainName": null, "assetVersionPath": "https://ssl.gstatic.com/codesite/ph/4119706131923068122", "token": null, "profileUrl": null, "assetHostPath": "https://ssl.gstatic.com/codesite/ph", "loggedInUserEmail": null, "relativeBaseUrl": "", "projectHomeUrl": "/p/csc480-chimera"};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script>
+ 
+ 
+ <title>ChimeraOnWindows - 
+ csc480-chimera -
+ 
+ How to get Chimera running on Windows. - 
+ The SUNY Oswego CSC480 class version of chimera project - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/ph_detail.css" >
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="/feeds/p/csc480-chimera/svnchanges/basic?path=/wiki/ChimeraOnWindows.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+</head>
+<body class="t6">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>&#9660;</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FChimeraOnWindows&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FChimeraOnWindows" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0"
+ itemscope itemtype="http://schema.org/CreativeWork">
+ <tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="/p/csc480-chimera">
+ <a href="/p/csc480-chimera/">
+ 
+ <img src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="/p/csc480-chimera/"><span itemprop="name">csc480-chimera</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link"
+ href="/p/csc480-chimera/"><span itemprop="description">The SUNY Oswego CSC480 class version of chimera project</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="/p/csc480-chimera/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/issues/list"
+ class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/source/checkout"
+ class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/export-to-github/export?project=csc480-chimera">
+ <button>Export to GitHub</button>
+ </a>
+ 
+ 
+ 
+ 
+ 
+ <div class=gtbc></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/csc480-chimera/w/list" method="GET" style="display:inline">
+ <select id="can" name="can" >
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1" >&nbsp;All wiki pages</option>
+ <option value="3" >&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4" >&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value=""
+ autocomplete="off" ></span>
+ 
+ 
+ 
+ <input type="submit" value="Search" >
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol"
+ 
+>
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size:120%;font-weight:bold">ChimeraOnWindows</span>
+ &nbsp;
+ <div> 
+ 
+ <i>How to get Chimera running on Windows.</i>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Thu Feb  4 13:41:34 2010">
+ Feb 4, 2010</span>
+ 
+ by 
+
+ <a class="userlink"
+ href="/u/110055968130759765257/">andrew05...@gmail.com</a
+>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h1><a name="Introduction"></a>Introduction<a href="#Introduction" class="section_anchor"></a></h1><p>After a little effort, I got Chimera running on my Windows laptop. Here is an overview of how to recreate that and hopefully get Chimera running on any Windows machine. </p><h1><a name="Details"></a>Details<a href="#Details" class="section_anchor"></a></h1><h3><a name="Install_Python_2.5"></a>Install Python 2.5<a href="#Install_Python_2.5" class="section_anchor"></a></h3><ul><li>Go to <a href="http://www.python.org/download/releases/2.5.4/" rel="nofollow">http://www.python.org/download/releases/2.5.4/</a> </li><li>Download python-2.5.4.msi (Use the x86 version - it works on x64, and it&#x27;s the only one that the packages will recognize.) </li></ul><h3><a name="Install_Missing_.dll&#x27;s"></a>Install Missing .dll&#x27;s<a href="#Install_Missing_.dll&#x27;s" class="section_anchor"></a></h3><p>It seems that there is a .dll (mfc71) that is not installed during the Python installation - but is critical for pywin. From what I read, it seems that the appropriate mfc would install for Python2.3, but not for Python2.4. It appears that this holds true for Python2.5 as well. The .dll may be downloaded at <a href="http://starship.python.net/crew/mhammond/downloads/mfc71.dll" rel="nofollow">http://starship.python.net/crew/mhammond/downloads/mfc71.dll</a>  </p><p>Information at: <a href="http://starship.python.net/crew/mhammond/win32/" rel="nofollow">http://starship.python.net/crew/mhammond/win32/</a> </p><h3><a name="Install_pywin32_210"></a>Install pywin32 210<a href="#Install_pywin32_210" class="section_anchor"></a></h3><ul><li>Go to <a href="http://sourceforge.net/project/showfiles.php?group_id=78018&amp;package_id=79063&amp;release_id=449591" rel="nofollow">http://sourceforge.net/project/showfiles.php?group_id=78018&amp;package_id=79063&amp;release_id=449591</a> </li><li>Download pywin32-210.win32-py2.5.exe </li></ul><h3><a name="Install_pyephem_3.7.3.3"></a>Install pyephem 3.7.3.3<a href="#Install_pyephem_3.7.3.3" class="section_anchor"></a></h3><ul><li>Go to <a href="http://pypi.python.org/pypi/pyephem/" rel="nofollow">http://pypi.python.org/pypi/pyephem/</a> </li><li>Download pyephem-3.7.3.3.win32-py2.5.exe </li></ul><h3><a name="Install_PyYAML_3.08"></a>Install PyYAML 3.08<a href="#Install_PyYAML_3.08" class="section_anchor"></a></h3><ul><li>Download <a href="http://pyyaml.org/download/pyyaml/PyYAML-3.08.win32-py2.5.exe" rel="nofollow">http://pyyaml.org/download/pyyaml/PyYAML-3.08.win32-py2.5.exe</a> </li></ul><h3><a name="Install_setuptools_0.6c9"></a>Install setuptools 0.6c9<a href="#Install_setuptools_0.6c9" class="section_anchor"></a></h3><ul><li>Go to <a href="http://pypi.python.org/pypi/setuptools" rel="nofollow">http://pypi.python.org/pypi/setuptools</a> </li><li>Download setuptools-0.6c9.win32-py2.5.exe </li></ul><h3><a name="Use_Subversion_to_get_the_Chimera_source_code_from_here"></a>Use Subversion to get the Chimera source code from here<a href="#Use_Subversion_to_get_the_Chimera_source_code_from_here" class="section_anchor"></a></h3><h3><a name="Run_setup.py_in_the_&quot;trunk/csc480chimera/&quot;_directory"></a>Run setup.py in the &quot;trunk/csc480chimera/&quot; directory<a href="#Run_setup.py_in_the_&quot;trunk/csc480chimera/&quot;_directory" class="section_anchor"></a></h3><ul><li>&quot;(python exe) setup.py install&quot; </li><li>When I ran it, it still displayed an error message about pywin32, but it&#x27;s already installed anyway, and Chimera didn&#x27;t show any ill affects afterward. </li></ul><h3><a name="Temporary_fix_for_connection_issues"></a>Temporary fix for connection issues<a href="#Temporary_fix_for_connection_issues" class="section_anchor"></a></h3><ul><li>In &quot;trunk/csc480chimera/src/chimera/core/managerlocator.py&quot; line 29, there&#x27;s a sendto statement that sends a UDP packet to an address represented by the empty string &quot;&quot;. The empty string address might not be valid on Windows. If you change the address to &quot;localhost&quot; (provided that&#x27;s where the server is), Chimera should run fine. I&#x27;m still looking to see if there is another solution that does not involve changing the Chimera source code. </li></ul><h3><a name="General_notes"></a>General notes<a href="#General_notes" class="section_anchor"></a></h3><ul><li>To run any Python script in Windows, enter the path to the Python executable followed by the script name and the parameters to the script. For example, &quot;chimera -vv&quot; could become &quot;C:\Python25\python chimera -vv&quot; (depending on where you installed Python). </li></ul><h3><a name="Copy_Chimera&#x27;s_Global_Configuration_file"></a>Copy Chimera&#x27;s Global Configuration file<a href="#Copy_Chimera&#x27;s_Global_Configuration_file" class="section_anchor"></a></h3><ul><li>Copy the file &quot;chimera.global.config&quot; from the csc480chimera directory </li></ul><ul><li>Paste this file to &quot;C:\Python25\Lib\site-packages\chimera_python-0.2.dev_r62-py2.5.egg\chimera\core&quot; (provided you installed Python2.5 to C:\) </li></ul><h3><a name="Starting_Chimera_Server"></a>Starting Chimera Server<a href="#Starting_Chimera_Server" class="section_anchor"></a></h3><ul><li>Navigate the command shell to the python\scripts directory (cd C:\Python25\Scripts by default)  </li></ul><ul><li>Type: C:\Python25\python.exe chimera -vv </li></ul><ul><li>You should see the drivers and managers starting. The last line should read: </li></ul><blockquote>&#x27;&#x27;INFO chimera.controllers.site.main main.py:249  
+System up and running.&#x27;&#x27; 
+</blockquote><ul><li>Note: If you&#x27;re running a firewall, it may interfere. If you&#x27;re using the default Windows Firewall there should be an Allow/Block prompt. </li></ul>
+ </div>
+ </div>
+ </td><tr>
+</table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">&#9658;</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FChimeraOnWindows&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FChimeraOnWindows"
+ >Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input type="hidden" name="sequence_num" value="" >
+ <input type="hidden" name="create_time" value="" >
+ <input type="hidden" name="mode" value="" >
+ <input type="hidden" name="pagename" value="ChimeraOnWindows" >
+ <input type="hidden" name="token" value="" >
+ </form>
+
+
+ <script src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/prettify/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/dit_scripts.js"></script>
+
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ </body>
+</html>
+
+

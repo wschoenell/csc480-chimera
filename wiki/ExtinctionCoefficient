@@ -1,0 +1,708 @@
+
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="https://ssl.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="https://code.google.com/p/csc480-chimera/wiki/ExtinctionCoefficient" />
+ 
+ <script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"projectName": "csc480-chimera", "domainName": null, "assetVersionPath": "https://ssl.gstatic.com/codesite/ph/4119706131923068122", "token": null, "profileUrl": null, "assetHostPath": "https://ssl.gstatic.com/codesite/ph", "loggedInUserEmail": null, "relativeBaseUrl": "", "projectHomeUrl": "/p/csc480-chimera"};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script>
+ 
+ 
+ <title>ExtinctionCoefficient - 
+ csc480-chimera -
+ 
+ How Chimera will compute the Extinction Coefficient - 
+ The SUNY Oswego CSC480 class version of chimera project - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/ph_detail.css" >
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="/feeds/p/csc480-chimera/svnchanges/basic?path=/wiki/ExtinctionCoefficient.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/4119706131923068122/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+</head>
+<body class="t6">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>&#9660;</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FExtinctionCoefficient&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FExtinctionCoefficient" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0"
+ itemscope itemtype="http://schema.org/CreativeWork">
+ <tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="/p/csc480-chimera">
+ <a href="/p/csc480-chimera/">
+ 
+ <img src="https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="/p/csc480-chimera/"><span itemprop="name">csc480-chimera</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link"
+ href="/p/csc480-chimera/"><span itemprop="description">The SUNY Oswego CSC480 class version of chimera project</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="/p/csc480-chimera/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/issues/list"
+ class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/csc480-chimera/source/checkout"
+ class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/export-to-github/export?project=csc480-chimera">
+ <button>Export to GitHub</button>
+ </a>
+ 
+ 
+ 
+ 
+ 
+ <div class=gtbc></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/csc480-chimera/w/list" method="GET" style="display:inline">
+ <select id="can" name="can" >
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1" >&nbsp;All wiki pages</option>
+ <option value="3" >&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4" >&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value=""
+ autocomplete="off" ></span>
+ 
+ 
+ 
+ <input type="submit" value="Search" >
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol"
+ 
+>
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size:120%;font-weight:bold">ExtinctionCoefficient</span>
+ &nbsp;
+ <div> 
+ 
+ <i>How Chimera will compute the Extinction Coefficient</i>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Thu Feb  4 13:41:35 2010">
+ Feb 4, 2010</span>
+ 
+ by 
+
+ <a class="userlink"
+ href="/u/110511450557881432060/">digitaln...@gmail.com</a
+>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h1><a name="Introduction"></a>Introduction<a href="#Introduction" class="section_anchor"></a></h1><p>Our requirements document is found here: <a href="http://csc480-chimera.googlecode.com/files/ExtinctionCoefficient_Requirements_Doc.pdf" rel="nofollow">http://csc480-chimera.googlecode.com/files/ExtinctionCoefficient_Requirements_Doc.pdf</a> </p><p>Steps to compute extinction coefficient: </p><ul><li><tt>public computeExtinctionCoefficient(raDec, latitude, flux[], lst[])</tt>  </li><ol><li>raDec and latitude are supplied by the image or database. Flux and LST are specific  to each image. This function returns the slope of a fitted line to the points.  </li><li>This function calls computeEC for each image, which gives us <tt>magnitude[]</tt>, <tt>airmass[]</tt>. </li><li>Run a least squares fit on <tt>magnitude[]</tt>, <tt>airmass[]</tt>. Use NumPy for this. </li><li>Return the numeric value here (the extinction coefficient). </li><li>Call the automated graphing system (GNUPlot). </li></ol></ul><ul><li><tt>private computeEC(raDec, latitude, flux, lst)</tt> called by computeExtinctionCoefficient. Returns Airmass and Magnitude. </li><ol><li>Local Sidereal Time (lst) is given to us. </li><li>Call function raDectoAltAz(raDec, latitude, lst) in position.py. This returns altitude and azimuth. </li><li>Compute airmass = 1/cos(altitude). </li><li>Compute magnitude = -2.5*log(flux) </li><li>return airmass and magnitude for the given star. </li></ol></ul><p>Note - in case we for some reason in the future might need to calculate the Local Sidereal Time, Shashi gave me this site: <a href="http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm" rel="nofollow">http://www.pietro.org/Astro_Util_StaticDemo/FDetailSiderealConv.htm</a> </p><p>Here is our final code, this is working for passing a directory and computing the extinction coefficient from FITS files or from the database. There is also a function to have input come from the scheduler at some point. This automates calculating the extinction coefficient and creating the graphs to go with it. </p><pre class="prettyprint">extinction.py:
+
+####################################################################
+###########Extinction Coefficient Module for Chimera################
+######Written by Lisette Antigua, Brandon Fink, Brandon Gilfus######
+####Chris Guida, Kendall Moore, Dawn Orlandella, and Dan Schlegel###
+####################################################################
+
+####extinction.py : Handles obtaining the extinction coefficient.
+
+#CALLING THE EXTINCTION COEFFICIENT MODULE FROM THE SCHEDULER:
+#Use the ex.extinctionCoefficient(database,ra,dec,error,starttime,endtime,latitude,outname) function!
+
+#Example code calling from the scheduler:
+#ex = Extinction()
+#ex.extinctionCoefficient(database(&#x27;moxie.oswego.edu&#x27;,&#x27;dschlege&#x27;,&#x27;password&#x27;,&#x27;chimera&#x27;),320.1,69.2,.01,&#x27;2009-05-03 18:58:30&#x27;,&#x27;2009-05-03 18:58:50&#x27;,&#x27;-22:32:04.000&#x27;,&quot;test&quot;)
+
+from seeing import Seeing 
+from chimera.core.site import Site
+from chimera.util.position import Position
+from chimera.util.coord import Coord
+from chimeradb import database
+import numpy as np
+import math
+import os, glob, sys
+import ephem
+
+#PyFITS provides us the ability to use FITS file header data
+import pyfits
+
+#Debug mode
+debugmode=0
+
+class Extinction:
+	def __init__(self):
+          self.db = 0
+	  self.ra = Coord.fromD(0)
+	  self.dec = Coord.fromD(0)
+	  self.error = 0
+	  self.starttime = &#x27;&#x27;
+	  self.endtime = &#x27;&#x27;
+	  self.latitude = Coord.fromD(0)
+	  self.outname = &quot;&quot;
+	  self.path = &quot;&quot;
+	  self.seeing = Seeing()
+
+
+	#Returns local sidereal time from the regular time.
+	def timeToLST(self,time):
+	  sun = ephem.Sun()
+	  obs = ephem.Observer()
+	  obs.lat = self.latitude.toHMS()
+	  obs.pressure = 0
+	  obs.date = time
+	  return obs.sidereal_time()
+
+	#Computes the coefficient. takes arrays: flux, altitude
+	def computeExtinctionCoefficient(self,flux, altitudeArr):
+		#These will be needed for our output.
+		magnitude = []
+		airmass = []
+
+		#Make radec a global var
+		global radec
+
+		#Iterate over each of the arrays to call computeEC
+		for i in range(len(flux)):
+			temparr = self.computeEC(flux[i], altitudeArr[i])
+			magnitude.append(temparr[0])
+			airmass.append(temparr[1])
+
+		#Print out magnitudes
+		if debugmode:
+		  print &quot;Magnitudes:&quot;
+		  print magnitude
+
+		#Print out airmasses
+		if debugmode:
+		  print &quot;Airmasses:&quot;
+		  print airmass
+
+		#Now run a least squares fit and return the slope of the line.
+		#We arent sure which order these come back in!
+		m,b = np.polyfit(airmass,magnitude,1)
+
+		#Print out m,b
+		if debugmode:
+		  print &quot;M value:&quot;, m
+		  print &quot;B value:&quot;, b
+
+		#Test plot
+		self.plotViaGnuplot(self.outname,&quot;Airmass&quot;,airmass,&quot;Instrumental Magnitude&quot;,magnitude,m,b)
+
+		return m
+
+	#Compute from the array of fluxes and array of local sidereal times the extinction coefficient.
+	def computeExtinctionWithLST(self,flux, lstArr):
+		altArr = []
+		aTuple = self.ra, self.dec
+		raDec = Position(aTuple)
+		for lst in lstArr:
+			#this returns the altitude and azimuth
+			altAz = raDec.raDecToAltAz(raDec, self.latitude, lst)
+			#Get the altitude
+			altArr.append(altAz.alt)
+		print flux
+		print altArr
+		return self.computeExtinctionCoefficient(flux, altArr)
+
+	#Compute the magnitude and airmass from specific raDec (of type Position), flux values.
+	def computeEC(self,flux, altitude):
+		#airmass calculation
+		airmass = 1/math.cos(altitude)
+		#magnitude calculation
+		magnitude = 2.5*math.log(flux)
+		return [magnitude,airmass]
+
+	# Generates a data file (fileName.dat), a gnuplot batch file (fileName.gnu)
+	#  and a PNG image of the plot (fileName.png)
+	def plotViaGnuplot(self,fileName, x_label, x_list, y_label, y_list, m, b):
+	    # Set path to the gnuplot binary
+	    gpPath = &quot;gnuplot&quot;
+
+	    # Set output type and file extension
+	    terminalType = &quot;png&quot;    # Alternatives: jpeg, gif, postscript, pdf, etc.
+	    extension = &quot;.png&quot;      # Alternatives: jpg, gif, ps, pdf, etc.
+
+	    # Create space-delimited data file
+	    file = open(fileName + &quot;.dat&quot;, &quot;w&quot;)
+	    for i in range(len(x_list)):
+		print &gt;&gt; file, str(x_list[i]) + &#x27; &#x27; + str(y_list[i])
+	    file.flush()
+	    file.close()
+
+	    # Create gnuplot batch file
+	    file = open(fileName + &quot;.gnu&quot;, &quot;w&quot;)
+	    print &gt;&gt; file, &quot;set terminal &quot; + terminalType
+	    print &gt;&gt; file, &quot;set output \&quot;&quot; + fileName + extension + &quot;\&quot;&quot;
+	    print &gt;&gt; file, &quot;set xlabel \&quot;&quot; + x_label + &quot;\&quot;&quot;
+	    print &gt;&gt; file, &quot;set ylabel \&quot;&quot; + y_label + &quot;\&quot;&quot;
+	    print &gt;&gt; file, &quot;set xrange [ &quot; + str(min(x_list) - 1) + &quot; : &quot; + str(max(x_list) + 1) + &quot; ]&quot;
+	    print &gt;&gt; file, &quot;set yrange [ &quot; + str(min(y_list) - 1) + &quot; : &quot; + str(max(y_list) + 1) + &quot; ]&quot;
+	    print &gt;&gt; file, &quot;set mxtics 5&quot;
+	    print &gt;&gt; file, &quot;set mytics 5&quot;
+	    print &gt;&gt; file, &quot;set xtics &quot; + str((max(x_list) - min(x_list)) / 5)
+	    print &gt;&gt; file, &quot;set ytics &quot; + str((max(y_list) - min(y_list)) / 5)
+	    print &gt;&gt; file, &quot;f(x) = &quot; + str(m) + &quot; * x + &quot; + str(b)
+	    print &gt;&gt; file, &quot;plot f(x) notitle with lines, \&quot;&quot; + fileName + &quot;.dat\&quot; using 1:2 notitle&quot;
+	    file.flush()
+	    file.close()
+
+	    # Run gnuplot, passing in the batch file
+	    os.system(gpPath + &quot; &quot; + fileName + &quot;.gnu&quot;)
+
+
+	def doFileModeEC(self,path):
+	  self.path = path
+	  #Initial setup variables, these will be passed to CalculateExtinctionCoefficient
+	  fluxArr = []
+	  altArr = []
+	  for infile in glob.glob( os.path.join(path, &#x27;*.fits&#x27;) ):
+	    print &quot;current file is: &quot; + infile
+	    #Read the Altitude from the FITS file
+	    hdulist = pyfits.open(infile)
+	    altCoord = Coord.fromHMS(hdulist[0].header[&#x27;ALT&#x27;])
+	    altArr.append(altCoord.toR())
+	    #Set the latitude. This really only needs to be done once though.
+	    latitude = Coord.fromHMS(hdulist[0].header[&#x27;LATITUDE&#x27;])
+	    #Get the RA and DEC for this star
+	    ra = Coord.fromHMS(hdulist[0].header[&#x27;RA&#x27;])
+	    dec = Coord.fromHMS(hdulist[0].header[&#x27;DEC&#x27;])
+	    #Run the file through seeing
+	    self.seeing.run(infile)
+	    star = self.seeing.getStarClosestTo(ra, dec)
+	    fluxArr.append(self.seeing.getFlux(star))
+	  if debugmode:
+	    print fluxArr
+	    print altArr
+	  print &quot;Extinction Coefficient: &quot; + str(self.computeExtinctionCoefficient(fluxArr, altArr))
+	##END doFileModeEC()
+
+
+	def doDatabaseModeEC(self,db):
+	  fluxArr = []
+	  lstArr = []
+	  #Pull the data from the database, make sure our ra and dec are in Degrees.
+	  data = db.getTimeAndFlux(self.ra,self.dec,self.error,self.starttime,self.endtime)
+	  for time,flux in data:
+	    #reformat the time to something ephem likes.
+	    time = str(time.year) + &#x27;/&#x27; + str(time.month) + &#x27;/&#x27; + str(time.day) + &quot; &quot; + str(time.hour) + &#x27;:&#x27; + str(time.minute) + &#x27;:&#x27; + str(time.second)
+	    lstArr.append(self.timeToLST(time))
+	    fluxArr.append(flux)
+	  coeff = self.computeExtinctionWithLST(fluxArr, lstArr)
+	  #Insert into database
+	  sid = db.get_StarID(self.ra.toD(),self.dec.toD())
+	  db.WriteEC_INTO_Extinction([coeff,sid])
+	##END doDatabaseModeEC()
+
+
+
+	#This would be called from the scheduluer!
+	#ra1 and dec1 are Coord objects (Be sure to convert to degrees)
+	#Latitude is a coord object in HMS
+	#Start and End time are in the format 2009-05-03 18:58:30 (standard python datetime format)
+	#dbase is an already initialized database object.
+	def extinctionCoefficient(self,dbase,ra1,dec1,error,startTime1,endTime1,latitude1,outfile):
+	  outname = outfile
+	  self.ra = Coord.fromD(ra1)
+	  self.dec = Coord.fromD(dec1)
+	  self.error = error
+	  self.starttime = startTime1
+	  self.endtime = endTime1
+	  self.latitude = Coord.fromHMS(latitude1)
+	  self.outname = outfile
+	  self.doDatabaseModeEC(dbase)
+##END CLASS EXTINCTION
+
+extinctioncoefficient.py:
+
+####################################################################
+###########Extinction Coefficient Module for Chimera################
+######Written by Lisette Antigua, Brandon Fink, Brandon Gilfus######
+####Chris Guida, Kendall Moore, Dawn Orlandella, and Dan Schlegel###
+####################################################################
+
+####extinctioncoefficient.py : Handles running the extinction coefficient from the command line
+####extinction.py : Contains the functions for calculating the extinction coefficient. If you are calling directly, look there!
+
+#USING THE EXTINCTION COEFFICIENT MODULE FROM THE COMMAND LINE:
+#python extinctioncoefficient.py [-f:&lt;path to images&gt; | ra=&lt;RA&gt; dec=&lt;DEC&gt; s=&lt;Start Time&gt; e=&lt;End Time&gt; l=&lt;Latitude&gt;] -o:&lt;Image output filename&gt;
+#		      		 [-s:&lt;server address&gt; -d:&lt;database&gt; -u:&lt;username&gt; -p:&lt;password&gt;]
+#Times should be in this format: 2009-05-03 18:58:30 (python datetime standard)
+#Latitude is in HMS, RA and DEC are in Degrees
+#Using the path to images will read the fits file headers for RA, DEC and altitude. 
+#Using the DB will read the LST from the DB and calculate ext. coeff from there.
+
+#Example code calling from the command line with DB:
+#python extinctioncoefficient.py ra=320.1 dec=69.2 s=2009-05-03 18:58:30 e=2009-05-03 18:58:50 l=-22:32:04.000 -o:test -d:chimera -u:dschlege -p:password -s:moxie.oswego.edu
+
+#Example code calling from the command line with file output:
+#python extinctioncoefficient.py -f:images/
+
+
+from extinction import Extinction
+from chimeradb import database
+from chimera.util.coord import Coord
+import os, glob, sys
+#from seeing import Seeing 
+
+#This sets latitude, we need to pull this from the fits or DB, default is the brazil telescope.
+latitude = Coord.fromHMS(&#x27;-22:32:04.000&#x27;)
+
+#Default to DB mode
+filemode=0
+db=0
+dbserver=0
+dbname=0
+dbuser=0
+dbpass=0
+
+
+#Default output filename
+outname=&quot;extinction&quot;
+
+#Default error in RA and DEC
+error = 0
+
+#Command processing
+last = &#x27;&#x27;
+
+for arg in sys.argv:
+  if arg.startswith(&quot;-f:&quot;): #find if this is folder search.
+    path=arg.lstrip(&quot;-f:&quot;)
+    filemode=1
+  elif arg.startswith(&quot;ra=&quot;):
+    ra=arg.lstrip(&quot;ra=&quot;)
+  elif arg.startswith(&quot;dec=&quot;):
+    dec=arg.lstrip(&quot;dec=&quot;)
+  elif arg.startswith(&quot;s=&quot;):
+    starttime=arg.lstrip(&quot;s=&quot;)
+    last=&#x27;s&#x27;
+  elif arg.startswith(&quot;e=&quot;):
+    endtime=arg.lstrip(&quot;e=&quot;)
+    last=&#x27;e&#x27;
+  elif arg.startswith(&quot;-o:&quot;):
+    outname=arg.lstrip(&quot;-o:&quot;)
+  elif arg.startswith(&quot;l=&quot;):
+    latitude=arg.lstrip(&quot;l=&quot;)
+  elif arg.startswith(&quot;-s:&quot;):
+    dbserver=arg.lstrip(&quot;-s:&quot;)
+  elif arg.startswith(&quot;-d:&quot;):
+    dbname=arg.lstrip(&quot;-d:&quot;)
+  elif arg.startswith(&quot;-u:&quot;):
+    dbuser=arg.lstrip(&quot;-u:&quot;)
+  elif arg.startswith(&quot;-p:&quot;):
+    dbpass=arg.lstrip(&quot;-p:&quot;)
+  else:
+    if last==&#x27;s&#x27;:
+      starttime += &#x27; &#x27; + arg
+    elif last==&#x27;e&#x27;:
+      endtime += &#x27; &#x27; + arg
+
+ex = Extinction()
+
+if filemode:
+  ex.doFileModeEC(path)
+else:
+  ex.extinctionCoefficient(database(dbserver,dbuser,dbpass,dbname),ra,dec,error,starttime,endtime,latitude,outname)
+</pre><p>Further description of the process for calculating the extinction coefficient is available at: <a href="http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html" rel="nofollow">http://star-www.rl.ac.uk/star/dvi/sc6.htx/node15.html</a> </p><p><strong>Chimera Extinction Coefficient Module Test Plan</strong> </p><p>The test plan we have developed for the Extinction Coefficient module of the Chimera robotic telescope application is rooted firmly in the use of PyUnit tests. We will test the known bounds of the inputs to ensure they are within the acceptable ranges, and we will test on specific data to ensure that we are presented with a value equal to what is expected. </p><p>Known Input Bounds: </p><ul><li>Ra: Ranges from 0-180 degrees </li><li>Dec: Ranges from 0-360 degrees </li><li>Latitude: Ranges from 0-180 degrees </li><li>Flux: Greater than 0 </li></ul>
+ </div>
+ </div>
+ </td><tr>
+</table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">&#9658;</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FExtinctionCoefficient&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fcsc480-chimera%2Fwiki%2FExtinctionCoefficient"
+ >Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input type="hidden" name="sequence_num" value="" >
+ <input type="hidden" name="create_time" value="" >
+ <input type="hidden" name="mode" value="" >
+ <input type="hidden" name="pagename" value="ExtinctionCoefficient" >
+ <input type="hidden" name="token" value="" >
+ </form>
+
+
+ <script src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/prettify/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/dit_scripts.js"></script>
+
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="https://ssl.gstatic.com/codesite/ph/4119706131923068122/js/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ </body>
+</html>
+
+
