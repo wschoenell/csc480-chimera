@@ -1,0 +1,14 @@
+# Introduction #
+
+Feel free to post any programming related links that you think may be useful to your peers. This does not necessarily need to pertain to our 480 project, just something interesting that others may like to see.
+
+
+# Links #
+
+http://norvig.com/21-days.html
+
+# Other Cool Things #
+
+### Python Tidbits ###
+
+  * `def __init__(self.....):` is the constructor in any python class

@@ -1,0 +1,31 @@
+# Introduction #
+
+You must be online for the program to take a picture
+
+
+# Directions #
+
+
+
+## HOW TO START AND RUN THE SERVER ##
+
+  1. Open a terminal, and cd into the directory that you have downloaded from the google.code site (note, it must be the class version)
+  1. At the command line type:  `sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core`
+  1. Now type:  `chimera -vv`
+  1. This has started the server, you should see `Running /FakeTelescope/faketelescopedriver` and things like that
+  1. The last line should contain `System up and running.`
+> Congratulations you have started the chimera server !
+
+
+## HOW TO START AND RUN THE CLIENT ##
+
+
+  1. Now open another terminal
+  1. In that terminal type:
+| `chimera-dome --help` | **-will get you the help menu and commands**|
+|:----------------------|:--------------------------------------------|
+| `sudo chimera-dome --open`|  **-will open the fake dome slit**|
+| `sudo chimera-cam --shutter=OPEN`  | **-will open the camera shutter and start the cooler**|
+| `sudo chimera-cam --filters` | **-will list available filters for you**|
+| `sudo chimera-cam --expose -n 1 filter=R` | **-will take a picture through the R filter**|
+| `ls`  | **-you should now see some `*.fits` images which you can view with GIMP**|

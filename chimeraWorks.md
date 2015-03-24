@@ -1,0 +1,434 @@
+# Script of Sashi helping us #
+
+```
+sdoherty@linux-laptop:~$ chimera-dome --help
+13-02-2009 09:24:07.638 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
+Usage: chimera-dome [options]
+
+Chimera - Observatory Automation System - Dome controller
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Display information while working [default=True]
+  -q, --quiet           Don't display information while working.
+
+  Object Paths:
+    -I PATH, --instruments-dir=PATH
+                        Append PATH to Dome load path. This option could be
+                        setted multiple times to add multiple directories.
+                        [default=['/usr/lib/python2.5/site-packages/chimera_py
+                        thon-0.2.dev_r415-py2.5.egg/chimera/instruments']]
+
+  Client Configuration:
+    -H HOST, --host=HOST
+                        Host name/IP to bind the local Chimera instance.
+                        [default=localhost]
+    --no-autostart      Don't try to autostart Chimera if it were not running.
+    -P PORT, --port=PORT
+                        Port to which the local Chimera instance will listen
+                        to. [default=9000]
+
+  Commands:
+    --info              Print dome information
+    --to=AZ             Move dome to AZ azimuth
+    --track             Track the telescope
+    --stand             Stop tracking the telescope (stand)
+    --close             Close dome slit
+    --open              Open dome slit
+
+  Dome:
+    --dome=DOME         Dome instrument to be used
+
+  Telescope Tracking Configuration:
+    --telescope=TELESCOPE
+                        Tell the dome to follow TELESCOPE when tracking (only
+                        utilized when using --track [default=/Telescope/0]
+sdoherty@linux-laptop:~$ chimera-dome --open
+13-02-2009 09:24:17.902 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
+Opening dome slit ...  
+OK 
+sdoherty@linux-laptop:~$ sudo chimera-dome --open
+[sudo] password for sdoherty: 
+Opening dome slit ...  
+OK 
+sdoherty@linux-laptop:~$ sudo chimera-cam --help
+Usage: chimera-cam [options]
+
+Chimera - Observatory Automation System - Camera controller
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Display information while working [default=True]
+  -q, --quiet           Don't display information while working.
+
+  Information:
+    --info              Print camera information and exit
+    -F, --filters       Print available filter names.
+
+  Object Paths:
+    -I PATH, --instruments-dir=PATH
+                        Append PATH to Camera load path. This option could be
+                        setted multiple times to add multiple directories.
+                        [default=['/usr/lib/python2.5/site-packages/chimera_py
+                        thon-0.2.dev_r415-py2.5.egg/chimera/instruments']]
+
+  Temperature control:
+    --start-fan         Start the cooler fan.
+    --stop-cooling      Stop camera cooling
+    --stop-fan          Stop the cooler fan.
+    -T TEMP, --start-cooling=TEMP
+                        Start camera cooling, using the defined TEMP
+    -w, --wait          Wait until the selected CCD setpoint is achived.
+
+  Exposure control:
+    --expose            Take an exposure with selected parameters
+                        [default=True]
+    -n FRAMES, --frames=FRAMES
+                        Number of frames [default=1]
+    -f FILTER, --filter=FILTER
+                        Filter to be used. Use --filters to get a list of
+                        available filters
+    --subframe=SUBFRAME
+                        Readout only the selected subframe portion. The
+                        notation follows IRAF conventions. x1:x2,y1:y2 to
+                        specify the corners of the desired subframe
+    --binning=BINNING   Apply the selected binning to all frames
+    -t EXPTIME, --exptime=EXPTIME
+                        Integration time in seconds for each frame [default=1]
+    -i INTERVAL, --interval=INTERVAL
+                        Number of seconds to wait between each frame
+    --shutter=SHUTTER   What to do with the shutter: open, close, leave (case
+                        insensitive) [default=OPEN]
+    -o OUTPUT, --output=OUTPUT
+                        Base filename including full path if needed.
+                        [default=$DATE-$TIME.fits]
+
+  Client Configuration:
+    -P PORT, --port=PORT
+                        Port to which the local Chimera instance will listen
+                        to. [default=9000]
+    -H HOST, --host=HOST
+                        Host name/IP to bind the local Chimera instance.
+                        [default=localhost]
+    --no-autostart      Don't try to autostart Chimera if it were not running.
+
+  Camera and Filter Wheel configuration:
+    --camera=CAMERA     Camera instrument to be used. If blank, try to guess
+                        from chimera.config
+    --wheel=WHEEL       Filter Wheel instrument to be used. If blank, try to
+                        guess from chimera.config
+
+  Display configuration:
+    --no-display        Don't try to display image on DS9. default is display
+                        for exptime >= 5
+    --force-display     Always display image on DS9 regardless of exptime.
+
+  Image types:
+    --sky-flat          Mark this frame as a SKY FLAT frame.
+    --object            Mark this frame as a OBJECT frame.
+    --bias              Mark this frame as a BIAS frame.
+    --dark              Mark this frame as a DARK frame.
+    --flat              Mark this frame as a DOME FLAT frame.
+sdoherty@linux-laptop:~$ sudo chimera-cam --shutter=open
+======================================== 
+Taking 1 OBJECT frame[s] of 1.000s each 
+Shutter: open 
+Interval between frames: 0.000s 
+Cooling disabled. 
+Current CCD temperature: 20.175 oC 
+No binning 
+Full Frame 
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera-cam", line 368, in expose
+    shutter=options.shutter)
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/proxy.py", line 106, in __call__
+    return self.sender (self.method, args, kwargs)
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/core.py", line 462, in _invokePYRO
+    return self.adapter.remoteInvocation(name, Pyro.constants.RIF_VarargsAndKeywords, vargs, kargs)
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/protocol.py", line 429, in remoteInvocation
+    return self._remoteInvocation(method, flags, *args)
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/protocol.py", line 529, in _remoteInvocation
+    answer.raiseEx()
+  File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/errors.py", line 72, in raiseEx
+    raise self.excObj
+ChimeraValueError: Invalid shutter value: open
+ +--- Remote traceback:
+ | Traceback (most recent call last):
+ |   File "/usr/lib/python2.5/site-packages/Pyro-3.8.1-py2.5.egg/Pyro/protocol.py", line 653, in _handleInvocation2
+ |     res = obj.Pyro_dyncall(req[1],flags,req[3])	# (method,flags,args)
+ |   File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/remoteobject.py", line 93, in Pyro_dyncall
+ |     return getattr(self, method) (*args, **keywords)
+ |   File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/methodwrapper.py", line 108, in __call__
+ |     return self.call(self.instance, *args, **kwargs)
+ |   File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/lockwrapper.py", line 63, in call
+ |     ret = self.func(*args, **kwargs)
+ |   File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/instruments/camera.py", line 114, in expose
+ |     imageRequest = ImageRequest(**kwargs)
+ |   File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/imageserver/imagerequest.py", line 78, in __init__
+ |     raise ChimeraValueError('Invalid shutter value: ' + str(self['shutter']))
+ | ChimeraValueError: Invalid shutter value: open
+ +--- End of remote traceback
+Error trying to take exposures. (None) 
+======================================== 
+Total time: 0.049s 
+======================================== 
+Fri Feb 13 09:25:07 2009 
+======================================== 
+sdoherty@linux-laptop:~$ sudo chimera-cam --shutter=OPEN
+======================================== 
+Taking 1 OBJECT frame[s] of 1.000s each 
+Shutter: OPEN 
+Interval between frames: 0.000s 
+Cooling disabled. 
+Current CCD temperature: 20.787 oC 
+No binning 
+Full Frame 
+======================================== 
+[001/001] [Fri Feb 13 09:25:17 2009] 
+exposing (1.000s) ... OK (took 1.106 s) 
+reading out and saving ...  (/home/sdoherty/130209-092518-0001.fits)  OK (took 0.313 s) 
+[001/001] took 1.436s 
+======================================== 
+Total time: 1.759s 
+======================================== 
+Fri Feb 13 09:25:18 2009 
+======================================== 
+sdoherty@linux-laptop:~$ sudo chimera-cam --help
+Usage: chimera-cam [options]
+
+Chimera - Observatory Automation System - Camera controller
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Display information while working [default=True]
+  -q, --quiet           Don't display information while working.
+
+  Information:
+    --info              Print camera information and exit
+    -F, --filters       Print available filter names.
+
+  Object Paths:
+    -I PATH, --instruments-dir=PATH
+                        Append PATH to Camera load path. This option could be
+                        setted multiple times to add multiple directories.
+                        [default=['/usr/lib/python2.5/site-packages/chimera_py
+                        thon-0.2.dev_r415-py2.5.egg/chimera/instruments']]
+
+  Temperature control:
+    --start-fan         Start the cooler fan.
+    --stop-cooling      Stop camera cooling
+    --stop-fan          Stop the cooler fan.
+    -T TEMP, --start-cooling=TEMP
+                        Start camera cooling, using the defined TEMP
+    -w, --wait          Wait until the selected CCD setpoint is achived.
+
+  Exposure control:
+    --expose            Take an exposure with selected parameters
+                        [default=True]
+    -n FRAMES, --frames=FRAMES
+                        Number of frames [default=1]
+    -f FILTER, --filter=FILTER
+                        Filter to be used. Use --filters to get a list of
+                        available filters
+    --subframe=SUBFRAME
+                        Readout only the selected subframe portion. The
+                        notation follows IRAF conventions. x1:x2,y1:y2 to
+                        specify the corners of the desired subframe
+    --binning=BINNING   Apply the selected binning to all frames
+    -t EXPTIME, --exptime=EXPTIME
+                        Integration time in seconds for each frame [default=1]
+    -i INTERVAL, --interval=INTERVAL
+                        Number of seconds to wait between each frame
+    --shutter=SHUTTER   What to do with the shutter: open, close, leave (case
+                        insensitive) [default=OPEN]
+    -o OUTPUT, --output=OUTPUT
+                        Base filename including full path if needed.
+                        [default=$DATE-$TIME.fits]
+
+  Client Configuration:
+    -P PORT, --port=PORT
+                        Port to which the local Chimera instance will listen
+                        to. [default=9000]
+    -H HOST, --host=HOST
+                        Host name/IP to bind the local Chimera instance.
+                        [default=localhost]
+    --no-autostart      Don't try to autostart Chimera if it were not running.
+
+  Camera and Filter Wheel configuration:
+    --camera=CAMERA     Camera instrument to be used. If blank, try to guess
+                        from chimera.config
+    --wheel=WHEEL       Filter Wheel instrument to be used. If blank, try to
+                        guess from chimera.config
+
+  Display configuration:
+    --no-display        Don't try to display image on DS9. default is display
+                        for exptime >= 5
+    --force-display     Always display image on DS9 regardless of exptime.
+
+  Image types:
+    --sky-flat          Mark this frame as a SKY FLAT frame.
+    --object            Mark this frame as a OBJECT frame.
+    --bias              Mark this frame as a BIAS frame.
+    --dark              Mark this frame as a DARK frame.
+    --flat              Mark this frame as a DOME FLAT frame.
+sdoherty@linux-laptop:~$ sudo chimera-cam --filters
+Available filters: R G B LUNAR CLEAR 
+sdoherty@linux-laptop:~$ sudo chimera-cam -expose -n 1 filter=R
+Usage: chimera-cam [options]
+
+chimera-cam: error: no such option: -e
+sdoherty@linux-laptop:~$ sudo chimera-cam --expose -n 1 filter=R
+======================================== 
+Taking 1 OBJECT frame[s] of 1.000s each 
+Shutter: OPEN 
+Interval between frames: 0.000s 
+Cooling disabled. 
+Current CCD temperature: 20.456 oC 
+No binning 
+Full Frame 
+======================================== 
+[001/001] [Fri Feb 13 09:26:28 2009] 
+exposing (1.000s) ... OK (took 1.106 s) 
+reading out and saving ...  (/home/sdoherty/130209-092629-0001.fits)  OK (took 0.270 s) 
+[001/001] took 1.384s 
+======================================== 
+Total time: 1.708s 
+======================================== 
+Fri Feb 13 09:26:29 2009 
+======================================== 
+sdoherty@linux-laptop:~$ ls
+130209-092518-0001.fits  Examples            jdk1.6.0_11       Pictures
+130209-092629-0001.fits  google-earth        Kiyut             Public
+bin                      grub.lst            Music             Templates
+Desktop                  iMacros             netbeans-6.5      Videos
+Documents                InstallShield       NetBeansProjects  workspace
+Downloads                jabberwocky.config  Notes
+sdoherty@linux-laptop:~$ 
+
+
+
+
+------------------------------------------------------SERVER--------------------------------------------------
+sdoherty@linux-laptop:~$ chimera
+13-02-2009 09:22:10.876 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
+Traceback (most recent call last):
+  File "/usr/bin/chimera", line 5, in <module>
+    pkg_resources.run_script('chimera-python==0.2.dev-r415', 'chimera')
+  File "/usr/lib/python2.5/site-packages/pkg_resources.py", line 448, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/lib/python2.5/site-packages/pkg_resources.py", line 1166, in run_script
+    execfile(script_filename, namespace, namespace)
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera", line 31, in <module>
+    main()
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/EGG-INFO/scripts/chimera", line 27, in main
+    SiteController(sys.argv).startup()
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/controllers/site/main.py", line 188, in startup
+    self.config = SystemConfig.fromFile(self.options.config_file, self.options.use_global)
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/systemconfig.py", line 118, in fromFile
+    s = SystemConfig(open(filename, 'r').read(), loadGlobal=loadGlobal)
+  File "/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/systemconfig.py", line 148, in __init__
+    self._loadConfig(open(SYSTEM_CONFIG_DEFAULT_GLOBAL, 'r').read())
+IOError: [Errno 2] No such file or directory: '/usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/chimera.global.config'
+sdoherty@linux-laptop:~$ ls
+bin        google-earth        jdk1.6.0_11       Notes      workspace
+Desktop    grub.lst            Kiyut             Pictures
+Documents  iMacros             Music             Public
+Downloads  InstallShield       netbeans-6.5      Templates
+Examples   jabberwocky.config  NetBeansProjects  Videos
+sdoherty@linux-laptop:~$ cd NetBeansProjects/
+sdoherty@linux-laptop:~/NetBeansProjects$ ls
+BarcodeReader  chimera  CSC435  CSC480  imported_libraries  OLD
+sdoherty@linux-laptop:~/NetBeansProjects$ cd chimera/
+sdoherty@linux-laptop:~/NetBeansProjects/chimera$ ls
+csc480chimera
+sdoherty@linux-laptop:~/NetBeansProjects/chimera$ cd csc480chimera/
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera$ ls
+AUTHORS    COPYING      INSTALL         NEWS       setup.py
+ChangeLog  docs         nbproject       README     src
+contrib    ez_setup.py  Netbeans_Setup  setup.cfg  tests
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera$ cd src/
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src$ ls
+chimera  gui  scripts
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src$ cd chimera/
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera$ ls
+controllers  core  drivers  __init__.py  instruments  interfaces  util
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera$ cd co
+bash: cd: co: No such file or directory
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera$ ls
+controllers  core  drivers  __init__.py  instruments  interfaces  util
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera$ cd core/
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera/core$ ls
+async.py               event.py         managerbeacon.py   rwlock.py
+callback.py            eventsproxy.py   managerlocator.py  site.py
+chimera.global.config  eventwrapper.py  manager.py         state.py
+chimeraobject.py       exceptions.py    metaobject.py      systemconfig.py
+chimera.sample.config  __init__.py      methodwrapper.py   tests
+classloader.py         interface.py     monitor.py         threads.py
+cli.py                 location.py      path.py            util.py
+compat.py              lock.py          proxy.py           version.py
+config.py              lockwrapper.py   remoteobject.py
+constants.py           log.py           resources.py
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera/core$ sudo cp chimera.global.config /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core
+[sudo] password for sdoherty: 
+sdoherty@linux-laptop:~/NetBeansProjects/chimera/csc480chimera/src/chimera/core$ chimera -vv
+13-02-2009 09:23:38.355 WARNING chimera log.py:85 Couldn't start Log System FileHandler ([Errno 13] Permission denied: '/home/sdoherty/.chimera/chimera.log')
+13-02-2009 09:23:38.782 INFO chimera.controllers.site.main main.py:192 Starting system.
+13-02-2009 09:23:38.786 INFO chimera.controllers.site.main main.py:193 Chimera version: 0.2.dev-r415
+13-02-2009 09:23:38.789 INFO chimera.controllers.site.main main.py:194 Chimera prefix: /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera
+13-02-2009 09:23:38.791 INFO chimera.core.manager manager.py:130 Starting manager.
+13-02-2009 09:23:39.809 INFO chimera.controllers.site.main main.py:202 Chimera: running on localhost:7666
+13-02-2009 09:23:39.811 INFO chimera.controllers.site.main main.py:204 Chimera: reading configuration from /usr/lib/python2.5/site-packages/chimera_python-0.2.dev_r415-py2.5.egg/chimera/core/chimera.global.config
+13-02-2009 09:23:39.813 INFO chimera.controllers.site.main main.py:205 Chimera: reading configuration from /home/sdoherty/.chimera/chimera.config
+13-02-2009 09:23:39.814 INFO chimera.controllers.site.main main.py:214 Setting objects include path from command line parameters...
+13-02-2009 09:23:39.815 INFO chimera.controllers.site.main main.py:225 Trying to start drivers...
+13-02-2009 09:23:39.862 INFO chimera.core.manager manager.py:526 Starting /FakeFocuser/fakefocuserdriver.
+13-02-2009 09:23:39.862 INFO chimera.core.manager manager.py:542 Running /FakeFocuser/fakefocuserdriver. __main___.
+13-02-2009 09:23:40.473 INFO chimera.core.manager manager.py:526 Starting /FakeCamera/fakecameradriver.
+13-02-2009 09:23:40.475 INFO chimera.core.manager manager.py:542 Running /FakeCamera/fakecameradriver. __main___.
+13-02-2009 09:23:40.536 INFO chimera.core.manager manager.py:526 Starting /FakeTelescope/faketelescopedriver.
+13-02-2009 09:23:40.538 INFO chimera.core.manager manager.py:542 Running /FakeTelescope/faketelescopedriver. __main___.
+13-02-2009 09:23:40.558 INFO chimera.core.manager manager.py:526 Starting /FakeFilterWheel/fakewheeldriver.
+13-02-2009 09:23:40.559 INFO chimera.core.manager manager.py:542 Running /FakeFilterWheel/fakewheeldriver. __main___.
+13-02-2009 09:23:40.589 INFO chimera.core.manager manager.py:526 Starting /FakeDome/fakedomedriver.
+13-02-2009 09:23:40.590 INFO chimera.core.manager manager.py:542 Running /FakeDome/fakedomedriver. __main___.
+13-02-2009 09:23:40.591 INFO chimera.controllers.site.main main.py:233 Trying to start instruments...
+13-02-2009 09:23:40.599 INFO chimera.core.manager manager.py:526 Starting /Focuser/fake.
+13-02-2009 09:23:40.633 INFO chimera.core.manager manager.py:542 Running /Focuser/fake. __main___.
+13-02-2009 09:23:40.649 INFO chimera.core.manager manager.py:526 Starting /Camera/fake.
+13-02-2009 09:23:40.722 INFO chimera.core.manager manager.py:542 Running /Camera/fake. __main___.
+13-02-2009 09:23:40.978 INFO chimera.core.manager manager.py:526 Starting /Telescope/fake.
+13-02-2009 09:23:40.999 INFO chimera.core.manager manager.py:542 Running /Telescope/fake. __main___.
+13-02-2009 09:23:41.5 INFO chimera.core.manager manager.py:526 Starting /FilterWheel/fake.
+13-02-2009 09:23:41.54 INFO chimera.core.manager manager.py:542 Running /FilterWheel/fake. __main___.
+13-02-2009 09:23:41.69 INFO chimera.core.manager manager.py:526 Starting /Dome/fake.
+13-02-2009 09:23:41.155 DEBUG chimera.dome (dome) dome.py:284 [mode] standing...
+13-02-2009 09:23:41.173 INFO chimera.core.manager manager.py:542 Running /Dome/fake. __main___.
+13-02-2009 09:23:41.174 INFO chimera.controllers.site.main main.py:241 Trying to start controllers...
+13-02-2009 09:23:41.183 INFO chimera.core.manager manager.py:526 Starting /Autofocus/fakeautofocus.
+13-02-2009 09:23:41.184 INFO chimera.core.manager manager.py:542 Running /Autofocus/fakeautofocus. __main___.
+13-02-2009 09:23:41.185 INFO chimera.controllers.site.main main.py:249 System up and running.
+13-02-2009 09:25:17.126 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/h748c440fbe056b73bac124362c95a29d2918a44d]). Removing from subscribers list.
+13-02-2009 09:25:18.231 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/h6878e8ddbcbf55230b3e485b030362f8d1fabfa5]). Removing from subscribers list.
+13-02-2009 09:25:18.241 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/ha7978c9b8c8019533c553678f5a6c08f677663ae]). Removing from subscribers list.
+13-02-2009 09:25:18.271 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:219 Dome open? True
+13-02-2009 09:25:18.277 INFO chimera.fakecamera (fakecamera) fakecamera.py:261 Making simulated flat image: 510x765
+13-02-2009 09:25:18.277 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:262 Generating dark...
+13-02-2009 09:25:18.314 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:264 Making flat...
+13-02-2009 09:25:18.507 INFO chimera.core.manager manager.py:526 Starting /ImageServer/imageserver.
+13-02-2009 09:25:18.508 INFO chimera.controllers.imageserver.imageserver imageserver.py:41 Loading existing images...
+13-02-2009 09:25:18.511 INFO chimera.core.manager manager.py:542 Running /ImageServer/imageserver. __main___.
+13-02-2009 09:25:18.558 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/h910db4167acb4e6d7b391f2320da999600e5df43]). Removing from subscribers list.
+13-02-2009 09:25:18.618 DEBUG cherrypy.error _cplogging.py:40 [13/Feb/2009:09:25:18] HTTP Serving HTTP on http://0.0.0.0:8080/
+13-02-2009 09:26:28.184 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/hb9f1129b9ac814532e75ad3b8572db939f9516d2]). Removing from subscribers list.
+13-02-2009 09:26:29.289 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/hfd2a44c31609e3d9d7c698b5ab3f502953755a26]). Removing from subscribers list.
+13-02-2009 09:26:29.298 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/heaba1b22a2fc5debfa03a96e453dd0b384ba3f0f]). Removing from subscribers list.
+13-02-2009 09:26:29.323 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:219 Dome open? True
+13-02-2009 09:26:29.329 INFO chimera.fakecamera (fakecamera) fakecamera.py:261 Making simulated flat image: 510x765
+13-02-2009 09:26:29.329 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:262 Generating dark...
+13-02-2009 09:26:29.367 DEBUG chimera.fakecamera (fakecamera) fakecamera.py:264 Making flat...
+13-02-2009 09:26:29.566 DEBUG chimera.core.eventsproxy eventsproxy.py:87 Unreachable handler ([proxy for PYRO://127.0.0.1:9000//Callback/h53aa60836fb0b2b0cd93c2381eab17715f7e8800]). Removing from subscribers list.
+k
+```

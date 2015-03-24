@@ -1,0 +1,894 @@
+# Introduction #
+
+Here is an ongoing list of notes from meetings with Dr. Kanbur as well as emails sent from him.
+
+
+---
+
+# 4/7 Test Images from Sashi #
+A preliminary set of test images is in the file moxie:/tmp/test1.tar.gz
+
+These were images of one Landolt field, taken at different times during the night using chimera in robotic mode from the telescope in Brazil last summer. You should run them through Astrometry.net and try and find the WCS plus the coords of the stars in the image. You can then look up the Landolt Stars catalogues on the web and find which of the stars in a particular image are Landolt standards  and try to identify that star in all the images. I believe it will be Landolt standard SA112223. Its RA should be close to 20:42:14 and its dec should be close to 00: 09:01.
+
+So I would suggest:
+  * Do photometry on all the images.
+> > So run one image through astrometry.net and write the WCS.
+> > Identify the point sources get the photometry and seeing from sextractor and write these results to the database
+
+  * Identify the point source with RA and dec close to those given above and then identify this object in all the images. Then find the hour angle of the time of observation, get the air mass and regress this on the instrumental magnitude and get the extinction coefficient.
+
+  * I dont have numbers for what these should be at this stage. I wouldnt worry about that too much. The images should also show you what its like in the "real world" The images arent as good as those you have been using from the web site I showed you.
+
+
+
+---
+
+# 2/18 Meeting with Sashi #
+
+## Photometry ##
+
+Software to be downloaded and tested:
+  * DS9 - http://hea-www.harvard.edu/RD/ds9/
+  * SExtractor - http://sextractor.sourceforge.net/
+  * Astrometry.net - http://astrometry.net/use.html
+  * IRAF - http://iraf.noao.edu/
+  * WCSTools - http://tdc-www.harvard.edu/software/wcstools/
+  * Sky2XY - http://tdc-www.harvard.edu/wcstools/sky2xy.html
+
+This uses the RA and DEC coordinates and converts them to the X and Y coordinates on the CCD
+  * Pyraf (IRAF for Python) - http://www.stsci.edu/resources/software_hardware/pyraf
+
+  * Explore site and download images from http://stdatu.stsci.edu/
+> > - Use RA and Dec and take picture
+
+  * Compare images and location to make sure they are the same at Astrometry.net (upload images to Astrometry.net)
+  * Run data reduction on image using IRAF
+  * Open images using DS9
+  * Look into FITS images, and understand the tags in the header of the files (Flexible Image Transport System)
+**Look at and understand pointverify.py
+
+> - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/controllers/pointverify.py
+  * Look at and understand autofocus.py
+> - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/interfaces/autofocus.py
+> - This will show you how photometry is done.
+> - WSC is a translation between sky position and CCD
+  * Look at, understand, and debug fakecamera.py
+> - http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/drivers/fakecamera.py
+> - The fake observatory (download the pictures) works the same way as the real thing. You can use sequential downloading and then run all the photometry processes on the files sequentially**
+
+  * The final outcome of our project will be a database the following information:
+> - Object name, RA and DEC, object flux (i)
+> - Object names will come from the ascii list the user supplies
+
+  * **Big things (From Dr. Kanbur):**
+  1. Still trying to understand more of the photometry. Source extractor (Sextractor) should be able to do all of it! Autofocus will help!
+  1. Download WCSTools, DS9, Astrometry.net, and IRAF
+  1. In utils there is astrometrynet.py… look at it!
+    * http://code.google.com/p/csc480-chimera/source/browse/trunk/csc480chimera/src/chimera/util/astrometrynet.py
+  1. Somebody really needs to fix fakecamera.py
+  1. Be careful with IRAF as it might mess with the Python version
+  1. DS9 is the VIEWER but IRAF manipulates the files
+    * Need IRAF for data reduction
+    * Astrometry.net will write into the FITS file
+
+## Seeing ##
+
+  * **Order of Operations for Chimera**
+    1. move telescope
+    1. take pic
+    1. confirm location with astrometry.net
+    1. take desired picture of star
+    1. photometry (write to database)
+    1. extinction (compute AM and extinction)
+    1. seeing (run sextractor, get info from fits files)
+
+  * sextractor will compute the seeing
+
+  * **requirements**
+    1. be able to use sextractor wrapper (in util) with fits file
+    1. extract info from file after wrapper completes
+    1. take user inputs for database request
+    1. give back database matches
+
+  * look at extinction.py (fairly close operations as seeing)
+
+## Extinction Coefficient ##
+
+Info about the picture will be given as input from a user in the form of a text file to the scheduler.
+The telescope will take a picture.
+The picture will be reduced and photometry will be applied.
+All data will be put in a database:
+
+  * Object Name
+  * Airmass (Also known as "x" or "hour angle" which is the angle between the known star and zenith. To find the airmass is already created in the project. Shashi thinks it is in the Utils.)
+  * RA
+  * DEC
+  * Flux (I)
+
+Example: An image of a star is taken 5 times throughout the night
+
+M (Magnitude)
+"I" (Flux)
+X (Hour Angle)
+
+M1 = 2.5\*log(I1)        X1
+M2 = 2.5\*log(I2)        X2
+M3 = 2.5\*log(I3)	X3
+M4 = 2.5\*log(I4)	X4
+M5 = 2.5\*log(I5)
+
+Plot M and X - Find Least Fits
+The extinction coefficient is the slope of the line.
+
+Shashi wants to see a graph of the plot M and X and slope.
+
+
+---
+
+# 2/20 Extinction (polynomical fit) #
+
+> The file autofocuser.py has a method to do a polynomical fit. You may want to look at that for the extinction. Shashi
+
+
+---
+
+# 2/20 Chimera poster and flow chart #
+
+> A nice poster and flow chart describing chimera is at
+
+> http://www.oswego.edu/~kanbur/IRES2008/isaac.pdf
+
+> Take a look, particularly at the flow chart.
+
+> For those in the photometry project, take a look at autofocus.py in the controllers section - it may show you how to do photometry. Shashi
+
+
+---
+
+# 2/20 sample abstracts for QUEST opportunities #
+## Photometry ##
+
+  * Aperture photometry in the Chimera Robotic Telescope Control System
+  * Student’s names James P. Early, Shashi Kanbur
+  * The Chimera Robotic Telescope Control System is a exible software program to automate a professional astronomical observatory. Here we describe one of its components: aperature photometry. We describe aperture photometry and its general implementation in Chimera and display some preliminary results from early versions of the module.
+
+## Seeing ##
+
+  * A seeing module for the Chimera Robotic Telescope System
+  * Student Names James P. Early, Shashi M. Kanbur
+  * Chimera is exible software system for controlling professional astronomical observatories. The Astronomical seeing is a measure of the ”blurriness” of the atmosphere and is an important quantity to know. Here we describe a preliminary version of a Chimera module to automatically compute astronomical seeing.
+
+## Extinction ##
+
+  * An Extinction Module for the Chimera Robotic Telescope System
+  * Students Names James P. Early, Shashi M. Kanbur
+  * Chimera is a exible program for automating a professional astronomical observatory. Here we describe a module for obtaining nightly extinction coefficients. We describe what the extinction is, the general form of implementation in Chimera and present some preliminary results.
+
+
+---
+
+# 2/16 fakecamera.py bug fix #
+
+> The routine fakecamera.py, if the variable dss is set to TRUE makes a call to the web site I showed you and downloads the available picture at the RA and dec of the telescope. This year, its seems the site doesnt gzip the pictures and the code is trying to ungzip a file which has already been gzipped. If I remove the gzip (right after the call to the st web site), then the system doesnt take a proper picture and crashes. This is a specific bug which you guys could work on. It would be great to get the virtual observatory working.
+> Shashi
+
+
+
+---
+
+
+# 2/15 How to use fakecamera.py #
+
+> Heres where I am at the moment:
+> In src/chimera/drivers/fakecamera.py change use\_dss to be True (in the config at the top). You may need to remake things (setup.py install)
+
+> To start chimera, in one terminal type src/scripts/chimera -vv
+
+> In another terminal type:
+
+  * src/scripts/chimera-dome --open
+  * src/scripts/chimera-dome --track
+  * src/scripts/chimera-tel --unpark
+  * src/scripts/chimera-tel --init
+  * src/scripts/chimera-tel --start-tracking
+  * src/scripts/chimera-tel --slew --ra=22:00:00 -dec=30:00:00
+  * src/scripts/chimera-cam --expose -t=2
+
+> This takes an exposre pointed at the ra and dec above. But it goes to the SDDS survey online and retrieves the image from that position - in drivers/fakecamera.py look for url="http://stdatu......
+
+> The log shows that it doesnt quite work: saying the file retrieved isnt a gzipped file. See if you can fix this bug.
+
+> Shashi
+
+
+---
+
+
+# 2/15 Extinction and Seeing notes #
+
+> regarding extinction and seeing a good resource is
+> http://spiff.rit.edu/classes/phys445/lectures/atmos/atmos.html
+
+> So for the extinction project, we observe given standard stars at different times during the night. Reduce the data, do aperature photometry and get instrumental magnitudes for them at different times during the night. Call z = angle between the star and the zenith (the point directly overhead). The airmass, X = sec(z).
+
+> Then the instrumental magnitude m(X) = m\_0 + k\*X
+> where k is the extinction coefficient. In the notes the abbreviation AM stands for AirMass.
+
+> So the position of the star at different times during the night gives X, and observing the star and doing photometry gives m(X) and doing a fit as above gives the extinction coefficient k.
+
+> As an initial routine they could write a python routine to do a least squares fit between any two sets of numbers. This could be the basis of the seeing routine.
+
+> Shashi
+
+
+---
+
+
+# 2/13 config file #
+
+  * Here is the configuration file for the virtual observatory. Shashi
+
+---------- Forwarded message ----------
+From: Isaac Richter
+Date: Thu, Feb 12, 2009 at 11:11 AM
+Subject: Re: virtual observatory
+To: Shashi Kanbur
+
+
+Sorry -- took a bit more time to track it down than I thought it
+would. Just save the following in a file, and then tell chimera to use
+that file as the configuration file (see "scripts/chimera --help").
+
+--Isaac
+
+
+
+&lt;chimera host="localhost" port="7666"&gt;
+
+
+
+
+
+&lt;instruments&gt;
+
+
+
+
+&lt;instrument name="tel" class="Telescope"&gt;
+
+
+
+
+&lt;option name="driver" value="/FakeTelescope/0"/&gt;
+
+
+
+
+&lt;/instrument&gt;
+
+
+
+
+&lt;instrument name="dome" class="Dome"&gt;
+
+
+
+
+&lt;option name="driver" value="/FakeDome/0"&gt;
+
+
+
+&lt;/option&gt;
+
+
+
+
+&lt;/instrument&gt;
+
+
+
+
+&lt;instrument name="cam" class="Camera"&gt;
+
+
+
+
+&lt;option name="driver" value="/FakeCamera/0"/&gt;
+
+
+
+
+&lt;/instrument&gt;
+
+
+
+
+&lt;instrument name="wheel" class="FilterWheel"&gt;
+
+
+
+
+&lt;option name="driver" value="/FakeFilterWheel/0"&gt;
+
+
+
+&lt;/option&gt;
+
+
+
+
+&lt;/instrument&gt;
+
+
+
+
+&lt;instrument name="focuser" class="Focuser"&gt;
+
+
+
+
+&lt;option name="driver" value="/FakeFocuser/0"&gt;
+
+
+
+&lt;/option&gt;
+
+
+
+
+&lt;/instrument&gt;
+
+
+
+
+&lt;/instruments&gt;
+
+
+
+
+
+&lt;drivers&gt;
+
+
+
+
+&lt;driver name="ft" class="FakeTelescope" /&gt;
+
+
+
+
+&lt;driver name="fc" class="FakeCamera"&gt;
+
+
+
+
+&lt;option name="ccd\_width" value="50" /&gt;
+
+
+
+
+&lt;option name="ccd\_height" value="50" /&gt;
+
+
+
+
+&lt;option name="use\_dss" value="true" /&gt;
+
+
+
+
+&lt;/driver&gt;
+
+
+
+
+&lt;driver name="fw" class="FakeFilterWheel" /&gt;
+
+
+
+
+&lt;driver name="ff" class="FakeFocuser" /&gt;
+
+
+
+
+&lt;driver name="fd" class="FakeDome" /&gt;
+
+
+
+
+&lt;/drivers&gt;
+
+
+
+
+
+&lt;controllers&gt;
+
+
+
+
+&lt;controller name="imageserver" class="ImageServer" /&gt;
+
+
+
+
+&lt;controller name="xmlrpc" class="XMLRPC" /&gt;
+
+
+
+
+&lt;/controllers&gt;
+
+
+
+
+
+&lt;site&gt;
+
+
+
+
+&lt;name&gt;
+
+UFSC
+
+&lt;/name&gt;
+
+
+
+
+&lt;latitude&gt;
+
+-27:36:12.286
+
+&lt;/latitude&gt;
+
+
+
+
+&lt;longitude&gt;
+
+-48:31:20.535
+
+&lt;/longitude&gt;
+
+
+
+
+&lt;altitude&gt;
+
+20
+
+&lt;/altitude&gt;
+
+
+
+
+<utc\_offset>
+
+-3
+
+</utc\_offset>
+
+
+
+
+&lt;dst&gt;
+
+False
+
+&lt;/dst&gt;
+
+
+
+
+&lt;/site&gt;
+
+
+
+
+&lt;site&gt;
+
+
+
+
+&lt;name&gt;
+
+LNA
+
+&lt;/name&gt;
+
+
+
+
+&lt;latitude&gt;
+
+-22:32:08.066
+
+&lt;/latitude&gt;
+
+
+
+
+&lt;longitude&gt;
+
+-45:34:58.480
+
+&lt;/longitude&gt;
+
+
+
+
+&lt;altitude&gt;
+
+20
+
+&lt;/altitude&gt;
+
+
+
+
+<utc\_offset>
+
+-3
+
+</utc\_offset>
+
+
+
+
+&lt;dst&gt;
+
+False
+
+&lt;/dst&gt;
+
+
+
+
+&lt;/site&gt;
+
+
+
+
+
+&lt;/chimera&gt;
+
+
+
+
+On 2/12/09, Shashi Kanbur wrote:
+Hi, can you get me those config files?
+Thanks,
+Shashi
+
+> On Wed, Feb 11, 2009 at 1:06 PM, Isaac Richter
+> wrote:
+
+> I can get them to you tonight -- I will have to pull them out of
+> archives on an external hard drive once I get back to my room.
+
+> --Isaac
+
+> On Wed, Feb 11, 2009 at 9:44 AM, Shashi Kanbur wrote:
+> Can you send me the config files you mention here?
+> Shashi
+
+> On Tue, Feb 10, 2009 at 4:24 PM, Isaac Richter wrote: http://code.google.com/p/chimera/source/....s/fakecamera.py
+
+> See config starting on line 55. Note the use\_dss option (if this is false, it won't use real star fields). Also note configuration of the telescope instrument and dome instrument to which to link.
+
+> Next interesting stuff is found in _readout. Line 210-212 covers making darks, Next, starting on line 221, if use\_dss is true and the dome slit is aligned with the telescope (and the dome slit is open)the driver will attempt to download a dss image of the requisite location. (If this fails, it makes a flat instead.) In all cases, fakecamera will simulate the detector issues (dark current and pixel variations) on the output data._
+
+> Probably, the easiest way to do all this is to use a site config file that sets up your fake dome, telescope, and camera with all of the correct parameters. I don't have access to the site files that I used for the fake equipment right now since I am booted into windows, but I will get them to you when I have a chance.
+--Isaac
+
+> On Tue, Feb 10, 2009 at 3:17 PM, Shashi Kanbur wrote: So its in fakecamera.py? Can you give me some more details? Shashi
+
+> On Tue, Feb 10, 2009 at 2:01 PM, Isaac Richter wrote:
+> Shashi,
+> That code is, as far as I know, still in SVN. It is done by modifying configuration parameters for the FakeCamera camera driver. The code requires that the dome be open and tracking the telescope (and you have to specify a dome and telescope for the FakeCamera driver to talk to). Otherwise, it just gives you either a fake dark or a fake flat. It is possible that the URL used to download the DSS data used to make the observations is no longer working. In that case, it probably substitutes a fake dark.
+--Isaac
+
+
+> On Tue, Feb 10, 2009 at 11:15 AM, Shashi Kanbur wrote:
+> Isaac, would you be willing to share the code you wrote last summer which permitted fake observations to be made to test chimera? Shashi
+
+
+---
+
+# 2/11 Chimera Explained #
+
+Chimera is an all-inclusive software package for those wishing to automate their telescope/CCD system. It can be run from the command line, or from an interactive GUI interface. Chimera is written in Python, a powerful, user-friendly, object-oriented language growing in popularity among the scientific community with Python modules available for many applications, for example matplotlib for plotting or pyraf for astronomical data reduction, or her own modules to add to Chimera, and customize Chimera for specific research tasks. Modularity is the main theme of Chimera. Because of this it is easy for a user to add his or her own modules to Chimera and customize it for specific research tasks. It is also easy to add new instruments and drivers since modularity separates hardware independent and hardware dependent code. The user only sees the hardware independent part of Chimera. For example, the command to take a CCD image is and always will be the same regardless of the user location, location and type of telescope/camera. Chimera will smoothly interface new drivers and equipment with familiar commands. Not only is Chimera modular in terms of its inherent structure, but it is also possible to distribute tasks between locations. What this means is that although the telescope and camera are physically located at Itajuba, MInas Gerais, Brazil, a PC at UFSC, Florianopolis, Brasil could be controlling the telescope, whilst a PC located at Oswego, NY, USA controls the CCD camera but a scientist located at Mount Stromlo Obervatory, Australia, is issuing commands to slew the telescope to a given position and take a number of CCD frames. Moreover, the observing program of this scientist at Mount Stromlo can be entirely automated so that he/she need have no further contact with the system after submitting their observing program. More realistically, two or more computers could be operating at an observatory control room, each one controlling a different element of the same telescope, all running Chimera. However, this distributivity will work between computers anywhere in the world.
+
+Details will follow later, but to get an idea of how Chimera actually operates, here is a typical command for the ’chimera-tel,’ or the part of chimera that controls the telescope.
+
+**chimera-tel -tel localhost:10000/Telescope/0 -slew –ra 10:00:00
+–dec 10:00:00**
+
+This tells Chimera both the computer location of the software to control the telescope, and where to slew. Other options include commanding the telescope to track the selected point in the sky or instead of using RA and Dec, use local azimuth and altitude to slew to a desired object.
+
+
+At the UFSC observatory, the telescope is controlled by a windows machine but the CCD camera is plugged into a linux machine. To use Chimera at the UFSC observatory:
+
+  * Start up Chimera on the windows machine. This machine controls the telescope through the mount.
+
+**chimera -f windows.xml**
+
+> Note this is only for the UFSC Observatory because the telescope mount is proprietary software and can only run on the windows machine. The file windows.xml is a file which contains details about where the telescope driver is located: more about this later.
+
+  * Then on the linux machine, login and type **chimera -f linux.xml**
+
+> The file linux.xml contains information about where the camera driver etc. is located (again more about this later). If all goes well, some messages giving information about the status of the system should appear on the screen. Typing
+
+**chimera -f linux.xml –vv**
+
+> will give you more information about whats going on.
+
+  * Then to point the telescope, type on the Linux machine
+
+**chimera-tel –tel localhost:10000/Telescope/0 –slew –ra=< coords >
+–dec=< coords >**
+
+  * To take an image with the camera, on the Linux machine type
+
+**chimera-cam –camera localhost:10000/Camera/0 -n**< numberofexposures >
+**-t**< exposuretimeinseconds >**-o**< basenameoffitsfile >
+
+> The option -s can be used with OPEN and/or CLOSE to open or close the camera shutter.
+
+  * To take a bias, close the shutter and set the exposure time to t=0.
+
+  * To take a dark, close the shutter and set the exposure time to be similar to the exposure time for the science image.
+
+  * To change the filter and take an exposure with a new filter type
+
+**chimera-cam –camera localhost:10000/Camera/0
+–wheel localhost:10000/FilterWheel/0 -f** < filteroption >
+**-n** < numberofexposures > **-t** < exposuretimeinseconds >
+**-o** < basenameofFITSimagefiles >**-s** < OPEN/CLOSE >
+
+  * The available filter options at UFSC are CLEAR (no filter), RED, BLUE, GREEN, VIOLET and LUNAR.
+
+  * **chimera-tel –help** gives you all the options available with this. Similarly for **chimera-cam –help**. Other instruments accessible in this way are chimera-dome and chimera-focus.
+
+  * The components of the system consist of a hardware instrument (say the camera) connected to some PC and on this PC resides a piece of software called the hardware driver. This hardware driver is code which talks and controls the camera directly. In order to manipulate the camera, users don’t use the hardware driver directly but interact with it through the program chimera-cam. As above chimera-cam can tell the camera to open/close its shutter, take a filter of specified exposure time, take more than one exposure and change the filter in front of the camera. In fact chimera-cam talks to the camera through the ”software instrument” camera which in turn talks to the driver. The software instrument camera is hardware independent. This structure is true for all the ”instruments” currently available: a dome, focuser, camera, telescope and filterwheel.
+
+  * The command chimera-cam –help gives details of all of these options.
+
+  * As an example, the following command tells the camera to open the shutter, chimera-cam –camera localhost:10000/Camera/0 -s OPEN
+
+  * We will discuss the **localhost:10000....** shortly.
+
+  * To take an exposure of 10 seconds duration, type **chimera-cam –camera localhost:10000/Camera/0 -s OPEN -n 1 -t 10**
+
+  * To take an exposure of 10 seconds with the RED filter, type **chimera- cam –camera localhost:10000/Camera/0 –wheel localhost:10000/FilterWheel/0 -f RED -n 1 -t 10**
+
+
+  * A bias frame can be taken with an exposure of 0 seconds and the shutter closed as in **chimera-cam –camera localhost:10000/Camera/0 -n 1 -t 0 -s CLOSE**
+
+  * A dark fram can be taken with an exposure of, say 10 seconds, and the shutter closed as in **chimera-cam –camera localhost:10000/Camera/0 -n 1 -t 10 -s CLOSE**
+
+  * The images are stored as fits files. They can be given special names using the -o option which specifies a base name. So chimera-cam – camera localhost:10000/Camera/0 -n 3 - t 10 -o shashi will give the 3 FITS files created by this command a base name of shashi. All images taken with this base name are numbered sequentially according to the order they were taken in.
+
+  * The chimera system consists of a dome, a camera, a telescope, and a focuser. Each instrument is controlled by the programs **chimera-dome**, **chimera-cam**, **chimera-tel**, **chimera-focus**. Typing chimera-dome **–help** etc. gives help on all the available options with these commands.
+
+  * A basic option with these commands specifies where software to control that particular instrument resides. The following are not complete commands but presented merely to show the nature of the option to specify the location of the software for that particular instrument.
+
+**chimera-dome –dome localhost:10000/Dome/0 ..... chimera- cam –camera localhost:10000/Camera/0 .... chimera-tel –tel localhost:10000/Telescope/0 ..... chimera-focus –focuser local-host:10000/Focuser/0 .....**
+
+  * In principle, this software could be on a different computer. Hence the full nature of this option is **[host:port]/Class/name**. In the case where the software is on the same computer from which the above command is being issued, the host part becomes localhost. The 10000 is the port number. The Class part deals with the way the chimera code is written, but each of the instruments dome, camera, telescope and focuser is thought of as a class with the name Dome, Camera, Telescope, and Focuser. The name corresponds to the number 0 in the above examples. Chimera can control more than one telescope or dome or focuser. Thus to control two telescopes, chimera-tel would refer to them as
+
+**chimera-tel –tel localhost:10000/Telescope/0.... and chimera-
+tel –tel localhost:10000/Telescope/1....**
+
+  * To understand this more, assume the telescope and camera are all physically connected to PC B with IP number 150.162.110.2 but the commands are to be issued from PC A with IP number 129.3.17.53. Then we first install chimera on BOTH machines and start up chimera on machine B with
+
+**chimera -vv -f linux.xml**
+
+  * Now on PC A, we issue the command
+
+**chimera-tel –telescope 150.162.110.2:10000/Telescope/0 –info.**
+
+  * This gives information on the telescope connected to PC B.
+
+  * Thus the following is an example of a chimera command issued on PC A with IP number 129.3.17.53 talking to PC B with IP number 150.162.110.2
+
+**chimera-tel –telescope 150.162.110.2:10000/Telescope/0 –info**
+
+  * This command asks chimera on PC A to contact chimera on PC B and get information for the telescope - called 0. The ”software instrument” for the telescope is located in ..../src/instruments.... and chimera knows its location and hence can find where the code describing ”Telescope” resides.
+
+  * The most ”distributed” case is if a telescope is physically connected to machine X, the software instrument resides on machine Y and you are issuing commands from machine Z. Machines X, Y and Z are all connected to the internet and all have chimera installed. Machines X and Y have chimera started through a command similar to chimera -f linux.xml. In the case of machine X, the .xml file contains details of the telescope driver since the telescope is physically connected to machine X.
+
+  * Thus an example of the most general command is
+
+**chimera-tel –telescope 150.162.110.2:10000/Telescope/0**
+
+> issued from machine Z and 150.162.110.2 is the IP number of machine Y. chimera on machine Y is started with information telling it that the driver and hardware instrument is located on machine X.
+
+  * The scripts chimera-dome, chimera-tel, chimera-cam, chimera-focuser are controlled by the user and talk to the ”software instrument”. This piece of code in turn talks to the driver - code which talks directly to the hardware. The driver is usually supplied by the hardware manufacturer. Its also possible to specify an alternative location for this driver other than the default location.
+
+  * Now we describe some options specific to some commands.
+
+  * chimera-dome
+> – **chimera-dome –track –tel localhost:10000/Telescope/0**
+> > tells the dome to track the specified telescope.
+
+
+> - **chimera-dome –dome localhost:10000/Dome/0 –close**
+> > closes the dome connected to the local machine.
+
+
+> – **chimera-dome –dome 128.119.34.20:20000/Dome/1 –open**
+> > opens dome number 1 which is connected to the machine with IP number 128.119.34.20 - communication is through port 20000.
+
+
+> - **chimera-dome –stand**
+> > tells the dome to stay stationary.
+
+## Installation ##
+
+> - Requirements to install, just install the package **Flow**
+  * To start up chimera, you need to use chimera -f ¡some file¿ on all the PC’s involved in the system. This file, currently in	xml contains details about the location of that PC, location of other PC’s in the system, what instruments/drivers etc. to load and where they are located. It also starts up managers on all these machines.
+
+
+
+---
+
+# 2/11 How to use UFSC Observatory #
+
+## To use Chimera at the UFSC observatory: ##
+
+  * Start up Chimera on the windows machine. This machine controls the telescope through the mount.
+
+**chimera -f windows.xml**
+
+> Note this is only for the UFSC Observatory because the telescope
+> mount is proprietary software and can only run on the windows ma-
+> chine.
+
+  * Then on the linux machine, login and type **chimera -f linux.xml**  If all goes well, some messages giving information about the status of the system should appear on the screen. Typing
+
+**chimera -f linux.xml –vv**
+
+> will give you more information about whats going on.
+
+  * hen to point the telescope, type on the Linux machine
+
+**chimera-tel –tel localhost:10000/Telescope/0 –slew –ra=¡coords¿
+–dec=¡coords¿**
+
+  * To take an image with the camera, on the Linux machine type
+
+**chimera-cam –camera localhost:10000/Camera/0 -n¡number of exposures¿ -t¡exposure time in seconds¿ -o¡basename of fits file¿**
+
+> The option -s can be used with OPEN and/or CLOSE to open or close the camera shutter.
+
+  * To take a bias, close the shutter and set the exposure time to t=0.
+
+  * To take a dark, close the shutter and set the exposure time to be similar to the exposure time for the science image.
+
+  * To change the filter and take an exposure with a new filter type
+
+**chimera-cam –camera localhost:10000/Camera/0 –wheel lo-
+calhost:10000/FilterWheel/0 -f ¡filteroption¿ -n ¡number of
+exposures¿ -t ¡exposure time in seconds¿ -o ¡basename of FITS
+image files¿ -s ¡OPEN/CLOSE¿**
+
+
+  * The available filter options at UFSC are CLEAR (no filter), RED, BLUE, GREEN, VIOLET and U (Extreme Violet).
+
+  * chimera-tel –help gives you all the options available with this. Similarly for chimera-cam –help. Other instruments accessible in this way are chimera-dome and chimera-focus.
+
+## Structure ##
+
+  * At the lowest level you have the actual piece of hardware that you are trying to control robotically: lets take as an example, the camera.
+
+  * This is connected by a wire to some PC (which usually is local) which contains the hardware driver for the camera. This hardware driver may be supplied by the manufacturer or is some code which talks to code supplied by the manufacturer.
+
+  * Items 1 and 2 are hardware specific.
+
+  * The ICamera code sets out the methods by which the Camera Driver communicates with other objects.
+
+  * The ICamera code is hardware independent.
+
+  * Above these you have the ”software instrument” for the camera. This contains code which any camera should be able to do and code to get the driver for that camera to do exactly that. The ”ICamera” bit sets out the methods by which the software instrument Camera can communicate with other objects.
+
+  * Generalizing this, for any Chimera object, we have the hardware, the driver, the interface and the software for that particular object.
+
+  * In addition, there can be a finer division of ”things” into (driver, interface, instrument). For example, there can also be an ICameradriver interface which sets out the ways in which the Camera driver communicates  with other objects. Another example is that the interface for the Camera software instrument is actually made up of the interfaces for a Basic Camera, a Basic Camera which can take and abort exposures and another interface which consists of a Basic Camera which also supports temperature monitoring and control.
+
+  * Above the software instrument is the interface to the user. Currently its chimera-cam or chimera-tel or chimera-dome but hopefully these will be replaced by some GUI.
+
+  * An analogy is a PC running some operating system. The manual is the I code, the set of allowed commands and the way anybody can communicate with the PC and vice versa. The operating system is the ”software instrument”. You, the user and the operating system have agreed that each can only talk to the other through what is layed out in the manual. Similarly the IDriver is the manual that describes how the operating system and CPU can talk to each other. The combination of driver and actual instrument are the guts of the PC. I look up in the manual what ”ls” means” (I code), type in ls (”software instrument”) and get back a list of files (driver plus actual instrument). In theory, if I get a new PC running linux, I should be able to just plug in my existing keyboard, read the manual and get the same result when I type in ”ls”.
+
+  * Controllers are roughly at the level of chimera-cam or chimera-tel and are used when more than one system, say the camera and telescope and focuser are in use. For example, the autofocuser. The Telescope moves to an object, the camera takes a picture and the autofocuser determines if the object is in focus - if not, the autofocuser adjusts the focus, tells the camera to take another picture etc. So the autofocuser needs to talk to more than one system. Another example of a controller is the scheduler.
+
+  * This explains the splitting up of the source code into instruments, drivers and interfaces. In addition the source code contains sections on core, utilities and controllers.
+
+  * At the moment the software instruments in chimera consist of a camera, dome, filterwheel, focuser and telescope.
+
+  * In principle many of the chimera components can be on separate computers connected only by the internet. Pyro takes care of the network communication details.
+
+  * Thus, it is possible to have an instrument connected by wire to one PC, but the driver for that instrument on another PC, the software instrument on a third PC and any controllers etc on a fourth PC. Options such as
+
+**chimera-tel –tel localhost:10000/Telescope/0**
+
+> can be changed to chimera-tel –tel ¡IP number¿:10000/Telescope/0 which will tell chimera the IP number of the machine where the software instrument for Telescope is located.
+
+  * As an example, if the software instrument for the camera is on 128.119.52.1, the driver for that camera is on 128.138.63.28, then type
+
+**chimera-cam –camera 128.119.52.1:10000/Camera/0 –driver
+128.138.63.28:10000/Driver/0**
+
+  * On each PC where there is a chimera component running, a chimera manager, initiated by chimera -f ¡**.xml¿ must be running. As before this component could be an instrument or a driver or an Interface.**
+
+  * In most cases, all the hardware instruments are connected by some type of wire to one PC at one site.
+
+  * The **.xml file contains details about what resources are available on the machine on which it is started.**
+
+  * So in the UFSC observatory case, the telescope is physically connected to the windows machine but the camera is physically connected to the nearby Linux machine. Thus initially, chimera -f windows.xml starts up chimera on the windows machine, informing it of the fact that it has a hardware instrument, the telescope, and its associated driver attached to it. chimera 0f linux.xml starts up the chimera on the linux machine informing it of resources that are available to it. Note the software instrument for the telescope, the telescope interface, camera, camera driver, camera interface reside on the linux machine.
+
+## Flow ##
+
+  * To start up chimera, you need to use chimera -f ¡some file¿ on all the PC’s involved in the system. This file, currently in xml contains details about the location of that PC, location of other PC’s in the system, what instruments/drivers etc. to load and where they are located. It also starts up managers on all these machines.
+
+  * If you start up chimera-cam as in 4), this sends a request to the manager running on that machine which forwards that request to the machine where the camera’s stuff is located. The machine on this manager receives the request, wakes up the ”camera software instrument” which sends the request to the location where the camera driver is. The manager on this machine receives the request, wakes up the camera driver which sends the request down some line which is physically connected to the camera. Information about what happened is sent back through this chain and results in information displayed on the terminal where the original camera request was issued.
+
+
+
+
+
+---
+
+# 2/11 Meeting #
+
+We met with Dr. Kanbur on 2/11 and these were the answers we got for our questions.
+
+What is the package structure?
+  * Controllers– things that use everything else.
+  * Instruments
+  * Interface– contract between the drivers and the instruments. User doesn’t have to worry about the interface – all that needs to change is the driver.
+  * Drivers
+  * Hardware
+
+
+Can we test on hardware
+  * Maybe later. (end of semester) Just work on fake telescope - Fakecamera.py in source chimera drivers shows how the virtual observatory is done.
+
+
+Getting feedback for modules and command line interface?
+  * With the file, we will be able to get feedback
+
+
+What are security issues w/ raw input?
+  * There will be issues but we are not going to deal with it right now. If you have ideas about how to make it secure without limiting functionality.
+
+
+Stand alone vs. web interface?
+  * He does not have a preference wither way. The jar file should be in with the program. Under source there is a GUI subdirectory.
+
+
+What parts are correct/not working:
+  * Most things work. If you gave the program 10 objects, it should run through all 10. He wants it to be more robust and debug.
+
+
+Data pre-collected or real time?
+  * Data will be pre-collected for the beginning.
+
+
+Install script re-write?
+  * We want to make it better. Make it as easy as possible. Easy install does not seem to work. Just have it work with Linux for right now but eventually wants to work with windows.
+
+
+What has and hasn't worked?
+  * Design should be as modular as possible.
+
+
+Details about Database?
+  * Want to save the images and create a database – needs to be free. Currently the images are stored in different directories named by the date.
+
+
+Formulas?
+  * The majority of the formulas are done already - they are in the program.

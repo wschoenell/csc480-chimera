@@ -1,0 +1,62 @@
+# Introduction #
+
+After a little effort, I got Chimera running on my Windows laptop. Here is an overview of how to recreate that and hopefully get Chimera running on any Windows machine.
+
+
+# Details #
+
+### Install Python 2.5 ###
+  * Go to http://www.python.org/download/releases/2.5.4/
+  * Download python-2.5.4.msi (Use the x86 version - it works on x64, and it's the only one that the packages will recognize.)
+
+### Install Missing .dll's ###
+
+It seems that there is a .dll (mfc71) that is not installed during the Python installation - but is critical for pywin. From what I read, it seems that the appropriate mfc would install for Python2.3, but not for Python2.4. It appears that this holds true for Python2.5 as well. The .dll may be downloaded at http://starship.python.net/crew/mhammond/downloads/mfc71.dll
+
+Information at: http://starship.python.net/crew/mhammond/win32/
+
+### Install pywin32 210 ###
+  * Go to http://sourceforge.net/project/showfiles.php?group_id=78018&package_id=79063&release_id=449591
+  * Download pywin32-210.win32-py2.5.exe
+
+### Install pyephem 3.7.3.3 ###
+  * Go to http://pypi.python.org/pypi/pyephem/
+  * Download pyephem-3.7.3.3.win32-py2.5.exe
+
+### Install PyYAML 3.08 ###
+  * Download http://pyyaml.org/download/pyyaml/PyYAML-3.08.win32-py2.5.exe
+
+### Install setuptools 0.6c9 ###
+  * Go to http://pypi.python.org/pypi/setuptools
+  * Download setuptools-0.6c9.win32-py2.5.exe
+
+### Use Subversion to get the Chimera source code from here ###
+
+### Run setup.py in the "trunk/csc480chimera/" directory ###
+  * "(python exe) setup.py install"
+  * When I ran it, it still displayed an error message about pywin32, but it's already installed anyway, and Chimera didn't show any ill affects afterward.
+
+### Temporary fix for connection issues ###
+  * In "trunk/csc480chimera/src/chimera/core/managerlocator.py" line 29, there's a sendto statement that sends a UDP packet to an address represented by the empty string "". The empty string address might not be valid on Windows. If you change the address to "localhost" (provided that's where the server is), Chimera should run fine. I'm still looking to see if there is another solution that does not involve changing the Chimera source code.
+
+### General notes ###
+  * To run any Python script in Windows, enter the path to the Python executable followed by the script name and the parameters to the script. For example, "chimera -vv" could become "C:\Python25\python chimera -vv" (depending on where you installed Python).
+
+### Copy Chimera's Global Configuration file ###
+
+  * Copy the file "chimera.global.config" from the csc480chimera directory
+
+  * Paste this file to "C:\Python25\Lib\site-packages\chimera\_python-0.2.dev\_r62-py2.5.egg\chimera\core" (provided you installed Python2.5 to C:\)
+
+### Starting Chimera Server ###
+
+  * Navigate the command shell to the python\scripts directory (cd C:\Python25\Scripts by default)
+
+  * Type: C:\Python25\python.exe chimera -vv
+
+  * You should see the drivers and managers starting. The last line should read:
+
+> ''INFO chimera.controllers.site.main main.py:249
+> System up and running.''
+
+  * Note: If you're running a firewall, it may interfere. If you're using the default Windows Firewall there should be an Allow/Block prompt.
